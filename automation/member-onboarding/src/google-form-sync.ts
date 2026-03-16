@@ -45,6 +45,15 @@ type SyncRuntime = {
   defaultDryRun: boolean;
 };
 
+type MirrorSheetSummary = {
+  messages: string[];
+};
+
+type MirrorSheetState = {
+  phonePairs: Set<string>;
+  emailPairs: Set<string>;
+};
+
 export async function syncGoogleFormResponses(
   runtime: SyncRuntime,
   forceDryRun?: boolean
@@ -88,6 +97,10 @@ export async function syncGoogleFormResponses(
   }
 
   const headerIndex = buildHeaderIndex(ensuredHeaders.headers);
+  const mirrorState = await createMirrorSheetState(
+    accessToken,
+    runtime.config
+  );
   const resultRows: GoogleFormSyncSummary["rows"] = [];
   let attemptedRows = 0;
   let skippedRows = 0;
@@ -100,9 +113,9 @@ export async function syncGoogleFormResponses(
   ) {
     const rowNumber = rowIndex + 1;
     const row = values[rowIndex] ?? [];
-    const email = getCell(row, headerIndex, runtime.config.emailColumn)
-      .trim()
-      .toLowerCase();
+    const email = getPrimaryEmail(
+      getCell(row, headerIndex, runtime.config.emailColumn)
+    );
     const existingStatus = getCell(
       row,
       headerIndex,
@@ -156,6 +169,16 @@ export async function syncGoogleFormResponses(
         defaultDryRun: effectiveDryRun,
         providers: runtime.providers
       });
+      const mirrorSummary = await syncMirrorSheets({
+        accessToken,
+        config: runtime.config,
+        row,
+        headerIndex,
+        memberName: result.member.fullName,
+        dryRun: effectiveDryRun,
+        state: mirrorState
+      });
+      const resultMessage = summarizeExecution(result, mirrorSummary.messages);
 
       if (!effectiveDryRun) {
         await writeSyncResult(
@@ -163,7 +186,8 @@ export async function syncGoogleFormResponses(
           runtime.config,
           headerIndex,
           rowNumber,
-          result
+          result,
+          resultMessage
         );
       }
 
@@ -172,7 +196,7 @@ export async function syncGoogleFormResponses(
         rowNumber,
         email,
         status: result.status,
-        message: summarizeExecution(result)
+        message: resultMessage
       });
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
@@ -214,9 +238,11 @@ export function buildMemberRequest(
   config: GoogleFormConfig
 ): MemberRequest {
   const group = getOptionalCell(row, headerIndex, config.groupColumn);
+  const rawEmail = getCell(row, headerIndex, config.emailColumn).trim();
+  const email = getPrimaryEmail(rawEmail);
 
   return {
-    email: getCell(row, headerIndex, config.emailColumn).trim(),
+    email,
     fullName: getOptionalCell(row, headerIndex, config.fullNameColumn),
     givenName: getOptionalCell(row, headerIndex, config.givenNameColumn),
     familyName: getOptionalCell(row, headerIndex, config.familyNameColumn),
@@ -298,7 +324,8 @@ async function writeSyncResult(
   config: GoogleFormConfig,
   headerIndex: Record<string, number>,
   rowNumber: number,
-  result: ExecutionResult
+  result: ExecutionResult,
+  resultMessage: string
 ): Promise<void> {
   await batchUpdateRanges(accessToken, config.spreadsheetId, [
     {
@@ -326,7 +353,7 @@ async function writeSyncResult(
         config.resultColumn,
         headerIndex
       ),
-      values: [[summarizeExecution(result)]]
+      values: [[resultMessage]]
     }
   ]);
 }
@@ -439,13 +466,22 @@ function escapeSheetName(sheetName: string): string {
   return `'${sheetName.replace(/'/g, "''")}'`;
 }
 
-function summarizeExecution(result: ExecutionResult): string {
-  return result.results
+function summarizeExecution(
+  result: ExecutionResult,
+  extraMessages: string[] = []
+): string {
+  const executionSummary = result.results
     .map(
       (step) =>
         `${step.provider}/${step.target}:${step.status} (${step.message})`
     )
     .join(" | ");
+
+  if (extraMessages.length === 0) {
+    return executionSummary;
+  }
+
+  return `${executionSummary} | ${extraMessages.join(" | ")}`;
 }
 
 function getCell(
@@ -508,4 +544,183 @@ function getEligibilityFailure(
   }
 
   return undefined;
+}
+
+async function syncMirrorSheets(input: {
+  accessToken: string;
+  config: GoogleFormConfig;
+  row: string[];
+  headerIndex: Record<string, number>;
+  memberName: string;
+  dryRun: boolean;
+  state: MirrorSheetState;
+}): Promise<MirrorSheetSummary> {
+  const messages: string[] = [];
+
+  if (input.config.phoneSourceColumn) {
+    const phone = getOptionalCell(
+      input.row,
+      input.headerIndex,
+      input.config.phoneSourceColumn
+    );
+
+    if (phone) {
+      const phoneKey = `${normalizeName(input.memberName)}::${normalizePhone(phone)}`;
+      const alreadyExists = input.state.phonePairs.has(phoneKey);
+
+      if (alreadyExists) {
+        messages.push(
+          `phone-sheet/${input.config.phoneSheetName}:skipped (existing row)`
+        );
+      } else if (input.dryRun) {
+        messages.push(
+          `phone-sheet/${input.config.phoneSheetName}:dry_run (${input.memberName}, ${phone})`
+        );
+      } else {
+        await appendRows(input.accessToken, input.config.spreadsheetId, input.config.phoneSheetName, [
+          [input.memberName, phone]
+        ]);
+        input.state.phonePairs.add(phoneKey);
+        messages.push(
+          `phone-sheet/${input.config.phoneSheetName}:success (${input.memberName})`
+        );
+      }
+    }
+  }
+
+  if (input.config.emailSourceColumn) {
+    const emailCell = getOptionalCell(
+      input.row,
+      input.headerIndex,
+      input.config.emailSourceColumn
+    );
+    const emails = extractEmails(emailCell);
+
+    if (emails.length > 0) {
+      const rowsToAppend = emails
+        .filter(
+          (email) =>
+            !input.state.emailPairs.has(
+              `${normalizeName(input.memberName)}::${normalizeEmail(email)}`
+            )
+        )
+        .map((email) => [input.memberName, email]);
+
+      if (rowsToAppend.length === 0) {
+        messages.push(
+          `email-sheet/${input.config.emailSheetName}:skipped (existing rows)`
+        );
+      } else if (input.dryRun) {
+        messages.push(
+          `email-sheet/${input.config.emailSheetName}:dry_run (${rowsToAppend.length} rows)`
+        );
+      } else {
+        await appendRows(
+          input.accessToken,
+          input.config.spreadsheetId,
+          input.config.emailSheetName,
+          rowsToAppend
+        );
+        for (const [name, email] of rowsToAppend) {
+          input.state.emailPairs.add(
+            `${normalizeName(name)}::${normalizeEmail(email)}`
+          );
+        }
+        messages.push(
+          `email-sheet/${input.config.emailSheetName}:success (${rowsToAppend.length} rows)`
+        );
+      }
+    }
+  }
+
+  return { messages };
+}
+
+async function createMirrorSheetState(
+  accessToken: string,
+  config: GoogleFormConfig
+): Promise<MirrorSheetState> {
+  const phonePairs = new Set<string>();
+  const emailPairs = new Set<string>();
+
+  if (config.phoneSourceColumn) {
+    const existingPhoneRows = await readSheetValues(
+      accessToken,
+      config.spreadsheetId,
+      config.phoneSheetName
+    );
+    for (const existingRow of existingPhoneRows) {
+      const key = `${normalizeName(existingRow[0])}::${normalizePhone(existingRow[1])}`;
+      if (!key.endsWith("::")) {
+        phonePairs.add(key);
+      }
+    }
+  }
+
+  if (config.emailSourceColumn) {
+    const existingEmailRows = await readSheetValues(
+      accessToken,
+      config.spreadsheetId,
+      config.emailSheetName
+    );
+    for (const existingRow of existingEmailRows) {
+      const key = `${normalizeName(existingRow[0])}::${normalizeEmail(existingRow[1])}`;
+      if (!key.endsWith("::")) {
+        emailPairs.add(key);
+      }
+    }
+  }
+
+  return {
+    phonePairs,
+    emailPairs
+  };
+}
+
+async function appendRows(
+  accessToken: string,
+  spreadsheetId: string,
+  sheetName: string,
+  values: string[][]
+): Promise<void> {
+  await fetchJson(
+    `https://sheets.googleapis.com/v4/spreadsheets/${encodeURIComponent(spreadsheetId)}/values/${encodeURIComponent(escapeSheetName(sheetName))}:append?valueInputOption=RAW&insertDataOption=INSERT_ROWS`,
+    {
+      method: "POST",
+      headers: {
+        authorization: `Bearer ${accessToken}`,
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({ values })
+    }
+  );
+}
+
+export function extractEmails(rawValue?: string | undefined): string[] {
+  if (!rawValue) {
+    return [];
+  }
+
+  const matches = rawValue.match(
+    /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi
+  );
+
+  return [...new Set((matches ?? []).map((value) => value.trim().toLowerCase()))];
+}
+
+function getPrimaryEmail(rawValue: string): string {
+  const extracted = extractEmails(rawValue);
+  return extracted[0] ?? rawValue.trim().toLowerCase();
+}
+
+function normalizeName(value: string | undefined): string {
+  return (value ?? "").trim();
+}
+
+function normalizePhone(value: string | undefined): string {
+  return (value ?? "").replace(/\D+/g, "");
+}
+
+function normalizeEmail(value: string | undefined): string {
+  return (value ?? "").trim().toLowerCase();
 }

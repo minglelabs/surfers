@@ -32,6 +32,13 @@ type NotionDatabaseCreateResponse = {
   url: string;
 };
 
+type NotionDatabaseQueryResponse = {
+  results: Array<{
+    id: string;
+    url: string;
+  }>;
+};
+
 export class NotionProvider implements Provider {
   readonly name = "notion";
 
@@ -215,6 +222,38 @@ export class NotionProvider implements Provider {
     }
 
     try {
+      const existing = await fetchJson<NotionDatabaseQueryResponse>(
+        `https://api.notion.com/v1/databases/${this.config.database.databaseId}/query`,
+        {
+          method: "POST",
+          headers: {
+            authorization: `Bearer ${token}`,
+            "content-type": "application/json",
+            accept: "application/json",
+            "notion-version": "2022-06-28"
+          },
+          body: JSON.stringify({
+            filter: {
+              property: this.config.database.titleProperty,
+              title: {
+                equals: member.fullName
+              }
+            },
+            page_size: 1
+          })
+        }
+      );
+
+      if (existing.results.length > 0) {
+        return {
+          provider: this.name,
+          target: this.config.database.databaseId,
+          status: "success",
+          message: `A Notion member record already exists for ${member.fullName}.`,
+          data: existing.results[0]
+        };
+      }
+
       const created = await fetchJson<NotionDatabaseCreateResponse>(
         "https://api.notion.com/v1/pages",
         {

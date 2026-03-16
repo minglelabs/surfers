@@ -3,7 +3,10 @@ import { createOnboardingRuntime } from "./app.js";
 import { runMemberOnboarding } from "./orchestrator.js";
 
 const { values } = parseArgs({
-  args: process.argv.slice(2).filter((argument) => argument !== "--"),
+  args: process.argv
+    .slice(2)
+    .filter((argument) => argument !== "--")
+    .map((argument) => (argument === "--dry-run" ? "--dryRun" : argument)),
   options: {
     email: { type: "string" },
     name: { type: "string" },

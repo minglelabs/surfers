@@ -5,7 +5,7 @@ This service receives a new member profile and fans out onboarding actions acros
 ## What it covers
 
 - Slack workspace onboarding
-- Notion workspace provisioning
+- Notion workspace provisioning or member database writes
 - Google Groups membership
 - Google Drive or Shared Drive access
 - Google Form response sheet ingestion
@@ -17,7 +17,7 @@ KakaoTalk is intentionally excluded because it is not reliably automatable with 
 | Service | Status | Notes |
 | --- | --- | --- |
 | Slack | Supported with caveats | `scim` mode needs a Slack `Business+` or `Enterprise Grid` plan. `admin` mode needs `Enterprise Grid` and at least one channel ID. |
-| Notion | Supported with caveats | Requires Notion `Enterprise` with SCIM enabled. |
+| Notion | Supported with caveats | `database` mode works with a regular internal integration token and a shared page tree. `scim` mode requires Notion `Enterprise`. |
 | Google Groups | Workspace only | Requires a Google Workspace service account with domain-wide delegation. Personal Gmail is not supported. |
 | Google Drive | Supported | Works with a service account directly. Share the target file or folder with the service account email. |
 | Google Sheets / Google Form sync | Supported | Works with a service account directly. Share the response spreadsheet with the service account email. |
@@ -56,6 +56,7 @@ Use `.env` for secrets and runtime switches:
 - `SLACK_TOKEN`
 - `SLACK_TEAM_ID` only when using Slack `admin` mode
 - `NOTION_TOKEN`
+- `NOTION_API_TOKEN`
 - `GOOGLE_SERVICE_ACCOUNT_FILE` or `GOOGLE_SERVICE_ACCOUNT_JSON`
 - `GOOGLE_IMPERSONATE_USER` only when using Google Groups with Google Workspace
 - `GOOGLE_FORM_SYNC_ENABLED`
@@ -66,9 +67,9 @@ Use `.env` for secrets and runtime switches:
 Use `config/services.json` for non-secret operational settings:
 
 - Slack mode and default channel IDs
-- Notion role
+- Notion role or database property mapping
 - Google Group emails and Drive target IDs
-- Google Form spreadsheet ID, sheet name, and header names
+- Google Form spreadsheet ID, sheet name, header names, and mirror sheet names
 
 ## Required credentials
 
@@ -81,9 +82,12 @@ Use `config/services.json` for non-secret operational settings:
 
 ### Notion
 
-- `NOTION_TOKEN`
+- `NOTION_API_TOKEN` for `database` mode
+- `NOTION_TOKEN` for `scim` mode
 
-The token must be a SCIM token created from Notion organization settings.
+`database` mode uses a regular internal integration token from the Notion integrations dashboard. Share the target parent page or database with that integration through `... -> Add connections`.
+
+`scim` mode requires a SCIM token created from Notion organization settings.
 
 ### Google Workspace
 
@@ -189,6 +193,11 @@ Optional headers:
 - `googleForm.givenNameColumn`
 - `googleForm.familyNameColumn`
 - `googleForm.slackUserNameColumn`
+- `googleForm.groupColumn`
+- `googleForm.paymentStatusColumn`
+- `googleForm.paymentAmountColumn`
+- `googleForm.phoneSourceColumn`
+- `googleForm.emailSourceColumn`
 
 Output headers:
 
@@ -201,9 +210,16 @@ If the output headers do not exist yet, the sync creates them in the header row 
 Rows are processed only when:
 
 - the email cell is not empty
+- the configured group cell is not empty
+- the configured payment status cell includes the configured accepted text
+- the configured payment amount cell is not empty
 - the status cell is empty
 
 Once a row is attempted, the sync writes back the result so it will not be retried unless you clear the status cell.
+
+If `googleForm.phoneSourceColumn` is configured, the sync also mirrors `[name, phone]` rows into `googleForm.phoneSheetName`.
+
+If `googleForm.emailSourceColumn` is configured, the sync extracts one or more email addresses from the source cell and mirrors `[name, email]` rows into `googleForm.emailSheetName`. Cells with two emails create two rows automatically.
 
 ## Development
 
@@ -218,6 +234,10 @@ pnpm build
 
 - [Slack SCIM](https://api.slack.com/admins/scim2)
 - [Slack admin.users.invite](https://api.slack.com/methods/admin.users.invite)
+- [Slack managing users](https://docs.slack.dev/admins/managing-users/)
+- [Notion internal integration setup](https://developers.notion.com/docs/create-a-notion-integration)
+- [Notion authorization](https://developers.notion.com/docs/authorization)
+- [Notion create a page](https://developers.notion.com/reference/post-page)
 - [Notion SCIM setup](https://www.notion.com/help/set-up-identity-provider-for-scim)
 - [Notion SCIM user provisioning](https://www.notion.com/help/provision-users-and-groups-with-scim)
 - [Google Admin SDK members.insert](https://developers.google.com/workspace/admin/directory/reference/rest/v1/members/insert)

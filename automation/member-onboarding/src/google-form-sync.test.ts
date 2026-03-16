@@ -2,7 +2,8 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {
   buildMemberRequest,
-  columnNumberToLetter
+  columnNumberToLetter,
+  extractEmails
 } from "./google-form-sync.js";
 
 test("columnNumberToLetter converts numeric indexes to A1 letters", () => {
@@ -37,6 +38,8 @@ test("buildMemberRequest maps configured headers into a member payload", () => {
       fullNameColumn: "Name",
       slackUserNameColumn: "Slack Username",
       groupColumn: "조",
+      phoneSheetName: "번호",
+      emailSheetName: "메일",
       statusColumn: "Automation Status",
       processedAtColumn: "Automation Processed At",
       resultColumn: "Automation Result",
@@ -55,4 +58,13 @@ test("buildMemberRequest maps configured headers into a member payload", () => {
       group: "C"
     }
   });
+});
+
+test("extractEmails returns one or more normalized email addresses", () => {
+  assert.deepEqual(
+    extractEmails(
+      "ehdals1323@gmail.com - 슬랙/구글/ZEP, deepmind@pusan.ac.kr - 노션"
+    ),
+    ["ehdals1323@gmail.com", "deepmind@pusan.ac.kr"]
+  );
 });
