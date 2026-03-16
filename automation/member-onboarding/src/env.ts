@@ -23,6 +23,7 @@ const envSchema = z.object({
   SLACK_TEAM_ID: z.string().min(1).optional(),
   SLACK_SCIM_BASE_URL: z.string().url().default("https://api.slack.com/scim/v2"),
   NOTION_TOKEN: z.string().min(1).optional(),
+  NOTION_API_TOKEN: z.string().min(1).optional(),
   NOTION_SCIM_BASE_URL: z
     .string()
     .url()
@@ -43,6 +44,7 @@ export type AppEnv = {
   slackTeamId?: string | undefined;
   slackScimBaseUrl: string;
   notionToken?: string | undefined;
+  notionApiToken?: string | undefined;
   notionScimBaseUrl: string;
   googleImpersonateUser?: string | undefined;
   googleServiceAccountFile?: string | undefined;
@@ -63,6 +65,7 @@ export function loadEnv(rawEnv: NodeJS.ProcessEnv = process.env): AppEnv {
     slackTeamId: parsed.SLACK_TEAM_ID,
     slackScimBaseUrl: parsed.SLACK_SCIM_BASE_URL.replace(/\/$/, ""),
     notionToken: parsed.NOTION_TOKEN,
+    notionApiToken: parsed.NOTION_API_TOKEN,
     notionScimBaseUrl: parsed.NOTION_SCIM_BASE_URL.replace(/\/$/, ""),
     googleImpersonateUser: parsed.GOOGLE_IMPERSONATE_USER,
     googleServiceAccountFile: parsed.GOOGLE_SERVICE_ACCOUNT_FILE

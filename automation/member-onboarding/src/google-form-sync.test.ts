@@ -14,12 +14,19 @@ test("columnNumberToLetter converts numeric indexes to A1 letters", () => {
 
 test("buildMemberRequest maps configured headers into a member payload", () => {
   const member = buildMemberRequest(
-    ["2026-03-16 18:00:00", "member@example.com", "Member Name", "member-name"],
+    [
+      "2026-03-16 18:00:00",
+      "member@example.com",
+      "Member Name",
+      "member-name",
+      "C"
+    ],
     {
       Timestamp: 0,
       "Email Address": 1,
       Name: 2,
-      "Slack Username": 3
+      "Slack Username": 3,
+      조: 4
     },
     {
       enabled: true,
@@ -29,6 +36,7 @@ test("buildMemberRequest maps configured headers into a member payload", () => {
       emailColumn: "Email Address",
       fullNameColumn: "Name",
       slackUserNameColumn: "Slack Username",
+      groupColumn: "조",
       statusColumn: "Automation Status",
       processedAtColumn: "Automation Processed At",
       resultColumn: "Automation Result",
@@ -42,6 +50,9 @@ test("buildMemberRequest maps configured headers into a member payload", () => {
     givenName: undefined,
     familyName: undefined,
     slackUserName: "member-name",
-    source: "google-form"
+    source: "google-form",
+    metadata: {
+      group: "C"
+    }
   });
 });

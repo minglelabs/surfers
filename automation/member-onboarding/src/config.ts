@@ -7,11 +7,24 @@ const slackConfigSchema = z.object({
   customMessage: z.string().min(1).optional()
 });
 
+const notionDatabaseConfigSchema = z.object({
+  databaseId: z.string().min(1),
+  titleProperty: z.string().min(1).default("이름"),
+  introProperty: z.string().min(1).default("소개"),
+  goalProperty: z.string().min(1).default("3개월간 목표"),
+  groupProperty: z.string().min(1).default("조"),
+  presentationProperty: z.string().min(1).default("발제"),
+  defaultIntro: z.string().default(""),
+  defaultGoal: z.string().default(""),
+  defaultPresentation: z.boolean().default(false)
+});
+
 const notionConfigSchema = z.object({
-  mode: z.enum(["disabled", "scim"]).default("disabled"),
+  mode: z.enum(["disabled", "scim", "database"]).default("disabled"),
   role: z
     .enum(["owner", "membership_admin", "member", "restricted_member"])
-    .default("member")
+    .default("member"),
+  database: notionDatabaseConfigSchema.optional()
 });
 
 const googleGroupSchema = z.object({
@@ -40,6 +53,10 @@ const googleFormConfigSchema = z.object({
   givenNameColumn: z.string().min(1).optional(),
   familyNameColumn: z.string().min(1).optional(),
   slackUserNameColumn: z.string().min(1).optional(),
+  groupColumn: z.string().min(1).optional(),
+  paymentStatusColumn: z.string().min(1).optional(),
+  paymentStatusIncludes: z.string().min(1).optional(),
+  paymentAmountColumn: z.string().min(1).optional(),
   statusColumn: z.string().min(1).default("Automation Status"),
   processedAtColumn: z.string().min(1).default("Automation Processed At"),
   resultColumn: z.string().min(1).default("Automation Result"),

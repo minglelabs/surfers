@@ -8,12 +8,28 @@ import type {
 } from "../types.js";
 
 type NotionConfig = {
-  mode: "disabled" | "scim";
+  mode: "disabled" | "scim" | "database";
   role: "owner" | "membership_admin" | "member" | "restricted_member";
+  database?: {
+    databaseId: string;
+    titleProperty: string;
+    introProperty: string;
+    goalProperty: string;
+    groupProperty: string;
+    presentationProperty: string;
+    defaultIntro: string;
+    defaultGoal: string;
+    defaultPresentation: boolean;
+  } | undefined;
 };
 
 type NotionScimList = {
   Resources?: Array<{ id: string; userName: string; active?: boolean }>;
+};
+
+type NotionDatabaseCreateResponse = {
+  id: string;
+  url: string;
 };
 
 export class NotionProvider implements Provider {
@@ -40,6 +56,17 @@ export class NotionProvider implements Provider {
     }
 
     if (context.dryRun) {
+      if (this.config.mode === "database") {
+        return [
+          {
+            provider: this.name,
+            target: this.config.database?.databaseId ?? "database",
+            status: "dry_run",
+            message: `Would create a Notion member record for ${member.fullName}.`
+          }
+        ];
+      }
+
       return [
         {
           provider: this.name,
@@ -48,6 +75,10 @@ export class NotionProvider implements Provider {
           message: `Would provision ${member.email} in Notion with role ${this.config.role}.`
         }
       ];
+    }
+
+    if (this.config.mode === "database") {
+      return [await this.createDatabaseRow(member)];
     }
 
     if (!this.env.notionToken) {
@@ -128,6 +159,95 @@ export class NotionProvider implements Provider {
           message: getErrorMessage(error)
         }
       ];
+    }
+  }
+
+  private async createDatabaseRow(
+    member: NormalizedMember
+  ): Promise<StepResult> {
+    if (!this.config.database) {
+      return {
+        provider: this.name,
+        target: "database",
+        status: "failed",
+        message: "Notion database mode requires notion.database configuration."
+      };
+    }
+
+    const token = this.env.notionApiToken ?? this.env.notionToken;
+
+    if (!token) {
+      return {
+        provider: this.name,
+        target: this.config.database.databaseId,
+        status: "failed",
+        message:
+          "NOTION_API_TOKEN or NOTION_TOKEN is required when Notion database mode is enabled."
+      };
+    }
+
+    const group = member.metadata?.group;
+    const properties: Record<string, unknown> = {
+      [this.config.database.titleProperty]: {
+        title: [{ text: { content: member.fullName } }]
+      },
+      [this.config.database.introProperty]: {
+        rich_text: this.config.database.defaultIntro
+          ? [{ text: { content: this.config.database.defaultIntro } }]
+          : []
+      },
+      [this.config.database.goalProperty]: {
+        rich_text: this.config.database.defaultGoal
+          ? [{ text: { content: this.config.database.defaultGoal } }]
+          : []
+      },
+      [this.config.database.presentationProperty]: {
+        checkbox: this.config.database.defaultPresentation
+      }
+    };
+
+    if (group) {
+      properties[this.config.database.groupProperty] = {
+        select: {
+          name: group
+        }
+      };
+    }
+
+    try {
+      const created = await fetchJson<NotionDatabaseCreateResponse>(
+        "https://api.notion.com/v1/pages",
+        {
+          method: "POST",
+          headers: {
+            authorization: `Bearer ${token}`,
+            "content-type": "application/json",
+            accept: "application/json",
+            "notion-version": "2022-06-28"
+          },
+          body: JSON.stringify({
+            parent: {
+              database_id: this.config.database.databaseId
+            },
+            properties
+          })
+        }
+      );
+
+      return {
+        provider: this.name,
+        target: this.config.database.databaseId,
+        status: "success",
+        message: `Created a Notion member record for ${member.fullName}.`,
+        data: created
+      };
+    } catch (error) {
+      return {
+        provider: this.name,
+        target: this.config.database.databaseId,
+        status: "failed",
+        message: getErrorMessage(error)
+      };
     }
   }
 }

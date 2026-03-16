@@ -119,6 +119,23 @@ export async function syncGoogleFormResponses(
       continue;
     }
 
+    const eligibilityFailure = getEligibilityFailure(
+      row,
+      headerIndex,
+      runtime.config
+    );
+
+    if (eligibilityFailure) {
+      skippedRows += 1;
+      resultRows.push({
+        rowNumber,
+        email,
+        status: "skipped",
+        message: eligibilityFailure
+      });
+      continue;
+    }
+
     if (existingStatus.length > 0) {
       skippedRows += 1;
       resultRows.push({
@@ -196,6 +213,8 @@ export function buildMemberRequest(
   headerIndex: Record<string, number>,
   config: GoogleFormConfig
 ): MemberRequest {
+  const group = getOptionalCell(row, headerIndex, config.groupColumn);
+
   return {
     email: getCell(row, headerIndex, config.emailColumn).trim(),
     fullName: getOptionalCell(row, headerIndex, config.fullNameColumn),
@@ -206,7 +225,8 @@ export function buildMemberRequest(
       headerIndex,
       config.slackUserNameColumn
     ),
-    source: config.sourceLabel
+    source: config.sourceLabel,
+    metadata: group ? { group } : undefined
   };
 }
 
@@ -453,4 +473,39 @@ function getOptionalCell(
 
   const value = getCell(row, headerIndex, headerName).trim();
   return value.length > 0 ? value : undefined;
+}
+
+function getEligibilityFailure(
+  row: string[],
+  headerIndex: Record<string, number>,
+  config: GoogleFormConfig
+): string | undefined {
+  const group = getOptionalCell(row, headerIndex, config.groupColumn);
+  if (config.groupColumn && !group) {
+    return `Skipped because ${config.groupColumn} is empty.`;
+  }
+
+  const paymentStatus = getOptionalCell(
+    row,
+    headerIndex,
+    config.paymentStatusColumn
+  );
+  if (
+    config.paymentStatusColumn &&
+    config.paymentStatusIncludes &&
+    (!paymentStatus || !paymentStatus.includes(config.paymentStatusIncludes))
+  ) {
+    return `Skipped because ${config.paymentStatusColumn} does not include ${config.paymentStatusIncludes}.`;
+  }
+
+  const paymentAmount = getOptionalCell(
+    row,
+    headerIndex,
+    config.paymentAmountColumn
+  );
+  if (config.paymentAmountColumn && !paymentAmount) {
+    return `Skipped because ${config.paymentAmountColumn} is empty.`;
+  }
+
+  return undefined;
 }

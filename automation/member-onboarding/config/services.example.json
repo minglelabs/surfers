@@ -1,12 +1,23 @@
 {
   "slack": {
-    "mode": "scim",
+    "mode": "disabled",
     "defaultChannels": [],
     "customMessage": "Welcome to Surfers."
   },
   "notion": {
-    "mode": "scim",
-    "role": "member"
+    "mode": "database",
+    "role": "member",
+    "database": {
+      "databaseId": "31822e3e-d20a-80e5-a31f-f495cf62cb90",
+      "titleProperty": "이름",
+      "introProperty": "소개",
+      "goalProperty": "3개월간 목표",
+      "groupProperty": "조",
+      "presentationProperty": "발제",
+      "defaultIntro": "",
+      "defaultGoal": "",
+      "defaultPresentation": false
+    }
   },
   "google": {
     "groups": [],
@@ -25,8 +36,12 @@
     "spreadsheetId": "replace-with-spreadsheet-id",
     "sheetName": "Form Responses 1",
     "headerRow": 1,
-    "emailColumn": "Email Address",
-    "fullNameColumn": "Name",
+    "emailColumn": "이메일",
+    "fullNameColumn": "이름",
+    "groupColumn": "조",
+    "paymentStatusColumn": "입금 완료",
+    "paymentStatusIncludes": "예",
+    "paymentAmountColumn": "입금액",
     "statusColumn": "Automation Status",
     "processedAtColumn": "Automation Processed At",
     "resultColumn": "Automation Result",
