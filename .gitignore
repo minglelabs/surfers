@@ -1,0 +1,8 @@
+node_modules
+dist
+.env
+*.log
+automation/**/node_modules
+automation/**/dist
+automation/**/.env
+automation/**/config/services.json

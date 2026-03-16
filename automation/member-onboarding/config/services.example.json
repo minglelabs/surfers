@@ -1,0 +1,28 @@
+{
+  "slack": {
+    "mode": "scim",
+    "defaultChannels": [],
+    "customMessage": "Welcome to Surfers."
+  },
+  "notion": {
+    "mode": "scim",
+    "role": "member"
+  },
+  "google": {
+    "groups": [
+      {
+        "email": "members@surfers.ai",
+        "role": "MEMBER"
+      }
+    ],
+    "driveTargets": [
+      {
+        "label": "Shared Drive",
+        "fileId": "replace-with-drive-or-folder-id",
+        "role": "writer",
+        "sendNotificationEmail": true,
+        "useDomainAdminAccess": true
+      }
+    ]
+  }
+}
