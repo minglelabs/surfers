@@ -52,69 +52,92 @@ export class GoogleProvider implements Provider {
       ];
     }
 
+    const groupResults = await this.onboardGroups(member, context);
+    const driveResults = await this.onboardDriveTargets(member, context);
+    return [...groupResults, ...driveResults];
+  }
+
+  private async onboardGroups(
+    member: NormalizedMember,
+    context: ExecutionContext
+  ): Promise<StepResult[]> {
+    if (this.config.groups.length === 0) {
+      return [];
+    }
+
+    if (!this.env.googleImpersonateUser) {
+      return this.config.groups.map((group) => ({
+        provider: "google-groups",
+        target: group.email,
+        status: "skipped" as const,
+        message:
+          "Google Groups automation requires GOOGLE_IMPERSONATE_USER and a Google Workspace domain."
+      }));
+    }
+
     if (context.dryRun) {
-      return [
-        ...this.config.groups.map((group) => ({
-          provider: "google-groups",
-          target: group.email,
-          status: "dry_run" as const,
-          message: `Would add ${member.email} to Google Group ${group.email} as ${group.role}.`
-        })),
-        ...this.config.driveTargets.map((target) => ({
-          provider: "google-drive",
-          target: target.label ?? target.fileId,
-          status: "dry_run" as const,
-          message: `Would grant ${target.role} access on ${target.label ?? target.fileId} to ${member.email}.`
-        }))
-      ];
+      return this.config.groups.map((group) => ({
+        provider: "google-groups",
+        target: group.email,
+        status: "dry_run" as const,
+        message: `Would add ${member.email} to Google Group ${group.email} as ${group.role}.`
+      }));
     }
 
     try {
-      const scopes = [];
-      if (this.config.groups.length > 0) {
-        scopes.push(DIRECTORY_SCOPE);
-      }
+      const accessToken = await getGoogleAccessToken(this.env, [DIRECTORY_SCOPE], {
+        subject: this.env.googleImpersonateUser
+      });
 
-      if (this.config.driveTargets.length > 0) {
-        scopes.push(DRIVE_SCOPE);
-      }
-
-      const accessToken = await getGoogleAccessToken(this.env, scopes);
-      const groupResults = await Promise.all(
+      return await Promise.all(
         this.config.groups.map((group) =>
           this.addGroupMember(accessToken, group, member)
         )
       );
-      const driveResults = await Promise.all(
+    } catch (error) {
+      const message = getErrorMessage(error);
+      return this.config.groups.map((group) => ({
+        provider: "google-groups",
+        target: group.email,
+        status: "failed" as const,
+        message
+      }));
+    }
+  }
+
+  private async onboardDriveTargets(
+    member: NormalizedMember,
+    context: ExecutionContext
+  ): Promise<StepResult[]> {
+    if (this.config.driveTargets.length === 0) {
+      return [];
+    }
+
+    if (context.dryRun) {
+      return this.config.driveTargets.map((target) => ({
+        provider: "google-drive",
+        target: target.label ?? target.fileId,
+        status: "dry_run" as const,
+        message: `Would grant ${target.role} access on ${target.label ?? target.fileId} to ${member.email}.`
+      }));
+    }
+
+    try {
+      const accessToken = await getGoogleAccessToken(this.env, [DRIVE_SCOPE]);
+
+      return await Promise.all(
         this.config.driveTargets.map((target) =>
           this.grantDriveAccess(accessToken, target, member)
         )
       );
-
-      return [...groupResults, ...driveResults];
     } catch (error) {
       const message = getErrorMessage(error);
-      const failures: StepResult[] = [];
-
-      if (this.config.groups.length > 0) {
-        failures.push({
-          provider: "google-groups",
-          target: "credentials",
-          status: "failed",
-          message
-        });
-      }
-
-      if (this.config.driveTargets.length > 0) {
-        failures.push({
-          provider: "google-drive",
-          target: "credentials",
-          status: "failed",
-          message
-        });
-      }
-
-      return failures;
+      return this.config.driveTargets.map((target) => ({
+        provider: "google-drive",
+        target: target.label ?? target.fileId,
+        status: "failed" as const,
+        message
+      }));
     }
   }
 

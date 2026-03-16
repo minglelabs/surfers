@@ -18,8 +18,9 @@ KakaoTalk is intentionally excluded because it is not reliably automatable with 
 | --- | --- | --- |
 | Slack | Supported with caveats | `scim` mode needs a Slack `Business+` or `Enterprise Grid` plan. `admin` mode needs `Enterprise Grid` and at least one channel ID. |
 | Notion | Supported with caveats | Requires Notion `Enterprise` with SCIM enabled. |
-| Google Groups | Supported | Requires a Google Workspace service account with domain-wide delegation. |
-| Google Drive | Supported | Requires a Google Workspace service account with domain-wide delegation. |
+| Google Groups | Workspace only | Requires a Google Workspace service account with domain-wide delegation. Personal Gmail is not supported. |
+| Google Drive | Supported | Works with a service account directly. Share the target file or folder with the service account email. |
+| Google Sheets / Google Form sync | Supported | Works with a service account directly. Share the response spreadsheet with the service account email. |
 
 ## How it works
 
@@ -55,8 +56,8 @@ Use `.env` for secrets and runtime switches:
 - `SLACK_TOKEN`
 - `SLACK_TEAM_ID` only when using Slack `admin` mode
 - `NOTION_TOKEN`
-- `GOOGLE_IMPERSONATE_USER`
 - `GOOGLE_SERVICE_ACCOUNT_FILE` or `GOOGLE_SERVICE_ACCOUNT_JSON`
+- `GOOGLE_IMPERSONATE_USER` only when using Google Groups with Google Workspace
 - `GOOGLE_FORM_SYNC_ENABLED`
 - `GOOGLE_FORM_SYNC_INTERVAL_MS`
 
@@ -86,16 +87,23 @@ The token must be a SCIM token created from Notion organization settings.
 
 ### Google Workspace
 
-- `GOOGLE_IMPERSONATE_USER`
 - Either `GOOGLE_SERVICE_ACCOUNT_FILE` or `GOOGLE_SERVICE_ACCOUNT_JSON`
+- `GOOGLE_IMPERSONATE_USER` only for Google Groups or other Google Workspace admin actions
 
-The service account must be granted domain-wide delegation for:
+For personal Gmail or non-admin use cases:
 
-- `https://www.googleapis.com/auth/admin.directory.group.member`
 - `https://www.googleapis.com/auth/drive`
 - `https://www.googleapis.com/auth/spreadsheets`
 
-If you use Google Form syncing, the impersonated user must also be able to read and edit the response spreadsheet.
+Share the Google Form response spreadsheet and any Drive file or folder targets directly with the service account email from your JSON key.
+
+For Google Workspace group automation:
+
+- the service account must be granted domain-wide delegation
+- `GOOGLE_IMPERSONATE_USER` must be set to an admin user
+- `https://www.googleapis.com/auth/admin.directory.group.member` must be authorized
+
+If you use Google Form syncing, the service account must be able to read and edit the response spreadsheet.
 
 ## API
 
@@ -153,6 +161,19 @@ curl -X POST http://localhost:8787/sync/google-form \
 ```
 
 If `GOOGLE_FORM_SYNC_ENABLED=true`, the server also polls the configured sheet automatically on the configured interval.
+
+## Personal Gmail setup
+
+If you are not using Google Workspace admin APIs:
+
+1. Create a Google Cloud service account and download its JSON key.
+2. Put the JSON file on disk and set `GOOGLE_SERVICE_ACCOUNT_FILE` in `.env`.
+3. Open the JSON file and copy the `client_email` value.
+4. Share your Google Form response spreadsheet with that service account email as an editor.
+5. Share the Drive folder or file you want to grant access to with that same service account email.
+6. Leave `GOOGLE_IMPERSONATE_USER` empty.
+
+Google Groups invites will be skipped automatically in this mode.
 
 ## Google Form sheet expectations
 

@@ -9,19 +9,14 @@
     "role": "member"
   },
   "google": {
-    "groups": [
-      {
-        "email": "members@surfers.ai",
-        "role": "MEMBER"
-      }
-    ],
+    "groups": [],
     "driveTargets": [
       {
         "label": "Shared Drive",
         "fileId": "replace-with-drive-or-folder-id",
         "role": "writer",
         "sendNotificationEmail": true,
-        "useDomainAdminAccess": true
+        "useDomainAdminAccess": false
       }
     ]
   },

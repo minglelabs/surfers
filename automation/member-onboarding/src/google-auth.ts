@@ -9,18 +9,17 @@ type ServiceAccountKey = {
 
 export async function getGoogleAccessToken(
   env: AppEnv,
-  scopes: string[]
+  scopes: string[],
+  options: {
+    subject?: string;
+  } = {}
 ): Promise<string> {
-  if (!env.googleImpersonateUser) {
-    throw new Error("GOOGLE_IMPERSONATE_USER is required.");
-  }
-
   const key = await loadServiceAccountKey(env);
   const jwt = new JWT({
     email: key.client_email,
     key: key.private_key,
     scopes,
-    subject: env.googleImpersonateUser
+    ...(options.subject ? { subject: options.subject } : {})
   });
 
   const tokens = await jwt.authorize();
@@ -30,6 +29,13 @@ export async function getGoogleAccessToken(
   }
 
   return tokens.access_token;
+}
+
+export async function getGoogleServiceAccountEmail(
+  env: AppEnv
+): Promise<string> {
+  const key = await loadServiceAccountKey(env);
+  return key.client_email;
 }
 
 async function loadServiceAccountKey(env: AppEnv): Promise<ServiceAccountKey> {

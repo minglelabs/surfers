@@ -2,6 +2,7 @@ node_modules
 dist
 .env
 *.log
+*.swp
 automation/**/node_modules
 automation/**/dist
 automation/**/.env
