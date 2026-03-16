@@ -8,6 +8,7 @@ This service receives a new member profile and fans out onboarding actions acros
 - Notion workspace provisioning
 - Google Groups membership
 - Google Drive or Shared Drive access
+- Google Form response sheet ingestion
 
 KakaoTalk is intentionally excluded because it is not reliably automatable with an official admin API.
 
@@ -23,14 +24,16 @@ KakaoTalk is intentionally excluded because it is not reliably automatable with 
 ## How it works
 
 1. A signup flow, Airtable automation, Form backend, Zapier step, or internal admin tool sends a `POST /members/onboard` request.
-2. The service validates the member payload.
-3. Each provider runs independently and returns `success`, `failed`, `skipped`, or `dry_run`.
-4. The response includes a single execution summary you can store in your upstream system.
+2. Or, a Google Form response sheet is polled and new rows are converted into onboarding requests automatically.
+3. The service validates the member payload.
+4. Each provider runs independently and returns `success`, `failed`, `skipped`, or `dry_run`.
+5. The response includes a single execution summary you can store in your upstream system.
 
 ## Files
 
 - `src/index.ts`: HTTP server entrypoint
 - `src/cli.ts`: manual replay command for one member
+- `src/sync-google-form.ts`: manual sync command for one Google Form response sheet
 - `config/services.example.json`: versioned example for non-secret target configuration
 - `.env.example`: secret and runtime configuration example
 
@@ -39,8 +42,32 @@ KakaoTalk is intentionally excluded because it is not reliably automatable with 
 1. Install dependencies.
 2. Copy `.env.example` to `.env`.
 3. Copy `config/services.example.json` to `config/services.json`.
-4. Fill in the provider tokens, IDs, and Google service account settings.
+4. Fill in the provider tokens, IDs, Google Form sheet mapping, and Google service account settings.
 5. Start the server with `pnpm serve`.
+
+## What goes where
+
+### `.env`
+
+Use `.env` for secrets and runtime switches:
+
+- `MEMBER_ONBOARDING_SECRET`
+- `SLACK_TOKEN`
+- `SLACK_TEAM_ID` only when using Slack `admin` mode
+- `NOTION_TOKEN`
+- `GOOGLE_IMPERSONATE_USER`
+- `GOOGLE_SERVICE_ACCOUNT_FILE` or `GOOGLE_SERVICE_ACCOUNT_JSON`
+- `GOOGLE_FORM_SYNC_ENABLED`
+- `GOOGLE_FORM_SYNC_INTERVAL_MS`
+
+### `config/services.json`
+
+Use `config/services.json` for non-secret operational settings:
+
+- Slack mode and default channel IDs
+- Notion role
+- Google Group emails and Drive target IDs
+- Google Form spreadsheet ID, sheet name, and header names
 
 ## Required credentials
 
@@ -66,6 +93,9 @@ The service account must be granted domain-wide delegation for:
 
 - `https://www.googleapis.com/auth/admin.directory.group.member`
 - `https://www.googleapis.com/auth/drive`
+- `https://www.googleapis.com/auth/spreadsheets`
+
+If you use Google Form syncing, the impersonated user must also be able to read and edit the response spreadsheet.
 
 ## API
 
@@ -106,6 +136,54 @@ pnpm onboard -- --email new-member@example.com --name "New Member"
 pnpm onboard -- --email new-member@example.com --name "New Member" --dry-run
 ```
 
+### Sync Google Form responses once
+
+```bash
+pnpm sync:form -- --dry-run
+pnpm sync:form
+```
+
+### Trigger Google Form sync over HTTP
+
+```bash
+curl -X POST http://localhost:8787/sync/google-form \
+  -H "content-type: application/json" \
+  -H "x-surfers-secret: change-me" \
+  -d '{"dryRun": true}'
+```
+
+If `GOOGLE_FORM_SYNC_ENABLED=true`, the server also polls the configured sheet automatically on the configured interval.
+
+## Google Form sheet expectations
+
+The sync reads one response row at a time and looks for the configured header names.
+
+Required headers:
+
+- the column named by `googleForm.emailColumn`
+
+Optional headers:
+
+- `googleForm.fullNameColumn`
+- `googleForm.givenNameColumn`
+- `googleForm.familyNameColumn`
+- `googleForm.slackUserNameColumn`
+
+Output headers:
+
+- `googleForm.statusColumn`
+- `googleForm.processedAtColumn`
+- `googleForm.resultColumn`
+
+If the output headers do not exist yet, the sync creates them in the header row automatically.
+
+Rows are processed only when:
+
+- the email cell is not empty
+- the status cell is empty
+
+Once a row is attempted, the sync writes back the result so it will not be retried unless you clear the status cell.
+
 ## Development
 
 ```bash
@@ -123,3 +201,5 @@ pnpm build
 - [Notion SCIM user provisioning](https://www.notion.com/help/provision-users-and-groups-with-scim)
 - [Google Admin SDK members.insert](https://developers.google.com/workspace/admin/directory/reference/rest/v1/members/insert)
 - [Google Drive permissions.create](https://developers.google.com/drive/api/reference/rest/v3/permissions/create)
+- [Google Sheets values.get](https://developers.google.com/workspace/sheets/api/reference/rest/v4/spreadsheets.values/get)
+- [Google Sheets values.batchUpdate](https://developers.google.com/workspace/sheets/api/reference/rest/v4/spreadsheets.values/batchUpdate)

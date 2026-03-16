@@ -26,7 +26,9 @@ const envSchema = z.object({
     .default("https://api.notion.com/scim/v2"),
   GOOGLE_IMPERSONATE_USER: z.string().email().optional(),
   GOOGLE_SERVICE_ACCOUNT_FILE: z.string().min(1).optional(),
-  GOOGLE_SERVICE_ACCOUNT_JSON: z.string().min(1).optional()
+  GOOGLE_SERVICE_ACCOUNT_JSON: z.string().min(1).optional(),
+  GOOGLE_FORM_SYNC_ENABLED: booleanish.default(false),
+  GOOGLE_FORM_SYNC_INTERVAL_MS: z.coerce.number().int().positive().default(60000)
 });
 
 export type AppEnv = {
@@ -42,6 +44,8 @@ export type AppEnv = {
   googleImpersonateUser?: string | undefined;
   googleServiceAccountFile?: string | undefined;
   googleServiceAccountJson?: string | undefined;
+  googleFormSyncEnabled: boolean;
+  googleFormSyncIntervalMs: number;
 };
 
 export function loadEnv(rawEnv: NodeJS.ProcessEnv = process.env): AppEnv {
@@ -61,6 +65,8 @@ export function loadEnv(rawEnv: NodeJS.ProcessEnv = process.env): AppEnv {
     googleServiceAccountFile: parsed.GOOGLE_SERVICE_ACCOUNT_FILE
       ? path.resolve(parsed.GOOGLE_SERVICE_ACCOUNT_FILE)
       : undefined,
-    googleServiceAccountJson: parsed.GOOGLE_SERVICE_ACCOUNT_JSON
+    googleServiceAccountJson: parsed.GOOGLE_SERVICE_ACCOUNT_JSON,
+    googleFormSyncEnabled: parsed.GOOGLE_FORM_SYNC_ENABLED,
+    googleFormSyncIntervalMs: parsed.GOOGLE_FORM_SYNC_INTERVAL_MS
   };
 }

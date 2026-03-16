@@ -24,5 +24,17 @@
         "useDomainAdminAccess": true
       }
     ]
+  },
+  "googleForm": {
+    "enabled": false,
+    "spreadsheetId": "replace-with-spreadsheet-id",
+    "sheetName": "Form Responses 1",
+    "headerRow": 1,
+    "emailColumn": "Email Address",
+    "fullNameColumn": "Name",
+    "statusColumn": "Automation Status",
+    "processedAtColumn": "Automation Processed At",
+    "resultColumn": "Automation Result",
+    "sourceLabel": "google-form"
   }
 }

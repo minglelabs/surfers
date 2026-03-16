@@ -30,6 +30,22 @@ const googleDriveTargetSchema = z.object({
   useDomainAdminAccess: z.boolean().default(false)
 });
 
+const googleFormConfigSchema = z.object({
+  enabled: z.boolean().default(false),
+  spreadsheetId: z.string().min(1),
+  sheetName: z.string().min(1).default("Form Responses 1"),
+  headerRow: z.number().int().positive().default(1),
+  emailColumn: z.string().min(1),
+  fullNameColumn: z.string().min(1).optional(),
+  givenNameColumn: z.string().min(1).optional(),
+  familyNameColumn: z.string().min(1).optional(),
+  slackUserNameColumn: z.string().min(1).optional(),
+  statusColumn: z.string().min(1).default("Automation Status"),
+  processedAtColumn: z.string().min(1).default("Automation Processed At"),
+  resultColumn: z.string().min(1).default("Automation Result"),
+  sourceLabel: z.string().min(1).default("google-form")
+});
+
 const onboardingConfigSchema = z.object({
   slack: slackConfigSchema.default({ mode: "disabled", defaultChannels: [] }),
   notion: notionConfigSchema.default({ mode: "disabled", role: "member" }),
@@ -38,12 +54,14 @@ const onboardingConfigSchema = z.object({
       groups: z.array(googleGroupSchema).default([]),
       driveTargets: z.array(googleDriveTargetSchema).default([])
     })
-    .default({ groups: [], driveTargets: [] })
+    .default({ groups: [], driveTargets: [] }),
+  googleForm: googleFormConfigSchema.optional()
 });
 
 export type OnboardingConfig = z.infer<typeof onboardingConfigSchema>;
 export type GoogleGroupTarget = z.infer<typeof googleGroupSchema>;
 export type GoogleDriveTarget = z.infer<typeof googleDriveTargetSchema>;
+export type GoogleFormConfig = z.infer<typeof googleFormConfigSchema>;
 
 export async function loadConfig(configPath: string): Promise<OnboardingConfig> {
   const file = await readFile(configPath, "utf8");

@@ -1,9 +1,11 @@
 import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
 import { createOnboardingRuntime } from "./app.js";
+import { syncGoogleFormResponses } from "./google-form-sync.js";
 import { runMemberOnboarding } from "./orchestrator.js";
 
 export async function startServer(): Promise<void> {
   const runtime = await createOnboardingRuntime();
+  const stopPolling = startGoogleFormPolling(runtime);
 
   const server = createServer(async (request, response) => {
     try {
@@ -25,6 +27,10 @@ export async function startServer(): Promise<void> {
       );
       resolve();
     });
+  });
+
+  server.on("close", () => {
+    stopPolling();
   });
 }
 
@@ -54,6 +60,34 @@ async function routeRequest(
     });
 
     respondJson(response, 200, result);
+    return;
+  }
+
+  if (request.method === "POST" && url.pathname === "/sync/google-form") {
+    if (!isAuthorized(request, runtime.env.webhookSecret)) {
+      respondJson(response, 401, { error: "Unauthorized" });
+      return;
+    }
+
+    const googleFormConfig = runtime.config.googleForm;
+
+    if (!googleFormConfig?.enabled) {
+      respondJson(response, 400, { error: "googleForm.enabled is false." });
+      return;
+    }
+
+    const payload = (await readJsonBody(request)) as { dryRun?: boolean } | undefined;
+    const summary = await syncGoogleFormResponses(
+      {
+        config: googleFormConfig,
+        env: runtime.env,
+        providers: runtime.providers,
+        defaultDryRun: runtime.env.defaultDryRun
+      },
+      payload?.dryRun
+    );
+
+    respondJson(response, 200, summary);
     return;
   }
 
@@ -107,4 +141,54 @@ function respondJson(
 ): void {
   response.writeHead(statusCode, { "content-type": "application/json" });
   response.end(JSON.stringify(payload, null, 2));
+}
+
+function startGoogleFormPolling(
+  runtime: Awaited<ReturnType<typeof createOnboardingRuntime>>
+): () => void {
+  const googleFormConfig = runtime.config.googleForm;
+
+  if (!runtime.env.googleFormSyncEnabled || !googleFormConfig?.enabled) {
+    return () => undefined;
+  }
+
+  let active = false;
+  const run = async () => {
+    if (active) {
+      return;
+    }
+
+    active = true;
+
+    try {
+      const summary = await syncGoogleFormResponses({
+        config: googleFormConfig,
+        env: runtime.env,
+        providers: runtime.providers,
+        defaultDryRun: runtime.env.defaultDryRun
+      });
+      console.log(
+        `Google Form sync finished: attempted=${summary.attemptedRows}, processed=${summary.processedRows}, skipped=${summary.skippedRows}, dryRun=${summary.dryRun}`
+      );
+    } catch (error) {
+      console.error(
+        "Google Form sync failed:",
+        error instanceof Error ? error.message : String(error)
+      );
+    } finally {
+      active = false;
+    }
+  };
+
+  void run();
+  const interval = setInterval(() => {
+    void run();
+  }, runtime.env.googleFormSyncIntervalMs);
+  interval.unref();
+
+  console.log(
+    `Google Form sync enabled every ${runtime.env.googleFormSyncIntervalMs}ms.`
+  );
+
+  return () => clearInterval(interval);
 }
