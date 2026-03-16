@@ -1,6 +1,6 @@
 import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
 import { createOnboardingRuntime } from "./app.js";
-import { syncGoogleFormResponses } from "./google-form-sync.js";
+import { runConfiguredSyncs } from "./configured-sync.js";
 import { runMemberOnboarding } from "./orchestrator.js";
 
 export async function startServer(): Promise<void> {
@@ -69,23 +69,13 @@ async function routeRequest(
       return;
     }
 
-    const googleFormConfig = runtime.config.googleForm;
-
-    if (!googleFormConfig?.enabled) {
+    if (!runtime.config.googleForm?.enabled) {
       respondJson(response, 400, { error: "googleForm.enabled is false." });
       return;
     }
 
     const payload = (await readJsonBody(request)) as { dryRun?: boolean } | undefined;
-    const summary = await syncGoogleFormResponses(
-      {
-        config: googleFormConfig,
-        env: runtime.env,
-        providers: runtime.providers,
-        defaultDryRun: runtime.env.defaultDryRun
-      },
-      payload?.dryRun
-    );
+    const summary = await runConfiguredSyncs(runtime, payload?.dryRun);
 
     respondJson(response, 200, summary);
     return;
@@ -146,9 +136,7 @@ function respondJson(
 function startGoogleFormPolling(
   runtime: Awaited<ReturnType<typeof createOnboardingRuntime>>
 ): () => void {
-  const googleFormConfig = runtime.config.googleForm;
-
-  if (!runtime.env.googleFormSyncEnabled || !googleFormConfig?.enabled) {
+  if (!runtime.env.googleFormSyncEnabled || !runtime.config.googleForm?.enabled) {
     return () => undefined;
   }
 
@@ -161,14 +149,9 @@ function startGoogleFormPolling(
     active = true;
 
     try {
-      const summary = await syncGoogleFormResponses({
-        config: googleFormConfig,
-        env: runtime.env,
-        providers: runtime.providers,
-        defaultDryRun: runtime.env.defaultDryRun
-      });
+      const summary = await runConfiguredSyncs(runtime);
       console.log(
-        `Google Form sync finished: attempted=${summary.attemptedRows}, processed=${summary.processedRows}, skipped=${summary.skippedRows}, dryRun=${summary.dryRun}`
+        `Google Form sync finished: attempted=${summary.googleForm.attemptedRows}, processed=${summary.googleForm.processedRows}, skipped=${summary.googleForm.skippedRows}, driveTargets=${summary.driveEmailSheet.targets.length}, dryRun=${summary.googleForm.dryRun}`
       );
     } catch (error) {
       console.error(

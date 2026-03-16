@@ -35,6 +35,7 @@ KakaoTalk is intentionally excluded because it is not reliably automatable with 
 - `src/index.ts`: HTTP server entrypoint
 - `src/cli.ts`: manual replay command for one member
 - `src/sync-google-form.ts`: manual sync command for one Google Form response sheet
+- `src/sync-drive-sheet.ts`: manual backfill command for Drive permissions from the mirrored email sheet
 - `config/services.example.json`: versioned example for non-secret target configuration
 - `.env.example`: secret and runtime configuration example
 
@@ -155,6 +156,15 @@ pnpm sync:form -- --dry-run
 pnpm sync:form
 ```
 
+`sync:form` now also backfills Google Drive permissions for every unique email in the configured `googleForm.emailSheetName`.
+
+### Sync Drive permissions from the mirrored email sheet
+
+```bash
+pnpm sync:drive-sheet -- --dry-run
+pnpm sync:drive-sheet
+```
+
 ### Trigger Google Form sync over HTTP
 
 ```bash
@@ -220,6 +230,8 @@ Once a row is attempted, the sync writes back the result so it will not be retri
 If `googleForm.phoneSourceColumn` is configured, the sync also mirrors `[name, phone]` rows into `googleForm.phoneSheetName`.
 
 If `googleForm.emailSourceColumn` is configured, the sync extracts one or more email addresses from the source cell and mirrors `[name, email]` rows into `googleForm.emailSheetName`. Cells with two emails create two rows automatically.
+
+If `google.driveTargets` is configured, the Drive sync reads every unique email from `googleForm.emailSheetName` and grants the configured Drive role to that email address. This is useful when one member has two separate emails that both need folder access.
 
 ## Development
 

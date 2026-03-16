@@ -23,10 +23,10 @@
     "groups": [],
     "driveTargets": [
       {
-        "label": "Shared Drive",
+        "label": "Member Drive Folder",
         "fileId": "replace-with-drive-or-folder-id",
-        "role": "writer",
-        "sendNotificationEmail": true,
+        "role": "commenter",
+        "sendNotificationEmail": false,
         "useDomainAdminAccess": false
       }
     ]

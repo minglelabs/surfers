@@ -10,6 +10,7 @@
     "serve": "tsx src/index.ts",
     "onboard": "tsx src/cli.ts",
     "sync:form": "tsx src/sync-google-form.ts",
+    "sync:drive-sheet": "tsx src/sync-drive-sheet.ts",
     "test": "tsx --test src/orchestrator.test.ts src/google-form-sync.test.ts src/providers/google.test.ts",
     "typecheck": "tsc --noEmit"
   },
