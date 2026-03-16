@@ -6,4 +6,5 @@ dist
 automation/**/node_modules
 automation/**/dist
 automation/**/.env
+automation/**/secrets/
 automation/**/config/services.json
