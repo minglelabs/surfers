@@ -1,5 +1,8 @@
 import path from "node:path";
+import { config as loadDotenv } from "dotenv";
 import { z } from "zod";
+
+loadDotenv({ path: path.resolve(process.cwd(), ".env") });
 
 const booleanish = z
   .union([z.boolean(), z.string()])

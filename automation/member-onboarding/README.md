@@ -40,7 +40,7 @@ KakaoTalk is intentionally excluded because it is not reliably automatable with 
 ## Setup
 
 1. Install dependencies.
-2. Copy `.env.example` to `.env`.
+2. Copy `.env.example` to `.env` in this directory.
 3. Copy `config/services.example.json` to `config/services.json`.
 4. Fill in the provider tokens, IDs, Google Form sheet mapping, and Google service account settings.
 5. Start the server with `pnpm serve`.
