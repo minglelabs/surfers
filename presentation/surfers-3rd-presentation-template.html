@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" id="viewport-meta" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#fffdf7" />
-    <title>[발제 제목] — Surfers 3기</title>
+    <title>AI 래퍼 SW 사업 기회 살펴보기 — Surfers 3기</title>
     <style>
       :root {
         color-scheme: light;
@@ -304,7 +304,7 @@
 
       .toc-grid {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: clamp(12px, 1.65vw, 20px);
         width: min(100%, 68rem);
         margin: clamp(34px, 4.4vw, 58px) auto 0;
@@ -811,7 +811,7 @@
       }
 
       .progress-fill {
-        width: 6.25%;
+        width: 6.666%;
         height: 100%;
         background: linear-gradient(90deg, var(--accent), var(--accent-strong));
         transition: width 380ms var(--slide-ease);
@@ -896,7 +896,7 @@
         .body { margin-top: 15px; font-size: clamp(0.95rem, 3.2vw, 1.15rem); line-height: 1.55; }
         .hero-wave { right: -135px; width: 800px; }
         .hero-sun { top: 14%; right: 13%; }
-        .toc-grid { grid-template-columns: 1fr; gap: 8px; margin-top: 25px; }
+        .toc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 25px; }
         .toc-link { padding: 12px 15px; border-radius: 15px; }
         .section-title { font-size: clamp(3.6rem, 12vw, 6.8rem); }
         .section-note { margin-top: 17px; font-size: clamp(0.94rem, 3.1vw, 1.12rem); }
@@ -940,6 +940,7 @@
         .media-icon { width: 47px; height: 47px; margin-bottom: 9px; border-radius: 14px; font-size: 1.1rem; }
         .media-label { font-size: 0.85rem; }
         .media-help { font-size: 0.72rem; }
+        .toc-text { font-size: 0.82rem; }
         .metric-grid { grid-template-columns: 1fr; }
         .metric { display: grid; grid-template-columns: 42% 1fr; align-items: center; min-height: 0; gap: 7px; padding: 12px 14px; }
         .metric-label { grid-row: 1 / span 2; }
@@ -985,16 +986,16 @@
       - .media-placeholder 자리에 <img>, <video>, iframe, 차트 등을 넣으면 됩니다.
       - 키보드 방향키 / 스페이스 / 마우스 휠 / 모바일 스와이프로 이동할 수 있습니다.
     -->
-    <main class="deck" aria-label="Surfers 3기 발제 템플릿">
+    <main class="deck" aria-label="AI 래퍼 SW 사업 기회 살펴보기">
       <div class="progress" aria-hidden="true"><div class="progress-fill" id="progress-fill"></div></div>
       <div class="track" id="deck-track">
         <section class="slide is-active" aria-label="표지">
           <article class="slide-shell slide-shell--center">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="copy copy--center">
-              <p class="kicker" contenteditable="true" spellcheck="false">Surfers 3rd · Presentation</p>
-              <h1 class="title title--hero title--center" contenteditable="true" spellcheck="false">[발제 제목]<br /><span class="title-accent">[한 줄 부제]</span></h1>
-              <p class="body body--center" contenteditable="true" spellcheck="false">[청중이 이 발표를 듣고 기억할 한 문장을 적어주세요.]</p>
+              <p class="kicker">Surfers 3rd · Presentation</p>
+              <h1 class="title title--hero title--center">AI 래퍼 SW<br /><span class="title-accent">사업 기회 살펴보기</span></h1>
+              <p class="body body--center" contenteditable="true" spellcheck="false">[발표의 문제의식 또는 한 줄 부제]</p>
               <div class="hero-meta" contenteditable="true" spellcheck="false"><span>[발표자]</span><span>[날짜]</span><span>Surfers 3기</span></div>
             </div>
             <div class="hero-sun" aria-hidden="true"></div>
@@ -1012,173 +1013,218 @@
           <article class="slide-shell slide-shell--center">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="copy copy--center copy--wide">
-              <p class="kicker" contenteditable="true" spellcheck="false">Contents</p>
-              <h1 class="title title--center" contenteditable="true" spellcheck="false">[발제의 흐름을<br />한 문장으로 소개]</h1>
+              <p class="kicker">Contents</p>
+              <h1 class="title title--center">오늘 살펴볼<br /><span class="title-accent">11개의 기회</span></h1>
               <nav class="toc-grid" aria-label="목차 이동">
-                <a class="toc-link" href="#3"><span class="toc-index">01</span><span class="toc-text" contenteditable="true" spellcheck="false">[섹션 1 제목]</span><span class="toc-arrow">→</span></a>
-                <a class="toc-link" href="#7"><span class="toc-index">02</span><span class="toc-text" contenteditable="true" spellcheck="false">[섹션 2 제목]</span><span class="toc-arrow">→</span></a>
-                <a class="toc-link" href="#10"><span class="toc-index">03</span><span class="toc-text" contenteditable="true" spellcheck="false">[섹션 3 제목]</span><span class="toc-arrow">→</span></a>
-                <a class="toc-link" href="#13"><span class="toc-index">04</span><span class="toc-text" contenteditable="true" spellcheck="false">[섹션 4 제목]</span><span class="toc-arrow">→</span></a>
+                <a class="toc-link" href="#3"><span class="toc-index">01</span><span class="toc-text">AI 래퍼 SW 분류</span><span class="toc-arrow">→</span></a>
+                <a class="toc-link" href="#4"><span class="toc-index">02</span><span class="toc-text">바이브 코딩</span><span class="toc-arrow">→</span></a>
+                <a class="toc-link" href="#5"><span class="toc-index">03</span><span class="toc-text">숙제 베끼기</span><span class="toc-arrow">→</span></a>
+                <a class="toc-link" href="#6"><span class="toc-index">04</span><span class="toc-text">캐릭터 챗</span><span class="toc-arrow">→</span></a>
+                <a class="toc-link" href="#7"><span class="toc-index">05</span><span class="toc-text">사진 보정</span><span class="toc-arrow">→</span></a>
+                <a class="toc-link" href="#8"><span class="toc-index">06</span><span class="toc-text">식단 관리</span><span class="toc-arrow">→</span></a>
+                <a class="toc-link" href="#9"><span class="toc-index">07</span><span class="toc-text">노트테이킹</span><span class="toc-arrow">→</span></a>
+                <a class="toc-link" href="#10"><span class="toc-index">08</span><span class="toc-text">브라우저</span><span class="toc-arrow">→</span></a>
+                <a class="toc-link" href="#11"><span class="toc-index">09</span><span class="toc-text">전문가 서비스</span><span class="toc-arrow">→</span></a>
+                <a class="toc-link" href="#12"><span class="toc-index">10</span><span class="toc-text">래퍼의 본질과 한계</span><span class="toc-arrow">→</span></a>
+                <a class="toc-link" href="#13"><span class="toc-index">11</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
               </nav>
             </div>
           </article>
         </section>
 
-        <section class="slide" aria-label="섹션 1 표지">
-          <article class="slide-shell slide-shell--section slide-shell--center">
-            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
-            <div class="copy copy--center">
-              <span class="section-index" contenteditable="true" spellcheck="false">01 / 04</span>
-              <h1 class="section-title" contenteditable="true" spellcheck="false">[섹션 1<br /><strong>제목</strong>]</h1>
-              <p class="section-note" contenteditable="true" spellcheck="false">[이 섹션에서 전달할 핵심 메시지를 한두 문장으로 적어주세요.]</p>
-            </div>
-          </article>
-        </section>
-
-        <section class="slide" aria-label="핵심 메시지 슬라이드">
-          <article class="slide-shell slide-shell--center">
-            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
-            <div class="copy copy--center">
-              <p class="kicker" contenteditable="true" spellcheck="false">[핵심 문제 / 관찰]</p>
-              <blockquote class="quote" contenteditable="true" spellcheck="false">[청중이 기억할 첫 번째 핵심 메시지를 크게 적어주세요.]</blockquote>
-              <p class="quote-caption" contenteditable="true" spellcheck="false">[출처, 맥락 또는 이 메시지를 뒷받침하는 짧은 설명]</p>
-            </div>
-          </article>
-        </section>
-
-        <section class="slide" aria-label="설명과 근거 슬라이드">
+        <section class="slide" aria-label="01. AI 래퍼 SW 분류">
           <article class="slide-shell slide-shell--split">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="copy copy--split">
-              <p class="kicker" contenteditable="true" spellcheck="false">[메시지 01]</p>
-              <h1 class="title" contenteditable="true" spellcheck="false">[설명할 내용을<br /><span class="title-accent">한 줄로 강조</span>]</h1>
-              <p class="body" contenteditable="true" spellcheck="false">[문제 정의, 배경, 관찰, 인용 등을 2~4문장으로 작성하세요. 한 장에는 하나의 메시지만 남기는 편이 좋습니다.]</p>
+              <p class="kicker" contenteditable="true" spellcheck="false">01 / 11</p>
+              <h1 class="title" contenteditable="true" spellcheck="false">AI 래퍼 SW<br /><span class="title-accent">분류</span></h1>
+              <p class="body" contenteditable="true" spellcheck="false">[래퍼 SW를 어떤 기준으로 분류할지, 이 장에서 정의할 관점을 적어주세요.]</p>
             </div>
-            <div class="visual" aria-label="근거 카드">
+            <div class="visual" aria-label="AI 래퍼 SW 분류 정리 카드">
               <div class="evidence-stack">
-                <section class="evidence-card"><span class="evidence-index">01</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">[첫 번째 근거]</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[숫자, 사례, 인용문 또는 관찰을 짧게 적으세요.]</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">02</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">[두 번째 근거]</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[이 메시지를 보완하는 자료를 적으세요.]</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">[세 번째 근거]</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[다음 슬라이드로 연결되는 문장을 적으세요.]</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">01</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">분류 기준</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[기능·사용자·워크플로 등 분류 축]</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">02</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">대표 유형</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[이 분류에 들어가는 대표 사례]</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">사업 기회</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[각 유형에서 발견되는 기회]</p></div></section>
               </div>
             </div>
           </article>
         </section>
 
-        <section class="slide" aria-label="핵심 수치 슬라이드">
-          <article class="slide-shell slide-shell--center">
-            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
-            <div class="copy copy--center copy--wide">
-              <p class="kicker" contenteditable="true" spellcheck="false">[근거를 압축하는 데이터]</p>
-              <h1 class="title title--center" contenteditable="true" spellcheck="false">[숫자나 비교로<br />핵심을 보여주는 한 문장]</h1>
-              <div class="metric-grid">
-                <section class="metric"><p class="metric-label" contenteditable="true" spellcheck="false">[지표 01]</p><p class="metric-value" contenteditable="true" spellcheck="false">[00%]</p><p class="metric-help" contenteditable="true" spellcheck="false">[이 숫자가 의미하는 바]</p></section>
-                <section class="metric"><p class="metric-label" contenteditable="true" spellcheck="false">[지표 02]</p><p class="metric-value" contenteditable="true" spellcheck="false">[000]</p><p class="metric-help" contenteditable="true" spellcheck="false">[이 숫자가 의미하는 바]</p></section>
-                <section class="metric"><p class="metric-label" contenteditable="true" spellcheck="false">[지표 03]</p><p class="metric-value" contenteditable="true" spellcheck="false">[00일]</p><p class="metric-help" contenteditable="true" spellcheck="false">[이 숫자가 의미하는 바]</p></section>
-              </div>
-            </div>
-          </article>
-        </section>
-
-        <section class="slide" aria-label="섹션 2 표지">
-          <article class="slide-shell slide-shell--section slide-shell--center">
-            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
-            <div class="copy copy--center">
-              <span class="section-index" contenteditable="true" spellcheck="false">02 / 04</span>
-              <h1 class="section-title" contenteditable="true" spellcheck="false">[섹션 2<br /><strong>제목</strong>]</h1>
-              <p class="section-note" contenteditable="true" spellcheck="false">[이 섹션의 전환 문장 또는 문제 제기를 적어주세요.]</p>
-            </div>
-          </article>
-        </section>
-
-        <section class="slide" aria-label="이미지 또는 데모 슬라이드">
+        <section class="slide" aria-label="02. 바이브 코딩">
           <article class="slide-shell slide-shell--split">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="copy copy--split">
-              <p class="kicker" contenteditable="true" spellcheck="false">[사례 / 데모 / 관찰]</p>
-              <h1 class="title" contenteditable="true" spellcheck="false">[이미지, 스크린샷 또는 데모가<br /><span class="title-accent">보여줄 메시지</span>]</h1>
-              <p class="body" contenteditable="true" spellcheck="false">[오른쪽 미디어를 보면서 말할 내용입니다. 맥락과 해석을 적고, 이미지 자체에 모든 정보를 담지 않아도 됩니다.]</p>
+              <p class="kicker" contenteditable="true" spellcheck="false">02 / 11</p>
+              <h1 class="title" contenteditable="true" spellcheck="false">바이브<br /><span class="title-accent">코딩</span></h1>
+              <p class="body" contenteditable="true" spellcheck="false">[바이브 코딩이 만든 사용자 행동과, 그 위에 얹을 수 있는 기회를 적어주세요.]</p>
             </div>
-            <div class="visual">
-              <div class="media-placeholder" contenteditable="true" spellcheck="false">
-                <div><div class="media-icon">↗</div><p class="media-label">[이미지 · 영상 · 데모 삽입 영역]</p><p class="media-help">이 요소를 삭제하고 원하는 미디어로 교체하세요.</p></div>
+            <div class="visual" aria-label="바이브 코딩 정리 카드">
+              <div class="evidence-stack">
+                <section class="evidence-card"><span class="evidence-index">01</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">사용자 변화</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[누가 무엇을 더 쉽게 하게 되었는가]</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">02</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">새로운 불편</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[기존 도구가 놓치는 문제]</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">기회 가설</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[래퍼 SW가 해결할 수 있는 일]</p></div></section>
               </div>
             </div>
           </article>
         </section>
 
-        <section class="slide" aria-label="프레임워크 슬라이드">
-          <article class="slide-shell slide-shell--center">
+        <section class="slide" aria-label="03. 숙제 베끼기">
+          <article class="slide-shell slide-shell--split">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
-            <div class="copy copy--center copy--wide">
-              <p class="kicker" contenteditable="true" spellcheck="false">[프레임워크 / 선택지]</p>
-              <h1 class="title title--center" contenteditable="true" spellcheck="false">[세 가지 관점으로<br /><span class="title-accent">구조화할 메시지</span>]</h1>
-              <div class="framework">
-                <section class="framework-card"><p class="framework-number">01</p><h2 class="framework-title" contenteditable="true" spellcheck="false">[관점 또는 원칙 1]</h2><p class="framework-text" contenteditable="true" spellcheck="false">[설명, 기준, 또는 대표적인 예시를 적어주세요.]</p></section>
-                <section class="framework-card"><p class="framework-number">02</p><h2 class="framework-title" contenteditable="true" spellcheck="false">[관점 또는 원칙 2]</h2><p class="framework-text" contenteditable="true" spellcheck="false">[설명, 기준, 또는 대표적인 예시를 적어주세요.]</p></section>
-                <section class="framework-card"><p class="framework-number">03</p><h2 class="framework-title" contenteditable="true" spellcheck="false">[관점 또는 원칙 3]</h2><p class="framework-text" contenteditable="true" spellcheck="false">[설명, 기준, 또는 대표적인 예시를 적어주세요.]</p></section>
+            <div class="copy copy--split">
+              <p class="kicker" contenteditable="true" spellcheck="false">03 / 11</p>
+              <h1 class="title" contenteditable="true" spellcheck="false">숙제<br /><span class="title-accent">베끼기</span></h1>
+              <p class="body" contenteditable="true" spellcheck="false">[숙제 베끼기라는 장면에서 드러나는 사용자 의도와 사업 기회를 적어주세요.]</p>
+            </div>
+            <div class="visual" aria-label="숙제 베끼기 정리 카드">
+              <div class="evidence-stack">
+                <section class="evidence-card"><span class="evidence-index">01</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">사용자 장면</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[언제, 누가, 어떤 방식으로 쓰는가]</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">02</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">가치 제안</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[단순 복사 이상으로 제공할 가치]</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">경계선</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[신뢰·윤리·검증에서의 주의점]</p></div></section>
               </div>
             </div>
           </article>
         </section>
 
-        <section class="slide" aria-label="섹션 3 표지">
-          <article class="slide-shell slide-shell--section slide-shell--center">
+        <section class="slide" aria-label="04. 캐릭터 챗">
+          <article class="slide-shell slide-shell--split">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
-            <div class="copy copy--center">
-              <span class="section-index" contenteditable="true" spellcheck="false">03 / 04</span>
-              <h1 class="section-title" contenteditable="true" spellcheck="false">[섹션 3<br /><strong>제목</strong>]</h1>
-              <p class="section-note" contenteditable="true" spellcheck="false">[앞의 내용을 다음 논점으로 연결하는 문장을 적어주세요.]</p>
+            <div class="copy copy--split">
+              <p class="kicker" contenteditable="true" spellcheck="false">04 / 11</p>
+              <h1 class="title" contenteditable="true" spellcheck="false">캐릭터<br /><span class="title-accent">챗</span></h1>
+              <p class="body" contenteditable="true" spellcheck="false">[캐릭터 챗을 둘러싼 관계·몰입·반복 사용의 기회를 적어주세요.]</p>
             </div>
-          </article>
-        </section>
-
-        <section class="slide" aria-label="프로세스 슬라이드">
-          <article class="slide-shell slide-shell--center">
-            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
-            <div class="copy copy--center copy--wide">
-              <p class="kicker" contenteditable="true" spellcheck="false">[방법 / 과정 / 전략]</p>
-              <h1 class="title title--center" contenteditable="true" spellcheck="false">[복잡한 내용을<br /><span class="title-accent">세 단계</span>로 보여주기]</h1>
-              <div class="flow">
-                <section class="flow-step"><span class="flow-number">01</span><h2 class="flow-title" contenteditable="true" spellcheck="false">[첫 번째 단계]</h2><p class="flow-text" contenteditable="true" spellcheck="false">[무엇을 하고, 왜 하는지 적어주세요.]</p></section>
-                <section class="flow-step"><span class="flow-number">02</span><h2 class="flow-title" contenteditable="true" spellcheck="false">[두 번째 단계]</h2><p class="flow-text" contenteditable="true" spellcheck="false">[무엇을 하고, 왜 하는지 적어주세요.]</p></section>
-                <section class="flow-step"><span class="flow-number">03</span><h2 class="flow-title" contenteditable="true" spellcheck="false">[세 번째 단계]</h2><p class="flow-text" contenteditable="true" spellcheck="false">[무엇을 하고, 왜 하는지 적어주세요.]</p></section>
+            <div class="visual" aria-label="캐릭터 챗 정리 카드">
+              <div class="evidence-stack">
+                <section class="evidence-card"><span class="evidence-index">01</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">핵심 경험</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[사용자가 계속 돌아오는 이유]</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">02</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">래퍼의 역할</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[모델 위에 어떤 경험을 설계하는가]</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">확장 가능성</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[다음 기능·고객·채널]</p></div></section>
               </div>
             </div>
           </article>
         </section>
 
-        <section class="slide" aria-label="핵심 인용문 슬라이드">
-          <article class="slide-shell slide-shell--center">
+        <section class="slide" aria-label="05. 사진 보정">
+          <article class="slide-shell slide-shell--split">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
-            <div class="copy copy--center">
-              <p class="kicker" contenteditable="true" spellcheck="false">[다시 강조할 메시지]</p>
-              <blockquote class="quote" contenteditable="true" spellcheck="false">[섹션 3을 마무리하는 짧고 강한 문장]</blockquote>
-              <p class="quote-caption" contenteditable="true" spellcheck="false">[이 문장이 다음 제안으로 이어지는 이유]</p>
+            <div class="copy copy--split">
+              <p class="kicker" contenteditable="true" spellcheck="false">05 / 11</p>
+              <h1 class="title" contenteditable="true" spellcheck="false">사진<br /><span class="title-accent">보정</span></h1>
+              <p class="body" contenteditable="true" spellcheck="false">[사진 보정에서 사용자가 실제로 사고 싶은 결과와 경험을 적어주세요.]</p>
+            </div>
+            <div class="visual" aria-label="사진 보정 정리 카드">
+              <div class="evidence-stack">
+                <section class="evidence-card"><span class="evidence-index">01</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">입력 장면</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[사용자가 어떤 사진을 가져오는가]</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">02</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">결과물</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[어떤 변화가 만족을 만드는가]</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">차별화</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[범용 모델과 달라지는 이유]</p></div></section>
+              </div>
             </div>
           </article>
         </section>
 
-        <section class="slide" aria-label="섹션 4 표지">
-          <article class="slide-shell slide-shell--section slide-shell--center">
+        <section class="slide" aria-label="06. 식단 관리">
+          <article class="slide-shell slide-shell--split">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
-            <div class="copy copy--center">
-              <span class="section-index" contenteditable="true" spellcheck="false">04 / 04</span>
-              <h1 class="section-title" contenteditable="true" spellcheck="false">[섹션 4<br /><strong>제목</strong>]</h1>
-              <p class="section-note" contenteditable="true" spellcheck="false">[마무리 전에 청중에게 남길 질문 또는 실행 제안을 적어주세요.]</p>
+            <div class="copy copy--split">
+              <p class="kicker" contenteditable="true" spellcheck="false">06 / 11</p>
+              <h1 class="title" contenteditable="true" spellcheck="false">식단<br /><span class="title-accent">관리</span></h1>
+              <p class="body" contenteditable="true" spellcheck="false">[식단 관리에서 기록·추천·실행을 연결하는 래퍼 기회를 적어주세요.]</p>
+            </div>
+            <div class="visual" aria-label="식단 관리 정리 카드">
+              <div class="evidence-stack">
+                <section class="evidence-card"><span class="evidence-index">01</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">반복 문제</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[매일 반복되는 판단과 기록]</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">02</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">개인화</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[사용자 맥락을 어떻게 반영하는가]</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">지속성</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[꾸준히 쓰게 만드는 장치]</p></div></section>
+              </div>
             </div>
           </article>
         </section>
 
-        <section class="slide" aria-label="실행 계획 슬라이드">
-          <article class="slide-shell slide-shell--center">
+        <section class="slide" aria-label="07. 노트테이킹">
+          <article class="slide-shell slide-shell--split">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
-            <div class="copy copy--center copy--wide">
-              <p class="kicker" contenteditable="true" spellcheck="false">[제안 / 다음 행동]</p>
-              <h1 class="title title--center" contenteditable="true" spellcheck="false">[청중이 <span class="title-accent">무엇을 하면 되는지</span><br />명확하게 보여주기]</h1>
-              <div class="roadmap">
-                <section class="roadmap-card"><p class="roadmap-time" contenteditable="true" spellcheck="false">[NOW]</p><h2 class="roadmap-title" contenteditable="true" spellcheck="false">[지금 할 일]</h2><p class="roadmap-text" contenteditable="true" spellcheck="false">[발표 직후 또는 오늘 실행할 한 가지]</p></section>
-                <section class="roadmap-card"><p class="roadmap-time" contenteditable="true" spellcheck="false">[NEXT]</p><h2 class="roadmap-title" contenteditable="true" spellcheck="false">[다음 할 일]</h2><p class="roadmap-text" contenteditable="true" spellcheck="false">[며칠 안에 확인할 기준 또는 행동]</p></section>
-                <section class="roadmap-card"><p class="roadmap-time" contenteditable="true" spellcheck="false">[LATER]</p><h2 class="roadmap-title" contenteditable="true" spellcheck="false">[이후의 방향]</h2><p class="roadmap-text" contenteditable="true" spellcheck="false">[장기적으로 이어질 선택 또는 질문]</p></section>
+            <div class="copy copy--split">
+              <p class="kicker" contenteditable="true" spellcheck="false">07 / 11</p>
+              <h1 class="title" contenteditable="true" spellcheck="false">노트<br /><span class="title-accent">테이킹</span></h1>
+              <p class="body" contenteditable="true" spellcheck="false">[노트테이킹이 단순 기록을 넘어 어떤 다음 행동을 만들 수 있는지 적어주세요.]</p>
+            </div>
+            <div class="visual" aria-label="노트테이킹 정리 카드">
+              <div class="evidence-stack">
+                <section class="evidence-card"><span class="evidence-index">01</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">기록</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[무엇을 어떤 순간에 남기는가]</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">02</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">정리</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[정보를 어떤 구조로 바꾸는가]</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">행동</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[정리된 정보가 무엇을 움직이는가]</p></div></section>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="08. 브라우저">
+          <article class="slide-shell slide-shell--split">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="copy copy--split">
+              <p class="kicker" contenteditable="true" spellcheck="false">08 / 11</p>
+              <h1 class="title" contenteditable="true" spellcheck="false">브라우저<br /><span class="title-accent">사용 경험</span></h1>
+              <p class="body" contenteditable="true" spellcheck="false">[브라우저라는 인터페이스 위에서 AI 래퍼가 바꿀 수 있는 행동을 적어주세요.]</p>
+            </div>
+            <div class="visual" aria-label="브라우저 정리 카드">
+              <div class="evidence-stack">
+                <section class="evidence-card"><span class="evidence-index">01</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">현재 흐름</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[사용자가 지금 오가는 화면과 도구]</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">02</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">개입 지점</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[AI가 자연스럽게 끼어들 순간]</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">새 경험</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[기존 웹을 어떻게 다시 묶는가]</p></div></section>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="09. 전문가 서비스">
+          <article class="slide-shell slide-shell--split">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="copy copy--split">
+              <p class="kicker" contenteditable="true" spellcheck="false">09 / 11</p>
+              <h1 class="title" contenteditable="true" spellcheck="false">전문가<br /><span class="title-accent">서비스</span></h1>
+              <p class="body" contenteditable="true" spellcheck="false">[전문가의 판단과 AI의 확장을 결합할 수 있는 사업 기회를 적어주세요.]</p>
+            </div>
+            <div class="visual" aria-label="전문가 서비스 정리 카드">
+              <div class="evidence-stack">
+                <section class="evidence-card"><span class="evidence-index">01</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">전문성</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[사람이 반드시 가져야 할 판단]</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">02</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">확장</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[AI가 줄이는 반복 업무]</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">신뢰</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[고객이 지불하는 근거]</p></div></section>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="10. 래퍼의 본질과 한계">
+          <article class="slide-shell slide-shell--split">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="copy copy--split">
+              <p class="kicker" contenteditable="true" spellcheck="false">10 / 11</p>
+              <h1 class="title" contenteditable="true" spellcheck="false">래퍼의<br />본질과<br /><span class="title-accent">한계</span></h1>
+              <p class="body" contenteditable="true" spellcheck="false">[래퍼가 만들어내는 본질적인 가치와, 구조적으로 넘기 어려운 한계를 함께 적어주세요.]</p>
+            </div>
+            <div class="visual" aria-label="래퍼의 본질과 한계 정리 카드">
+              <div class="evidence-stack">
+                <section class="evidence-card"><span class="evidence-index">01</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">본질</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[모델이 아니라 경험을 파는 이유]</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">02</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">한계</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[복제·의존·차별화의 어려움]</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">판단 기준</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[좋은 래퍼를 고르는 질문]</p></div></section>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="11. 미래와 제언">
+          <article class="slide-shell slide-shell--split">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="copy copy--split">
+              <p class="kicker" contenteditable="true" spellcheck="false">11 / 11</p>
+              <h1 class="title" contenteditable="true" spellcheck="false">미래와<br /><span class="title-accent">제언</span></h1>
+              <p class="body" contenteditable="true" spellcheck="false">[앞으로의 기회와, 지금 시작할 때의 제언을 한 장에 정리해주세요.]</p>
+            </div>
+            <div class="visual" aria-label="미래와 제언 정리 카드">
+              <div class="evidence-stack">
+                <section class="evidence-card"><span class="evidence-index">01</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">지금</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[당장 검증할 가설]</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">02</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">다음</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[확장할 고객·기능·채널]</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">제언</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[발표를 듣는 사람에게 남길 행동]</p></div></section>
               </div>
             </div>
           </article>
@@ -1188,9 +1234,9 @@
           <article class="slide-shell slide-shell--center">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="copy copy--center">
-              <p class="kicker" contenteditable="true" spellcheck="false">[Closing message]</p>
-              <h1 class="title title--hero title--center" contenteditable="true" spellcheck="false">[마지막으로<br /><span class="title-accent">남길 한 문장</span>]</h1>
-              <p class="body body--center" contenteditable="true" spellcheck="false">[핵심 메시지를 다시 한 번 풀어 쓰거나, 청중에게 건넬 짧은 질문을 적어주세요.]</p>
+              <p class="kicker" contenteditable="true" spellcheck="false">Closing message</p>
+              <h1 class="title title--hero title--center" contenteditable="true" spellcheck="false">[래퍼 SW의<br /><span class="title-accent">다음 기회</span>]</h1>
+              <p class="body body--center" contenteditable="true" spellcheck="false">[11개의 장면을 살펴본 뒤 남길 결론과 제언을 적어주세요.]</p>
               <p class="final-chip" contenteditable="true" spellcheck="false"><span>→</span>[청중에게 요청할 다음 행동]</p>
             </div>
             <div class="hero-sun" aria-hidden="true"></div>
@@ -1207,8 +1253,8 @@
           <article class="slide-shell slide-shell--center">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="copy copy--center">
-              <p class="kicker" contenteditable="true" spellcheck="false">Thank you</p>
-              <h1 class="title title--hero title--center" contenteditable="true" spellcheck="false">감사합니다.<br /><span class="title-accent">Q &amp; A</span></h1>
+              <p class="kicker">Thank you</p>
+              <h1 class="title title--hero title--center">감사합니다.<br /><span class="title-accent">Q &amp; A</span></h1>
               <p class="body body--center" contenteditable="true" spellcheck="false">[연락처, 링크, QR 코드 또는 마지막 안내]</p>
             </div>
           </article>
@@ -1218,7 +1264,7 @@
       <div class="page-controls" aria-label="페이지 이동">
         <button class="page-home-button" id="home-button" type="button" aria-label="첫 슬라이드로 이동">처음</button>
         <button id="previous-button" type="button" aria-label="이전 슬라이드">←</button>
-        <span class="page-counter" id="page-counter" aria-live="polite">01 / 16</span>
+        <span class="page-counter" id="page-counter" aria-live="polite">01 / 15</span>
         <button id="next-button" type="button" aria-label="다음 슬라이드">→</button>
       </div>
     </main>
