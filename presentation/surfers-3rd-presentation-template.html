@@ -1,0 +1,1332 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" id="viewport-meta" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fffdf7" />
+    <title>[발제 제목] — Surfers 3기</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --page: #fffdf7;
+        --paper: rgba(255, 255, 255, 0.75);
+        --title: #2d2a1e;
+        --body: rgba(45, 42, 30, 0.72);
+        --soft: rgba(45, 42, 30, 0.1);
+        --accent: #fbbc32;
+        --accent-strong: #f97316;
+        --accent-pale: #fff1c9;
+        --slide-ease: cubic-bezier(0.22, 1, 0.36, 1);
+        --deck-width: 100vw;
+        --deck-height: 100svh;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+        background:
+          radial-gradient(130% 100% at 0% 0%, rgba(251, 188, 50, 0.11), transparent 52%),
+          radial-gradient(110% 120% at 100% 100%, rgba(249, 115, 22, 0.07), transparent 54%),
+          linear-gradient(135deg, #fffefb 0%, #fffaf1 44%, #fffdf7 100%);
+        color: var(--title);
+        font-family: "SF Pro Display", "Pretendard", "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      button,
+      a {
+        font: inherit;
+      }
+
+      .deck {
+        position: relative;
+        width: var(--deck-width);
+        height: var(--deck-height);
+        overflow: hidden;
+        overscroll-behavior: none;
+        touch-action: pan-y;
+      }
+
+      .track {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        height: 100%;
+        will-change: transform;
+        transition: transform 420ms var(--slide-ease);
+      }
+
+      .slide {
+        position: relative;
+        flex: 0 0 var(--deck-width);
+        width: var(--deck-width);
+        height: var(--deck-height);
+        overflow: hidden;
+      }
+
+      .slide-shell {
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        padding: clamp(28px, 3.7vw, 62px) clamp(34px, 7vw, 112px) clamp(56px, 7vw, 104px);
+      }
+
+      .slide-shell::before {
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        content: "";
+        background:
+          linear-gradient(rgba(45, 42, 30, 0.025) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(45, 42, 30, 0.025) 1px, transparent 1px);
+        background-size: clamp(44px, 5vw, 76px) clamp(44px, 5vw, 76px);
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.42), transparent 82%);
+      }
+
+      .slide-shell::after {
+        position: absolute;
+        top: 12%;
+        right: -15vw;
+        z-index: -1;
+        width: min(46vw, 620px);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        content: "";
+        background: radial-gradient(circle at 32% 30%, rgba(251, 188, 50, 0.13), rgba(249, 115, 22, 0.02) 64%, transparent 67%);
+        pointer-events: none;
+      }
+
+      .slide-shell--center {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .slide-shell--split {
+        align-items: center;
+        justify-content: space-between;
+        gap: clamp(28px, 6vw, 106px);
+      }
+
+      .slide-shell--section {
+        background:
+          radial-gradient(60% 80% at 90% 20%, rgba(251, 188, 50, 0.28), transparent 74%),
+          radial-gradient(55% 80% at 0% 96%, rgba(249, 115, 22, 0.12), transparent 75%),
+          linear-gradient(138deg, #fff9ea, #fffdf7 65%);
+      }
+
+      .slide-shell--section::before {
+        opacity: 0.5;
+      }
+
+      .slide-shell--section::after {
+        top: auto;
+        right: -8%;
+        bottom: -22%;
+        width: min(48vw, 720px);
+        background: radial-gradient(circle at 48% 42%, rgba(251, 188, 50, 0.22), rgba(249, 115, 22, 0.04) 65%, transparent 67%);
+      }
+
+      .brand {
+        position: absolute;
+        top: clamp(22px, 3vw, 42px);
+        left: clamp(24px, 4.2vw, 66px);
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        color: rgba(45, 42, 30, 0.66);
+        font-size: clamp(0.7rem, 0.9vw, 0.82rem);
+        font-weight: 850;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        user-select: none;
+      }
+
+      .brand-mark {
+        position: relative;
+        width: 25px;
+        height: 14px;
+        overflow: hidden;
+      }
+
+      .brand-mark::before,
+      .brand-mark::after {
+        position: absolute;
+        width: 23px;
+        height: 10px;
+        border: 3px solid var(--accent-strong);
+        border-top: 0;
+        border-radius: 0 0 30px 30px;
+        content: "";
+        transform: rotate(-8deg);
+      }
+
+      .brand-mark::before { top: -2px; left: -3px; }
+      .brand-mark::after { top: 4px; left: 5px; border-color: var(--accent); }
+
+      .copy {
+        position: relative;
+        width: min(100%, 60rem);
+        margin-top: clamp(84px, 17vh, 202px);
+      }
+
+      .copy--center {
+        width: min(100%, 70rem);
+        margin-top: 0;
+      }
+
+      .copy--split {
+        flex: 1 1 50%;
+        margin-top: 0;
+      }
+
+      .copy--wide {
+        width: min(100%, 75rem);
+      }
+
+      .kicker {
+        display: inline-grid;
+        gap: 9px;
+        width: fit-content;
+        margin: 0 0 clamp(18px, 2vw, 28px);
+        color: rgba(45, 42, 30, 0.58);
+        font-size: clamp(0.82rem, 1.1vw, 0.98rem);
+        font-weight: 850;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .kicker::after {
+        width: 100%;
+        height: 3px;
+        border-radius: 999px;
+        content: "";
+        background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+      }
+
+      h1,
+      h2,
+      h3,
+      p,
+      blockquote {
+        margin: 0;
+      }
+
+      .title {
+        max-width: 17ch;
+        font-size: clamp(2.75rem, 5vw, 5.8rem);
+        font-weight: 680;
+        line-height: 1.18;
+        letter-spacing: -0.065em;
+        text-wrap: balance;
+      }
+
+      .title--hero {
+        max-width: 12ch;
+        font-size: clamp(4.2rem, 8.2vw, 9.4rem);
+        line-height: 1.03;
+        letter-spacing: -0.096em;
+      }
+
+      .title--center {
+        margin-inline: auto;
+      }
+
+      .title-accent {
+        color: var(--accent-strong);
+      }
+
+      .body {
+        max-width: 46rem;
+        margin-top: clamp(20px, 2.5vw, 32px);
+        color: var(--body);
+        font-size: clamp(1.02rem, 1.55vw, 1.42rem);
+        line-height: 1.65;
+        letter-spacing: -0.035em;
+        text-wrap: pretty;
+      }
+
+      .body--center {
+        margin-inline: auto;
+      }
+
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 13px;
+        margin-top: clamp(25px, 3vw, 40px);
+        color: rgba(45, 42, 30, 0.52);
+        font-size: clamp(0.86rem, 1.1vw, 1.02rem);
+        line-height: 1.5;
+      }
+
+      .hero-meta span + span::before {
+        margin-right: 13px;
+        color: rgba(45, 42, 30, 0.26);
+        content: "·";
+      }
+
+      .hero-sun {
+        position: absolute;
+        top: clamp(16%, 18vh, 24%);
+        right: clamp(13%, 18vw, 24%);
+        width: clamp(58px, 7vw, 110px);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: linear-gradient(145deg, #ffd778, var(--accent));
+        box-shadow: 0 0 0 17px rgba(251, 188, 50, 0.09), 0 28px 60px rgba(249, 115, 22, 0.16);
+      }
+
+      .hero-wave {
+        position: absolute;
+        right: min(-2vw, -20px);
+        bottom: min(-2vw, -20px);
+        width: min(65vw, 980px);
+        min-width: 560px;
+        opacity: 0.84;
+        pointer-events: none;
+      }
+
+      .hero-wave path { fill: none; stroke-linecap: round; }
+      .hero-wave .wave-a { stroke: var(--accent-strong); stroke-width: 10; }
+      .hero-wave .wave-b { stroke: var(--accent); stroke-width: 14; }
+      .hero-wave .wave-c { stroke: rgba(249, 115, 22, 0.16); stroke-width: 28; }
+
+      .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(12px, 1.65vw, 20px);
+        width: min(100%, 68rem);
+        margin: clamp(34px, 4.4vw, 58px) auto 0;
+        text-align: left;
+      }
+
+      .toc-link {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 15px;
+        padding: clamp(16px, 1.85vw, 23px);
+        border: 1px solid var(--soft);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.56);
+        box-shadow: 0 12px 36px rgba(131, 85, 13, 0.05);
+        color: var(--title);
+        text-decoration: none;
+        transition: transform 180ms var(--slide-ease), border-color 180ms ease, box-shadow 180ms ease;
+      }
+
+      .toc-link:hover,
+      .toc-link:focus-visible {
+        border-color: rgba(249, 115, 22, 0.36);
+        outline: none;
+        box-shadow: 0 20px 44px rgba(249, 115, 22, 0.12);
+        transform: translateY(-4px);
+      }
+
+      .toc-index {
+        color: var(--accent-strong);
+        font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+        font-size: 0.78rem;
+        font-weight: 800;
+      }
+
+      .toc-text {
+        font-size: clamp(1rem, 1.45vw, 1.25rem);
+        font-weight: 730;
+        letter-spacing: -0.04em;
+      }
+
+      .toc-arrow {
+        color: var(--accent-strong);
+        font-size: 1.25rem;
+        transition: transform 180ms ease;
+      }
+
+      .toc-link:hover .toc-arrow { transform: translateX(4px); }
+
+      .section-index {
+        display: block;
+        margin-bottom: clamp(13px, 1.8vw, 23px);
+        color: var(--accent-strong);
+        font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+        font-size: clamp(0.88rem, 1.3vw, 1.12rem);
+        font-weight: 800;
+        letter-spacing: 0.14em;
+      }
+
+      .section-title {
+        max-width: 13ch;
+        font-size: clamp(4rem, 8vw, 9.2rem);
+        font-weight: 700;
+        line-height: 0.98;
+        letter-spacing: -0.098em;
+        text-wrap: balance;
+      }
+
+      .section-title strong {
+        color: var(--accent-strong);
+        font-weight: inherit;
+      }
+
+      .section-note {
+        max-width: 31rem;
+        margin-top: clamp(22px, 2.7vw, 34px);
+        color: var(--body);
+        font-size: clamp(1rem, 1.4vw, 1.27rem);
+        line-height: 1.55;
+        letter-spacing: -0.04em;
+      }
+
+      .quote {
+        max-width: 15ch;
+        color: var(--title);
+        font-family: "Iowan Old Style", "Nanum Myeongjo", "Times New Roman", serif;
+        font-size: clamp(3.15rem, 6.1vw, 7.1rem);
+        font-weight: 500;
+        line-height: 1.12;
+        letter-spacing: -0.082em;
+        text-wrap: balance;
+      }
+
+      .quote::before,
+      .quote::after {
+        color: var(--accent-strong);
+        font-size: 1.13em;
+        line-height: 0;
+      }
+
+      .quote::before { content: "“"; }
+      .quote::after { content: "”"; }
+
+      .quote-caption {
+        margin-top: 28px;
+        color: var(--body);
+        font-size: clamp(0.95rem, 1.2vw, 1.08rem);
+        font-weight: 680;
+        letter-spacing: -0.025em;
+      }
+
+      .visual {
+        position: relative;
+        flex: 0 1 44rem;
+        min-width: min(41vw, 440px);
+      }
+
+      .media-placeholder {
+        position: relative;
+        display: grid;
+        min-height: clamp(270px, 33vw, 430px);
+        place-items: center;
+        overflow: hidden;
+        border: 1.5px dashed rgba(249, 115, 22, 0.42);
+        border-radius: 26px;
+        background:
+          radial-gradient(circle at 18% 20%, rgba(251, 188, 50, 0.2), transparent 31%),
+          radial-gradient(circle at 82% 78%, rgba(249, 115, 22, 0.14), transparent 35%),
+          rgba(255, 255, 255, 0.44);
+        color: rgba(45, 42, 30, 0.47);
+        text-align: center;
+      }
+
+      .media-placeholder::before,
+      .media-placeholder::after {
+        position: absolute;
+        width: 160%;
+        height: 1px;
+        content: "";
+        background: rgba(249, 115, 22, 0.14);
+        transform: rotate(-34deg);
+      }
+
+      .media-placeholder::after { transform: rotate(34deg); }
+
+      .media-icon {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 14px;
+        place-items: center;
+        border: 1px solid rgba(249, 115, 22, 0.24);
+        border-radius: 18px;
+        background: rgba(255, 253, 247, 0.76);
+        color: var(--accent-strong);
+        font-size: 1.45rem;
+      }
+
+      .media-label {
+        position: relative;
+        z-index: 1;
+        font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+        font-weight: 760;
+        letter-spacing: -0.04em;
+      }
+
+      .media-help {
+        position: relative;
+        z-index: 1;
+        margin-top: 8px;
+        font-size: clamp(0.78rem, 1vw, 0.9rem);
+      }
+
+      .evidence-stack {
+        display: grid;
+        gap: clamp(11px, 1.4vw, 17px);
+        width: min(100%, 42rem);
+      }
+
+      .evidence-card {
+        position: relative;
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: clamp(14px, 1.8vw, 22px);
+        align-items: start;
+        padding: clamp(18px, 2.15vw, 28px);
+        overflow: hidden;
+        border: 1px solid var(--soft);
+        border-radius: 20px;
+        background: var(--paper);
+        box-shadow: 0 14px 34px rgba(131, 85, 13, 0.06);
+      }
+
+      .evidence-card:nth-child(2) { margin-left: clamp(12px, 2.5vw, 42px); }
+      .evidence-card:nth-child(3) { margin-left: clamp(3px, 0.7vw, 12px); }
+
+      .evidence-index {
+        color: var(--accent-strong);
+        font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+        font-size: clamp(0.82rem, 1vw, 0.9rem);
+        font-weight: 800;
+        letter-spacing: 0.08em;
+      }
+
+      .evidence-title {
+        font-size: clamp(1.05rem, 1.55vw, 1.35rem);
+        font-weight: 760;
+        letter-spacing: -0.055em;
+      }
+
+      .evidence-text {
+        margin-top: 7px;
+        color: var(--body);
+        font-size: clamp(0.86rem, 1.08vw, 0.98rem);
+        line-height: 1.5;
+        letter-spacing: -0.03em;
+      }
+
+      .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(12px, 1.55vw, 19px);
+        width: min(100%, 68rem);
+        margin: clamp(34px, 4vw, 54px) auto 0;
+      }
+
+      .metric {
+        min-height: clamp(176px, 21vw, 250px);
+        padding: clamp(18px, 2.4vw, 32px);
+        border: 1px solid var(--soft);
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.59);
+        box-shadow: 0 15px 35px rgba(131, 85, 13, 0.05);
+        text-align: left;
+      }
+
+      .metric-label {
+        color: var(--body);
+        font-size: clamp(0.76rem, 1vw, 0.88rem);
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .metric-value {
+        margin-top: 22px;
+        color: var(--accent-strong);
+        font-size: clamp(2rem, 3.5vw, 3.9rem);
+        font-weight: 720;
+        line-height: 1;
+        letter-spacing: -0.08em;
+      }
+
+      .metric-help {
+        margin-top: 14px;
+        color: var(--body);
+        font-size: clamp(0.83rem, 1.04vw, 0.95rem);
+        line-height: 1.45;
+        letter-spacing: -0.03em;
+      }
+
+      .framework {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(13px, 1.8vw, 24px);
+        width: min(100%, 70rem);
+      }
+
+      .framework-card {
+        position: relative;
+        min-height: clamp(256px, 29vw, 340px);
+        padding: clamp(22px, 2.8vw, 38px);
+        overflow: hidden;
+        border: 1px solid var(--soft);
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.7);
+        text-align: left;
+      }
+
+      .framework-card::after {
+        position: absolute;
+        right: -28px;
+        bottom: -34px;
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        content: "";
+        background: rgba(251, 188, 50, 0.15);
+      }
+
+      .framework-card:nth-child(2)::after { background: rgba(249, 115, 22, 0.12); }
+      .framework-card:nth-child(3)::after { background: rgba(255, 203, 96, 0.22); }
+
+      .framework-number {
+        color: var(--accent-strong);
+        font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.13em;
+      }
+
+      .framework-title {
+        margin-top: 23px;
+        font-size: clamp(1.45rem, 2.2vw, 2.05rem);
+        font-weight: 760;
+        line-height: 1.12;
+        letter-spacing: -0.07em;
+      }
+
+      .framework-text {
+        margin-top: 16px;
+        color: var(--body);
+        font-size: clamp(0.9rem, 1.1vw, 1.02rem);
+        line-height: 1.55;
+        letter-spacing: -0.03em;
+      }
+
+      .flow {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(20px, 3vw, 44px);
+        width: min(100%, 70rem);
+        margin-top: clamp(36px, 4.3vw, 60px);
+      }
+
+      .flow-step {
+        position: relative;
+        padding: clamp(22px, 2.7vw, 36px);
+        border: 1px solid var(--soft);
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.65);
+        text-align: left;
+      }
+
+      .flow-step:not(:last-child)::after {
+        position: absolute;
+        top: 50%;
+        right: clamp(-33px, -2.5vw, -22px);
+        color: var(--accent-strong);
+        content: "→";
+        font-size: clamp(1.4rem, 2.3vw, 2rem);
+        transform: translateY(-50%);
+      }
+
+      .flow-number {
+        display: grid;
+        width: 34px;
+        height: 34px;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--accent-pale);
+        color: var(--accent-strong);
+        font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+        font-size: 0.78rem;
+        font-weight: 850;
+      }
+
+      .flow-title {
+        margin-top: 21px;
+        font-size: clamp(1.28rem, 1.85vw, 1.66rem);
+        font-weight: 760;
+        letter-spacing: -0.06em;
+      }
+
+      .flow-text {
+        margin-top: 12px;
+        color: var(--body);
+        font-size: clamp(0.88rem, 1.08vw, 0.98rem);
+        line-height: 1.52;
+        letter-spacing: -0.025em;
+      }
+
+      .roadmap {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(11px, 1.3vw, 17px);
+        width: min(100%, 67rem);
+        margin-top: clamp(34px, 4vw, 54px);
+        text-align: left;
+      }
+
+      .roadmap-card {
+        padding: clamp(18px, 2.2vw, 28px);
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.68);
+        box-shadow: 0 14px 34px rgba(131, 85, 13, 0.06);
+      }
+
+      .roadmap-card:first-child { border: 1px solid rgba(251, 188, 50, 0.3); }
+      .roadmap-card:nth-child(2) { border: 1px solid rgba(249, 115, 22, 0.3); }
+      .roadmap-card:nth-child(3) { border: 1px solid rgba(45, 42, 30, 0.14); }
+
+      .roadmap-time {
+        color: var(--accent-strong);
+        font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+      }
+
+      .roadmap-title {
+        margin-top: 18px;
+        font-size: clamp(1.15rem, 1.7vw, 1.5rem);
+        font-weight: 760;
+        letter-spacing: -0.06em;
+      }
+
+      .roadmap-text {
+        margin-top: 10px;
+        color: var(--body);
+        font-size: clamp(0.86rem, 1.04vw, 0.97rem);
+        line-height: 1.5;
+        letter-spacing: -0.025em;
+      }
+
+      .final-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: clamp(27px, 3.2vw, 40px);
+        padding: 12px 16px 12px 12px;
+        border: 1px solid rgba(249, 115, 22, 0.2);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.64);
+        color: var(--accent-strong);
+        font-size: clamp(0.87rem, 1.12vw, 1rem);
+        font-weight: 800;
+        letter-spacing: -0.03em;
+      }
+
+      .final-chip span {
+        display: grid;
+        width: 26px;
+        height: 26px;
+        place-items: center;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+        color: #fff;
+      }
+
+      .page-controls {
+        position: absolute;
+        right: clamp(22px, 3.8vw, 54px);
+        bottom: clamp(18px, 3vw, 40px);
+        z-index: 4;
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        color: rgba(45, 42, 30, 0.52);
+        font-size: clamp(0.68rem, 0.85vw, 0.78rem);
+        font-weight: 800;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        user-select: none;
+      }
+
+      .page-controls button {
+        display: grid;
+        width: 34px;
+        height: 34px;
+        padding: 0;
+        place-items: center;
+        border: 1px solid rgba(45, 42, 30, 0.12);
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.55);
+        color: inherit;
+        cursor: pointer;
+        transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+      }
+
+      .page-controls button:hover,
+      .page-controls button:focus-visible {
+        border-color: rgba(249, 115, 22, 0.42);
+        outline: none;
+        background: #fff;
+        transform: translateY(-2px);
+      }
+
+      .page-home-button {
+        width: auto !important;
+        padding: 0 11px !important;
+        border-radius: 999px !important;
+        font-size: inherit;
+        letter-spacing: inherit;
+        text-transform: inherit;
+      }
+
+      .page-counter {
+        min-width: 4.5em;
+        text-align: center;
+      }
+
+      .progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        width: 100%;
+        height: 3px;
+        background: rgba(249, 115, 22, 0.07);
+      }
+
+      .progress-fill {
+        width: 6.25%;
+        height: 100%;
+        background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+        transition: width 380ms var(--slide-ease);
+      }
+
+      .hint {
+        position: absolute;
+        bottom: clamp(19px, 3vw, 38px);
+        left: clamp(24px, 4.2vw, 66px);
+        color: rgba(45, 42, 30, 0.42);
+        font-size: clamp(0.72rem, 0.92vw, 0.82rem);
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+
+      .hint-key {
+        display: inline-grid;
+        width: 23px;
+        height: 18px;
+        margin-right: 7px;
+        place-items: center;
+        border: 1px solid rgba(45, 42, 30, 0.15);
+        border-radius: 5px;
+        font-size: 0.7rem;
+      }
+
+      [contenteditable="true"] {
+        border-radius: 5px;
+        outline: 0 solid transparent;
+        transition: outline-color 160ms ease, background 160ms ease;
+      }
+
+      [contenteditable="true"]:focus {
+        outline: 2px solid rgba(249, 115, 22, 0.55);
+        background: rgba(255, 255, 255, 0.62);
+      }
+
+      .slide:not(.is-active) .copy,
+      .slide:not(.is-active) .visual,
+      .slide:not(.is-active) .hero-wave,
+      .slide:not(.is-active) .hero-sun {
+        opacity: 0.12;
+      }
+
+      .slide.is-active .copy,
+      .slide.is-active .visual,
+      .slide.is-active .hero-wave,
+      .slide.is-active .hero-sun {
+        animation: enter 460ms var(--slide-ease) both;
+      }
+
+      .slide.is-active .visual { animation-delay: 70ms; }
+      .slide.is-active .hero-wave { animation-delay: 120ms; }
+      .slide.is-active .hero-sun { animation-delay: 160ms; }
+
+      @keyframes enter {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      @media (max-width: 860px), (max-height: 680px) {
+        .slide-shell {
+          padding: 74px clamp(21px, 6vw, 44px) 78px;
+        }
+
+        .slide-shell--split {
+          flex-direction: column;
+          justify-content: center;
+          gap: clamp(16px, 3.5vh, 28px);
+        }
+
+        .copy,
+        .copy--split { margin-top: 0; }
+
+        .copy--split {
+          flex: 0 0 auto;
+          width: 100%;
+        }
+
+        .title { font-size: clamp(2.2rem, 7.6vw, 4.4rem); }
+        .title--hero { font-size: clamp(3.7rem, 12vw, 6.8rem); }
+        .body { margin-top: 15px; font-size: clamp(0.95rem, 3.2vw, 1.15rem); line-height: 1.55; }
+        .hero-wave { right: -135px; width: 800px; }
+        .hero-sun { top: 14%; right: 13%; }
+        .toc-grid { grid-template-columns: 1fr; gap: 8px; margin-top: 25px; }
+        .toc-link { padding: 12px 15px; border-radius: 15px; }
+        .section-title { font-size: clamp(3.6rem, 12vw, 6.8rem); }
+        .section-note { margin-top: 17px; font-size: clamp(0.94rem, 3.1vw, 1.12rem); }
+        .quote { font-size: clamp(2.8rem, 9.8vw, 5rem); }
+        .visual { flex: 0 0 auto; min-width: 0; width: 100%; }
+        .media-placeholder { min-height: clamp(175px, 27vh, 260px); border-radius: 19px; }
+        .evidence-stack { width: 100%; gap: 8px; }
+        .evidence-card { padding: 13px 15px; border-radius: 15px; }
+        .evidence-card:nth-child(2) { margin-left: 18px; }
+        .evidence-card:nth-child(3) { margin-left: 0; }
+        .metric-grid { gap: 8px; margin-top: 25px; }
+        .metric { min-height: 152px; padding: 16px; border-radius: 17px; }
+        .metric-value { margin-top: 14px; }
+        .metric-help { margin-top: 10px; line-height: 1.35; }
+        .framework { width: 100%; gap: 8px; }
+        .framework-card { min-height: 212px; padding: 17px; border-radius: 18px; }
+        .framework-title { margin-top: 14px; }
+        .framework-text { margin-top: 10px; line-height: 1.4; }
+        .flow { gap: 8px; margin-top: 24px; }
+        .flow-step { padding: 16px; border-radius: 17px; }
+        .flow-step:not(:last-child)::after { display: none; }
+        .flow-title { margin-top: 13px; }
+        .flow-text { margin-top: 8px; line-height: 1.4; }
+        .roadmap { gap: 8px; margin-top: 25px; }
+        .roadmap-card { padding: 15px; border-radius: 16px; }
+        .roadmap-title { margin-top: 12px; }
+        .roadmap-text { margin-top: 7px; line-height: 1.4; }
+        .page-controls { right: 50%; bottom: max(14px, env(safe-area-inset-bottom)); gap: 8px; transform: translateX(50%); }
+        .page-controls button { width: 29px; height: 29px; }
+        .page-home-button { display: none !important; }
+        .hint { display: none; }
+      }
+
+      @media (max-width: 530px) {
+        .slide-shell { padding-inline: 20px; }
+        .brand { left: 20px; }
+        .title--hero { font-size: clamp(3rem, 14.5vw, 4.7rem); }
+        .hero-meta { margin-top: 19px; font-size: 0.75rem; }
+        .hero-wave { right: -265px; width: 720px; opacity: 0.65; }
+        .hero-sun { width: 47px; box-shadow: 0 0 0 10px rgba(251, 188, 50, 0.09); }
+        .media-icon { width: 47px; height: 47px; margin-bottom: 9px; border-radius: 14px; font-size: 1.1rem; }
+        .media-label { font-size: 0.85rem; }
+        .media-help { font-size: 0.72rem; }
+        .metric-grid { grid-template-columns: 1fr; }
+        .metric { display: grid; grid-template-columns: 42% 1fr; align-items: center; min-height: 0; gap: 7px; padding: 12px 14px; }
+        .metric-label { grid-row: 1 / span 2; }
+        .metric-value { margin: 0; font-size: 1.65rem; }
+        .metric-help { margin: 0; font-size: 0.74rem; }
+        .framework { grid-template-columns: 1fr; gap: 7px; }
+        .framework-card { display: grid; grid-template-columns: 68px 1fr; column-gap: 10px; min-height: 0; padding: 13px; }
+        .framework-number { grid-row: 1 / span 2; }
+        .framework-title { margin: 0; font-size: 1.04rem; }
+        .framework-text { margin: 5px 0 0; font-size: 0.76rem; }
+        .flow { grid-template-columns: 1fr; }
+        .flow-step { display: grid; grid-template-columns: 44px 1fr; column-gap: 8px; padding: 11px 13px; }
+        .flow-number { grid-row: 1 / span 2; width: 30px; height: 30px; }
+        .flow-title { margin: 0; font-size: 0.98rem; }
+        .flow-text { grid-column: 2; margin-top: 4px; font-size: 0.74rem; }
+        .roadmap { grid-template-columns: 1fr; gap: 7px; }
+        .roadmap-card { display: grid; grid-template-columns: 68px 1fr; column-gap: 9px; padding: 11px 13px; }
+        .roadmap-time { grid-row: 1 / span 2; }
+        .roadmap-title { margin: 0; font-size: 0.99rem; }
+        .roadmap-text { margin: 4px 0 0; font-size: 0.74rem; }
+        .final-chip { margin-top: 21px; padding: 10px 13px 10px 11px; font-size: 0.81rem; }
+        .final-chip span { width: 23px; height: 23px; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .track,
+        .progress-fill,
+        .toc-link,
+        .page-controls button { transition: none; }
+
+        .slide.is-active .copy,
+        .slide.is-active .visual,
+        .slide.is-active .hero-wave,
+        .slide.is-active .hero-sun { animation: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+      편집 안내
+      - 대괄호([ ]) 안의 텍스트를 주제에 맞게 바꾸세요. 브라우저에서는 텍스트를 직접 클릭해 임시 편집할 수 있습니다.
+      - 각 section.slide가 한 장의 슬라이드입니다. 필요 없는 슬라이드는 통째로 삭제하거나 복제하세요.
+      - .media-placeholder 자리에 <img>, <video>, iframe, 차트 등을 넣으면 됩니다.
+      - 키보드 방향키 / 스페이스 / 마우스 휠 / 모바일 스와이프로 이동할 수 있습니다.
+    -->
+    <main class="deck" aria-label="Surfers 3기 발제 템플릿">
+      <div class="progress" aria-hidden="true"><div class="progress-fill" id="progress-fill"></div></div>
+      <div class="track" id="deck-track">
+        <section class="slide is-active" aria-label="표지">
+          <article class="slide-shell slide-shell--center">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="copy copy--center">
+              <p class="kicker" contenteditable="true" spellcheck="false">Surfers 3rd · Presentation</p>
+              <h1 class="title title--hero title--center" contenteditable="true" spellcheck="false">[발제 제목]<br /><span class="title-accent">[한 줄 부제]</span></h1>
+              <p class="body body--center" contenteditable="true" spellcheck="false">[청중이 이 발표를 듣고 기억할 한 문장을 적어주세요.]</p>
+              <div class="hero-meta" contenteditable="true" spellcheck="false"><span>[발표자]</span><span>[날짜]</span><span>Surfers 3기</span></div>
+            </div>
+            <div class="hero-sun" aria-hidden="true"></div>
+            <svg class="hero-wave" viewBox="0 0 900 620" aria-hidden="true">
+              <path class="wave-c" d="M-10 465 C170 280 278 618 478 394 C630 222 699 65 920 188" />
+              <path class="wave-a" d="M-2 518 C172 310 290 648 503 411 C642 255 746 117 910 222" />
+              <path class="wave-b" d="M-10 555 C179 364 320 648 548 452 C714 310 788 220 920 294" />
+              <path class="wave-a" d="M109 598 C259 464 370 605 550 523 C680 464 784 381 903 425" />
+            </svg>
+            <p class="hint"><span class="hint-key">→</span> 또는 스크롤로 넘기세요</p>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="목차">
+          <article class="slide-shell slide-shell--center">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="copy copy--center copy--wide">
+              <p class="kicker" contenteditable="true" spellcheck="false">Contents</p>
+              <h1 class="title title--center" contenteditable="true" spellcheck="false">[발제의 흐름을<br />한 문장으로 소개]</h1>
+              <nav class="toc-grid" aria-label="목차 이동">
+                <a class="toc-link" href="#3"><span class="toc-index">01</span><span class="toc-text" contenteditable="true" spellcheck="false">[섹션 1 제목]</span><span class="toc-arrow">→</span></a>
+                <a class="toc-link" href="#7"><span class="toc-index">02</span><span class="toc-text" contenteditable="true" spellcheck="false">[섹션 2 제목]</span><span class="toc-arrow">→</span></a>
+                <a class="toc-link" href="#10"><span class="toc-index">03</span><span class="toc-text" contenteditable="true" spellcheck="false">[섹션 3 제목]</span><span class="toc-arrow">→</span></a>
+                <a class="toc-link" href="#13"><span class="toc-index">04</span><span class="toc-text" contenteditable="true" spellcheck="false">[섹션 4 제목]</span><span class="toc-arrow">→</span></a>
+              </nav>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="섹션 1 표지">
+          <article class="slide-shell slide-shell--section slide-shell--center">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="copy copy--center">
+              <span class="section-index" contenteditable="true" spellcheck="false">01 / 04</span>
+              <h1 class="section-title" contenteditable="true" spellcheck="false">[섹션 1<br /><strong>제목</strong>]</h1>
+              <p class="section-note" contenteditable="true" spellcheck="false">[이 섹션에서 전달할 핵심 메시지를 한두 문장으로 적어주세요.]</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="핵심 메시지 슬라이드">
+          <article class="slide-shell slide-shell--center">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="copy copy--center">
+              <p class="kicker" contenteditable="true" spellcheck="false">[핵심 문제 / 관찰]</p>
+              <blockquote class="quote" contenteditable="true" spellcheck="false">[청중이 기억할 첫 번째 핵심 메시지를 크게 적어주세요.]</blockquote>
+              <p class="quote-caption" contenteditable="true" spellcheck="false">[출처, 맥락 또는 이 메시지를 뒷받침하는 짧은 설명]</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="설명과 근거 슬라이드">
+          <article class="slide-shell slide-shell--split">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="copy copy--split">
+              <p class="kicker" contenteditable="true" spellcheck="false">[메시지 01]</p>
+              <h1 class="title" contenteditable="true" spellcheck="false">[설명할 내용을<br /><span class="title-accent">한 줄로 강조</span>]</h1>
+              <p class="body" contenteditable="true" spellcheck="false">[문제 정의, 배경, 관찰, 인용 등을 2~4문장으로 작성하세요. 한 장에는 하나의 메시지만 남기는 편이 좋습니다.]</p>
+            </div>
+            <div class="visual" aria-label="근거 카드">
+              <div class="evidence-stack">
+                <section class="evidence-card"><span class="evidence-index">01</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">[첫 번째 근거]</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[숫자, 사례, 인용문 또는 관찰을 짧게 적으세요.]</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">02</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">[두 번째 근거]</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[이 메시지를 보완하는 자료를 적으세요.]</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">[세 번째 근거]</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[다음 슬라이드로 연결되는 문장을 적으세요.]</p></div></section>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="핵심 수치 슬라이드">
+          <article class="slide-shell slide-shell--center">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="copy copy--center copy--wide">
+              <p class="kicker" contenteditable="true" spellcheck="false">[근거를 압축하는 데이터]</p>
+              <h1 class="title title--center" contenteditable="true" spellcheck="false">[숫자나 비교로<br />핵심을 보여주는 한 문장]</h1>
+              <div class="metric-grid">
+                <section class="metric"><p class="metric-label" contenteditable="true" spellcheck="false">[지표 01]</p><p class="metric-value" contenteditable="true" spellcheck="false">[00%]</p><p class="metric-help" contenteditable="true" spellcheck="false">[이 숫자가 의미하는 바]</p></section>
+                <section class="metric"><p class="metric-label" contenteditable="true" spellcheck="false">[지표 02]</p><p class="metric-value" contenteditable="true" spellcheck="false">[000]</p><p class="metric-help" contenteditable="true" spellcheck="false">[이 숫자가 의미하는 바]</p></section>
+                <section class="metric"><p class="metric-label" contenteditable="true" spellcheck="false">[지표 03]</p><p class="metric-value" contenteditable="true" spellcheck="false">[00일]</p><p class="metric-help" contenteditable="true" spellcheck="false">[이 숫자가 의미하는 바]</p></section>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="섹션 2 표지">
+          <article class="slide-shell slide-shell--section slide-shell--center">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="copy copy--center">
+              <span class="section-index" contenteditable="true" spellcheck="false">02 / 04</span>
+              <h1 class="section-title" contenteditable="true" spellcheck="false">[섹션 2<br /><strong>제목</strong>]</h1>
+              <p class="section-note" contenteditable="true" spellcheck="false">[이 섹션의 전환 문장 또는 문제 제기를 적어주세요.]</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="이미지 또는 데모 슬라이드">
+          <article class="slide-shell slide-shell--split">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="copy copy--split">
+              <p class="kicker" contenteditable="true" spellcheck="false">[사례 / 데모 / 관찰]</p>
+              <h1 class="title" contenteditable="true" spellcheck="false">[이미지, 스크린샷 또는 데모가<br /><span class="title-accent">보여줄 메시지</span>]</h1>
+              <p class="body" contenteditable="true" spellcheck="false">[오른쪽 미디어를 보면서 말할 내용입니다. 맥락과 해석을 적고, 이미지 자체에 모든 정보를 담지 않아도 됩니다.]</p>
+            </div>
+            <div class="visual">
+              <div class="media-placeholder" contenteditable="true" spellcheck="false">
+                <div><div class="media-icon">↗</div><p class="media-label">[이미지 · 영상 · 데모 삽입 영역]</p><p class="media-help">이 요소를 삭제하고 원하는 미디어로 교체하세요.</p></div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="프레임워크 슬라이드">
+          <article class="slide-shell slide-shell--center">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="copy copy--center copy--wide">
+              <p class="kicker" contenteditable="true" spellcheck="false">[프레임워크 / 선택지]</p>
+              <h1 class="title title--center" contenteditable="true" spellcheck="false">[세 가지 관점으로<br /><span class="title-accent">구조화할 메시지</span>]</h1>
+              <div class="framework">
+                <section class="framework-card"><p class="framework-number">01</p><h2 class="framework-title" contenteditable="true" spellcheck="false">[관점 또는 원칙 1]</h2><p class="framework-text" contenteditable="true" spellcheck="false">[설명, 기준, 또는 대표적인 예시를 적어주세요.]</p></section>
+                <section class="framework-card"><p class="framework-number">02</p><h2 class="framework-title" contenteditable="true" spellcheck="false">[관점 또는 원칙 2]</h2><p class="framework-text" contenteditable="true" spellcheck="false">[설명, 기준, 또는 대표적인 예시를 적어주세요.]</p></section>
+                <section class="framework-card"><p class="framework-number">03</p><h2 class="framework-title" contenteditable="true" spellcheck="false">[관점 또는 원칙 3]</h2><p class="framework-text" contenteditable="true" spellcheck="false">[설명, 기준, 또는 대표적인 예시를 적어주세요.]</p></section>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="섹션 3 표지">
+          <article class="slide-shell slide-shell--section slide-shell--center">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="copy copy--center">
+              <span class="section-index" contenteditable="true" spellcheck="false">03 / 04</span>
+              <h1 class="section-title" contenteditable="true" spellcheck="false">[섹션 3<br /><strong>제목</strong>]</h1>
+              <p class="section-note" contenteditable="true" spellcheck="false">[앞의 내용을 다음 논점으로 연결하는 문장을 적어주세요.]</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="프로세스 슬라이드">
+          <article class="slide-shell slide-shell--center">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="copy copy--center copy--wide">
+              <p class="kicker" contenteditable="true" spellcheck="false">[방법 / 과정 / 전략]</p>
+              <h1 class="title title--center" contenteditable="true" spellcheck="false">[복잡한 내용을<br /><span class="title-accent">세 단계</span>로 보여주기]</h1>
+              <div class="flow">
+                <section class="flow-step"><span class="flow-number">01</span><h2 class="flow-title" contenteditable="true" spellcheck="false">[첫 번째 단계]</h2><p class="flow-text" contenteditable="true" spellcheck="false">[무엇을 하고, 왜 하는지 적어주세요.]</p></section>
+                <section class="flow-step"><span class="flow-number">02</span><h2 class="flow-title" contenteditable="true" spellcheck="false">[두 번째 단계]</h2><p class="flow-text" contenteditable="true" spellcheck="false">[무엇을 하고, 왜 하는지 적어주세요.]</p></section>
+                <section class="flow-step"><span class="flow-number">03</span><h2 class="flow-title" contenteditable="true" spellcheck="false">[세 번째 단계]</h2><p class="flow-text" contenteditable="true" spellcheck="false">[무엇을 하고, 왜 하는지 적어주세요.]</p></section>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="핵심 인용문 슬라이드">
+          <article class="slide-shell slide-shell--center">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="copy copy--center">
+              <p class="kicker" contenteditable="true" spellcheck="false">[다시 강조할 메시지]</p>
+              <blockquote class="quote" contenteditable="true" spellcheck="false">[섹션 3을 마무리하는 짧고 강한 문장]</blockquote>
+              <p class="quote-caption" contenteditable="true" spellcheck="false">[이 문장이 다음 제안으로 이어지는 이유]</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="섹션 4 표지">
+          <article class="slide-shell slide-shell--section slide-shell--center">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="copy copy--center">
+              <span class="section-index" contenteditable="true" spellcheck="false">04 / 04</span>
+              <h1 class="section-title" contenteditable="true" spellcheck="false">[섹션 4<br /><strong>제목</strong>]</h1>
+              <p class="section-note" contenteditable="true" spellcheck="false">[마무리 전에 청중에게 남길 질문 또는 실행 제안을 적어주세요.]</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="실행 계획 슬라이드">
+          <article class="slide-shell slide-shell--center">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="copy copy--center copy--wide">
+              <p class="kicker" contenteditable="true" spellcheck="false">[제안 / 다음 행동]</p>
+              <h1 class="title title--center" contenteditable="true" spellcheck="false">[청중이 <span class="title-accent">무엇을 하면 되는지</span><br />명확하게 보여주기]</h1>
+              <div class="roadmap">
+                <section class="roadmap-card"><p class="roadmap-time" contenteditable="true" spellcheck="false">[NOW]</p><h2 class="roadmap-title" contenteditable="true" spellcheck="false">[지금 할 일]</h2><p class="roadmap-text" contenteditable="true" spellcheck="false">[발표 직후 또는 오늘 실행할 한 가지]</p></section>
+                <section class="roadmap-card"><p class="roadmap-time" contenteditable="true" spellcheck="false">[NEXT]</p><h2 class="roadmap-title" contenteditable="true" spellcheck="false">[다음 할 일]</h2><p class="roadmap-text" contenteditable="true" spellcheck="false">[며칠 안에 확인할 기준 또는 행동]</p></section>
+                <section class="roadmap-card"><p class="roadmap-time" contenteditable="true" spellcheck="false">[LATER]</p><h2 class="roadmap-title" contenteditable="true" spellcheck="false">[이후의 방향]</h2><p class="roadmap-text" contenteditable="true" spellcheck="false">[장기적으로 이어질 선택 또는 질문]</p></section>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="마무리 메시지">
+          <article class="slide-shell slide-shell--center">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="copy copy--center">
+              <p class="kicker" contenteditable="true" spellcheck="false">[Closing message]</p>
+              <h1 class="title title--hero title--center" contenteditable="true" spellcheck="false">[마지막으로<br /><span class="title-accent">남길 한 문장</span>]</h1>
+              <p class="body body--center" contenteditable="true" spellcheck="false">[핵심 메시지를 다시 한 번 풀어 쓰거나, 청중에게 건넬 짧은 질문을 적어주세요.]</p>
+              <p class="final-chip" contenteditable="true" spellcheck="false"><span>→</span>[청중에게 요청할 다음 행동]</p>
+            </div>
+            <div class="hero-sun" aria-hidden="true"></div>
+            <svg class="hero-wave" viewBox="0 0 900 620" aria-hidden="true">
+              <path class="wave-c" d="M-10 465 C170 280 278 618 478 394 C630 222 699 65 920 188" />
+              <path class="wave-a" d="M-2 518 C172 310 290 648 503 411 C642 255 746 117 910 222" />
+              <path class="wave-b" d="M-10 555 C179 364 320 648 548 452 C714 310 788 220 920 294" />
+              <path class="wave-a" d="M109 598 C259 464 370 605 550 523 C680 464 784 381 903 425" />
+            </svg>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="질문과 답변">
+          <article class="slide-shell slide-shell--center">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="copy copy--center">
+              <p class="kicker" contenteditable="true" spellcheck="false">Thank you</p>
+              <h1 class="title title--hero title--center" contenteditable="true" spellcheck="false">감사합니다.<br /><span class="title-accent">Q &amp; A</span></h1>
+              <p class="body body--center" contenteditable="true" spellcheck="false">[연락처, 링크, QR 코드 또는 마지막 안내]</p>
+            </div>
+          </article>
+        </section>
+      </div>
+
+      <div class="page-controls" aria-label="페이지 이동">
+        <button class="page-home-button" id="home-button" type="button" aria-label="첫 슬라이드로 이동">처음</button>
+        <button id="previous-button" type="button" aria-label="이전 슬라이드">←</button>
+        <span class="page-counter" id="page-counter" aria-live="polite">01 / 16</span>
+        <button id="next-button" type="button" aria-label="다음 슬라이드">→</button>
+      </div>
+    </main>
+
+    <script>
+      (() => {
+        const track = document.getElementById("deck-track");
+        const slides = Array.from(track.querySelectorAll(".slide"));
+        const progress = document.getElementById("progress-fill");
+        const counter = document.getElementById("page-counter");
+        const homeButton = document.getElementById("home-button");
+        const previousButton = document.getElementById("previous-button");
+        const nextButton = document.getElementById("next-button");
+        const total = slides.length;
+        const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+        let activeIndex = 0;
+        let wheelLocked = false;
+        let touchStart = null;
+
+        function normalise(index) {
+          return ((index % total) + total) % total;
+        }
+
+        function indexFromHash() {
+          const number = Number.parseInt(window.location.hash.slice(1), 10);
+          return Number.isInteger(number) && number >= 1 && number <= total ? number - 1 : null;
+        }
+
+        function setActive(nextIndex, { syncHash = true } = {}) {
+          activeIndex = normalise(nextIndex);
+          track.style.transitionDuration = motionQuery.matches ? "0ms" : "420ms";
+          track.style.transform = `translate3d(${-activeIndex * window.innerWidth}px, 0, 0)`;
+
+          slides.forEach((slide, index) => {
+            const isActive = index === activeIndex;
+            slide.classList.toggle("is-active", isActive);
+            slide.setAttribute("aria-hidden", String(!isActive));
+          });
+
+          const current = String(activeIndex + 1).padStart(2, "0");
+          const count = String(total).padStart(2, "0");
+          counter.textContent = `${current} / ${count}`;
+          progress.style.width = `${((activeIndex + 1) / total) * 100}%`;
+
+          if (syncHash && window.location.hash !== `#${activeIndex + 1}`) {
+            window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}#${activeIndex + 1}`);
+          }
+        }
+
+        function move(step) {
+          setActive(activeIndex + step);
+        }
+
+        homeButton.addEventListener("click", () => setActive(0));
+        previousButton.addEventListener("click", () => move(-1));
+        nextButton.addEventListener("click", () => move(1));
+
+        window.addEventListener("keydown", (event) => {
+          if (event.target instanceof HTMLElement && event.target.isContentEditable) return;
+          const forward = ["ArrowRight", "ArrowDown", "PageDown", " "];
+          const backward = ["ArrowLeft", "ArrowUp", "PageUp"];
+          if (!forward.includes(event.key) && !backward.includes(event.key)) return;
+          event.preventDefault();
+          move(forward.includes(event.key) ? 1 : -1);
+        });
+
+        window.addEventListener("wheel", (event) => {
+          const delta = Math.abs(event.deltaY) >= Math.abs(event.deltaX) ? event.deltaY : event.deltaX;
+          if (wheelLocked || Math.abs(delta) < 14) return;
+          wheelLocked = true;
+          window.setTimeout(() => { wheelLocked = false; }, 680);
+          move(delta > 0 ? 1 : -1);
+        }, { passive: true });
+
+        window.addEventListener("touchstart", (event) => {
+          if (event.touches.length !== 1) return;
+          const touch = event.touches[0];
+          touchStart = { x: touch.clientX, y: touch.clientY };
+        }, { passive: true });
+
+        window.addEventListener("touchend", (event) => {
+          if (!touchStart || event.changedTouches.length !== 1) return;
+          const touch = event.changedTouches[0];
+          const deltaX = touch.clientX - touchStart.x;
+          const deltaY = touch.clientY - touchStart.y;
+          touchStart = null;
+          if (Math.max(Math.abs(deltaX), Math.abs(deltaY)) < 45) return;
+          const primaryDelta = Math.abs(deltaX) >= Math.abs(deltaY) ? deltaX : deltaY;
+          move(primaryDelta < 0 ? 1 : -1);
+        }, { passive: true });
+
+        document.querySelectorAll(".toc-link").forEach((link) => {
+          link.addEventListener("click", (event) => {
+            event.preventDefault();
+            const target = Number.parseInt(link.getAttribute("href").slice(1), 10);
+            if (Number.isInteger(target)) setActive(target - 1);
+          });
+        });
+
+        window.addEventListener("hashchange", () => {
+          const target = indexFromHash();
+          if (target !== null && target !== activeIndex) setActive(target, { syncHash: false });
+        });
+
+        window.addEventListener("resize", () => setActive(activeIndex, { syncHash: false }));
+        motionQuery.addEventListener?.("change", () => setActive(activeIndex, { syncHash: false }));
+        setActive(indexFromHash() ?? 0, { syncHash: false });
+      })();
+    </script>
+  </body>
+</html>
