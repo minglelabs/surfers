@@ -195,6 +195,31 @@
       .brand-mark::before { top: -2px; left: -3px; }
       .brand-mark::after { top: 4px; left: 5px; border-color: var(--accent); }
 
+      .chapter-label {
+        position: absolute;
+        top: clamp(22px, 3vw, 42px);
+        right: clamp(34px, 7vw, 112px);
+        z-index: 1;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: rgba(45, 42, 30, 0.52);
+        font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+        font-size: clamp(0.62rem, 0.78vw, 0.74rem);
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        user-select: none;
+      }
+
+      .chapter-label::before {
+        width: 18px;
+        height: 2px;
+        border-radius: 999px;
+        content: "";
+        background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+      }
+
       .copy {
         position: relative;
         width: min(100%, 60rem);
@@ -1102,6 +1127,7 @@
         .source-note { margin-top: 12px; font-size: 0.68rem; }
         .hero-wave { right: -135px; width: 800px; }
         .hero-sun { top: 14%; right: 13%; }
+        .chapter-label { top: 24px; right: clamp(21px, 6vw, 44px); font-size: 0.62rem; }
         .toc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 25px; }
         .toc-column { gap: 8px; }
         .toc-link { padding: 12px 15px; border-radius: 15px; }
@@ -1192,6 +1218,7 @@
         .hero-meta { margin-top: 19px; font-size: 0.75rem; }
         .hero-wave { right: -265px; width: 720px; opacity: 0.65; }
         .hero-sun { width: 47px; box-shadow: 0 0 0 10px rgba(251, 188, 50, 0.09); }
+        .chapter-label { top: 20px; right: 20px; font-size: 0.58rem; }
         .media-icon { width: 47px; height: 47px; margin-bottom: 9px; border-radius: 14px; font-size: 1.1rem; }
         .media-label { font-size: 0.85rem; }
         .media-help { font-size: 0.72rem; }
@@ -1290,8 +1317,9 @@
         <section class="slide" aria-label="01. AI 래퍼(Wrapper)란?">
           <article class="slide-shell slide-shell--split slide-shell--wrapper">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="chapter-label">Chapter 1</div>
             <div class="copy copy--split">
-              <p class="kicker" contenteditable="true" spellcheck="false">01 / 11</p>
+              <p class="kicker" contenteditable="true" spellcheck="false">Chapter 1</p>
               <h1 class="title" contenteditable="true" spellcheck="false">AI 래퍼(Wrapper)란?</h1>
               <p class="body" contenteditable="true" spellcheck="false">AI 래퍼는 기초 모델 위에 맥락·인터페이스·워크플로를 얹어 특정 문제를 해결하는 서비스입니다. “AI를 쓴다”보다 “업무가 끝난다”에 초점을 둡니다.</p>
               <p class="source-note">출처 · <a href="https://techcrunch.com/2026/02/21/google-vp-warns-that-two-types-of-ai-startups-may-not-survive/" target="_blank" rel="noreferrer">TechCrunch, 2026</a> · <a href="https://blog.eladgil.com/p/defensibility-and-competition" target="_blank" rel="noreferrer">Elad Gil, 2023</a></p>
@@ -1309,8 +1337,9 @@
         <section class="slide" aria-label="02. AI 래퍼의 본질과 한계">
           <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--wrapper-limit">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="chapter-label">Chapter 2</div>
             <div class="copy copy--split">
-              <p class="kicker" contenteditable="true" spellcheck="false">02 / 11</p>
+              <p class="kicker" contenteditable="true" spellcheck="false">Chapter 2</p>
               <h1 class="title" contenteditable="true" spellcheck="false">AI 래퍼의 <span class="title-accent">본질</span></h1>
               <p class="body" contenteditable="true" spellcheck="false">AI 래퍼의 본질은 기존에도 이미 존재하던 유저 경험을 AI를 활용해 자동으로 제공해주는 것입니다. 성공한 서비스는 기능보다 사용환경에 먼저 녹아듭니다.</p>
               <p class="source-note">출처 · <a href="https://www.crv.com/content/what-is-an-ai-wrapper" target="_blank" rel="noreferrer">CRV, AI 래퍼 정의</a> · <a href="https://www.cursor.com/features" target="_blank" rel="noreferrer">Cursor Features</a> · <a href="https://help.x.com/ko/using-x/translate-posts" target="_blank" rel="noreferrer">X 도움말</a></p>
@@ -1328,6 +1357,7 @@
         <section class="slide" aria-label="02. 참고 사례">
           <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--case">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="chapter-label">Chapter 2</div>
             <div class="copy copy--split">
               <p class="kicker" contenteditable="true" spellcheck="false">참고 사례</p>
               <h1 class="title" contenteditable="true" spellcheck="false">두 가지 <span class="title-accent">사례</span></h1>
@@ -1360,6 +1390,7 @@
         <section class="slide" aria-label="02. 래퍼의 한계">
           <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--moat">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="chapter-label">Chapter 2</div>
             <div class="copy copy--split">
               <p class="kicker" contenteditable="true" spellcheck="false">한계</p>
               <h1 class="title" contenteditable="true" spellcheck="false">AI 래퍼는<br /><span class="title-accent">가치가 있지만</span><br />해자가 없다</h1>
@@ -1379,6 +1410,7 @@
         <section class="slide" aria-label="02. Elad Gil의 관점">
           <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--elad">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="chapter-label">Chapter 2</div>
             <div class="copy copy--split">
               <p class="kicker" contenteditable="true" spellcheck="false">한계 · 관점</p>
               <h1 class="title" contenteditable="true" spellcheck="false">해자가 없어도<br /><span class="title-accent">기회는 사라지지 않는다</span></h1>
@@ -1407,8 +1439,9 @@
         <section class="slide" aria-label="03. 바이브 코딩">
           <article class="slide-shell slide-shell--split">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="chapter-label">Chapter 3</div>
             <div class="copy copy--split">
-              <p class="kicker" contenteditable="true" spellcheck="false">03 / 11</p>
+              <p class="kicker" contenteditable="true" spellcheck="false">Chapter 3</p>
               <h1 class="title" contenteditable="true" spellcheck="false">바이브 <span class="title-accent">코딩</span></h1>
               <p class="body" contenteditable="true" spellcheck="false">[바이브 코딩이 만든 사용자 행동과, 그 위에 얹을 수 있는 기회를 적어주세요.]</p>
             </div>
@@ -1425,8 +1458,9 @@
         <section class="slide" aria-label="04. 숙제 베끼기">
           <article class="slide-shell slide-shell--split">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="chapter-label">Chapter 4</div>
             <div class="copy copy--split">
-              <p class="kicker" contenteditable="true" spellcheck="false">04 / 11</p>
+              <p class="kicker" contenteditable="true" spellcheck="false">Chapter 4</p>
               <h1 class="title" contenteditable="true" spellcheck="false">숙제 <span class="title-accent">베끼기</span></h1>
               <p class="body" contenteditable="true" spellcheck="false">[숙제 베끼기라는 장면에서 드러나는 사용자 의도와 사업 기회를 적어주세요.]</p>
             </div>
@@ -1443,8 +1477,9 @@
         <section class="slide" aria-label="05. 캐릭터 챗">
           <article class="slide-shell slide-shell--split">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="chapter-label">Chapter 5</div>
             <div class="copy copy--split">
-              <p class="kicker" contenteditable="true" spellcheck="false">05 / 11</p>
+              <p class="kicker" contenteditable="true" spellcheck="false">Chapter 5</p>
               <h1 class="title" contenteditable="true" spellcheck="false">캐릭터 <span class="title-accent">챗</span></h1>
               <p class="body" contenteditable="true" spellcheck="false">[캐릭터 챗을 둘러싼 관계·몰입·반복 사용의 기회를 적어주세요.]</p>
             </div>
@@ -1461,8 +1496,9 @@
         <section class="slide" aria-label="06. 사진 보정">
           <article class="slide-shell slide-shell--split">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="chapter-label">Chapter 6</div>
             <div class="copy copy--split">
-              <p class="kicker" contenteditable="true" spellcheck="false">06 / 11</p>
+              <p class="kicker" contenteditable="true" spellcheck="false">Chapter 6</p>
               <h1 class="title" contenteditable="true" spellcheck="false">사진 <span class="title-accent">보정</span></h1>
               <p class="body" contenteditable="true" spellcheck="false">[사진 보정에서 사용자가 실제로 사고 싶은 결과와 경험을 적어주세요.]</p>
             </div>
@@ -1479,8 +1515,9 @@
         <section class="slide" aria-label="07. 식단 관리">
           <article class="slide-shell slide-shell--split">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="chapter-label">Chapter 7</div>
             <div class="copy copy--split">
-              <p class="kicker" contenteditable="true" spellcheck="false">07 / 11</p>
+              <p class="kicker" contenteditable="true" spellcheck="false">Chapter 7</p>
               <h1 class="title" contenteditable="true" spellcheck="false">식단 <span class="title-accent">관리</span></h1>
               <p class="body" contenteditable="true" spellcheck="false">[식단 관리에서 기록·추천·실행을 연결하는 래퍼 기회를 적어주세요.]</p>
             </div>
@@ -1497,8 +1534,9 @@
         <section class="slide" aria-label="08. 노트테이킹">
           <article class="slide-shell slide-shell--split">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="chapter-label">Chapter 8</div>
             <div class="copy copy--split">
-              <p class="kicker" contenteditable="true" spellcheck="false">08 / 11</p>
+              <p class="kicker" contenteditable="true" spellcheck="false">Chapter 8</p>
               <h1 class="title" contenteditable="true" spellcheck="false">노트 <span class="title-accent">테이킹</span></h1>
               <p class="body" contenteditable="true" spellcheck="false">[노트테이킹이 단순 기록을 넘어 어떤 다음 행동을 만들 수 있는지 적어주세요.]</p>
             </div>
@@ -1515,8 +1553,9 @@
         <section class="slide" aria-label="09. 브라우저">
           <article class="slide-shell slide-shell--split">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="chapter-label">Chapter 9</div>
             <div class="copy copy--split">
-              <p class="kicker" contenteditable="true" spellcheck="false">09 / 11</p>
+              <p class="kicker" contenteditable="true" spellcheck="false">Chapter 9</p>
               <h1 class="title" contenteditable="true" spellcheck="false">브라우저</h1>
               <p class="body" contenteditable="true" spellcheck="false">[브라우저라는 인터페이스 위에서 AI 래퍼가 바꿀 수 있는 행동을 적어주세요.]</p>
             </div>
@@ -1533,8 +1572,9 @@
         <section class="slide" aria-label="10. 전문가 서비스">
           <article class="slide-shell slide-shell--split">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="chapter-label">Chapter 10</div>
             <div class="copy copy--split">
-              <p class="kicker" contenteditable="true" spellcheck="false">10 / 11</p>
+              <p class="kicker" contenteditable="true" spellcheck="false">Chapter 10</p>
               <h1 class="title" contenteditable="true" spellcheck="false">전문가 <span class="title-accent">서비스</span></h1>
               <p class="body" contenteditable="true" spellcheck="false">[전문가의 판단과 AI의 확장을 결합할 수 있는 사업 기회를 적어주세요.]</p>
             </div>
@@ -1551,8 +1591,9 @@
         <section class="slide" aria-label="11. 미래와 제언">
           <article class="slide-shell slide-shell--split">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="chapter-label">Chapter 11</div>
             <div class="copy copy--split">
-              <p class="kicker" contenteditable="true" spellcheck="false">11 / 11</p>
+              <p class="kicker" contenteditable="true" spellcheck="false">Chapter 11</p>
               <h1 class="title" contenteditable="true" spellcheck="false">미래와 <span class="title-accent">제언</span></h1>
               <p class="body" contenteditable="true" spellcheck="false">[앞으로의 기회와, 지금 시작할 때의 제언을 한 장에 정리해주세요.]</p>
             </div>
@@ -1569,6 +1610,7 @@
         <section class="slide" aria-label="마무리 메시지">
           <article class="slide-shell slide-shell--center">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="chapter-label">Chapter 11</div>
             <div class="copy copy--center">
               <p class="kicker" contenteditable="true" spellcheck="false">Closing message</p>
               <h1 class="title title--hero title--center" contenteditable="true" spellcheck="false">[래퍼 SW의<br /><span class="title-accent">다음 기회</span>]</h1>
@@ -1588,6 +1630,7 @@
         <section class="slide" aria-label="질문과 답변">
           <article class="slide-shell slide-shell--center">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="chapter-label">Chapter 11</div>
             <div class="copy copy--center">
               <p class="kicker">Thank you</p>
               <h1 class="title title--hero title--center">감사합니다.<br /><span class="title-accent">Q &amp; A</span></h1>
