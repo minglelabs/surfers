@@ -690,11 +690,20 @@
       }
 
       .logo-service-name {
-        margin-top: 4px;
+        margin: 4px 0 0;
         color: var(--title);
         font-size: clamp(1rem, 1.4vw, 1.3rem);
         font-weight: 780;
         letter-spacing: -0.045em;
+      }
+
+      .logo-service {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-width: 0;
+        text-align: center;
       }
 
       .slide-shell--cursor-series .logo-equation {
@@ -728,16 +737,22 @@
         white-space: nowrap;
       }
 
+      .logo-equation--stacked .logo-service-name {
+        font-size: clamp(0.82rem, 1.1vw, 1.05rem);
+      }
+
       .logo-equation-row--output {
         margin-top: 1px;
       }
 
       .logo-equation-connector {
+        display: block;
         color: var(--body);
         font-size: clamp(1.8rem, 3vw, 3rem);
         font-weight: 760;
         letter-spacing: 0.08em;
         line-height: 0.75;
+        transform: rotate(90deg);
       }
 
       .case-stack {
@@ -954,7 +969,8 @@
         min-height: clamp(330px, 38vw, 520px);
       }
 
-      .logo-bridge > img {
+      .logo-bridge > img,
+      .logo-bridge > .logo-service > img {
         display: block;
         width: clamp(108px, 11vw, 178px);
         height: auto;
@@ -1490,7 +1506,8 @@
         .logo-equation img { width: clamp(62px, 19vw, 118px); }
         .logo-equation-sign { font-size: clamp(1.6rem, 7vw, 2.8rem); }
         .logo-bridge { min-height: 285px; gap: 7px; }
-        .logo-bridge > img { width: clamp(60px, 19vw, 108px); }
+        .logo-bridge > img,
+        .logo-bridge > .logo-service > img { width: clamp(60px, 19vw, 108px); }
         .logo-bridge-arrow { min-width: clamp(68px, 20vw, 100px); gap: 10px; }
         .logo-bridge-caption { font-size: clamp(0.68rem, 2.4vw, 0.82rem); }
         .logo-bridge-symbol { font-size: clamp(1.8rem, 8vw, 3rem); }
@@ -1751,6 +1768,7 @@
             <div class="visual" aria-label="Cursor 사례">
               <div class="logo-feature">
                 <img src="assets/cursor-logo.svg" alt="Cursor 로고" />
+                <p class="logo-service-name" contenteditable="true" spellcheck="false">Cursor</p>
               </div>
             </div>
           </article>
@@ -1767,6 +1785,7 @@
             <div class="visual" aria-label="Tiro 사례">
               <div class="logo-feature">
                 <img src="assets/tiro-logo.jpg" alt="Tiro 로고" />
+                <p class="logo-service-name" contenteditable="true" spellcheck="false">Tiro</p>
               </div>
             </div>
           </article>
@@ -1783,6 +1802,7 @@
             <div class="visual" aria-label="Perplexity 사례">
               <div class="logo-feature">
                 <img src="assets/perplexity-logo.svg" alt="Perplexity 로고" />
+                <p class="logo-service-name" contenteditable="true" spellcheck="false">Perplexity</p>
               </div>
             </div>
           </article>
@@ -1880,6 +1900,7 @@
             <div class="visual" aria-label="Cursor 로고">
               <div class="chatgpt-logo">
                 <img src="assets/cursor-logo.svg" alt="Cursor 로고" />
+                <p class="logo-service-name" contenteditable="true" spellcheck="false">Cursor</p>
               </div>
             </div>
           </article>
@@ -1896,13 +1917,22 @@
             <div class="visual" aria-label="VS Code와 ChatGPT가 Cursor로 통합되는 과정">
               <div class="logo-equation logo-equation--stacked">
                 <div class="logo-equation-row">
-                  <span contenteditable="true" spellcheck="false">VSCODE</span>
+                  <div class="logo-service">
+                    <img src="assets/vscode-logo.svg" alt="VS Code 로고" />
+                    <p class="logo-service-name" contenteditable="true" spellcheck="false">VSCODE</p>
+                  </div>
                   <span class="logo-equation-sign" aria-hidden="true">+</span>
-                  <span contenteditable="true" spellcheck="false">챗지피티</span>
+                  <div class="logo-service">
+                    <img src="assets/chatgpt-logo.svg" alt="ChatGPT 로고" />
+                    <p class="logo-service-name" contenteditable="true" spellcheck="false">챗지피티</p>
+                  </div>
                 </div>
-                <span class="logo-equation-connector" aria-hidden="true">||</span>
+                <span class="logo-equation-connector" aria-hidden="true">=</span>
                 <div class="logo-equation-row logo-equation-row--output">
-                  <span contenteditable="true" spellcheck="false">커서</span>
+                  <div class="logo-service">
+                    <img src="assets/cursor-logo.svg" alt="Cursor 로고" />
+                    <p class="logo-service-name" contenteditable="true" spellcheck="false">커서</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1919,13 +1949,19 @@
             </div>
             <div class="visual" aria-label="VS Code와 ChatGPT 사이의 복사와 이동">
               <div class="logo-bridge">
-                <img src="assets/vscode-logo.svg" alt="VS Code 로고" />
+                <div class="logo-service">
+                  <img src="assets/vscode-logo.svg" alt="VS Code 로고" />
+                  <p class="logo-service-name" contenteditable="true" spellcheck="false">VS Code</p>
+                </div>
                 <div class="logo-bridge-arrow">
                   <span class="logo-bridge-caption">복사 &amp; 붙여넣기</span>
                   <span class="logo-bridge-symbol" aria-hidden="true">↔</span>
                   <span class="logo-bridge-caption">왔다 갔다 해야됨</span>
                 </div>
-                <img src="assets/chatgpt-logo.svg" alt="ChatGPT 로고" />
+                <div class="logo-service">
+                  <img src="assets/chatgpt-logo.svg" alt="ChatGPT 로고" />
+                  <p class="logo-service-name" contenteditable="true" spellcheck="false">ChatGPT</p>
+                </div>
               </div>
             </div>
           </article>
