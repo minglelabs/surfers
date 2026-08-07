@@ -303,6 +303,16 @@
         text-wrap: pretty;
       }
 
+      .body--focus {
+        max-width: 70rem;
+        margin-inline: auto;
+        color: var(--title);
+        font-size: clamp(1.65rem, 3.15vw, 3.35rem);
+        font-weight: 720;
+        line-height: 1.38;
+        letter-spacing: -0.065em;
+      }
+
       .source-note {
         max-width: 46rem;
         margin-top: clamp(18px, 2vw, 28px);
@@ -1334,21 +1344,13 @@
         </section>
 
         <section class="slide" aria-label="01. AI 래퍼(Wrapper)란?">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper">
+          <article class="slide-shell slide-shell--center slide-shell--section">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
-            <div class="copy copy--split">
+            <div class="copy copy--center copy--wide">
               <p class="kicker" contenteditable="true" spellcheck="false">Chapter 1</p>
               <h1 class="title" contenteditable="true" spellcheck="false">AI 래퍼(Wrapper)란?</h1>
-              <p class="body" contenteditable="true" spellcheck="false">AI 래퍼는 기초 모델 위에 맥락·인터페이스·워크플로를 얹어 특정 문제를 해결하는 서비스입니다. “AI를 쓴다”보다 “업무가 끝난다”에 초점을 둡니다.</p>
-              <p class="source-note">출처 · <a href="https://techcrunch.com/2026/02/21/google-vp-warns-that-two-types-of-ai-startups-may-not-survive/" target="_blank" rel="noreferrer">TechCrunch, 2026</a> · <a href="https://blog.eladgil.com/p/defensibility-and-competition" target="_blank" rel="noreferrer">Elad Gil, 2023</a></p>
-            </div>
-            <div class="visual" aria-label="AI 래퍼란 정리 카드">
-              <div class="evidence-stack">
-                <section class="evidence-card"><span class="evidence-index">01</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">기초 모델</h2><p class="evidence-text" contenteditable="true" spellcheck="false">텍스트·이미지·코드 생성 같은 기반 능력을 가져옵니다.</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">02</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">제품 경험</h2><p class="evidence-text" contenteditable="true" spellcheck="false">사용자 맥락과 도구 연결로 일반 모델을 좁은 문제에 맞춥니다.</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">결과 책임</h2><p class="evidence-text" contenteditable="true" spellcheck="false">좋은 래퍼는 답변이 아니라 다음 행동과 결과까지 설계합니다.</p></div></section>
-              </div>
+              <p class="body body--focus body--center" contenteditable="true" spellcheck="false">GPT 같은 파운데이션 모델 위에 UI만 구현해서 만든 소프트웨어를 뜻합니다. AI 모델을 직접 만드는게 아니라 파운데이션 모델의 API를 사용해서 가져다 씁니다.</p>
             </div>
           </article>
         </section>
