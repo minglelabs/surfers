@@ -842,6 +842,17 @@
         white-space: nowrap;
       }
 
+      .slide-shell--reference-logo-only .copy--split {
+        flex: 1 1 64%;
+        max-width: 68rem;
+      }
+
+      .slide-shell--reference-logo-only .visual {
+        flex: 0 1 30%;
+        width: min(100%, 22rem);
+        min-width: 0;
+      }
+
       .logo-feature {
         display: flex;
         flex-direction: column;
@@ -852,21 +863,20 @@
         text-align: center;
       }
 
-      .logo-feature-caption {
-        max-width: 24ch;
-        margin-bottom: clamp(18px, 2.2vw, 30px);
-        color: var(--title);
-        font-size: clamp(1.45rem, 2.1vw, 2.35rem);
-        font-weight: 720;
-        line-height: 1.35;
-        letter-spacing: -0.055em;
-      }
-
       .logo-feature img {
         display: block;
         width: clamp(170px, 15vw, 250px);
         height: auto;
         object-fit: contain;
+      }
+
+      .slide-shell--reference-logo-only .logo-feature {
+        width: min(100%, 22rem);
+        min-height: clamp(280px, 34vw, 460px);
+      }
+
+      .slide-shell--reference-logo-only .logo-feature img {
+        width: clamp(150px, 12vw, 215px);
       }
 
       .chatgpt-logo {
@@ -1436,8 +1446,10 @@
         .case-tag { margin-top: 9px; font-size: 0.7rem; }
         .logo-stack { min-height: 285px; }
         .logo-feature { min-height: 285px; }
-        .logo-feature-caption { margin-bottom: 15px; font-size: clamp(1.25rem, 4.6vw, 1.85rem); }
         .logo-feature img { width: clamp(135px, 34vw, 220px); }
+        .slide-shell--reference-logo-only .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
+        .slide-shell--reference-logo-only .visual { flex: 0 0 auto; width: 100%; }
+        .slide-shell--reference-logo-only .logo-feature { width: 100%; min-height: 285px; }
         .chatgpt-logo { min-height: 285px; }
         .chatgpt-logo img { width: clamp(180px, 40vw, 280px); }
         .logo-equation { min-height: 285px; gap: 8px; }
@@ -1692,7 +1704,7 @@
         </section>
 
         <section class="slide" aria-label="01. 참고 사례 · Cursor">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--reference">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--reference slide-shell--reference-logo-only">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
@@ -1701,7 +1713,6 @@
             </div>
             <div class="visual" aria-label="Cursor 사례">
               <div class="logo-feature">
-                <p class="logo-feature-caption">코드 작성·수정 경험을 자동화</p>
                 <img src="assets/cursor-logo.svg" alt="Cursor 로고" />
               </div>
             </div>
@@ -1709,7 +1720,7 @@
         </section>
 
         <section class="slide" aria-label="01. 참고 사례 · Tiro">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--reference">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--reference slide-shell--reference-logo-only">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
@@ -1718,7 +1729,6 @@
             </div>
             <div class="visual" aria-label="Tiro 사례">
               <div class="logo-feature">
-                <p class="logo-feature-caption">회의록 작성 경험을 자동화</p>
                 <img src="assets/tiro-logo.jpg" alt="Tiro 로고" />
               </div>
             </div>
@@ -1726,7 +1736,7 @@
         </section>
 
         <section class="slide" aria-label="01. 참고 사례 · Perplexity">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--reference">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--reference slide-shell--reference-logo-only">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
@@ -1735,7 +1745,6 @@
             </div>
             <div class="visual" aria-label="Perplexity 사례">
               <div class="logo-feature">
-                <p class="logo-feature-caption">검색·요약 경험을 자동화</p>
                 <img src="assets/perplexity-logo.svg" alt="Perplexity 로고" />
               </div>
             </div>
