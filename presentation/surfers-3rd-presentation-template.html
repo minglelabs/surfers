@@ -670,6 +670,45 @@
         font-size: clamp(1.55rem, 2vw, 2.35rem);
       }
 
+      .slide-shell--cursor-series .copy--split {
+        flex: 1 1 62%;
+        max-width: 64rem;
+      }
+
+      .slide-shell--cursor-series .visual {
+        flex: 0 1 38rem;
+        min-width: 0;
+      }
+
+      .slide-shell--cursor-series .chatgpt-logo {
+        min-height: clamp(280px, 32vw, 430px);
+      }
+
+      .slide-shell--cursor-series .chatgpt-logo img {
+        width: clamp(150px, 16vw, 250px);
+      }
+
+      .logo-service-name {
+        margin-top: 12px;
+        color: var(--title);
+        font-size: clamp(1rem, 1.4vw, 1.3rem);
+        font-weight: 780;
+        letter-spacing: -0.045em;
+      }
+
+      .slide-shell--cursor-series .logo-equation {
+        min-height: clamp(280px, 32vw, 430px);
+        gap: clamp(7px, 1vw, 15px);
+      }
+
+      .slide-shell--cursor-series .logo-equation img {
+        width: clamp(66px, 6.8vw, 112px);
+      }
+
+      .slide-shell--cursor-series .logo-equation-sign {
+        font-size: clamp(1.5rem, 2.5vw, 2.7rem);
+      }
+
       .case-stack {
         display: grid;
         gap: clamp(14px, 1.8vw, 22px);
@@ -1352,6 +1391,14 @@
         .slide-shell--ambient .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--ambient .visual { flex: 0 0 auto; width: 100%; }
         .slide-shell--ambient .evidence-title { font-size: clamp(1.45rem, 5.2vw, 2.4rem); }
+        .slide-shell--cursor-series .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
+        .slide-shell--cursor-series .visual { flex: 0 0 auto; width: 100%; }
+        .slide-shell--cursor-series .chatgpt-logo { min-height: 285px; }
+        .slide-shell--cursor-series .chatgpt-logo img { width: clamp(150px, 32vw, 230px); }
+        .slide-shell--cursor-series .logo-equation { min-height: 285px; gap: 6px; }
+        .slide-shell--cursor-series .logo-equation img { width: clamp(54px, 16vw, 100px); }
+        .slide-shell--cursor-series .logo-equation-sign { font-size: clamp(1.3rem, 6vw, 2.3rem); }
+        .logo-service-name { font-size: clamp(0.95rem, 3.8vw, 1.15rem); }
         .evidence-card:nth-child(2) { margin-left: 0; }
         .evidence-card:nth-child(3) { margin-left: 0; }
         .case-stack { width: 100%; gap: 8px; }
@@ -1645,7 +1692,7 @@
         </section>
 
         <section class="slide" aria-label="01. 성공적인 AI 래퍼의 세 가지 요소">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--principles slide-shell--ambient">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--principles">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
@@ -1663,7 +1710,7 @@
         </section>
 
         <section class="slide" aria-label="01. Ambient AI">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--principles">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--principles slide-shell--ambient">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
@@ -1692,7 +1739,7 @@
         </section>
 
         <section class="slide" aria-label="01. Cursor와 ChatGPT">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--cursor-series">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
@@ -1702,13 +1749,14 @@
             <div class="visual" aria-label="ChatGPT 로고">
               <div class="chatgpt-logo">
                 <img src="assets/chatgpt-logo.svg" alt="ChatGPT 로고" />
+                <p class="logo-service-name">ChatGPT</p>
               </div>
             </div>
           </article>
         </section>
 
         <section class="slide" aria-label="01. Cursor의 당시 상황">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--cursor-series">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
@@ -1718,13 +1766,14 @@
             <div class="visual" aria-label="ChatGPT 로고">
               <div class="chatgpt-logo">
                 <img src="assets/chatgpt-logo.svg" alt="ChatGPT 로고" />
+                <p class="logo-service-name">ChatGPT</p>
               </div>
             </div>
           </article>
         </section>
 
         <section class="slide" aria-label="01. Cursor 출시와 바이브 코딩">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--cursor-series">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
@@ -1740,7 +1789,7 @@
         </section>
 
         <section class="slide" aria-label="01. Cursor의 통합 경험">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--cursor-series">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
