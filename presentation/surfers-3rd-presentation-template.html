@@ -2012,6 +2012,29 @@
           }
         }
 
+        function normaliseLegacyWrapperApiSlide() {
+          const slide = slides.find((item) => item.getAttribute("aria-label") === "01. AI 래퍼는 파운데이션 모델의 API를 사용합니다");
+          const body = slide?.querySelector(".body--focus");
+          if (!body) return false;
+
+          const lines = body.innerHTML
+            .replace(/<br\s*\/?>(?=\S)/gi, "\n")
+            .replace(/<[^>]+>/g, "")
+            .split(/\n+/)
+            .map((line) => line.trim())
+            .filter(Boolean);
+          const half = lines.length / 2;
+          const isDuplicatedBlock = lines.length >= 4
+            && Number.isInteger(half)
+            && lines.slice(0, half).join("\n") === lines.slice(half).join("\n");
+          if (!isDuplicatedBlock) return false;
+
+          const kicker = slide.querySelector(".kicker");
+          if (kicker) kicker.textContent = "Chapter 1";
+          body.innerHTML = "AI 래퍼는<br />AI 모델을 직접 만들지 않고<br />파운데이션 모델의 API를 사용합니다.";
+          return true;
+        }
+
         function downloadDeck() {
           saveEdits();
           const blob = new Blob([`<!doctype html>\n${document.documentElement.outerHTML}`], { type: "text/html;charset=utf-8" });
@@ -2026,6 +2049,7 @@
         }
 
         readSavedEdits();
+        if (normaliseLegacyWrapperApiSlide()) saveEdits();
         editableEntries.forEach(({ element }) => {
           element.addEventListener("input", saveEdits);
           element.addEventListener("blur", saveEdits);
