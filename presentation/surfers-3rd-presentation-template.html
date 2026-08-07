@@ -593,6 +593,26 @@
         letter-spacing: -0.03em;
       }
 
+      .slide-shell--principles .evidence-card {
+        padding: clamp(7px, 1vw, 13px) 0;
+        overflow: visible;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      .slide-shell--principles .evidence-index {
+        font-size: clamp(1.15rem, 1.65vw, 1.6rem);
+      }
+
+      .slide-shell--principles .evidence-title {
+        font-size: clamp(2.25rem, 4.25vw, 5rem);
+        font-weight: 760;
+        letter-spacing: -0.075em;
+        white-space: nowrap;
+      }
+
       .case-stack {
         display: grid;
         gap: clamp(14px, 1.8vw, 22px);
@@ -1192,6 +1212,8 @@
         .media-placeholder { min-height: clamp(175px, 27vh, 260px); border-radius: 19px; }
         .evidence-stack { width: 100%; gap: 8px; }
         .evidence-card { padding: 13px 15px; border-radius: 15px; }
+        .slide-shell--principles .evidence-card { padding: 4px 0; border-radius: 0; }
+        .slide-shell--principles .evidence-title { font-size: clamp(1.75rem, 7vw, 3.3rem); }
         .evidence-card:nth-child(2) { margin-left: 18px; }
         .evidence-card:nth-child(3) { margin-left: 0; }
         .case-stack { width: 100%; gap: 8px; }
@@ -1470,7 +1492,7 @@
                   <div>
                     <h2 class="case-title" contenteditable="true" spellcheck="false">Cursor</h2>
                     <p class="case-text" contenteditable="true" spellcheck="false">에디터·코드베이스·실행 환경을 한곳에 묶고, 말 한마디로 수정과 실행까지 이어갑니다.</p>
-                    <span class="case-tag">Ambient AI · GUI → CUI</span>
+                    <span class="case-tag">Ambient AI · GUI to CUI</span>
                   </div>
                 </section>
               </div>
@@ -1479,19 +1501,18 @@
         </section>
 
         <section class="slide" aria-label="01. 성공적인 AI 래퍼의 세 가지 요소">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--principles">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
               <p class="kicker" contenteditable="true" spellcheck="false">성공 조건</p>
               <h1 class="title" contenteditable="true" spellcheck="false">성공적인 AI 래퍼의 <span class="title-accent">세 가지 요소</span></h1>
-              <p class="body" contenteditable="true" spellcheck="false">AI 기능을 더하는 데서 멈추지 않고, 사용자가 느끼는 마찰 자체를 줄여야 합니다.</p>
             </div>
             <div class="visual" aria-label="성공적인 AI 래퍼의 세 가지 요소">
               <div class="evidence-stack">
-                <section class="evidence-card"><span class="evidence-index">01</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">Ambient AI</h2></div></section>
-                <section class="evidence-card"><span class="evidence-index">02</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">알잘딱</h2></div></section>
-                <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">GUI → CUI</h2></div></section>
+                <section class="evidence-card"><span class="evidence-index">1</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">Ambient AI</h2></div></section>
+                <section class="evidence-card"><span class="evidence-index">2</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">알잘딱</h2></div></section>
+                <section class="evidence-card"><span class="evidence-index">3</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">GUI to CUI</h2></div></section>
               </div>
             </div>
           </article>
@@ -1553,7 +1574,7 @@
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
               <p class="kicker" contenteditable="true" spellcheck="false">세 번째 요소</p>
-              <h1 class="title" contenteditable="true" spellcheck="false"><span class="title-accent">GUI → CUI</span></h1>
+              <h1 class="title" contenteditable="true" spellcheck="false"><span class="title-accent">GUI to CUI</span></h1>
               <p class="body" contenteditable="true" spellcheck="false">기능과 화면을 찾아 헤매던 경험 대신, 말 한마디로 끝낼 수 있어야 합니다.</p>
             </div>
             <div class="visual" aria-label="GUI에서 CUI로의 전환">
