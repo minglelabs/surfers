@@ -671,12 +671,13 @@
       }
 
       .slide-shell--cursor-series .copy--split {
-        flex: 1 1 62%;
-        max-width: 64rem;
+        flex: 1 1 68%;
+        max-width: 72rem;
       }
 
       .slide-shell--cursor-series .visual {
-        flex: 0 1 38rem;
+        flex: 0 1 30rem;
+        width: min(100%, 30rem);
         min-width: 0;
       }
 
@@ -1511,6 +1512,9 @@
           min-width: 0;
         }
 
+        .slide-shell--cursor-series .copy--split { flex: 1 1 68%; }
+        .slide-shell--cursor-series .visual { flex: 0 1 30rem; width: auto; }
+
         .slide-shell--wrapper-limit .title {
           max-width: none;
           font-size: clamp(2.25rem, 4.2vw, 3rem);
@@ -1869,7 +1873,7 @@
         </section>
 
         <section class="slide" aria-label="01. Cursor 이전의 코딩 경험">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--cursor-series">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
