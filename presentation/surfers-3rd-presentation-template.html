@@ -150,6 +150,13 @@
         letter-spacing: -0.085em;
       }
 
+      .slide-shell--elad .title {
+        max-width: 16ch;
+        font-size: clamp(2.6rem, 4.15vw, 4.8rem);
+        line-height: 1.1;
+        letter-spacing: -0.082em;
+      }
+
       .brand {
         position: absolute;
         top: clamp(22px, 3vw, 42px);
@@ -627,6 +634,103 @@
         letter-spacing: 0.02em;
       }
 
+      .elad-panel {
+        display: grid;
+        grid-template-columns: minmax(0, 0.76fr) minmax(0, 1.24fr);
+        gap: clamp(14px, 1.7vw, 22px);
+        width: min(100%, 43rem);
+        padding: clamp(16px, 2vw, 26px);
+        border: 1px solid var(--soft);
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.77);
+        box-shadow: 0 16px 38px rgba(131, 85, 13, 0.07);
+      }
+
+      .elad-figure {
+        min-width: 0;
+        margin: 0;
+      }
+
+      .elad-photo {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        object-position: 50% 35%;
+        border-radius: 18px;
+        filter: saturate(0.9) contrast(0.98);
+      }
+
+      .elad-credit {
+        margin-top: 7px;
+        color: rgba(45, 42, 30, 0.45);
+        font-size: clamp(0.56rem, 0.68vw, 0.66rem);
+        line-height: 1.35;
+        letter-spacing: -0.025em;
+      }
+
+      .elad-credit a,
+      .portfolio-note a {
+        color: inherit;
+        text-underline-offset: 3px;
+      }
+
+      .elad-quote {
+        min-width: 0;
+        margin: 0;
+      }
+
+      .elad-label {
+        color: var(--accent-strong);
+        font-size: clamp(0.62rem, 0.78vw, 0.72rem);
+        font-weight: 850;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .elad-label--translation {
+        margin-top: 14px;
+      }
+
+      .elad-original,
+      .elad-translation {
+        margin-top: 8px;
+        font-size: clamp(0.82rem, 1.03vw, 0.96rem);
+        line-height: 1.5;
+        letter-spacing: -0.03em;
+      }
+
+      .elad-original {
+        color: var(--title);
+        font-family: "Iowan Old Style", "Nanum Myeongjo", "Times New Roman", serif;
+        font-style: italic;
+      }
+
+      .elad-translation {
+        color: var(--body);
+      }
+
+      .elad-interpretation {
+        margin-top: 13px;
+        padding-top: 12px;
+        border-top: 1px solid rgba(249, 115, 22, 0.18);
+        color: var(--body);
+        font-size: clamp(0.72rem, 0.9vw, 0.84rem);
+        line-height: 1.48;
+        letter-spacing: -0.035em;
+      }
+
+      .portfolio-note {
+        grid-column: 1 / -1;
+        margin: 0;
+        padding-top: 12px;
+        border-top: 1px solid rgba(45, 42, 30, 0.09);
+        color: rgba(45, 42, 30, 0.47);
+        font-size: clamp(0.58rem, 0.72vw, 0.68rem);
+        line-height: 1.45;
+        letter-spacing: -0.025em;
+      }
+
       .metric-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -912,7 +1016,7 @@
       }
 
       .progress-fill {
-        width: 5.882%;
+        width: 5.556%;
         height: 100%;
         background: linear-gradient(90deg, var(--accent), var(--accent-strong));
         transition: width 380ms var(--slide-ease);
@@ -1016,6 +1120,12 @@
         .case-mark { width: 42px; height: 42px; border-radius: 13px; }
         .case-text { margin-top: 5px; line-height: 1.42; }
         .case-tag { margin-top: 9px; font-size: 0.7rem; }
+        .elad-panel { grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); gap: 11px; padding: 13px; border-radius: 17px; }
+        .elad-photo { border-radius: 13px; }
+        .elad-credit { margin-top: 5px; font-size: 0.54rem; }
+        .elad-original, .elad-translation { margin-top: 5px; font-size: 0.74rem; line-height: 1.4; }
+        .elad-interpretation { margin-top: 8px; padding-top: 8px; font-size: 0.66rem; line-height: 1.4; }
+        .portfolio-note { padding-top: 8px; font-size: 0.56rem; }
         .metric-grid { gap: 8px; margin-top: 25px; }
         .metric { min-height: 152px; padding: 16px; border-radius: 17px; }
         .metric-value { margin-top: 14px; }
@@ -1067,6 +1177,11 @@
         .slide-shell--moat .title {
           max-width: 13ch;
           font-size: clamp(2.2rem, 4.6vw, 3.25rem);
+        }
+
+        .slide-shell--elad .title {
+          max-width: 14ch;
+          font-size: clamp(2.2rem, 4.5vw, 3.3rem);
         }
       }
 
@@ -1155,17 +1270,17 @@
                 <div class="toc-column">
                   <a class="toc-link" href="#3"><span class="toc-index">01</span><span class="toc-text">AI 래퍼란</span><span class="toc-arrow">→</span></a>
                   <a class="toc-link" href="#4"><span class="toc-index">02</span><span class="toc-text">AI Wrapper의 본질</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#7"><span class="toc-index">03</span><span class="toc-text">바이브 코딩</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#8"><span class="toc-index">04</span><span class="toc-text">숙제 베끼기</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#9"><span class="toc-index">05</span><span class="toc-text">캐릭터 챗</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#8"><span class="toc-index">03</span><span class="toc-text">바이브 코딩</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#9"><span class="toc-index">04</span><span class="toc-text">숙제 베끼기</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#10"><span class="toc-index">05</span><span class="toc-text">캐릭터 챗</span><span class="toc-arrow">→</span></a>
                 </div>
                 <div class="toc-column">
-                  <a class="toc-link" href="#10"><span class="toc-index">06</span><span class="toc-text">사진 보정</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#11"><span class="toc-index">07</span><span class="toc-text">식단 관리</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#12"><span class="toc-index">08</span><span class="toc-text">노트테이킹</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#13"><span class="toc-index">09</span><span class="toc-text">브라우저</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#14"><span class="toc-index">10</span><span class="toc-text">전문가 서비스</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#15"><span class="toc-index">11</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#11"><span class="toc-index">06</span><span class="toc-text">사진 보정</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#12"><span class="toc-index">07</span><span class="toc-text">식단 관리</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#13"><span class="toc-index">08</span><span class="toc-text">노트테이킹</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#14"><span class="toc-index">09</span><span class="toc-text">브라우저</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#15"><span class="toc-index">10</span><span class="toc-text">전문가 서비스</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#16"><span class="toc-index">11</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
                 </div>
               </nav>
             </div>
@@ -1256,6 +1371,34 @@
                 <section class="evidence-card"><span class="evidence-index">01</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">가치는 생긴다</h2><p class="evidence-text" contenteditable="true" spellcheck="false">기존 경험을 더 쉽고 빠르게 제공하면 사용자는 분명한 효용을 느낍니다.</p></div></section>
                 <section class="evidence-card"><span class="evidence-index">02</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">하지만 복제된다</h2><p class="evidence-text" contenteditable="true" spellcheck="false">모델·프롬프트·UI만으로 만든 기능은 모델 제공자와 경쟁자가 빠르게 따라옵니다.</p></div></section>
                 <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">해자는 뒤에서 만든다</h2><p class="evidence-text" contenteditable="true" spellcheck="false">고유 데이터·깊은 워크플로·유통과 신뢰를 쌓아야 방어력이 생깁니다.</p></div></section>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="02. Elad Gil의 관점">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--elad">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="copy copy--split">
+              <p class="kicker" contenteditable="true" spellcheck="false">한계 · 관점</p>
+              <h1 class="title" contenteditable="true" spellcheck="false">해자가 없어도<br /><span class="title-accent">기회는 사라지지 않는다</span></h1>
+              <p class="body" contenteditable="true" spellcheck="false">Elad Gil은 초기 AI·SaaS의 방어력이 약하더라도 고객의 필요를 잘 해결하는 일이 먼저라고 설명합니다. 방어력은 고객 가치 위에 시간이 지나며 쌓입니다.</p>
+              <p class="source-note">원문 출처 · <a href="https://blog.eladgil.com/p/defensibility-and-competition" target="_blank" rel="noreferrer">Defensibility &amp; Competition</a> · 2023.02.16<br />포트폴리오 · <a href="https://eladgil.com/" target="_blank" rel="noreferrer">Elad Gil 공식 프로필</a> · <a href="https://milkeninstitute.org/events/global-conference-2024/speakers/elad-gil" target="_blank" rel="noreferrer">Milken Institute</a></p>
+            </div>
+            <div class="visual" aria-label="Elad Gil의 원문과 번역">
+              <div class="elad-panel">
+                <figure class="elad-figure">
+                  <img class="elad-photo" src="assets/elad-gil.jpg" alt="Elad Gil at Collision 2023" />
+                  <figcaption class="elad-credit">Elad Gil · Investor &amp; Operator<br />사진: <a href="https://commons.wikimedia.org/wiki/File:Elad_Gil_(53006122469).jpg" target="_blank" rel="noreferrer">Collision Conf / Wikimedia Commons</a> · CC BY 2.0</figcaption>
+                </figure>
+                <blockquote class="elad-quote">
+                  <p class="elad-label">원문</p>
+                  <p class="elad-original">“serving a customer need well is often more important (and harder) to think about than defensibility. In many cases defensibility emerges over time.”</p>
+                  <p class="elad-label elad-label--translation">번역</p>
+                  <p class="elad-translation">“고객의 필요를 잘 충족하는 일이 방어력 자체보다 더 중요하고, 생각하기도 더 어렵습니다. 많은 경우 방어력은 시간이 지나며 생깁니다.”</p>
+                  <p class="elad-interpretation">해자가 없다는 사실이 고객 가치나 사업 기회를 없애는 것은 아닙니다. 먼저 문제를 해결하고, 데이터·워크플로·유통을 쌓으며 해자를 만들어가면 됩니다.</p>
+                </blockquote>
+                <p class="portfolio-note">투자·초기 투자 기업 · Airbnb · Stripe · Coinbase · Figma · Notion · Anduril · Deel · Instacart · Pinterest · OpenAI · Character · Harvey · Mistral · Perplexity · Pika</p>
               </div>
             </div>
           </article>
@@ -1457,7 +1600,7 @@
       <div class="page-controls" aria-label="페이지 이동">
         <button class="page-home-button" id="home-button" type="button" aria-label="첫 슬라이드로 이동">처음</button>
         <button id="previous-button" type="button" aria-label="이전 슬라이드">←</button>
-        <span class="page-counter" id="page-counter" aria-live="polite">01 / 17</span>
+        <span class="page-counter" id="page-counter" aria-live="polite">01 / 18</span>
         <button id="next-button" type="button" aria-label="다음 슬라이드">→</button>
       </div>
     </main>
