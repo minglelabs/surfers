@@ -31,10 +31,7 @@
         height: 100%;
         margin: 0;
         overflow: hidden;
-        background:
-          radial-gradient(130% 100% at 0% 0%, rgba(251, 188, 50, 0.11), transparent 52%),
-          radial-gradient(110% 120% at 100% 100%, rgba(249, 115, 22, 0.07), transparent 54%),
-          linear-gradient(135deg, #fffefb 0%, #fffaf1 44%, #fffdf7 100%);
+        background: var(--page);
         color: var(--title);
         font-family: "SF Pro Display", "Pretendard", "Apple SD Gothic Neo", "Segoe UI", sans-serif;
         -webkit-font-smoothing: antialiased;
@@ -81,28 +78,11 @@
       }
 
       .slide-shell::before {
-        position: absolute;
-        inset: 0;
-        z-index: -2;
-        content: "";
-        background:
-          linear-gradient(rgba(45, 42, 30, 0.025) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(45, 42, 30, 0.025) 1px, transparent 1px);
-        background-size: clamp(44px, 5vw, 76px) clamp(44px, 5vw, 76px);
-        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.42), transparent 82%);
+        display: none;
       }
 
       .slide-shell::after {
-        position: absolute;
-        top: 12%;
-        right: -15vw;
-        z-index: -1;
-        width: min(46vw, 620px);
-        aspect-ratio: 1;
-        border-radius: 50%;
-        content: "";
-        background: radial-gradient(circle at 32% 30%, rgba(251, 188, 50, 0.13), rgba(249, 115, 22, 0.02) 64%, transparent 67%);
-        pointer-events: none;
+        display: none;
       }
 
       .slide-shell--center {
@@ -140,22 +120,15 @@
       }
 
       .slide-shell--section {
-        background:
-          radial-gradient(60% 80% at 90% 20%, rgba(251, 188, 50, 0.28), transparent 74%),
-          radial-gradient(55% 80% at 0% 96%, rgba(249, 115, 22, 0.12), transparent 75%),
-          linear-gradient(138deg, #fff9ea, #fffdf7 65%);
+        background: var(--page);
       }
 
       .slide-shell--section::before {
-        opacity: 0.5;
+        display: none;
       }
 
       .slide-shell--section::after {
-        top: auto;
-        right: -8%;
-        bottom: -22%;
-        width: min(48vw, 720px);
-        background: radial-gradient(circle at 48% 42%, rgba(251, 188, 50, 0.22), rgba(249, 115, 22, 0.04) 65%, transparent 67%);
+        display: none;
       }
 
       .slide-shell--wrapper-limit .title {
@@ -369,32 +342,6 @@
         color: rgba(45, 42, 30, 0.26);
         content: "·";
       }
-
-      .hero-sun {
-        position: absolute;
-        top: clamp(16%, 18vh, 24%);
-        right: clamp(13%, 18vw, 24%);
-        width: clamp(58px, 7vw, 110px);
-        aspect-ratio: 1;
-        border-radius: 50%;
-        background: linear-gradient(145deg, #ffd778, var(--accent));
-        box-shadow: 0 0 0 17px rgba(251, 188, 50, 0.09), 0 28px 60px rgba(249, 115, 22, 0.16);
-      }
-
-      .hero-wave {
-        position: absolute;
-        right: min(-2vw, -20px);
-        bottom: min(-2vw, -20px);
-        width: min(65vw, 980px);
-        min-width: 560px;
-        opacity: 0.84;
-        pointer-events: none;
-      }
-
-      .hero-wave path { fill: none; stroke-linecap: round; }
-      .hero-wave .wave-a { stroke: var(--accent-strong); stroke-width: 10; }
-      .hero-wave .wave-b { stroke: var(--accent); stroke-width: 14; }
-      .hero-wave .wave-c { stroke: rgba(249, 115, 22, 0.16); stroke-width: 28; }
 
       .toc-grid {
         display: grid;
@@ -1174,22 +1121,16 @@
       }
 
       .slide:not(.is-active) .copy,
-      .slide:not(.is-active) .visual,
-      .slide:not(.is-active) .hero-wave,
-      .slide:not(.is-active) .hero-sun {
+      .slide:not(.is-active) .visual {
         opacity: 0.12;
       }
 
       .slide.is-active .copy,
-      .slide.is-active .visual,
-      .slide.is-active .hero-wave,
-      .slide.is-active .hero-sun {
+      .slide.is-active .visual {
         animation: enter 460ms var(--slide-ease) both;
       }
 
       .slide.is-active .visual { animation-delay: 70ms; }
-      .slide.is-active .hero-wave { animation-delay: 120ms; }
-      .slide.is-active .hero-sun { animation-delay: 160ms; }
 
       @keyframes enter {
         from { opacity: 0; transform: translateY(20px); }
@@ -1219,8 +1160,6 @@
         .title--hero { font-size: clamp(3.7rem, 12vw, 6.8rem); }
         .body { margin-top: 15px; font-size: clamp(0.95rem, 3.2vw, 1.15rem); line-height: 1.55; }
         .source-note { margin-top: 12px; font-size: 0.68rem; }
-        .hero-wave { right: -135px; width: 800px; }
-        .hero-sun { top: 14%; right: 13%; }
         .chapter-label { top: 24px; right: clamp(21px, 6vw, 44px); font-size: 0.62rem; }
         .toc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 25px; }
         .toc-column { gap: 8px; }
@@ -1315,8 +1254,6 @@
         .brand { left: 20px; }
         .title--hero { font-size: clamp(3rem, 14.5vw, 4.7rem); }
         .hero-meta { margin-top: 19px; font-size: 0.75rem; }
-        .hero-wave { right: -265px; width: 720px; opacity: 0.65; }
-        .hero-sun { width: 47px; box-shadow: 0 0 0 10px rgba(251, 188, 50, 0.09); }
         .chapter-label { top: 20px; right: 20px; font-size: 0.58rem; }
         .media-icon { width: 47px; height: 47px; margin-bottom: 9px; border-radius: 14px; font-size: 1.1rem; }
         .media-label { font-size: 0.85rem; }
@@ -1353,9 +1290,7 @@
         .page-controls button { transition: none; }
 
         .slide.is-active .copy,
-        .slide.is-active .visual,
-        .slide.is-active .hero-wave,
-        .slide.is-active .hero-sun { animation: none; }
+        .slide.is-active .visual { animation: none; }
       }
     </style>
   </head>
@@ -1970,13 +1905,6 @@
               <p class="body body--center" contenteditable="true" spellcheck="false">[새로운 기회를 살펴본 뒤 남길 결론과 제언을 적어주세요.]</p>
               <p class="final-chip" contenteditable="true" spellcheck="false"><span>→</span>[청중에게 요청할 다음 행동]</p>
             </div>
-            <div class="hero-sun" aria-hidden="true"></div>
-            <svg class="hero-wave" viewBox="0 0 900 620" aria-hidden="true">
-              <path class="wave-c" d="M-10 465 C170 280 278 618 478 394 C630 222 699 65 920 188" />
-              <path class="wave-a" d="M-2 518 C172 310 290 648 503 411 C642 255 746 117 910 222" />
-              <path class="wave-b" d="M-10 555 C179 364 320 648 548 452 C714 310 788 220 920 294" />
-              <path class="wave-a" d="M109 598 C259 464 370 605 550 523 C680 464 784 381 903 425" />
-            </svg>
           </article>
         </section>
 
