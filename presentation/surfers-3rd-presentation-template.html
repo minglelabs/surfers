@@ -2569,7 +2569,7 @@
         window.addEventListener("pagehide", saveEdits);
 
         function normalise(index) {
-          return ((index % total) + total) % total;
+          return Math.min(Math.max(index, 0), total - 1);
         }
 
         function indexFromHash() {
