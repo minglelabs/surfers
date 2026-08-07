@@ -143,6 +143,13 @@
         white-space: nowrap;
       }
 
+      .slide-shell--moat .title {
+        max-width: 12ch;
+        font-size: clamp(3rem, 5.6vw, 6.4rem);
+        line-height: 1.08;
+        letter-spacing: -0.085em;
+      }
+
       .brand {
         position: absolute;
         top: clamp(22px, 3vw, 42px);
@@ -905,7 +912,7 @@
       }
 
       .progress-fill {
-        width: 6.25%;
+        width: 5.882%;
         height: 100%;
         background: linear-gradient(90deg, var(--accent), var(--accent-strong));
         transition: width 380ms var(--slide-ease);
@@ -1056,6 +1063,11 @@
           font-size: clamp(2.25rem, 4.2vw, 3rem);
           white-space: nowrap;
         }
+
+        .slide-shell--moat .title {
+          max-width: 13ch;
+          font-size: clamp(2.2rem, 4.6vw, 3.25rem);
+        }
       }
 
       @media (max-width: 530px) {
@@ -1143,17 +1155,17 @@
                 <div class="toc-column">
                   <a class="toc-link" href="#3"><span class="toc-index">01</span><span class="toc-text">AI 래퍼란</span><span class="toc-arrow">→</span></a>
                   <a class="toc-link" href="#4"><span class="toc-index">02</span><span class="toc-text">AI Wrapper의 본질</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#6"><span class="toc-index">03</span><span class="toc-text">바이브 코딩</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#7"><span class="toc-index">04</span><span class="toc-text">숙제 베끼기</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#8"><span class="toc-index">05</span><span class="toc-text">캐릭터 챗</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#7"><span class="toc-index">03</span><span class="toc-text">바이브 코딩</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#8"><span class="toc-index">04</span><span class="toc-text">숙제 베끼기</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#9"><span class="toc-index">05</span><span class="toc-text">캐릭터 챗</span><span class="toc-arrow">→</span></a>
                 </div>
                 <div class="toc-column">
-                  <a class="toc-link" href="#9"><span class="toc-index">06</span><span class="toc-text">사진 보정</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#10"><span class="toc-index">07</span><span class="toc-text">식단 관리</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#11"><span class="toc-index">08</span><span class="toc-text">노트테이킹</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#12"><span class="toc-index">09</span><span class="toc-text">브라우저</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#13"><span class="toc-index">10</span><span class="toc-text">전문가 서비스</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#14"><span class="toc-index">11</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#10"><span class="toc-index">06</span><span class="toc-text">사진 보정</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#11"><span class="toc-index">07</span><span class="toc-text">식단 관리</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#12"><span class="toc-index">08</span><span class="toc-text">노트테이킹</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#13"><span class="toc-index">09</span><span class="toc-text">브라우저</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#14"><span class="toc-index">10</span><span class="toc-text">전문가 서비스</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#15"><span class="toc-index">11</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
                 </div>
               </nav>
             </div>
@@ -1225,6 +1237,25 @@
                     <span class="case-tag">Ambient AI · GUI → CUI</span>
                   </div>
                 </section>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="02. 래퍼의 한계">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--moat">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="copy copy--split">
+              <p class="kicker" contenteditable="true" spellcheck="false">한계</p>
+              <h1 class="title" contenteditable="true" spellcheck="false">AI Wrapper는<br /><span class="title-accent">가치가 있지만</span><br />해자가 없다</h1>
+              <p class="body" contenteditable="true" spellcheck="false">사용자에게 가치를 주는 것과 오래 방어할 수 있는 것은 다른 문제입니다. a16z 파트너 Bryan Kim은 소비자 AI의 현재를 “지금은 해자가 없다”고 진단했습니다.</p>
+              <p class="source-note">요지 · <a href="https://a16z.com/momentum-as-ai-moat/" target="_blank" rel="noreferrer">Bryan Kim, a16z (2025)</a> · <a href="https://blog.eladgil.com/p/defensibility-and-competition" target="_blank" rel="noreferrer">Elad Gil (2023)</a></p>
+            </div>
+            <div class="visual" aria-label="AI Wrapper의 한계와 해자 정리 카드">
+              <div class="evidence-stack">
+                <section class="evidence-card"><span class="evidence-index">01</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">가치는 생긴다</h2><p class="evidence-text" contenteditable="true" spellcheck="false">기존 경험을 더 쉽고 빠르게 제공하면 사용자는 분명한 효용을 느낍니다.</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">02</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">하지만 복제된다</h2><p class="evidence-text" contenteditable="true" spellcheck="false">모델·프롬프트·UI만으로 만든 기능은 모델 제공자와 경쟁자가 빠르게 따라옵니다.</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">해자는 뒤에서 만든다</h2><p class="evidence-text" contenteditable="true" spellcheck="false">고유 데이터·깊은 워크플로·유통과 신뢰를 쌓아야 방어력이 생깁니다.</p></div></section>
               </div>
             </div>
           </article>
@@ -1426,7 +1457,7 @@
       <div class="page-controls" aria-label="페이지 이동">
         <button class="page-home-button" id="home-button" type="button" aria-label="첫 슬라이드로 이동">처음</button>
         <button id="previous-button" type="button" aria-label="이전 슬라이드">←</button>
-        <span class="page-counter" id="page-counter" aria-live="polite">01 / 16</span>
+        <span class="page-counter" id="page-counter" aria-live="polite">01 / 17</span>
         <button id="next-button" type="button" aria-label="다음 슬라이드">→</button>
       </div>
     </main>
