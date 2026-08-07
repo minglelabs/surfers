@@ -111,6 +111,28 @@
         text-align: center;
       }
 
+      .chapter-divider-shell {
+        align-items: center;
+        justify-content: center;
+        background: var(--page);
+        text-align: center;
+      }
+
+      .chapter-divider-shell::before,
+      .chapter-divider-shell::after {
+        display: none;
+      }
+
+      .chapter-divider-title {
+        max-width: 20ch;
+        margin: 0 auto;
+        font-size: clamp(3.4rem, 7.2vw, 8rem);
+        font-weight: 700;
+        line-height: 1.08;
+        letter-spacing: -0.095em;
+        text-wrap: balance;
+      }
+
       .slide-shell--split {
         align-items: center;
         justify-content: space-between;
@@ -1373,23 +1395,29 @@
               <nav class="toc-grid" aria-label="목차 이동">
                 <div class="toc-column">
                   <a class="toc-link" href="#3"><span class="toc-index">01</span><span class="toc-text">AI 래퍼란</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#5"><span class="toc-index">02</span><span class="toc-text">AI 래퍼의 본질과 한계</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#13"><span class="toc-index">03</span><span class="toc-text">바이브 코딩</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#14"><span class="toc-index">04</span><span class="toc-text">숙제 베끼기</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#15"><span class="toc-index">05</span><span class="toc-text">캐릭터 챗</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#16"><span class="toc-index">06</span><span class="toc-text">사진 보정</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#6"><span class="toc-index">02</span><span class="toc-text">AI 래퍼의 본질과 한계</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#15"><span class="toc-index">03</span><span class="toc-text">바이브 코딩</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#17"><span class="toc-index">04</span><span class="toc-text">숙제 베끼기</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#19"><span class="toc-index">05</span><span class="toc-text">캐릭터 챗</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#21"><span class="toc-index">06</span><span class="toc-text">사진 보정</span><span class="toc-arrow">→</span></a>
                 </div>
                 <div class="toc-column">
-                  <a class="toc-link" href="#17"><span class="toc-index">07</span><span class="toc-text">식단 관리</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#18"><span class="toc-index">08</span><span class="toc-text">노트테이킹</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#19"><span class="toc-index">09</span><span class="toc-text">브라우저</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#20"><span class="toc-index">10</span><span class="toc-text">전문가 서비스</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#21"><span class="toc-index">11</span><span class="toc-text">AI 애그리게이터</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#22"><span class="toc-index">12</span><span class="toc-text">뜰 것 같은 분야들</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#23"><span class="toc-index">13</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#23"><span class="toc-index">07</span><span class="toc-text">식단 관리</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#25"><span class="toc-index">08</span><span class="toc-text">노트테이킹</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#27"><span class="toc-index">09</span><span class="toc-text">브라우저</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#29"><span class="toc-index">10</span><span class="toc-text">전문가 서비스</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#31"><span class="toc-index">11</span><span class="toc-text">AI 애그리게이터</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#33"><span class="toc-index">12</span><span class="toc-text">뜰 것 같은 분야들</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#35"><span class="toc-index">13</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
                 </div>
               </nav>
             </div>
+          </article>
+        </section>
+
+        <section class="slide chapter-divider" aria-label="챕터 1. AI 래퍼란">
+          <article class="slide-shell chapter-divider-shell">
+            <h1 class="chapter-divider-title" contenteditable="true" spellcheck="false">1. AI 래퍼란</h1>
           </article>
         </section>
 
@@ -1433,6 +1461,12 @@
                 </section>
               </div>
             </div>
+          </article>
+        </section>
+
+        <section class="slide chapter-divider" aria-label="챕터 2. AI 래퍼의 본질과 한계">
+          <article class="slide-shell chapter-divider-shell">
+            <h1 class="chapter-divider-title" contenteditable="true" spellcheck="false">2. AI 래퍼의 본질과 한계</h1>
           </article>
         </section>
 
@@ -1629,6 +1663,12 @@
           </article>
         </section>
 
+        <section class="slide chapter-divider" aria-label="챕터 3. 바이브 코딩">
+          <article class="slide-shell chapter-divider-shell">
+            <h1 class="chapter-divider-title" contenteditable="true" spellcheck="false">3. 바이브 코딩</h1>
+          </article>
+        </section>
+
         <section class="slide" aria-label="03. 바이브 코딩">
           <article class="slide-shell slide-shell--split">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
@@ -1645,6 +1685,12 @@
                 <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">기회 가설</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[래퍼 SW가 해결할 수 있는 일]</p></div></section>
               </div>
             </div>
+          </article>
+        </section>
+
+        <section class="slide chapter-divider" aria-label="챕터 4. 숙제 베끼기">
+          <article class="slide-shell chapter-divider-shell">
+            <h1 class="chapter-divider-title" contenteditable="true" spellcheck="false">4. 숙제 베끼기</h1>
           </article>
         </section>
 
@@ -1667,6 +1713,12 @@
           </article>
         </section>
 
+        <section class="slide chapter-divider" aria-label="챕터 5. 캐릭터 챗">
+          <article class="slide-shell chapter-divider-shell">
+            <h1 class="chapter-divider-title" contenteditable="true" spellcheck="false">5. 캐릭터 챗</h1>
+          </article>
+        </section>
+
         <section class="slide" aria-label="05. 캐릭터 챗">
           <article class="slide-shell slide-shell--split">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
@@ -1683,6 +1735,12 @@
                 <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">확장 가능성</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[다음 기능·고객·채널]</p></div></section>
               </div>
             </div>
+          </article>
+        </section>
+
+        <section class="slide chapter-divider" aria-label="챕터 6. 사진 보정">
+          <article class="slide-shell chapter-divider-shell">
+            <h1 class="chapter-divider-title" contenteditable="true" spellcheck="false">6. 사진 보정</h1>
           </article>
         </section>
 
@@ -1705,6 +1763,12 @@
           </article>
         </section>
 
+        <section class="slide chapter-divider" aria-label="챕터 7. 식단 관리">
+          <article class="slide-shell chapter-divider-shell">
+            <h1 class="chapter-divider-title" contenteditable="true" spellcheck="false">7. 식단 관리</h1>
+          </article>
+        </section>
+
         <section class="slide" aria-label="07. 식단 관리">
           <article class="slide-shell slide-shell--split">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
@@ -1721,6 +1785,12 @@
                 <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">지속성</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[꾸준히 쓰게 만드는 장치]</p></div></section>
               </div>
             </div>
+          </article>
+        </section>
+
+        <section class="slide chapter-divider" aria-label="챕터 8. 노트테이킹">
+          <article class="slide-shell chapter-divider-shell">
+            <h1 class="chapter-divider-title" contenteditable="true" spellcheck="false">8. 노트테이킹</h1>
           </article>
         </section>
 
@@ -1743,6 +1813,12 @@
           </article>
         </section>
 
+        <section class="slide chapter-divider" aria-label="챕터 9. 브라우저">
+          <article class="slide-shell chapter-divider-shell">
+            <h1 class="chapter-divider-title" contenteditable="true" spellcheck="false">9. 브라우저</h1>
+          </article>
+        </section>
+
         <section class="slide" aria-label="09. 브라우저">
           <article class="slide-shell slide-shell--split">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
@@ -1759,6 +1835,12 @@
                 <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">새 경험</h2><p class="evidence-text" contenteditable="true" spellcheck="false">[기존 웹을 어떻게 다시 묶는가]</p></div></section>
               </div>
             </div>
+          </article>
+        </section>
+
+        <section class="slide chapter-divider" aria-label="챕터 10. 전문가 서비스">
+          <article class="slide-shell chapter-divider-shell">
+            <h1 class="chapter-divider-title" contenteditable="true" spellcheck="false">10. 전문가 서비스</h1>
           </article>
         </section>
 
@@ -1781,6 +1863,12 @@
           </article>
         </section>
 
+        <section class="slide chapter-divider" aria-label="챕터 11. AI 애그리게이터">
+          <article class="slide-shell chapter-divider-shell">
+            <h1 class="chapter-divider-title" contenteditable="true" spellcheck="false">11. AI 애그리게이터</h1>
+          </article>
+        </section>
+
         <section class="slide" aria-label="11. AI 애그리게이터">
           <article class="slide-shell slide-shell--split slide-shell--wrapper">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
@@ -1797,6 +1885,12 @@
                 <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">중개만으로는 약하다</h2><p class="evidence-text" contenteditable="true" spellcheck="false">모델사가 직접 기능을 확장하면 단순 접근·결제·중개만으로는 마진과 해자를 지키기 어렵습니다.</p></div></section>
               </div>
             </div>
+          </article>
+        </section>
+
+        <section class="slide chapter-divider" aria-label="챕터 12. 뜰 것 같은 분야들">
+          <article class="slide-shell chapter-divider-shell">
+            <h1 class="chapter-divider-title" contenteditable="true" spellcheck="false">12. 뜰 것 같은 분야들</h1>
           </article>
         </section>
 
@@ -1829,6 +1923,12 @@
                 </section>
               </div>
             </div>
+          </article>
+        </section>
+
+        <section class="slide chapter-divider" aria-label="챕터 13. 미래와 제언">
+          <article class="slide-shell chapter-divider-shell">
+            <h1 class="chapter-divider-title" contenteditable="true" spellcheck="false">13. 미래와 제언</h1>
           </article>
         </section>
 
@@ -1887,7 +1987,7 @@
       <div class="page-controls" aria-label="페이지 이동">
         <button class="page-home-button" id="home-button" type="button" aria-label="첫 슬라이드로 이동">처음</button>
         <button id="previous-button" type="button" aria-label="이전 슬라이드">←</button>
-        <span class="page-counter" id="page-counter" aria-live="polite">01 / 25</span>
+        <span class="page-counter" id="page-counter" aria-live="polite">01 / 38</span>
         <button id="next-button" type="button" aria-label="다음 슬라이드">→</button>
       </div>
     </main>
