@@ -652,6 +652,24 @@
         white-space: nowrap;
       }
 
+      .slide-shell--ambient .copy--split {
+        flex: 0 1 38%;
+        max-width: 38rem;
+      }
+
+      .slide-shell--ambient .visual {
+        flex: 1 1 62%;
+        min-width: 0;
+      }
+
+      .slide-shell--ambient .evidence-stack {
+        width: min(100%, 48rem);
+      }
+
+      .slide-shell--ambient .evidence-title {
+        font-size: clamp(1.55rem, 2vw, 2.35rem);
+      }
+
       .case-stack {
         display: grid;
         gap: clamp(14px, 1.8vw, 22px);
@@ -1331,6 +1349,9 @@
         .evidence-card { padding: 13px 15px; border-radius: 15px; }
         .slide-shell--principles .evidence-card { padding: 4px 0; border-radius: 0; }
         .slide-shell--principles .evidence-title { font-size: clamp(1.75rem, 7vw, 3.3rem); }
+        .slide-shell--ambient .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
+        .slide-shell--ambient .visual { flex: 0 0 auto; width: 100%; }
+        .slide-shell--ambient .evidence-title { font-size: clamp(1.45rem, 5.2vw, 2.4rem); }
         .evidence-card:nth-child(2) { margin-left: 0; }
         .evidence-card:nth-child(3) { margin-left: 0; }
         .case-stack { width: 100%; gap: 8px; }
@@ -1624,7 +1645,7 @@
         </section>
 
         <section class="slide" aria-label="01. 성공적인 AI 래퍼의 세 가지 요소">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--principles">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--principles slide-shell--ambient">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
