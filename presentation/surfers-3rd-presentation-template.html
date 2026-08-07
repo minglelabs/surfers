@@ -710,6 +710,36 @@
         font-size: clamp(1.5rem, 2.5vw, 2.7rem);
       }
 
+      .slide-shell--cursor-series .logo-equation--stacked {
+        flex-direction: column;
+        gap: clamp(8px, 1.1vw, 16px);
+      }
+
+      .logo-equation-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(10px, 1.4vw, 20px);
+        color: var(--title);
+        font-size: clamp(1.75rem, 3vw, 3rem);
+        font-weight: 760;
+        letter-spacing: -0.07em;
+        line-height: 1;
+        white-space: nowrap;
+      }
+
+      .logo-equation-row--output {
+        margin-top: 1px;
+      }
+
+      .logo-equation-connector {
+        color: var(--body);
+        font-size: clamp(1.8rem, 3vw, 3rem);
+        font-weight: 760;
+        letter-spacing: 0.08em;
+        line-height: 0.75;
+      }
+
       .case-stack {
         display: grid;
         gap: clamp(14px, 1.8vw, 22px);
@@ -1436,6 +1466,9 @@
         .slide-shell--cursor-series .logo-equation { min-height: 285px; gap: 6px; }
         .slide-shell--cursor-series .logo-equation img { width: clamp(54px, 16vw, 100px); }
         .slide-shell--cursor-series .logo-equation-sign { font-size: clamp(1.3rem, 6vw, 2.3rem); }
+        .slide-shell--cursor-series .logo-equation--stacked { gap: 7px; }
+        .slide-shell--cursor-series .logo-equation--stacked .logo-equation-row { font-size: clamp(1.55rem, 7.5vw, 2.7rem); }
+        .slide-shell--cursor-series .logo-equation--stacked .logo-equation-connector { font-size: clamp(1.7rem, 7vw, 2.6rem); }
         .logo-service-name { font-size: clamp(0.95rem, 3.8vw, 1.15rem); }
         .evidence-card:nth-child(2) { margin-left: 0; }
         .evidence-card:nth-child(3) { margin-left: 0; }
@@ -1861,12 +1894,16 @@
               <h1 class="title" contenteditable="true" spellcheck="false">그 이유는 Cursor에 이르러서야 개발 환경에 AI를 완전히 통합했기 때문입니다.</h1>
             </div>
             <div class="visual" aria-label="VS Code와 ChatGPT가 Cursor로 통합되는 과정">
-              <div class="logo-equation">
-                <img src="assets/vscode-logo.svg" alt="VS Code 로고" />
-                <span class="logo-equation-sign" aria-hidden="true">+</span>
-                <img src="assets/chatgpt-logo.svg" alt="ChatGPT 로고" />
-                <span class="logo-equation-sign" aria-hidden="true">=</span>
-                <img src="assets/cursor-logo.svg" alt="Cursor 로고" />
+              <div class="logo-equation logo-equation--stacked">
+                <div class="logo-equation-row">
+                  <span contenteditable="true" spellcheck="false">VSCODE</span>
+                  <span class="logo-equation-sign" aria-hidden="true">+</span>
+                  <span contenteditable="true" spellcheck="false">챗지피티</span>
+                </div>
+                <span class="logo-equation-connector" aria-hidden="true">||</span>
+                <div class="logo-equation-row logo-equation-row--output">
+                  <span contenteditable="true" spellcheck="false">커서</span>
+                </div>
               </div>
             </div>
           </article>
