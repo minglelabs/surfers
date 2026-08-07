@@ -2046,6 +2046,18 @@
           return true;
         }
 
+        function normaliseLegacyWrapperDefinitionSlide() {
+          const slide = slides.find((item) => item.getAttribute("aria-label") === "01. AI 래퍼(Wrapper)란?");
+          const body = slide?.querySelector(".body--focus");
+          if (!body) return false;
+
+          const text = body.textContent.replace(/\s+/g, " ").trim();
+          if (text !== "AI 래퍼(Wrapper)란?") return false;
+
+          body.innerHTML = "AI 래퍼(Wrapper)란?<br />“파운데이션 모델 위에 UI만 구현해서 만든 소프트웨어”<br />를 뜻합니다.";
+          return true;
+        }
+
         function downloadDeck() {
           saveEdits();
           const blob = new Blob([`<!doctype html>\n${document.documentElement.outerHTML}`], { type: "text/html;charset=utf-8" });
@@ -2060,7 +2072,9 @@
         }
 
         readSavedEdits();
-        if (normaliseLegacyWrapperApiSlide()) saveEdits();
+        const didNormaliseDefinition = normaliseLegacyWrapperDefinitionSlide();
+        const didNormaliseApi = normaliseLegacyWrapperApiSlide();
+        if (didNormaliseDefinition || didNormaliseApi) saveEdits();
         editableEntries.forEach(({ element }) => {
           element.addEventListener("input", saveEdits);
           element.addEventListener("blur", saveEdits);
