@@ -681,6 +681,16 @@
         min-width: 0;
       }
 
+      .slide-shell--cursor-integration .copy--split {
+        flex: 1 1 74%;
+        max-width: 78rem;
+      }
+
+      .slide-shell--cursor-integration .visual {
+        flex: 0 1 24rem;
+        width: min(100%, 24rem);
+      }
+
       .slide-shell--cursor-series .chatgpt-logo {
         min-height: clamp(280px, 32vw, 430px);
       }
@@ -1566,6 +1576,8 @@
 
         .slide-shell--cursor-series .copy--split { flex: 1 1 68%; }
         .slide-shell--cursor-series .visual { flex: 0 1 30rem; width: auto; }
+        .slide-shell--cursor-integration .copy--split { flex: 1 1 74%; }
+        .slide-shell--cursor-integration .visual { flex: 0 1 24rem; width: auto; }
 
         .slide-shell--wrapper-limit .title {
           max-width: none;
@@ -1909,7 +1921,7 @@
         </section>
 
         <section class="slide" aria-label="01. Cursor의 통합 경험">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--cursor-series">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--cursor-series slide-shell--cursor-integration">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
