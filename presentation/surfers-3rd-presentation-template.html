@@ -1990,6 +1990,56 @@
         let activeIndex = 0;
         let wheelLocked = false;
         let touchStart = null;
+        const editStorageKey = "surfers-3rd-presentation-edits-v1";
+        const editableEntries = Array.from(document.querySelectorAll('[contenteditable="true"]')).map((element) => {
+          const slide = element.closest(".slide");
+          const slideIndex = slides.indexOf(slide);
+          const slideLabel = slide?.getAttribute("aria-label") || `slide-${slideIndex + 1}`;
+          const slideEditables = Array.from(slide?.querySelectorAll('[contenteditable="true"]') || []);
+          const elementIndex = slideEditables.indexOf(element);
+          return { element, key: `${slideLabel}::${elementIndex}` };
+        });
+
+        function readSavedEdits() {
+          try {
+            const saved = JSON.parse(window.localStorage.getItem(editStorageKey) || "{}");
+            editableEntries.forEach(({ element, key }) => {
+              if (Object.prototype.hasOwnProperty.call(saved, key)) element.innerHTML = saved[key];
+            });
+          } catch {
+            // Local storage can be unavailable for restricted file origins.
+          }
+        }
+
+        function saveEdits() {
+          try {
+            const saved = {};
+            editableEntries.forEach(({ element, key }) => { saved[key] = element.innerHTML; });
+            window.localStorage.setItem(editStorageKey, JSON.stringify(saved));
+          } catch {
+            // Local storage can be unavailable for restricted file origins.
+          }
+        }
+
+        function downloadDeck() {
+          saveEdits();
+          const blob = new Blob([`<!doctype html>\n${document.documentElement.outerHTML}`], { type: "text/html;charset=utf-8" });
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement("a");
+          link.href = url;
+          link.download = "surfers-3rd-presentation-edited.html";
+          document.body.append(link);
+          link.click();
+          link.remove();
+          window.setTimeout(() => URL.revokeObjectURL(url), 0);
+        }
+
+        readSavedEdits();
+        editableEntries.forEach(({ element }) => {
+          element.addEventListener("input", saveEdits);
+          element.addEventListener("blur", saveEdits);
+        });
+        window.addEventListener("pagehide", saveEdits);
 
         function normalise(index) {
           return ((index % total) + total) % total;
@@ -2030,6 +2080,11 @@
         nextButton.addEventListener("click", () => move(1));
 
         window.addEventListener("keydown", (event) => {
+          if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "s") {
+            event.preventDefault();
+            downloadDeck();
+            return;
+          }
           if (event.target instanceof HTMLElement && event.target.isContentEditable) return;
           const forward = ["ArrowRight", "ArrowDown", "PageDown", " "];
           const backward = ["ArrowLeft", "ArrowUp", "PageUp"];
