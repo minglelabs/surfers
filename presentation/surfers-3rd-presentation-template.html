@@ -2493,6 +2493,27 @@
           return true;
         }
 
+        function normaliseLegacyCursorIntegrationLabels() {
+          const slide = slides.find((item) => item.getAttribute("aria-label") === "01. Cursor의 통합 경험");
+          const labels = Array.from(slide?.querySelectorAll(".logo-service-name") || []);
+          const replacements = new Map([
+            ["VSCODE", "VS Code"],
+            ["챗지피티", "ChatGPT"],
+            ["커서", "Cursor"],
+          ]);
+          let changed = false;
+
+          labels.forEach((label) => {
+            const current = label.textContent.replace(/\s+/g, " ").trim();
+            const replacement = replacements.get(current);
+            if (!replacement || replacement === current) return;
+            label.textContent = replacement;
+            changed = true;
+          });
+
+          return changed;
+        }
+
         function downloadDeck() {
           saveEdits();
           const blob = new Blob([`<!doctype html>\n${document.documentElement.outerHTML}`], { type: "text/html;charset=utf-8" });
@@ -2509,7 +2530,8 @@
         readSavedEdits();
         const didNormaliseDefinition = normaliseLegacyWrapperDefinitionSlide();
         const didNormaliseApi = normaliseLegacyWrapperApiSlide();
-        if (didNormaliseDefinition || didNormaliseApi) saveEdits();
+        const didNormaliseCursorLabels = normaliseLegacyCursorIntegrationLabels();
+        if (didNormaliseDefinition || didNormaliseApi || didNormaliseCursorLabels) saveEdits();
         editableEntries.forEach(({ element }) => {
           element.addEventListener("input", saveEdits);
           element.addEventListener("blur", saveEdits);
