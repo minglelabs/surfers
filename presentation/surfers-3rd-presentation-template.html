@@ -691,6 +691,32 @@
         width: min(100%, 24rem);
       }
 
+      .slide-shell--cursor-bridge .copy--split {
+        flex: 1 1 76%;
+        max-width: 80rem;
+      }
+
+      .slide-shell--cursor-bridge .visual {
+        flex: 0 1 21rem;
+        width: min(100%, 21rem);
+      }
+
+      .slide-shell--cursor-bridge .logo-bridge {
+        flex-direction: column;
+        gap: clamp(12px, 1.5vw, 22px);
+        width: min(100%, 21rem);
+        min-height: clamp(360px, 42vw, 560px);
+      }
+
+      .slide-shell--cursor-bridge .logo-bridge-arrow {
+        min-width: 0;
+        gap: 10px;
+      }
+
+      .slide-shell--cursor-bridge .logo-bridge-symbol {
+        transform: rotate(90deg);
+      }
+
       .slide-shell--cursor-series .chatgpt-logo {
         min-height: clamp(280px, 32vw, 430px);
       }
@@ -1523,6 +1549,8 @@
         .logo-bridge-arrow { min-width: clamp(68px, 20vw, 100px); gap: 10px; }
         .logo-bridge-caption { font-size: clamp(0.68rem, 2.4vw, 0.82rem); }
         .logo-bridge-symbol { font-size: clamp(1.8rem, 8vw, 3rem); }
+        .slide-shell--cursor-bridge .logo-bridge { width: 100%; min-height: 285px; }
+        .slide-shell--cursor-bridge .logo-bridge-arrow { min-width: 0; }
         .logo-image { width: 78px; height: 78px; border-radius: 17px; }
         .logo-name { margin-top: 6px; font-size: 0.98rem; }
         .logo-caption { margin-top: 2px; font-size: 0.7rem; }
@@ -1578,6 +1606,8 @@
         .slide-shell--cursor-series .visual { flex: 0 1 30rem; width: auto; }
         .slide-shell--cursor-integration .copy--split { flex: 1 1 74%; }
         .slide-shell--cursor-integration .visual { flex: 0 1 24rem; width: auto; }
+        .slide-shell--cursor-bridge .copy--split { flex: 1 1 76%; }
+        .slide-shell--cursor-bridge .visual { flex: 0 1 21rem; width: auto; }
 
         .slide-shell--wrapper-limit .title {
           max-width: none;
@@ -1954,7 +1984,7 @@
         </section>
 
         <section class="slide" aria-label="01. Cursor 이전의 코딩 경험">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--cursor-series">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--cursor-series slide-shell--cursor-bridge">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
