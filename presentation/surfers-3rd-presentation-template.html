@@ -136,6 +136,13 @@
         background: radial-gradient(circle at 48% 42%, rgba(251, 188, 50, 0.22), rgba(249, 115, 22, 0.04) 65%, transparent 67%);
       }
 
+      .slide-shell--wrapper-limit .title {
+        max-width: none;
+        font-size: clamp(2.45rem, 4.3vw, 4.9rem);
+        letter-spacing: -0.082em;
+        white-space: nowrap;
+      }
+
       .brand {
         position: absolute;
         top: clamp(22px, 3vw, 42px);
@@ -548,6 +555,71 @@
         letter-spacing: -0.03em;
       }
 
+      .case-stack {
+        display: grid;
+        gap: clamp(14px, 1.8vw, 22px);
+        width: min(100%, 42rem);
+      }
+
+      .case-card {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: clamp(14px, 1.8vw, 22px);
+        align-items: start;
+        padding: clamp(20px, 2.4vw, 31px);
+        border: 1px solid var(--soft);
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.76);
+        box-shadow: 0 16px 38px rgba(131, 85, 13, 0.07);
+      }
+
+      .case-card:nth-child(2) { margin-left: clamp(14px, 2.8vw, 46px); }
+
+      .case-mark {
+        display: grid;
+        width: clamp(48px, 5vw, 64px);
+        height: clamp(48px, 5vw, 64px);
+        place-items: center;
+        border-radius: 18px;
+        background: #111;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        font-size: clamp(1.4rem, 2.5vw, 2rem);
+        font-weight: 800;
+        letter-spacing: -0.08em;
+      }
+
+      .case-mark--cursor {
+        background: linear-gradient(145deg, #f7f7f4, #d9d8d2);
+        color: #24231e;
+        border: 1px solid rgba(45, 42, 30, 0.12);
+        box-shadow: inset 0 0 0 7px rgba(255, 255, 255, 0.54);
+        font-size: clamp(1.2rem, 2.3vw, 1.8rem);
+      }
+
+      .case-title {
+        font-size: clamp(1.1rem, 1.65vw, 1.48rem);
+        font-weight: 780;
+        letter-spacing: -0.055em;
+      }
+
+      .case-text {
+        margin-top: 8px;
+        color: var(--body);
+        font-size: clamp(0.88rem, 1.08vw, 1rem);
+        line-height: 1.55;
+        letter-spacing: -0.03em;
+      }
+
+      .case-tag {
+        display: inline-block;
+        margin-top: 15px;
+        color: var(--accent-strong);
+        font-size: clamp(0.72rem, 0.9vw, 0.82rem);
+        font-weight: 820;
+        letter-spacing: 0.02em;
+      }
+
       .metric-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -833,7 +905,7 @@
       }
 
       .progress-fill {
-        width: 6.666%;
+        width: 6.25%;
         height: 100%;
         background: linear-gradient(90deg, var(--accent), var(--accent-strong));
         transition: width 380ms var(--slide-ease);
@@ -931,6 +1003,12 @@
         .evidence-card { padding: 13px 15px; border-radius: 15px; }
         .evidence-card:nth-child(2) { margin-left: 18px; }
         .evidence-card:nth-child(3) { margin-left: 0; }
+        .case-stack { width: 100%; gap: 8px; }
+        .case-card { padding: 14px 15px; border-radius: 17px; }
+        .case-card:nth-child(2) { margin-left: 18px; }
+        .case-mark { width: 42px; height: 42px; border-radius: 13px; }
+        .case-text { margin-top: 5px; line-height: 1.42; }
+        .case-tag { margin-top: 9px; font-size: 0.7rem; }
         .metric-grid { gap: 8px; margin-top: 25px; }
         .metric { min-height: 152px; padding: 16px; border-radius: 17px; }
         .metric-value { margin-top: 14px; }
@@ -1064,18 +1142,18 @@
               <nav class="toc-grid" aria-label="목차 이동">
                 <div class="toc-column">
                   <a class="toc-link" href="#3"><span class="toc-index">01</span><span class="toc-text">AI 래퍼란</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#4"><span class="toc-index">02</span><span class="toc-text">래퍼의 본질과 한계</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#5"><span class="toc-index">03</span><span class="toc-text">바이브 코딩</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#6"><span class="toc-index">04</span><span class="toc-text">숙제 베끼기</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#7"><span class="toc-index">05</span><span class="toc-text">캐릭터 챗</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#4"><span class="toc-index">02</span><span class="toc-text">AI Wrapper의 본질</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#6"><span class="toc-index">03</span><span class="toc-text">바이브 코딩</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#7"><span class="toc-index">04</span><span class="toc-text">숙제 베끼기</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#8"><span class="toc-index">05</span><span class="toc-text">캐릭터 챗</span><span class="toc-arrow">→</span></a>
                 </div>
                 <div class="toc-column">
-                  <a class="toc-link" href="#8"><span class="toc-index">06</span><span class="toc-text">사진 보정</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#9"><span class="toc-index">07</span><span class="toc-text">식단 관리</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#10"><span class="toc-index">08</span><span class="toc-text">노트테이킹</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#11"><span class="toc-index">09</span><span class="toc-text">브라우저</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#12"><span class="toc-index">10</span><span class="toc-text">전문가 서비스</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#13"><span class="toc-index">11</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#9"><span class="toc-index">06</span><span class="toc-text">사진 보정</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#10"><span class="toc-index">07</span><span class="toc-text">식단 관리</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#11"><span class="toc-index">08</span><span class="toc-text">노트테이킹</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#12"><span class="toc-index">09</span><span class="toc-text">브라우저</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#13"><span class="toc-index">10</span><span class="toc-text">전문가 서비스</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#14"><span class="toc-index">11</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
                 </div>
               </nav>
             </div>
@@ -1101,20 +1179,52 @@
           </article>
         </section>
 
-        <section class="slide" aria-label="02. 래퍼의 본질과 한계">
+        <section class="slide" aria-label="02. AI Wrapper의 본질">
           <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--wrapper-limit">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="copy copy--split">
               <p class="kicker" contenteditable="true" spellcheck="false">02 / 11</p>
-              <h1 class="title" contenteditable="true" spellcheck="false">래퍼의 본질과 <span class="title-accent">한계</span></h1>
-              <p class="body" contenteditable="true" spellcheck="false">Cursor는 여러 모델을 골라 쓰는 AI 코딩 에디터입니다. 코드베이스 맥락과 편집·실행 도구를 묶어, 모델 호출을 개발 워크플로로 바꿉니다.</p>
-              <p class="source-note">출처 · <a href="https://www.cursor.com/features" target="_blank" rel="noreferrer">Cursor Features</a> · <a href="https://www.cursor.com/security" target="_blank" rel="noreferrer">Cursor Security</a></p>
+              <h1 class="title" contenteditable="true" spellcheck="false">AI Wrapper의 <span class="title-accent">본질</span></h1>
+              <p class="body" contenteditable="true" spellcheck="false">AI Wrapper의 본질은 기존에도 이미 존재하던 유저 경험을 AI를 활용해 자동으로 제공해주는 것입니다. 성공한 서비스는 기능보다 사용환경에 먼저 녹아듭니다.</p>
+              <p class="source-note">출처 · <a href="https://www.crv.com/content/what-is-an-ai-wrapper" target="_blank" rel="noreferrer">CRV, What is an AI Wrapper?</a> · <a href="https://www.cursor.com/features" target="_blank" rel="noreferrer">Cursor Features</a> · <a href="https://help.x.com/ko/using-x/translate-posts" target="_blank" rel="noreferrer">X 도움말</a></p>
             </div>
-            <div class="visual" aria-label="래퍼의 본질과 한계 정리 카드">
+            <div class="visual" aria-label="AI Wrapper 성공 조건 정리 카드">
               <div class="evidence-stack">
-                <section class="evidence-card"><span class="evidence-index">01</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">본질</h2><p class="evidence-text" contenteditable="true" spellcheck="false">범용 모델을 특정 업무 맥락에 넣어 결과를 만듭니다.</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">02</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">Cursor</h2><p class="evidence-text" contenteditable="true" spellcheck="false">코드베이스 맥락·편집기·Agent를 묶은 구체적 사례입니다.</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">한계</h2><p class="evidence-text" contenteditable="true" spellcheck="false">모델·가격·정책 변화에 영향받으므로 실행과 워크플로가 중요합니다.</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">01</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">Ambient AI</h2><p class="evidence-text" contenteditable="true" spellcheck="false">사용환경에 AI 서비스가 완전히 통합되어 자동으로 적용되어야 합니다.</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">02</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">알잘딱</h2><p class="evidence-text" contenteditable="true" spellcheck="false">유저에게 딸깍 이상의 조작을 요구하지 않고, 알아서 결과를 내야 합니다.</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title" contenteditable="true" spellcheck="false">GUI → CUI</h2><p class="evidence-text" contenteditable="true" spellcheck="false">기능과 화면을 찾아 헤매는 대신, 말 한마디로 끝낼 수 있어야 합니다.</p></div></section>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="02. 참고 사례">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--case">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="copy copy--split">
+              <p class="kicker" contenteditable="true" spellcheck="false">참고 사례</p>
+              <h1 class="title" contenteditable="true" spellcheck="false">두 가지 <span class="title-accent">사례</span></h1>
+              <p class="body" contenteditable="true" spellcheck="false">X의 자동 번역과 Cursor는 서로 다른 제품이지만, 이미 존재하던 유저 경험을 AI로 자동 제공한다는 점에서 같은 원리를 공유합니다.</p>
+              <p class="source-note">출처 · <a href="https://help.x.com/ko/using-x/translate-posts" target="_blank" rel="noreferrer">X 도움말</a> · <a href="https://www.cursor.com/features" target="_blank" rel="noreferrer">Cursor Features</a></p>
+            </div>
+            <div class="visual" aria-label="X 자동 번역과 Cursor 사례">
+              <div class="case-stack">
+                <section class="case-card">
+                  <div class="case-mark" aria-hidden="true">𝕏</div>
+                  <div>
+                    <h2 class="case-title" contenteditable="true" spellcheck="false">X 자동 번역</h2>
+                    <p class="case-text" contenteditable="true" spellcheck="false">번역 버튼을 찾아 다른 도구로 이동하지 않아도, 읽던 흐름 안에서 번역을 바로 확인합니다.</p>
+                    <span class="case-tag">Ambient AI · 알잘딱</span>
+                  </div>
+                </section>
+                <section class="case-card">
+                  <div class="case-mark case-mark--cursor" aria-hidden="true">C</div>
+                  <div>
+                    <h2 class="case-title" contenteditable="true" spellcheck="false">Cursor</h2>
+                    <p class="case-text" contenteditable="true" spellcheck="false">에디터·코드베이스·실행 환경을 한곳에 묶고, 말 한마디로 수정과 실행까지 이어갑니다.</p>
+                    <span class="case-tag">Ambient AI · GUI → CUI</span>
+                  </div>
+                </section>
               </div>
             </div>
           </article>
@@ -1316,7 +1426,7 @@
       <div class="page-controls" aria-label="페이지 이동">
         <button class="page-home-button" id="home-button" type="button" aria-label="첫 슬라이드로 이동">처음</button>
         <button id="previous-button" type="button" aria-label="이전 슬라이드">←</button>
-        <span class="page-counter" id="page-counter" aria-live="polite">01 / 15</span>
+        <span class="page-counter" id="page-counter" aria-live="polite">01 / 16</span>
         <button id="next-button" type="button" aria-label="다음 슬라이드">→</button>
       </div>
     </main>
