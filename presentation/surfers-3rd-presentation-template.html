@@ -1154,6 +1154,36 @@
         letter-spacing: -0.03em;
       }
 
+      .slide-shell--moat-list .evidence-stack {
+        gap: clamp(17px, 2vw, 28px);
+        width: min(100%, 44rem);
+      }
+
+      .slide-shell--moat-list .evidence-card {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: clamp(16px, 2vw, 28px);
+        padding: 0;
+        overflow: visible;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      .slide-shell--moat-list .evidence-index {
+        padding-top: 0.08em;
+        font-size: clamp(1.45rem, 2vw, 2rem);
+        letter-spacing: 0;
+      }
+
+      .slide-shell--moat-list .evidence-title {
+        font-size: clamp(2rem, 3.6vw, 4rem);
+        font-weight: 760;
+        line-height: 1.16;
+        letter-spacing: -0.075em;
+      }
+
       .slide-shell--principles .evidence-card {
         padding: clamp(7px, 1vw, 13px) 0;
         overflow: visible;
@@ -3283,7 +3313,7 @@
             <div class="chapter-label">미래와 제언</div>
             <div class="copy copy--split">
               <p class="kicker">MOAT</p>
-              <h1 class="title">래퍼로 시작하되, <br/><span class="title-accent">해자를 만들자</span></h1>
+              <h1 class="title">래퍼로 시작하되 <br/><span class="title-accent">해자를 만들자</span></h1>
             </div>
             <div class="visual" aria-label="Paul Graham의 인용문">
               <div class="quote-only">
@@ -3296,7 +3326,7 @@
         </section>
 
         <section class="slide" aria-label="03. 미래와 제언">
-          <article class="slide-shell slide-shell--split">
+          <article class="slide-shell slide-shell--split slide-shell--moat-list">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">미래와 제언</div>
             <div class="copy copy--split">
@@ -3305,9 +3335,11 @@
             </div>
             <div class="visual" aria-label="SW가 해자를 만드는 방법">
               <div class="evidence-stack">
-                <section class="evidence-card"><span class="evidence-index">1</span><div><h2 class="evidence-title">네트워크 효과</h2><p class="evidence-text">사용자·거래·데이터가 늘수록 서비스 가치가 커져 후발주자가 따라오기 어려워집니다.</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">2</span><div><h2 class="evidence-title">Innovation Stack</h2><p class="evidence-text">기술·운영·유통을 연쇄적으로 쌓아 복제하기 어려운 시스템을 만듭니다. CUDA와 스퀘어가 예시입니다.</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">3</span><div><h2 class="evidence-title">오프라인 비즈니스와의 연계</h2><p class="evidence-text">소프트웨어를 매장·장비·공급망과 연결해 온라인 기능만으로는 복제하기 어려운 운영 자산을 만듭니다.</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">1</span><div><h2 class="evidence-title">네트워크 효과</h2></div></section>
+                <section class="evidence-card"><span class="evidence-index">2</span><div><h2 class="evidence-title">스위칭 비용 (데이터,워크플로우 락인)</h2></div></section>
+                <section class="evidence-card"><span class="evidence-index">3</span><div><h2 class="evidence-title">하드웨어·오프라인 연계</h2></div></section>
+                <section class="evidence-card"><span class="evidence-index">4</span><div><h2 class="evidence-title">독점 데이터</h2></div></section>
+                <section class="evidence-card"><span class="evidence-index">5</span><div><h2 class="evidence-title">단순 기술력</h2></div></section>
               </div>
             </div>
           </article>
