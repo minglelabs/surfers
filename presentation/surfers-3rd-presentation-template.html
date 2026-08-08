@@ -1425,6 +1425,24 @@
         letter-spacing: 0.02em;
       }
 
+      .slide-shell--future-fields .case-stack {
+        width: min(100%, 42rem);
+      }
+
+      .slide-shell--future-fields .case-card {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+      }
+
+      .slide-shell--future-fields .case-title {
+        font-size: clamp(1.25rem, 1.8vw, 1.62rem);
+      }
+
+      .slide-shell--future-fields .case-tag {
+        margin-top: 10px;
+        font-size: clamp(0.82rem, 1vw, 0.94rem);
+      }
+
       .logo-stack {
         position: relative;
         display: grid;
@@ -2912,7 +2930,7 @@
             <div class="chapter-label">래퍼 서비스 사례</div>
             <div class="copy copy--split">
               <p class="kicker">STUDY</p>
-              <h1 class="title">후발주자 StudyFetch가<br />새로운 방향을 제시하는 것 같습니다</h1>
+              <h1 class="title">후발주자 StudyFetch가<br />새로운 방향을 제시했습니다</h1>
             </div>
             <div class="visual" aria-label="StudyFetch 로고">
               <img class="study-example-image" src="./assets/studyfetch-wordmark.png" alt="StudyFetch 로고" />
@@ -3503,7 +3521,7 @@
         </section>
 
         <section class="slide" aria-label="11. 뜰 것 같은 분야들">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--future-fields">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">뜰 것 같은 분야들</div>
             <div class="copy copy--split">
@@ -3514,18 +3532,26 @@
             <div class="visual" aria-label="뜰 것 같은 분야들 정리 카드">
               <div class="case-stack">
                 <section class="case-card">
-                  <div class="case-mark" aria-hidden="true">T</div>
                   <div>
-                    <h2 class="case-title">항공편/숙소 찾기 자동화</h2>
-                    <p class="case-text">여행 조건을 던지면 후보·일정·동선을 이어서 만들고, 항공편 정보까지 자동으로 반영합니다. underduck의 Toki가 저장한 여행 콘텐츠를 최적 동선으로 바꾸는 사례입니다.</p>
-                    <span class="case-tag">예시 · underduck Toki</span>
+                    <h2 class="case-title">항공편/숙소/여행상품 찾기 자동화</h2>
+                    <span class="case-tag">예시 · Toki</span>
                   </div>
                 </section>
                 <section class="case-card">
-                  <div class="case-mark" aria-hidden="true">A</div>
                   <div>
                     <h2 class="case-title">영업용 AI 솔루션</h2>
-                    <p class="case-text">영업 통화 중 기술 질문이 나오면 문서·Slack·과거 콜에서 답을 찾아 실시간으로 제안하고, 다음 질문과 코칭까지 제공합니다.</p>
+                    <span class="case-tag">예시 · Caret</span>
+                  </div>
+                </section>
+                <section class="case-card">
+                  <div>
+                    <h2 class="case-title">광고 제작과정 자동화 에이전트</h2>
+                    <span class="case-tag">예시 · GRIIM AI</span>
+                  </div>
+                </section>
+                <section class="case-card">
+                  <div>
+                    <h2 class="case-title">CUI 브라우저</h2>
                     <span class="case-tag">예시 · Aside</span>
                   </div>
                 </section>
