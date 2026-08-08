@@ -1294,6 +1294,20 @@
         filter: grayscale(0.8);
       }
 
+      /* Give page 49 more room for its copy while keeping the evidence column compact. */
+      .slide-shell--ambient-focus-always-on .copy--split {
+        flex: 1 1 55%;
+        max-width: none;
+        min-width: 0;
+      }
+
+      .slide-shell--ambient-focus-always-on .visual {
+        flex: 0 0 30rem;
+        width: 30rem;
+        max-width: 30rem;
+        min-width: 0;
+      }
+
       .slide-shell--always-on .copy--split,
       .slide-shell--translation-toggle .copy--split {
         flex: 1 1 48%;
@@ -1360,6 +1374,19 @@
       .slide-shell--cursor-series .visual {
         flex: 0 1 30rem;
         width: min(100%, 30rem);
+        min-width: 0;
+      }
+
+      /* Page 48 uses a narrower visual column so the title can breathe. */
+      .slide-shell--cursor-launch .copy--split {
+        flex: 1 1 78%;
+        max-width: none;
+        min-width: 0;
+      }
+
+      .slide-shell--cursor-launch .visual {
+        flex: 0 1 21rem;
+        width: min(100%, 21rem);
         min-width: 0;
       }
 
@@ -2431,6 +2458,8 @@
         .slide-shell--principles .evidence-title { font-size: clamp(1.75rem, 7vw, 3.3rem); }
         .slide-shell--ambient .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--ambient .visual { flex: 0 0 auto; width: 100%; }
+        .slide-shell--ambient-focus-always-on .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
+        .slide-shell--ambient-focus-always-on .visual { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--ambient .evidence-card { grid-template-columns: auto minmax(0, 1fr); justify-content: normal; }
         .slide-shell--ambient .evidence-title { font-size: clamp(1.95rem, 6.5vw, 3.15rem); }
         .slide-shell--always-on .copy--split,
@@ -2444,6 +2473,8 @@
         .translation-toggle img { max-height: 25vh; object-fit: contain; }
         .slide-shell--cursor-series .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--cursor-series .visual { flex: 0 0 auto; width: 100%; }
+        .slide-shell--cursor-launch .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
+        .slide-shell--cursor-launch .visual { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--cursor-integration .visual { left: 0; margin-left: 0; margin-right: 0; }
         .slide-shell--cursor-bridge .visual { left: 0; margin-left: 0; margin-right: 0; }
         .slide-shell--bigtech { display: flex; }
@@ -2585,8 +2616,12 @@
 
         .slide-shell--cursor-series .copy--split { flex: 1 1 68%; }
         .slide-shell--cursor-series .visual { flex: 0 1 30rem; width: auto; }
+        .slide-shell--cursor-launch .copy--split { flex: 1 1 78%; max-width: none; }
+        .slide-shell--cursor-launch .visual { flex: 0 1 21rem; width: auto; }
         .slide-shell--ambient .copy--split { flex: 1 1 34%; }
         .slide-shell--ambient .visual { flex: 1 1 66%; }
+        .slide-shell--ambient-focus-always-on .copy--split { flex: 1 1 55%; max-width: none; }
+        .slide-shell--ambient-focus-always-on .visual { flex: 0 0 30rem; width: 30rem; max-width: 30rem; }
         .slide-shell--cursor-integration .copy--split { flex: 1 1 82%; }
         .slide-shell--cursor-integration .visual { flex: 0 1 19rem; width: auto; margin-inline: -0.75rem; }
         .slide-shell--cursor-integration .title { font-size: clamp(2rem, 7vw, 2.9rem); }
@@ -3759,7 +3794,7 @@
         </section>
 
         <section class="slide" aria-label="01. Cursor 출시와 바이브 코딩">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--cursor-series">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--cursor-series slide-shell--cursor-launch">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
