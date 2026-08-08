@@ -1249,6 +1249,33 @@
         color: var(--body);
       }
 
+      .quote-only {
+        width: min(100%, 38rem);
+        margin: 0;
+      }
+
+      .quote-only-original,
+      .quote-only-translation {
+        margin: 0;
+        letter-spacing: -0.04em;
+      }
+
+      .quote-only-original {
+        color: var(--title);
+        font-family: "Iowan Old Style", "Nanum Myeongjo", "Times New Roman", serif;
+        font-size: clamp(1.25rem, 1.9vw, 1.7rem);
+        font-style: italic;
+        line-height: 1.45;
+      }
+
+      .quote-only-translation {
+        margin-top: clamp(18px, 2.2vw, 28px);
+        color: var(--body);
+        font-size: clamp(1.15rem, 1.75vw, 1.5rem);
+        font-weight: 720;
+        line-height: 1.5;
+      }
+
       .elad-interpretation {
         margin-top: 13px;
         padding-top: 12px;
@@ -1966,17 +1993,10 @@
               <h1 class="title">AI 래퍼는<br />가치는 크지만<br /><span class="title-accent">해자가 없다</span></h1>
             </div>
             <div class="visual" aria-label="Elad Gil의 AI 래퍼 관련 발언">
-              <div class="elad-panel">
-                <figure class="elad-figure">
-                  <img class="elad-photo" src="assets/elad-gil.jpg" alt="Elad Gil" />
-                </figure>
-                <blockquote class="elad-quote">
-                  <p class="elad-label">원문</p>
-                  <p class="elad-original">“Today’s day one, no moat businesses: AI wrappers.”</p>
-                  <p class="elad-label elad-label--translation">해석</p>
-                  <p class="elad-translation">“지금은 첫날이고, 해자 없는 비즈니스는 AI 래퍼입니다.”</p>
-                </blockquote>
-              </div>
+              <blockquote class="quote-only">
+                <p class="quote-only-original">“Today’s day one, no moat businesses: AI wrappers.”</p>
+                <p class="quote-only-translation">“AI 래퍼는 이제 막 출발한 사업이라, 아직 독자적인 방어벽이 없습니다.”</p>
+              </blockquote>
             </div>
           </article>
         </section>
