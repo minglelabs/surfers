@@ -929,6 +929,48 @@
         letter-spacing: -0.03em;
       }
 
+      .automation-examples {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: start;
+        gap: clamp(24px, 5vw, 72px);
+        width: min(100%, 68rem);
+        margin: clamp(26px, 4vw, 54px) auto 0;
+      }
+
+      .automation-example {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 0;
+        text-align: center;
+      }
+
+      .automation-name {
+        margin: 0 0 clamp(10px, 1.2vw, 16px);
+        color: var(--title);
+        font-size: clamp(1.1rem, 1.6vw, 1.45rem);
+        font-weight: 780;
+        letter-spacing: -0.045em;
+      }
+
+      .automation-icon {
+        display: block;
+        width: clamp(110px, 12vw, 176px);
+        height: clamp(110px, 12vw, 176px);
+        object-fit: contain;
+        border-radius: 24px;
+      }
+
+      .automation-description {
+        max-width: 18ch;
+        margin-top: clamp(10px, 1.3vw, 16px);
+        color: var(--body);
+        font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+        line-height: 1.45;
+        letter-spacing: -0.04em;
+      }
+
       .slide-shell--reference .logo-caption {
         font-size: clamp(0.9rem, 1.05vw, 1.05rem);
         white-space: nowrap;
@@ -1554,6 +1596,10 @@
         .logo-image { width: 78px; height: 78px; border-radius: 17px; }
         .logo-name { margin-top: 6px; font-size: 0.98rem; }
         .logo-caption { margin-top: 2px; font-size: 0.7rem; }
+        .automation-examples { gap: 10px; margin-top: 20px; }
+        .automation-name { margin-bottom: 8px; font-size: clamp(0.82rem, 3.5vw, 1.05rem); }
+        .automation-icon { width: clamp(66px, 19vw, 104px); height: clamp(66px, 19vw, 104px); border-radius: 17px; }
+        .automation-description { margin-top: 8px; font-size: clamp(0.64rem, 2.45vw, 0.82rem); line-height: 1.4; }
         .elad-panel { grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); gap: 11px; padding: 13px; border-radius: 17px; }
         .elad-photo { border-radius: 13px; }
         .elad-credit { margin-top: 5px; font-size: 0.54rem; }
@@ -1791,13 +1837,29 @@
           </article>
         </section>
 
-        <section class="slide" aria-label="01. AI 래퍼의 특징">
-          <article class="slide-shell slide-shell--center slide-shell--section slide-shell--definition">
+        <section class="slide" aria-label="01. AI 래퍼 서비스 사례">
+          <article class="slide-shell slide-shell--center slide-shell--section">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--center copy--wide">
-              <p class="kicker">본질</p>
-              <p class="body body--focus body--center"><br />도메인 별로 정말 많이 쏟아지고 있습니다.</p>
+              <p class="kicker">예시</p>
+              <div class="automation-examples">
+                <section class="automation-example">
+                  <h2 class="automation-name">Cursor</h2>
+                  <img class="automation-icon" src="assets/cursor-logo.svg" alt="Cursor 아이콘" />
+                  <p class="automation-description">코드 작성과 수정을 자동화</p>
+                </section>
+                <section class="automation-example">
+                  <h2 class="automation-name">Perplexity</h2>
+                  <img class="automation-icon" src="assets/perplexity-logo.svg" alt="Perplexity 아이콘" />
+                  <p class="automation-description">검색과 답변 정리를 자동화</p>
+                </section>
+                <section class="automation-example">
+                  <h2 class="automation-name">Tiro</h2>
+                  <img class="automation-icon" src="assets/tiro-logo.jpg" alt="Tiro 아이콘" />
+                  <p class="automation-description">회의 기록과 요약을 자동화</p>
+                </section>
+              </div>
             </div>
           </article>
         </section>
@@ -1871,7 +1933,7 @@
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
               <p class="kicker">Cursor</p>
-              <h1 class="title">이전까지는 코딩에 도움을 받으려면 알트탭해가며 코드를 일일이 GPT에게 복붙해야만 했습니다.</h1>
+              <h1 class="title">기존에는 AI에게 도움을 받으려면<br /> 알트탭해가며 코드를 일일이 <br />GPT에게 복붙해야만 했습니다.</h1>
             </div>
             <div class="visual" aria-label="VS Code와 ChatGPT 사이의 복사와 이동">
               <div class="logo-bridge">
@@ -1938,68 +2000,6 @@
               <div class="chatgpt-logo">
                 <img src="assets/cursor-logo.svg" alt="Cursor 로고" />
                 <p class="logo-service-name">Cursor</p>
-              </div>
-            </div>
-          </article>
-        </section>
-
-        <section class="slide" aria-label="01. 알잘딱 · title-only">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper">
-            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
-            <div class="chapter-label">AI 래퍼란</div>
-            <div class="copy copy--split">
-              <p class="kicker">두 번째 요소</p>
-              <h1 class="title">알잘딱</h1>
-            </div>
-            <div class="visual" aria-label="X 자동 번역과 알잘딱">
-              <div class="case-stack">
-                <section class="case-card">
-                  <div class="case-mark" aria-hidden="true">𝕏</div>
-                  <div>
-                    <h2 class="case-title">기존 경험</h2>
-                    <p class="case-text">‘번역 보기’ 버튼을 한 번 더 눌러야 했습니다.</p>
-                    <span class="case-tag">딸깍도 마찰이다</span>
-                  </div>
-                </section>
-                <section class="case-card">
-                  <div class="case-mark" aria-hidden="true">→</div>
-                  <div>
-                    <h2 class="case-title">자동 번역</h2>
-                    <p class="case-text">읽는 흐름 안에 번역이 바로 들어오자 사람들이 놀랐습니다.</p>
-                    <span class="case-tag">알잘딱의 기준</span>
-                  </div>
-                </section>
-              </div>
-            </div>
-          </article>
-        </section>
-
-        <section class="slide" aria-label="01. GUI to CUI · title-only">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper">
-            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
-            <div class="chapter-label">AI 래퍼란</div>
-            <div class="copy copy--split">
-              <p class="kicker">세 번째 요소</p>
-              <h1 class="title">GUI to CUI</h1>
-            </div>
-            <div class="visual" aria-label="GUI에서 CUI로의 전환">
-              <div class="case-stack">
-                <section class="case-card">
-                  <div class="case-mark" aria-hidden="true">G</div>
-                  <div>
-                    <h2 class="case-title">GUI</h2>
-                    <p class="case-text">기능·메뉴·화면을 찾아 이동하며 작업합니다.</p>
-                    <span class="case-tag">찾아 헤매기</span>
-                  </div>
-                </section>
-                <section class="case-card">
-                  <div class="case-mark case-mark--cursor" aria-hidden="true">C</div>
-                  <div>
-                    <h2 class="case-title">CUI · Cursor</h2>
-                    <p class="case-text">말 한마디로 의도 전달부터 수정·실행까지 이어집니다.</p>
-                    <span class="case-tag">말 한마디로 끝내기</span>
-                  </div>
-                </section>
               </div>
             </div>
           </article>
