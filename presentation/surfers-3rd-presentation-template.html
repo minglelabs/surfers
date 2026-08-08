@@ -317,6 +317,23 @@
         width: min(100%, 32rem);
       }
 
+      .slide-shell--vibe-exit .copy--split {
+        flex: 1 1 70%;
+        max-width: 72rem;
+        min-width: 0;
+      }
+
+      .slide-shell--vibe-exit .title {
+        max-width: none;
+        white-space: nowrap;
+      }
+
+      .slide-shell--vibe-exit .visual {
+        flex: 0 1 26rem;
+        width: min(100%, 26rem);
+        margin-right: calc(-1 * clamp(10px, 1.5vw, 22px));
+      }
+
       .vibe-exit-list {
         display: flex;
         width: 100%;
@@ -2025,6 +2042,8 @@
         .slide-competitor-cloud { height: clamp(250px, 66vw, 390px); }
         .slide-shell--vibe-tools .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--vibe-tools .visual { flex: 0 0 auto; width: 100%; }
+        .slide-shell--vibe-exit .title { white-space: normal; }
+        .slide-shell--vibe-exit .visual { margin-right: 0; }
         .vibe-tool-cloud { height: clamp(270px, 72vw, 360px); }
         .vibe-tool { padding: 8px; border-radius: 16px; }
         .vibe-tool { width: min(var(--s), 24vw); height: min(var(--s), 24vw); }
