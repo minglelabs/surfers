@@ -1349,8 +1349,8 @@
 
       .slide-shell--always-on .copy--split,
       .slide-shell--translation-toggle .copy--split {
-        flex: 1 1 48%;
-        max-width: 56rem;
+        flex: 1 1 62%;
+        max-width: none;
         min-width: 0;
       }
 
@@ -1363,14 +1363,14 @@
       }
 
       .slide-shell--always-on .visual {
-        flex: 0 1 42rem;
-        width: min(100%, 42rem);
+        flex: 0 1 30rem;
+        width: min(100%, 30rem);
         min-width: 0;
       }
 
       .slide-shell--translation-toggle .visual {
-        flex: 0 1 34rem;
-        width: min(100%, 34rem);
+        flex: 0 1 24rem;
+        width: min(100%, 24rem);
         min-width: 0;
       }
 
@@ -1393,7 +1393,7 @@
       .translation-toggle img {
         display: block;
         width: 100%;
-        aspect-ratio: 1168 / 544;
+        height: clamp(145px, 13vw, 250px);
         object-fit: cover;
         border-radius: 16px;
       }
