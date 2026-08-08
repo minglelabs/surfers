@@ -322,6 +322,35 @@
         height: clamp(300px, 33vw, 430px);
       }
 
+      .slide-shell--expert-services {
+        gap: clamp(18px, 2.4vw, 42px);
+      }
+
+      .slide-shell--expert-services .copy--split {
+        flex: 0 1 28%;
+        max-width: 24rem;
+        min-width: 0;
+      }
+
+      .slide-shell--expert-services .visual {
+        flex: 1 1 72%;
+        width: min(100%, 64rem);
+        min-width: 0;
+      }
+
+      .slide-shell--expert-services .vibe-tool-cloud {
+        height: clamp(360px, 38vw, 500px);
+      }
+
+      .slide-shell--expert-services .vibe-tool {
+        width: var(--s);
+        height: var(--s);
+      }
+
+      .slide-shell--expert-services .vibe-tool-name {
+        font-size: clamp(0.68rem, 0.9vw, 0.88rem);
+      }
+
       .slide-shell--vibe-resilience .copy--split {
         flex: 1 1 62%;
         max-width: 66rem;
@@ -2872,7 +2901,7 @@
         </section>
 
         <section class="slide" aria-label="09. 전문가 서비스">
-          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category">
+          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category slide-shell--expert-services">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">전문가 서비스</div>
             <div class="copy copy--split">
@@ -2881,17 +2910,53 @@
             </div>
             <div class="visual" aria-label="전문가 서비스 대표 서비스">
               <div class="vibe-tool-cloud">
-                <div class="vibe-tool" style="--x: 16%; --y: 26%; --s: clamp(114px, 8.7vw, 146px); --r: -11deg">
+                <div class="vibe-tool" style="--x: 9%; --y: 20%; --s: clamp(88px, 6.3vw, 108px); --r: -11deg">
                   <img src="./assets/harvey-logo.png" alt="Harvey 로고" />
                   <span class="vibe-tool-name">Harvey</span>
                 </div>
-                <div class="vibe-tool" style="--x: 55%; --y: 17%; --s: clamp(112px, 8.5vw, 142px); --r: 9deg">
+                <div class="vibe-tool" style="--x: 30%; --y: 14%; --s: clamp(88px, 6.3vw, 108px); --r: 8deg">
+                  <img src="https://superlawyer.co.kr/favicon.ico" alt="SuperLawyer 로고" />
+                  <span class="vibe-tool-name">SuperLawyer</span>
+                </div>
+                <div class="vibe-tool" style="--x: 53%; --y: 22%; --s: clamp(88px, 6.3vw, 108px); --r: -7deg">
+                  <img src="https://cdn.sanity.io/images/5mkfcvr8/production/474b87d1296943e6409de08f6d42b1cb346febd1-512x512.png" alt="Norm AI 로고" />
+                  <span class="vibe-tool-name">Norm AI</span>
+                </div>
+                <div class="vibe-tool" style="--x: 78%; --y: 15%; --s: clamp(88px, 6.3vw, 108px); --r: 11deg">
+                  <img src="https://framerusercontent.com/images/WY5ORpPObnBhMgjnlR4uFUElzWs.png" alt="Legora 로고" />
+                  <span class="vibe-tool-name">Legora</span>
+                </div>
+                <div class="vibe-tool" style="--x: 18%; --y: 48%; --s: clamp(88px, 6.3vw, 108px); --r: 7deg">
                   <img src="./assets/evenup-logo.png" alt="EvenUp 로고" />
                   <span class="vibe-tool-name">EvenUp</span>
                 </div>
-                <div class="vibe-tool" style="--x: 79%; --y: 70%; --s: clamp(110px, 8.3vw, 138px); --r: -7deg">
-                  <img src="./assets/glean-logo.png" alt="Glean 로고" />
-                  <span class="vibe-tool-name">Glean</span>
+                <div class="vibe-tool" style="--x: 41%; --y: 43%; --s: clamp(88px, 6.3vw, 108px); --r: -10deg">
+                  <img src="https://lbox.kr/favicon.ico" alt="LBOX 로고" />
+                  <span class="vibe-tool-name">LBOX</span>
+                </div>
+                <div class="vibe-tool" style="--x: 66%; --y: 49%; --s: clamp(88px, 6.3vw, 108px); --r: 12deg">
+                  <img src="https://static.neardoc.ai/logo.svg" alt="NearDoc 로고" />
+                  <span class="vibe-tool-name">NearDoc</span>
+                </div>
+                <div class="vibe-tool" style="--x: 89%; --y: 45%; --s: clamp(88px, 6.3vw, 108px); --r: -8deg">
+                  <img src="https://cdn.prod.website-files.com/6279c9d10eb860662e5ec006/6695ec67d4fc124a96df106b_abridge-favicon-symbol-red.png" alt="Abridge 로고" />
+                  <span class="vibe-tool-name">Abridge</span>
+                </div>
+                <div class="vibe-tool" style="--x: 12%; --y: 79%; --s: clamp(88px, 6.3vw, 108px); --r: -6deg">
+                  <img src="https://cdn.prod.website-files.com/68dd4bd4ddd2a6818d9fdde6/68fa39549a10a75db074f07f_68efd87f8372e64d05b5ea6b_fav-32%20(1).png" alt="Counsel Health 로고" />
+                  <span class="vibe-tool-name">Counsel Health</span>
+                </div>
+                <div class="vibe-tool" style="--x: 37%; --y: 82%; --s: clamp(88px, 6.3vw, 108px); --r: 9deg">
+                  <img src="https://framerusercontent.com/images/RcdrytOKpIouzwnRG9UtFjLkm0c.png" alt="Rogo 로고" />
+                  <span class="vibe-tool-name">Rogo</span>
+                </div>
+                <div class="vibe-tool" style="--x: 62%; --y: 77%; --s: clamp(88px, 6.3vw, 108px); --r: -12deg">
+                  <img src="https://images.ctfassets.net/bn476u6z5acg/FL0Xan4jxdYw5m4aeVp5r/51fdfa3b20f78e4009ccd40d52f37fb2/vector.png?w=64&q=85&fm=webp" alt="Hebbia 로고" />
+                  <span class="vibe-tool-name">Hebbia</span>
+                </div>
+                <div class="vibe-tool" style="--x: 86%; --y: 81%; --s: clamp(88px, 6.3vw, 108px); --r: 6deg">
+                  <img src="https://cdn.sanity.io/images/ewv2vq7j/production/3d8360e5ead3de1b0875f9f4b7ee309e29f0480a-64x65.png?fit=max&auto=format" alt="AlphaSense 로고" />
+                  <span class="vibe-tool-name">AlphaSense</span>
                 </div>
               </div>
             </div>
