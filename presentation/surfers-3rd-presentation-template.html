@@ -1425,22 +1425,43 @@
         letter-spacing: 0.02em;
       }
 
-      .slide-shell--future-fields .case-stack {
-        width: min(100%, 42rem);
+      .future-field-list {
+        display: grid;
+        gap: clamp(22px, 2.7vw, 36px);
+        width: min(100%, 48rem);
       }
 
-      .slide-shell--future-fields .case-card {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 0;
+      .future-field-row {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        align-items: baseline;
+        column-gap: clamp(12px, 1.5vw, 20px);
       }
 
-      .slide-shell--future-fields .case-title {
-        font-size: clamp(1.25rem, 1.8vw, 1.62rem);
+      .future-field-index {
+        color: var(--accent-strong);
+        font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+        font-size: clamp(1.25rem, 1.9vw, 1.65rem);
+        font-weight: 850;
+        line-height: 1;
       }
 
-      .slide-shell--future-fields .case-tag {
-        margin-top: 10px;
-        font-size: clamp(0.82rem, 1vw, 0.94rem);
+      .future-field-title {
+        color: var(--title);
+        font-size: clamp(1.4rem, 2.25vw, 2.1rem);
+        font-weight: 780;
+        line-height: 1.18;
+        letter-spacing: -0.06em;
+      }
+
+      .future-field-example {
+        justify-self: end;
+        color: var(--accent-strong);
+        font-size: clamp(1rem, 1.45vw, 1.32rem);
+        font-weight: 820;
+        line-height: 1.2;
+        letter-spacing: -0.035em;
+        white-space: nowrap;
       }
 
       .logo-stack {
@@ -3527,34 +3548,30 @@
             <div class="copy copy--split">
               <p class="kicker">Chapter 11</p>
               <h1 class="title">뜰 것 같은 <span class="title-accent">분야들</span></h1>
-              <p class="body">기존 경험의 마지막 병목을 AI가 대신하는 곳에는 아직 새로운 기회가 남아 있습니다. 다음 두 영역은 ‘찾고, 판단하고, 이어서 실행하는’ 흐름을 한 번에 묶을 수 있습니다.</p>
+              <p class="body">기존 경험의 마지막 병목을 AI가 대신하는 곳에는 아직 새로운 기회가 남아 있습니다. 다음 네 영역은 ‘찾고, 판단하고, 이어서 실행하는’ 흐름을 한 번에 묶을 수 있습니다.</p>
             </div>
-            <div class="visual" aria-label="뜰 것 같은 분야들 정리 카드">
-              <div class="case-stack">
-                <section class="case-card">
-                  <div>
-                    <h2 class="case-title">항공편/숙소/여행상품 찾기 자동화</h2>
-                    <span class="case-tag">예시 · Toki</span>
-                  </div>
-                </section>
-                <section class="case-card">
-                  <div>
-                    <h2 class="case-title">영업용 AI 솔루션</h2>
-                    <span class="case-tag">예시 · Caret</span>
-                  </div>
-                </section>
-                <section class="case-card">
-                  <div>
-                    <h2 class="case-title">광고 제작과정 자동화 에이전트</h2>
-                    <span class="case-tag">예시 · GRIIM AI</span>
-                  </div>
-                </section>
-                <section class="case-card">
-                  <div>
-                    <h2 class="case-title">CUI 브라우저</h2>
-                    <span class="case-tag">예시 · Aside</span>
-                  </div>
-                </section>
+            <div class="visual" aria-label="뜰 것 같은 분야들 목록">
+              <div class="future-field-list">
+                <div class="future-field-row">
+                  <span class="future-field-index">1</span>
+                  <h2 class="future-field-title">항공편/숙소/여행상품 찾기 자동화</h2>
+                  <span class="future-field-example">예시 · Toki</span>
+                </div>
+                <div class="future-field-row">
+                  <span class="future-field-index">2</span>
+                  <h2 class="future-field-title">영업용 AI 솔루션</h2>
+                  <span class="future-field-example">예시 · Caret</span>
+                </div>
+                <div class="future-field-row">
+                  <span class="future-field-index">3</span>
+                  <h2 class="future-field-title">광고 제작과정 자동화 에이전트</h2>
+                  <span class="future-field-example">예시 · GRIIM AI</span>
+                </div>
+                <div class="future-field-row">
+                  <span class="future-field-index">4</span>
+                  <h2 class="future-field-title">CUI 브라우저</h2>
+                  <span class="future-field-example">예시 · Aside</span>
+                </div>
               </div>
             </div>
           </article>
