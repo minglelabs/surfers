@@ -291,6 +291,21 @@
         height: clamp(330px, 35vw, 470px);
       }
 
+      .vibe-tool-cloud--row {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: clamp(18px, 3vw, 44px);
+      }
+
+      .vibe-tool-cloud--row .vibe-tool {
+        position: relative;
+        left: auto;
+        top: auto;
+        flex: 0 0 var(--s);
+        transform: none;
+      }
+
       .vibe-tool {
         position: absolute;
         left: var(--x);
@@ -2423,7 +2438,7 @@
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">바이브 코딩 및 에이전트</div>
             <div class="copy copy--split">
-              <p class="kicker">AGENT</p>
+              <p class="kicker">VIBE CODING</p>
               <h1 class="title">바이브 코딩 및<br/>에이전트 서비스</h1>
             </div>
             <div class="visual" aria-label="바이브 코딩 툴과 에이전트">
@@ -2444,14 +2459,6 @@
                   <span class="vibe-tool-mark" aria-hidden="true">v0</span>
                   <span class="vibe-tool-name">v0</span>
                 </div>
-                <div class="vibe-tool" style="--x: 31%; --y: 44%; --s: clamp(102px, 7.2vw, 120px); --r: -7deg">
-                  <img src="./assets/anthropic-logo.svg" alt="Claude Code 로고" />
-                  <span class="vibe-tool-name">Claude Code</span>
-                </div>
-                <div class="vibe-tool" style="--x: 57%; --y: 44%; --s: clamp(100px, 7vw, 116px); --r: 10deg">
-                  <img src="./assets/chatgpt-logo.svg" alt="Codex 로고" />
-                  <span class="vibe-tool-name">Codex</span>
-                </div>
                 <div class="vibe-tool vibe-tool--replit" style="--x: 19%; --y: 73%; --s: clamp(106px, 8vw, 132px); --r: 7deg">
                   <span class="vibe-tool-mark" aria-hidden="true">Replit</span>
                   <span class="vibe-tool-name">Replit Agent</span>
@@ -2463,6 +2470,29 @@
                 <div class="vibe-tool vibe-tool--manus" style="--x: 79%; --y: 67%; --s: clamp(108px, 8.1vw, 136px); --r: 9deg">
                   <img src="./assets/manus-logo.ico" alt="Manus 로고" />
                   <span class="vibe-tool-name">Manus</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="02. 빅테크의 쓰나미에도 의외로 선방하는 모습입니다">
+          <article class="slide-shell slide-shell--split slide-shell--vibe-tools">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="chapter-label">바이브 코딩 및 에이전트</div>
+            <div class="copy copy--split">
+              <p class="kicker">VIBE CODING</p>
+              <h1 class="title">빅테크의 쓰나미에도<br />의외로 선방하는<br />모습입니다</h1>
+            </div>
+            <div class="visual" aria-label="Claude Code와 Codex 로고">
+              <div class="vibe-tool-cloud vibe-tool-cloud--row">
+                <div class="vibe-tool" style="--s: clamp(144px, 11vw, 184px)">
+                  <img src="./assets/anthropic-logo.svg" alt="Claude Code 로고" />
+                  <span class="vibe-tool-name">Claude Code</span>
+                </div>
+                <div class="vibe-tool" style="--s: clamp(144px, 11vw, 184px)">
+                  <img src="./assets/chatgpt-logo.svg" alt="Codex 로고" />
+                  <span class="vibe-tool-name">Codex</span>
                 </div>
               </div>
             </div>
