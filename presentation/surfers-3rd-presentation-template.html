@@ -511,13 +511,12 @@
 
       .quote::before,
       .quote::after {
-        color: var(--accent-strong);
         font-size: 1.13em;
         line-height: 0;
       }
 
-      .quote::before { color: inherit; content: "“"; }
-      .quote::after { content: "”"; }
+      .quote::before { color: var(--accent-strong); content: "“"; }
+      .quote::after { color: inherit; content: "”"; }
 
       .quote-caption {
         margin-top: 28px;
