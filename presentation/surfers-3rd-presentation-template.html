@@ -285,6 +285,24 @@
         box-shadow: none;
       }
 
+      .slide-shell--vibe-category {
+        gap: clamp(22px, 3.6vw, 62px);
+      }
+
+      .slide-shell--vibe-category .copy--split {
+        flex: 1 1 46%;
+        max-width: 48rem;
+      }
+
+      .slide-shell--vibe-category .visual {
+        flex: 0 1 43rem;
+        width: min(100%, 43rem);
+      }
+
+      .slide-shell--vibe-category .vibe-tool-cloud {
+        height: clamp(300px, 33vw, 430px);
+      }
+
       .slide-shell--vibe-resilience .copy--split {
         flex: 1 1 62%;
         max-width: 66rem;
@@ -2215,8 +2233,8 @@
               <p class="kicker">목차</p>
               <nav class="toc-grid toc-grid--three" aria-label="목차 이동">
                 <a class="toc-link" href="#3"><span class="toc-index">01</span><span class="toc-text">AI 래퍼란</span><span class="toc-arrow">→</span></a>
-                <a class="toc-link" href="#24"><span class="toc-index">02</span><span class="toc-text">래퍼 서비스 사례</span><span class="toc-arrow">→</span></a>
-                <a class="toc-link" href="#44"><span class="toc-index">03</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
+                <a class="toc-link" href="#17"><span class="toc-index">02</span><span class="toc-text">래퍼 서비스 사례</span><span class="toc-arrow">→</span></a>
+                <a class="toc-link" href="#39"><span class="toc-index">03</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
               </nav>
             </div>
           </article>
@@ -2478,16 +2496,16 @@
                 <div class="toc-column">
                   <a class="toc-link" href="#18"><span class="toc-index">01</span><span class="toc-text">바이브 코딩 및 에이전트</span><span class="toc-arrow">→</span></a>
                   <a class="toc-link" href="#21"><span class="toc-index">02</span><span class="toc-text">AI 학습 도우미</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#23"><span class="toc-index">03</span><span class="toc-text">캐릭터 챗</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#25"><span class="toc-index">04</span><span class="toc-text">사진 보정</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#27"><span class="toc-index">05</span><span class="toc-text">식단 관리</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#22"><span class="toc-index">03</span><span class="toc-text">캐릭터 챗</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#23"><span class="toc-index">04</span><span class="toc-text">사진 보정</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#24"><span class="toc-index">05</span><span class="toc-text">식단 관리</span><span class="toc-arrow">→</span></a>
                 </div>
                 <div class="toc-column">
-                  <a class="toc-link" href="#29"><span class="toc-index">06</span><span class="toc-text">노트테이킹</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#31"><span class="toc-index">07</span><span class="toc-text">브라우저</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#33"><span class="toc-index">08</span><span class="toc-text">전문가 서비스</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#35"><span class="toc-index">09</span><span class="toc-text">AI 애그리게이터</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#44"><span class="toc-index">10</span><span class="toc-text">외국어 교육</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#25"><span class="toc-index">06</span><span class="toc-text">노트테이킹</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#26"><span class="toc-index">07</span><span class="toc-text">브라우저</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#27"><span class="toc-index">08</span><span class="toc-text">전문가 서비스</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#28"><span class="toc-index">09</span><span class="toc-text">AI 애그리게이터</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#29"><span class="toc-index">10</span><span class="toc-text">외국어 교육</span><span class="toc-arrow">→</span></a>
                 </div>
               </nav>
             </div>
@@ -2566,7 +2584,7 @@
             <div class="chapter-label">바이브 코딩 및 에이전트</div>
             <div class="copy copy--split">
               <p class="kicker">VIBE CODING</p>
-              <h1 class="title">그럼에도 일부는 잘 Exit했으며,<br />나머지도 꽤나 성장 중입니다</h1>
+              <h1 class="title">그럼에도 일부는 잘 Exit했고,<br />나머지도 꽤나 성장 중입니다</h1>
             </div>
             <div class="visual" aria-label="VIBE CODING 서비스 성과">
               <div class="vibe-exit-list">
@@ -2627,115 +2645,169 @@
         </section>
 
         <section class="slide" aria-label="04. 캐릭터 챗">
-          <article class="slide-shell slide-shell--split">
+          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">캐릭터 챗</div>
             <div class="copy copy--split">
               <p class="kicker">CHARACTER</p>
               <h1 class="title">캐릭터 챗</h1>
             </div>
-            <div class="visual" aria-label="캐릭터 챗 정리 카드">
-              <div class="evidence-stack">
-                <section class="evidence-card"><span class="evidence-index">01</span><div><h2 class="evidence-title">핵심 경험</h2><p class="evidence-text">[사용자가 계속 돌아오는 이유]</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">02</span><div><h2 class="evidence-title">래퍼의 역할</h2><p class="evidence-text">[모델 위에 어떤 경험을 설계하는가]</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title">확장 가능성</h2><p class="evidence-text">[다음 기능·고객·채널]</p></div></section>
+            <div class="visual" aria-label="캐릭터 챗 대표 서비스">
+              <div class="vibe-tool-cloud">
+                <div class="vibe-tool" style="--x: 18%; --y: 26%; --s: clamp(118px, 9vw, 150px); --r: -10deg">
+                  <img src="./assets/character-ai-logo.ico" alt="Character.AI 로고" />
+                  <span class="vibe-tool-name">Character.AI</span>
+                </div>
+                <div class="vibe-tool" style="--x: 55%; --y: 17%; --s: clamp(112px, 8.5vw, 142px); --r: 8deg">
+                  <img src="./assets/replika-logo.ico" alt="Replika 로고" />
+                  <span class="vibe-tool-name">Replika</span>
+                </div>
+                <div class="vibe-tool" style="--x: 78%; --y: 68%; --s: clamp(110px, 8.3vw, 138px); --r: -7deg">
+                  <img src="./assets/chai-logo.svg" alt="Chai 로고" />
+                  <span class="vibe-tool-name">Chai</span>
+                </div>
               </div>
             </div>
           </article>
         </section>
 
         <section class="slide" aria-label="05. 사진 보정">
-          <article class="slide-shell slide-shell--split">
+          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">사진 보정</div>
             <div class="copy copy--split">
               <p class="kicker">PHOTO</p>
               <h1 class="title">사진 보정</h1>
             </div>
-            <div class="visual" aria-label="사진 보정 정리 카드">
-              <div class="evidence-stack">
-                <section class="evidence-card"><span class="evidence-index">01</span><div><h2 class="evidence-title">입력 장면</h2><p class="evidence-text">[사용자가 어떤 사진을 가져오는가]</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">02</span><div><h2 class="evidence-title">결과물</h2><p class="evidence-text">[어떤 변화가 만족을 만드는가]</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title">차별화</h2><p class="evidence-text">[범용 모델과 달라지는 이유]</p></div></section>
+            <div class="visual" aria-label="사진 보정 대표 서비스">
+              <div class="vibe-tool-cloud">
+                <div class="vibe-tool" style="--x: 15%; --y: 32%; --s: clamp(114px, 8.7vw, 146px); --r: -12deg">
+                  <img src="./assets/remini-logo.ico" alt="Remini 로고" />
+                  <span class="vibe-tool-name">Remini</span>
+                </div>
+                <div class="vibe-tool" style="--x: 52%; --y: 20%; --s: clamp(116px, 8.8vw, 148px); --r: 7deg">
+                  <img src="./assets/faceapp-logo.png" alt="FaceApp 로고" />
+                  <span class="vibe-tool-name">FaceApp</span>
+                </div>
+                <div class="vibe-tool" style="--x: 78%; --y: 70%; --s: clamp(112px, 8.5vw, 144px); --r: -9deg">
+                  <img src="./assets/photoroom-logo.ico" alt="Photoroom 로고" />
+                  <span class="vibe-tool-name">Photoroom</span>
+                </div>
               </div>
             </div>
           </article>
         </section>
 
         <section class="slide" aria-label="06. 식단 관리">
-          <article class="slide-shell slide-shell--split">
+          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">식단 관리</div>
             <div class="copy copy--split">
               <p class="kicker">DIET</p>
               <h1 class="title">식단 관리</h1>
             </div>
-            <div class="visual" aria-label="식단 관리 정리 카드">
-              <div class="evidence-stack">
-                <section class="evidence-card"><span class="evidence-index">01</span><div><h2 class="evidence-title">반복 문제</h2><p class="evidence-text">[매일 반복되는 판단과 기록]</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">02</span><div><h2 class="evidence-title">개인화</h2><p class="evidence-text">[사용자 맥락을 어떻게 반영하는가]</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title">지속성</h2><p class="evidence-text">[꾸준히 쓰게 만드는 장치]</p></div></section>
+            <div class="visual" aria-label="식단 관리 대표 서비스">
+              <div class="vibe-tool-cloud">
+                <div class="vibe-tool" style="--x: 18%; --y: 23%; --s: clamp(116px, 8.8vw, 148px); --r: -8deg">
+                  <img src="./assets/myfitnesspal-logo.ico" alt="MyFitnessPal 로고" />
+                  <span class="vibe-tool-name">MyFitnessPal</span>
+                </div>
+                <div class="vibe-tool" style="--x: 56%; --y: 35%; --s: clamp(112px, 8.5vw, 144px); --r: 11deg">
+                  <img src="./assets/foodvisor-logo.png" alt="Foodvisor 로고" />
+                  <span class="vibe-tool-name">Foodvisor</span>
+                </div>
+                <div class="vibe-tool" style="--x: 79%; --y: 72%; --s: clamp(108px, 8.1vw, 136px); --r: -6deg">
+                  <img src="./assets/snapcalorie-logo.png" alt="SnapCalorie 로고" />
+                  <span class="vibe-tool-name">SnapCalorie</span>
+                </div>
               </div>
             </div>
           </article>
         </section>
 
         <section class="slide" aria-label="07. 노트테이킹">
-          <article class="slide-shell slide-shell--split">
+          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">노트테이킹</div>
             <div class="copy copy--split">
               <p class="kicker">NOTES</p>
               <h1 class="title">노트테이킹</h1>
             </div>
-            <div class="visual" aria-label="노트테이킹 정리 카드">
-              <div class="evidence-stack">
-                <section class="evidence-card"><span class="evidence-index">01</span><div><h2 class="evidence-title">기록</h2><p class="evidence-text">[무엇을 어떤 순간에 남기는가]</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">02</span><div><h2 class="evidence-title">정리</h2><p class="evidence-text">[정보를 어떤 구조로 바꾸는가]</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title">행동</h2><p class="evidence-text">[정리된 정보가 무엇을 움직이는가]</p></div></section>
+            <div class="visual" aria-label="노트테이킹 대표 서비스">
+              <div class="vibe-tool-cloud">
+                <div class="vibe-tool" style="--x: 16%; --y: 28%; --s: clamp(112px, 8.5vw, 142px); --r: -10deg">
+                  <img src="./assets/logo-granola.png" alt="Granola 로고" />
+                  <span class="vibe-tool-name">Granola</span>
+                </div>
+                <div class="vibe-tool" style="--x: 54%; --y: 18%; --s: clamp(116px, 8.8vw, 148px); --r: 8deg">
+                  <img src="./assets/logo-otter.png" alt="Otter.ai 로고" />
+                  <span class="vibe-tool-name">Otter.ai</span>
+                </div>
+                <div class="vibe-tool" style="--x: 79%; --y: 70%; --s: clamp(110px, 8.3vw, 138px); --r: -8deg">
+                  <img src="./assets/logo-fireflies.png" alt="Fireflies.ai 로고" />
+                  <span class="vibe-tool-name">Fireflies.ai</span>
+                </div>
               </div>
             </div>
           </article>
         </section>
 
         <section class="slide" aria-label="08. 브라우저">
-          <article class="slide-shell slide-shell--split">
+          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">브라우저</div>
             <div class="copy copy--split">
               <p class="kicker">BROWSER</p>
               <h1 class="title">브라우저</h1>
             </div>
-            <div class="visual" aria-label="브라우저 정리 카드">
-              <div class="evidence-stack">
-                <section class="evidence-card"><span class="evidence-index">01</span><div><h2 class="evidence-title">현재 흐름</h2><p class="evidence-text">[사용자가 지금 오가는 화면과 도구]</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">02</span><div><h2 class="evidence-title">개입 지점</h2><p class="evidence-text">[AI가 자연스럽게 끼어들 순간]</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title">새 경험</h2><p class="evidence-text">[기존 웹을 어떻게 다시 묶는가]</p></div></section>
+            <div class="visual" aria-label="AI 브라우저 대표 서비스">
+              <div class="vibe-tool-cloud">
+                <div class="vibe-tool" style="--x: 17%; --y: 30%; --s: clamp(114px, 8.7vw, 146px); --r: -9deg">
+                  <img src="./assets/perplexity-logo.svg" alt="Perplexity Comet 로고" />
+                  <span class="vibe-tool-name">Perplexity Comet</span>
+                </div>
+                <div class="vibe-tool" style="--x: 54%; --y: 16%; --s: clamp(112px, 8.5vw, 142px); --r: 7deg">
+                  <img src="./assets/dia-logo.ico" alt="Dia 로고" />
+                  <span class="vibe-tool-name">Dia</span>
+                </div>
+                <div class="vibe-tool" style="--x: 80%; --y: 69%; --s: clamp(110px, 8.3vw, 138px); --r: -11deg">
+                  <img src="./assets/arc-logo.svg" alt="Arc Search 로고" />
+                  <span class="vibe-tool-name">Arc Search</span>
+                </div>
               </div>
             </div>
           </article>
         </section>
 
         <section class="slide" aria-label="09. 전문가 서비스">
-          <article class="slide-shell slide-shell--split">
+          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">전문가 서비스</div>
             <div class="copy copy--split">
               <p class="kicker">EXPERT</p>
               <h1 class="title">전문가 서비스</h1>
             </div>
-            <div class="visual" aria-label="전문가 서비스 정리 카드">
-              <div class="evidence-stack">
-                <section class="evidence-card"><span class="evidence-index">01</span><div><h2 class="evidence-title">전문성</h2><p class="evidence-text">[사람이 반드시 가져야 할 판단]</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">02</span><div><h2 class="evidence-title">확장</h2><p class="evidence-text">[AI가 줄이는 반복 업무]</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title">신뢰</h2><p class="evidence-text">[고객이 지불하는 근거]</p></div></section>
+            <div class="visual" aria-label="전문가 서비스 대표 서비스">
+              <div class="vibe-tool-cloud">
+                <div class="vibe-tool" style="--x: 16%; --y: 26%; --s: clamp(114px, 8.7vw, 146px); --r: -11deg">
+                  <img src="./assets/harvey-logo.png" alt="Harvey 로고" />
+                  <span class="vibe-tool-name">Harvey</span>
+                </div>
+                <div class="vibe-tool" style="--x: 55%; --y: 17%; --s: clamp(112px, 8.5vw, 142px); --r: 9deg">
+                  <img src="./assets/evenup-logo.png" alt="EvenUp 로고" />
+                  <span class="vibe-tool-name">EvenUp</span>
+                </div>
+                <div class="vibe-tool" style="--x: 79%; --y: 70%; --s: clamp(110px, 8.3vw, 138px); --r: -7deg">
+                  <img src="./assets/glean-logo.png" alt="Glean 로고" />
+                  <span class="vibe-tool-name">Glean</span>
+                </div>
               </div>
             </div>
           </article>
         </section>
 
         <section class="slide" aria-label="10. AI 애그리게이터">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper">
+          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category slide-shell--wrapper">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 애그리게이터</div>
             <div class="copy copy--split">
@@ -2743,11 +2815,47 @@
               <h1 class="title">AI 애그리게이터</h1>
               <p class="body">OpenRouter·Poe처럼 여러 LLM을 하나의 인터페이스나 API로 묶고, 요청을 모델 사이에 라우팅하는 사업입니다. Google의 Darren Mowry는 이 유형을 “AI aggregators”라고 부르며 “Stay out of the aggregator business.”라고 경고했습니다.</p>
             </div>
-            <div class="visual" aria-label="AI 애그리게이터 정리 카드">
-              <div class="evidence-stack">
-                <section class="evidence-card"><span class="evidence-index">01</span><div><h2 class="evidence-title">멀티 모델 접근</h2><p class="evidence-text">여러 모델을 한 계정·인터페이스·결제 흐름으로 묶어 비교와 전환을 쉽게 합니다.</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">02</span><div><h2 class="evidence-title">API 라우팅</h2><p class="evidence-text">하나의 API로 요청을 받고, 품질·비용·안정성에 맞는 모델로 연결합니다.</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title">중개만으로는 약하다</h2><p class="evidence-text">모델사가 직접 기능을 확장하면 단순 접근·결제·중개만으로는 마진과 해자를 지키기 어렵습니다.</p></div></section>
+            <div class="visual" aria-label="AI 애그리게이터 대표 서비스">
+              <div class="vibe-tool-cloud">
+                <div class="vibe-tool" style="--x: 17%; --y: 28%; --s: clamp(112px, 8.5vw, 142px); --r: -9deg">
+                  <img src="./assets/openrouter-logo.svg" alt="OpenRouter 로고" />
+                  <span class="vibe-tool-name">OpenRouter</span>
+                </div>
+                <div class="vibe-tool" style="--x: 54%; --y: 16%; --s: clamp(116px, 8.8vw, 148px); --r: 8deg">
+                  <img src="./assets/poe-logo.svg" alt="Poe 로고" />
+                  <span class="vibe-tool-name">Poe</span>
+                </div>
+                <div class="vibe-tool" style="--x: 80%; --y: 70%; --s: clamp(110px, 8.3vw, 138px); --r: -7deg">
+                  <img src="./assets/together-logo.png" alt="Together AI 로고" />
+                  <span class="vibe-tool-name">Together AI</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="10. 외국어 교육">
+          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="chapter-label">외국어 교육</div>
+            <div class="copy copy--split">
+              <p class="kicker">LANGUAGE</p>
+              <h1 class="title">외국어 교육</h1>
+            </div>
+            <div class="visual" aria-label="외국어 교육 대표 서비스">
+              <div class="vibe-tool-cloud">
+                <div class="vibe-tool" style="--x: 17%; --y: 28%; --s: clamp(112px, 8.5vw, 142px); --r: -10deg">
+                  <img src="./assets/duolingo-logo.svg" alt="Duolingo 로고" />
+                  <span class="vibe-tool-name">Duolingo</span>
+                </div>
+                <div class="vibe-tool" style="--x: 54%; --y: 17%; --s: clamp(116px, 8.8vw, 148px); --r: 8deg">
+                  <img src="./assets/speak-logo.png" alt="Speak 로고" />
+                  <span class="vibe-tool-name">Speak</span>
+                </div>
+                <div class="vibe-tool" style="--x: 80%; --y: 70%; --s: clamp(110px, 8.3vw, 138px); --r: -7deg">
+                  <img src="./assets/elsa-logo.ico" alt="ELSA Speak 로고" />
+                  <span class="vibe-tool-name">ELSA Speak</span>
+                </div>
               </div>
             </div>
           </article>
