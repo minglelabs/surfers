@@ -3031,9 +3031,9 @@
                 <div class="toc-column">
                   <a class="toc-link" href="#33"><span class="toc-index">06</span><span class="toc-text">노트테이킹</span><span class="toc-arrow">→</span></a>
                   <a class="toc-link" href="#34"><span class="toc-index">07</span><span class="toc-text">브라우저</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#35"><span class="toc-index">08</span><span class="toc-text">전문가 서비스</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#35"><span class="toc-index">08</span><span class="toc-text">외국어 교육</span><span class="toc-arrow">→</span></a>
                   <a class="toc-link" href="#36"><span class="toc-index">09</span><span class="toc-text">AI 애그리게이터</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#37"><span class="toc-index">10</span><span class="toc-text">외국어 교육</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#37"><span class="toc-index">10</span><span class="toc-text">전문가 서비스</span><span class="toc-arrow">→</span></a>
                 </div>
               </nav>
             </div>
@@ -3502,13 +3502,13 @@
           </article>
         </section>
 
-        <section class="slide" aria-label="09. 전문가 서비스">
+        <section class="slide" aria-label="10. 전문가 서비스" data-category-order="10">
           <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category slide-shell--expert-services">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">래퍼 서비스 사례</div>
             <div class="copy copy--split">
               <p class="kicker">EXPERT</p>
-              <h1 class="title"><span class="title-index">분야 08</span>전문가 서비스</h1>
+              <h1 class="title"><span class="title-index">분야 10</span>전문가 서비스</h1>
             </div>
             <div class="visual" aria-label="전문가 서비스 대표 서비스">
               <div class="vibe-tool-cloud">
@@ -3581,7 +3581,7 @@
           </article>
         </section>
 
-        <section class="slide" aria-label="10. AI 애그리게이터">
+        <section class="slide" aria-label="09. AI 애그리게이터" data-category-order="09">
           <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category slide-shell--wrapper">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">래퍼 서비스 사례</div>
@@ -3617,13 +3617,13 @@
           </article>
         </section>
 
-        <section class="slide" aria-label="02. 외국어 교육">
+        <section class="slide" aria-label="08. 외국어 교육" data-category-order="08">
           <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">래퍼 서비스 사례</div>
             <div class="copy copy--split">
               <p class="kicker">LANGUAGE</p>
-              <h1 class="title"><span class="title-index">분야 10</span>외국어 교육</h1>
+              <h1 class="title"><span class="title-index">분야 08</span>외국어 교육</h1>
             </div>
             <div class="visual" aria-label="외국어 교육 대표 서비스">
               <div class="vibe-tool-cloud">
@@ -3986,6 +3986,13 @@
     <script>
       (() => {
         const track = document.getElementById("deck-track");
+        const expertServicesSlide = track.querySelector('[data-category-order="10"]');
+        const aggregatorSlide = track.querySelector('[data-category-order="09"]');
+        const languageEducationSlide = track.querySelector('[data-category-order="08"]');
+        if (expertServicesSlide && aggregatorSlide && languageEducationSlide) {
+          track.insertBefore(languageEducationSlide, expertServicesSlide);
+          track.insertBefore(expertServicesSlide, aggregatorSlide.nextElementSibling);
+        }
         const slides = Array.from(track.querySelectorAll(".slide"));
         const progress = document.getElementById("progress-fill");
         const counter = document.getElementById("page-counter");
