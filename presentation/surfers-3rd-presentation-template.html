@@ -942,6 +942,45 @@
         margin-inline: auto;
       }
 
+      .slide-final-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: clamp(56px, 5vw, 74px);
+        padding: 0 clamp(22px, 2vw, 32px);
+        border: 1px solid rgba(255, 255, 255, 0.78);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.86);
+        box-shadow: 0 22px 44px rgba(66, 49, 15, 0.12);
+        color: var(--title);
+        text-decoration: none;
+        backdrop-filter: blur(12px);
+      }
+
+      .slide-final-link--linkedin {
+        min-width: clamp(164px, 14vw, 206px);
+        gap: clamp(10px, 0.9vw, 14px);
+        margin-top: clamp(14px, 1.4vw, 24px);
+        font-size: clamp(1.1rem, 1.25vw, 1.42rem);
+        font-weight: 780;
+        letter-spacing: -0.03em;
+      }
+
+      .slide-final-logo--linkedin {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: clamp(28px, 2.3vw, 36px);
+        height: clamp(28px, 2.3vw, 36px);
+        border-radius: 8px;
+        background: #0a66c2;
+        color: #fff;
+        font-size: clamp(1.05rem, 1.1vw, 1.35rem);
+        font-weight: 850;
+        line-height: 1;
+        letter-spacing: -0.06em;
+      }
+
       .hero-meta {
         display: flex;
         flex-wrap: wrap;
