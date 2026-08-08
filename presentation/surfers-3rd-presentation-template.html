@@ -1237,6 +1237,15 @@
         font-size: clamp(2.75rem, 4.25vw, 5rem);
       }
 
+      /* Keep the active Ambient AI principle prominent while softening the others. */
+      .slide-shell--ambient-focus-workflow .evidence-card:nth-child(n+2),
+      .slide-shell--ambient-focus-always-on .evidence-card:nth-child(1),
+      .slide-shell--ambient-focus-always-on .evidence-card:nth-child(3),
+      .slide-shell--ambient-focus-gui .evidence-card:nth-child(-n+2) {
+        opacity: 0.16;
+        filter: grayscale(0.8);
+      }
+
       .slide-shell--always-on .copy--split,
       .slide-shell--translation-toggle .copy--split {
         flex: 1 1 48%;
@@ -3556,7 +3565,7 @@
         </section>
 
         <section class="slide" aria-label="01. Ambient AI">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--principles slide-shell--ambient">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--principles slide-shell--ambient slide-shell--ambient-focus-workflow">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
@@ -3717,7 +3726,7 @@
             <div class="chapter-label">미래와 제언</div>
             <div class="copy copy--split">
               <p class="kicker">Always-on AI</p>
-              <h1 class="title">기존의 '번역 보기' 버튼을 토글링 한 것에 불과했습니다</h1>
+              <h1 class="title">기존의 '번역 보기' 버튼을 <br/>토글링 한 것에 불과했습니다</h1>
             </div>
             <div class="visual" aria-label="X 번역 보기 전후 비교">
               <div class="translation-toggle">
@@ -3730,7 +3739,7 @@
         </section>
 
         <section class="slide" aria-label="01. Ambient AI">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--principles slide-shell--ambient">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--principles slide-shell--ambient slide-shell--ambient-focus-always-on">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
@@ -3749,7 +3758,7 @@
         </section>
 
         <section class="slide" aria-label="01. Ambient AI">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--principles slide-shell--ambient">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--principles slide-shell--ambient slide-shell--ambient-focus-gui">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
