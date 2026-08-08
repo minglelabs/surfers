@@ -346,6 +346,10 @@
         letter-spacing: -0.09em;
       }
 
+      .vibe-tool--bolt {
+        z-index: 3;
+      }
+
       .vibe-tool--v0 .vibe-tool-mark {
         color: #111111;
         font-size: clamp(2rem, 3.3vw, 3.15rem);
@@ -1932,6 +1936,7 @@
         .slide-shell--vibe-tools .visual { flex: 0 0 auto; width: 100%; }
         .vibe-tool-cloud { height: clamp(270px, 72vw, 360px); }
         .vibe-tool { padding: 8px; border-radius: 16px; }
+        .vibe-tool { width: min(var(--s), 24vw); height: min(var(--s), 24vw); }
         .vibe-tool-name { font-size: clamp(0.68rem, 2.4vw, 0.88rem); }
         .vibe-tool-mark { font-size: clamp(1rem, 5.4vw, 1.65rem); }
         .vibe-tool--bolt .vibe-tool-mark { font-size: clamp(0.82rem, 4.2vw, 1.3rem); }
@@ -2439,15 +2444,23 @@
                   <span class="vibe-tool-mark" aria-hidden="true">v0</span>
                   <span class="vibe-tool-name">v0</span>
                 </div>
-                <div class="vibe-tool vibe-tool--replit" style="--x: 25%; --y: 64%; --s: clamp(110px, 8.5vw, 142px); --r: 7deg">
+                <div class="vibe-tool" style="--x: 31%; --y: 44%; --s: clamp(102px, 7.2vw, 120px); --r: -7deg">
+                  <img src="./assets/anthropic-logo.svg" alt="Claude Code 로고" />
+                  <span class="vibe-tool-name">Claude Code</span>
+                </div>
+                <div class="vibe-tool" style="--x: 57%; --y: 44%; --s: clamp(100px, 7vw, 116px); --r: 10deg">
+                  <img src="./assets/chatgpt-logo.svg" alt="Codex 로고" />
+                  <span class="vibe-tool-name">Codex</span>
+                </div>
+                <div class="vibe-tool vibe-tool--replit" style="--x: 19%; --y: 73%; --s: clamp(106px, 8vw, 132px); --r: 7deg">
                   <span class="vibe-tool-mark" aria-hidden="true">Replit</span>
                   <span class="vibe-tool-name">Replit Agent</span>
                 </div>
-                <div class="vibe-tool" style="--x: 49%; --y: 74%; --s: clamp(116px, 9vw, 152px); --r: -10deg">
+                <div class="vibe-tool" style="--x: 47%; --y: 78%; --s: clamp(110px, 8.2vw, 138px); --r: -10deg">
                   <img src="./assets/windsurf-logo.png" alt="Windsurf 로고" />
                   <span class="vibe-tool-name">Windsurf</span>
                 </div>
-                <div class="vibe-tool vibe-tool--manus" style="--x: 75%; --y: 62%; --s: clamp(112px, 8.6vw, 146px); --r: 9deg">
+                <div class="vibe-tool vibe-tool--manus" style="--x: 79%; --y: 67%; --s: clamp(108px, 8.1vw, 136px); --r: 9deg">
                   <img src="./assets/manus-logo.ico" alt="Manus 로고" />
                   <span class="vibe-tool-name">Manus</span>
                 </div>
