@@ -181,10 +181,11 @@
 
       .elad-opportunity-photo {
         display: block;
-        width: 100%;
+        width: 50%;
         aspect-ratio: 16 / 9;
         object-fit: cover;
         border-radius: 20px;
+        align-self: center;
       }
 
       .elad-opportunity-attribution {
@@ -193,6 +194,24 @@
         font-weight: 650;
         line-height: 1.45;
         letter-spacing: -0.035em;
+      }
+
+      .elad-opportunity-quote-original,
+      .elad-opportunity-quote-translation {
+        color: var(--body);
+        font-size: clamp(0.82rem, 1.1vw, 1.04rem);
+        line-height: 1.45;
+        letter-spacing: -0.035em;
+      }
+
+      .elad-opportunity-quote-original {
+        color: var(--title);
+        font-family: "Iowan Old Style", "Nanum Myeongjo", "Times New Roman", serif;
+        font-style: italic;
+      }
+
+      .elad-opportunity-quote-translation {
+        font-weight: 650;
       }
 
       .slide-shell--bigtech {
@@ -2223,7 +2242,7 @@
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--center copy--wide">
               <p class="kicker">한계</p>
-              <h1 class="title title--center">해자가 없는 AI 래퍼 스타트업을 하는 것은<br />AI라는 쓰나미에 스스로 집어삼켜지는 격이다</h1>
+              <h1 class="title title--center">해자가 없는 AI 래퍼 스타트업을 하는 것은<br />AI라는 쓰나미에 스스로 집어삼켜지는 격일까요?</h1>
             </div>
           </article>
         </section>
@@ -2234,12 +2253,14 @@
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
               <p class="kicker">한계</p>
-              <h1 class="title">Elad Gil은 그럼에도 AI Wrapper가 좋은 기회라고 강조했습니다</h1>
+              <h1 class="title">Elad Gil은 오히려<br/> 해자는 나중에 쌓아도<br />된다고 강조했습니다</h1>
             </div>
             <div class="visual" aria-label="Elad Gil 사진과 투자 이력">
               <div class="elad-opportunity-panel">
                 <img class="elad-opportunity-photo" src="assets/elad-gil-opportunity.png" alt="Elad Gil" />
-                <p class="elad-opportunity-attribution">Elad Gil, 실리콘 밸리의 유명 투자자, Airbnb, Stripe, Coinbase, Figma, Notion, Anduril, Deel, Instacart, Pinterest, OpenAI, CharacterAI, Harvey, Mistral, Perplexity, Pika에 투자</p>
+                <p class="elad-opportunity-attribution">Elad Gil, 실리콘 밸리의 유명 투자자, OpenAI, CharacterAI, Harvey, Mistral, Perplexity, Pika, Airbnb, Stripe, Coinbase, Figma, Notion, Anduril, Instacart, Pinterest에 투자</p>
+                <p class="elad-opportunity-quote-original">"Serving a customer need well is often more important (and harder) to think about than defensibility."</p>
+                <p class="elad-opportunity-quote-translation">"Wrapper냐 아니냐보다 고객 문제를 잘 푸는 게 중요하고, 해자는 나중에 쌓으면 된다."</p>
               </div>
             </div>
           </article>
