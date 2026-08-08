@@ -3805,7 +3805,7 @@
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
               <p class="kicker">Workflow Integration</p>
-              <h1 class="title">커서 팀은 이를 해결하기 위해<br />AI에게 접근 권한을 부여하고<br />개발 환경에 AI를 통합했습니다</h1>
+              <h1 class="title">커서 팀은 이를 해결하기 위해<br />개발 환경에 AI를 통합했습니다</h1>
             </div>
             <div class="visual" aria-label="VS Code와 ChatGPT가 Cursor로 통합되는 과정">
               <div class="logo-equation logo-equation--stacked">
@@ -3838,7 +3838,7 @@
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
               <p class="kicker">Workflow Integration</p>
-              <h1 class="title">그러자 비로소 완전한 <br/>바이브 코딩 트렌드가 <br/>시작되었습니다.</h1>
+              <h1 class="title">그러자 바이브 코딩이 시작됐습니다 <br/>단순한 워크플로우 통합만으로.</h1>
             </div>
             <div class="visual" aria-label="Cursor 로고">
               <div class="chatgpt-logo">
@@ -3989,11 +3989,24 @@
         const previousButton = document.getElementById("previous-button");
         const nextButton = document.getElementById("next-button");
         const total = slides.length;
+        const leadingClone = slides[total - 1].cloneNode(true);
+        const trailingClone = slides[0].cloneNode(true);
+        leadingClone.classList.remove("is-active");
+        trailingClone.classList.remove("is-active");
+        leadingClone.setAttribute("aria-hidden", "true");
+        trailingClone.setAttribute("aria-hidden", "true");
+        leadingClone.setAttribute("inert", "");
+        trailingClone.setAttribute("inert", "");
+        leadingClone.dataset.loopClone = "leading";
+        trailingClone.dataset.loopClone = "trailing";
+        track.insertBefore(leadingClone, slides[0]);
+        track.appendChild(trailingClone);
         const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
         let activeIndex = 0;
         let hasInitialised = false;
         let wheelLocked = false;
         let touchStart = null;
+        let loopResetTimer = null;
         function normalise(index) {
           return Math.min(Math.max(index, 0), total - 1);
         }
@@ -4003,10 +4016,11 @@
           return Number.isInteger(number) && number >= 1 && number <= total ? number - 1 : null;
         }
 
-        function setActive(nextIndex, { syncHash = true, immediate = false } = {}) {
+        function setActive(nextIndex, { syncHash = true, immediate = false, visualIndex = null } = {}) {
           activeIndex = normalise(nextIndex);
           track.style.transitionDuration = immediate || !hasInitialised || motionQuery.matches ? "0ms" : "420ms";
-          track.style.transform = `translate3d(${-activeIndex * window.innerWidth}px, 0, 0)`;
+          const renderedIndex = visualIndex ?? activeIndex + 1;
+          track.style.transform = `translate3d(${-renderedIndex * window.innerWidth}px, 0, 0)`;
 
           slides.forEach((slide, index) => {
             const isActive = index === activeIndex;
@@ -4026,10 +4040,26 @@
           hasInitialised = true;
         }
 
+        function resetLoopPosition(renderedIndex) {
+          loopResetTimer = window.setTimeout(() => {
+            loopResetTimer = null;
+            setActive(activeIndex, { syncHash: false, immediate: true, visualIndex: renderedIndex });
+          }, motionQuery.matches ? 0 : 460);
+        }
+
         function move(step) {
+          if (loopResetTimer !== null) return;
           let nextIndex = activeIndex + step;
-          if (nextIndex >= total) nextIndex = 0;
-          if (nextIndex < 0) nextIndex = total - 1;
+          if (nextIndex >= total) {
+            setActive(0, { visualIndex: total + 1 });
+            resetLoopPosition(1);
+            return;
+          }
+          if (nextIndex < 0) {
+            setActive(total - 1, { visualIndex: 0 });
+            resetLoopPosition(total);
+            return;
+          }
           setActive(nextIndex);
         }
 
