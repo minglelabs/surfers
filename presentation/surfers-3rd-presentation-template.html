@@ -181,6 +181,79 @@
         white-space: nowrap;
       }
 
+      .slide-shell--competitor-cloud {
+        gap: clamp(20px, 3.2vw, 52px);
+      }
+
+      .slide-shell--competitor-cloud .copy--split {
+        flex: 0 1 50%;
+        max-width: 50rem;
+      }
+
+      .slide-shell--competitor-cloud .title {
+        max-width: none;
+        font-size: clamp(2.65rem, 4.6vw, 5.4rem);
+        line-height: 1.12;
+        white-space: nowrap;
+      }
+
+      .slide-shell--competitor-cloud .visual {
+        flex: 0 1 50%;
+        width: auto;
+        min-width: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      .competitor-cloud-stack {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: clamp(10px, 1.7vw, 24px);
+      }
+
+      .competitor-cloud-label {
+        color: var(--title);
+        font-size: clamp(1.28rem, 2.25vw, 2.2rem);
+        font-weight: 760;
+        line-height: 1.2;
+        letter-spacing: -0.06em;
+        text-align: center;
+      }
+
+      .slide-competitor-cloud {
+        position: relative;
+        width: 100%;
+        height: clamp(300px, 32vw, 430px);
+      }
+
+      .slide-competitor-logo {
+        position: absolute;
+        left: var(--x);
+        top: var(--y);
+        width: var(--s);
+        height: var(--s);
+        padding: clamp(8px, 0.72vw, 12px);
+        border: 1px solid rgba(255, 255, 255, 0.72);
+        border-radius: clamp(16px, 1.55vw, 24px);
+        background: rgba(255, 255, 255, 0.88);
+        box-shadow: 0 20px 40px rgba(66, 49, 15, 0.13);
+        object-fit: contain;
+        transform: translate(-50%, -50%) rotate(var(--r));
+        backdrop-filter: blur(10px);
+      }
+
+      .slide-competitor-logo--translation {
+        box-shadow: 0 20px 42px rgba(249, 115, 22, 0.15);
+      }
+
+      .slide-competitor-logo--note {
+        box-shadow: 0 20px 42px rgba(45, 42, 30, 0.13);
+      }
+
       .slide-shell--tsunami .title {
         max-width: 26ch;
         font-size: clamp(2rem, 3.8vw, 4.8rem);
@@ -1677,6 +1750,11 @@
         .slide-shell--bigtech .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--bigtech .visual { flex: 0 0 auto; width: 100%; }
         .slide-shell--bigtech .title { font-size: clamp(2.1rem, 7.2vw, 4.2rem); white-space: normal; }
+        .slide-shell--competitor-cloud .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
+        .slide-shell--competitor-cloud .visual { flex: 0 0 auto; width: 100%; }
+        .slide-shell--competitor-cloud .title { max-width: none; font-size: clamp(2.1rem, 7.2vw, 4.2rem); white-space: normal; }
+        .competitor-cloud-label { font-size: clamp(1.08rem, 4.4vw, 1.6rem); }
+        .slide-competitor-cloud { height: clamp(250px, 66vw, 390px); }
         .slide-shell--cursor-series .chatgpt-logo { min-height: 285px; }
         .slide-shell--cursor-series .chatgpt-logo img { width: clamp(150px, 32vw, 230px); }
         .slide-shell--cursor-series .logo-equation { min-height: 285px; gap: 6px; }
@@ -2003,6 +2081,44 @@
                 <p class="quote-only-original">“Today’s day one, no moat businesses: AI wrappers.”</p>
                 <p class="quote-only-translation">“AI 래퍼는 아직 초창기라서, 제대로 된 해자가 없습니다.”</p>
               </blockquote>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="01. AI 래퍼가 난무하는 이유">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--competitor-cloud">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="chapter-label">AI 래퍼란</div>
+            <div class="copy copy--split">
+              <p class="kicker">한계</p>
+              <h1 class="title">그래서 수많은 AI<br />래퍼가 난무하고 있습니다</h1>
+            </div>
+            <div class="visual" aria-label="수많은 노트테이킹 서비스">
+              <div class="competitor-cloud-stack">
+                <p class="competitor-cloud-label">수많은 노트테이킹 서비스들</p>
+                <div class="slide-competitor-cloud">
+                  <img class="slide-competitor-logo slide-competitor-logo--translation" style="--x: 12%; --y: 18%; --s: clamp(62px, 5vw, 84px); --r: -11deg" src="./assets/logo-transync.jpg" alt="Transync AI" />
+                  <img class="slide-competitor-logo slide-competitor-logo--translation" style="--x: 31%; --y: 10%; --s: clamp(64px, 5.1vw, 86px); --r: 6deg" src="./assets/logo-google-translate.jpg" alt="Google Translate" />
+                  <img class="slide-competitor-logo slide-competitor-logo--translation" style="--x: 47%; --y: 21%; --s: clamp(60px, 4.8vw, 82px); --r: -8deg" src="./assets/logo-apple-translate.jpg" alt="Apple Translate" />
+                  <img class="slide-competitor-logo slide-competitor-logo--translation" style="--x: 68%; --y: 13%; --s: clamp(64px, 5.1vw, 86px); --r: 12deg" src="./assets/logo-felo.jpg" alt="Felo Translator" />
+                  <img class="slide-competitor-logo slide-competitor-logo--translation" style="--x: 87%; --y: 24%; --s: clamp(60px, 4.9vw, 82px); --r: -4deg" src="./assets/logo-papago.jpg" alt="Papago" />
+                  <img class="slide-competitor-logo slide-competitor-logo--translation" style="--x: 20%; --y: 40%; --s: clamp(66px, 5.2vw, 88px); --r: 9deg" src="./assets/logo-deepl.png" alt="DeepL" />
+                  <img class="slide-competitor-logo slide-competitor-logo--translation" style="--x: 38%; --y: 31%; --s: clamp(58px, 4.7vw, 80px); --r: -10deg" src="./assets/logo-microsoft-translator.png" alt="Microsoft Translator" />
+                  <img class="slide-competitor-logo slide-competitor-logo--translation" style="--x: 57%; --y: 42%; --s: clamp(60px, 4.9vw, 82px); --r: 13deg" src="./assets/logo-itranslate.png" alt="iTranslate" />
+                  <img class="slide-competitor-logo slide-competitor-logo--translation" style="--x: 75%; --y: 34%; --s: clamp(64px, 5.1vw, 86px); --r: -13deg" src="./assets/logo-jotme.png" alt="JotMe" />
+                  <img class="slide-competitor-logo slide-competitor-logo--translation" style="--x: 91%; --y: 46%; --s: clamp(58px, 4.7vw, 80px); --r: 7deg" src="./assets/logo-cuckoo.png" alt="Cuckoo" />
+                  <img class="slide-competitor-logo slide-competitor-logo--note" style="--x: 11%; --y: 62%; --s: clamp(60px, 4.8vw, 82px); --r: -6deg" src="./assets/logo-tiro.png" alt="Tiro" />
+                  <img class="slide-competitor-logo slide-competitor-logo--note" style="--x: 29%; --y: 54%; --s: clamp(64px, 5.1vw, 86px); --r: 8deg" src="./assets/logo-char.png" alt="Char" />
+                  <img class="slide-competitor-logo slide-competitor-logo--note" style="--x: 49%; --y: 64%; --s: clamp(66px, 5.2vw, 88px); --r: -9deg" src="./assets/logo-granola.png" alt="Granola" />
+                  <img class="slide-competitor-logo slide-competitor-logo--note" style="--x: 69%; --y: 56%; --s: clamp(60px, 4.8vw, 82px); --r: 14deg" src="./assets/logo-alt.png" alt="Alt" />
+                  <img class="slide-competitor-logo slide-competitor-logo--note" style="--x: 84%; --y: 68%; --s: clamp(58px, 4.7vw, 80px); --r: -12deg" src="./assets/logo-otter.png" alt="Otter.ai" />
+                  <img class="slide-competitor-logo slide-competitor-logo--note" style="--x: 17%; --y: 86%; --s: clamp(60px, 4.8vw, 82px); --r: -8deg" src="./assets/logo-fireflies.png" alt="Fireflies.ai" />
+                  <img class="slide-competitor-logo slide-competitor-logo--note" style="--x: 36%; --y: 77%; --s: clamp(64px, 5.1vw, 86px); --r: 9deg" src="./assets/logo-fathom.png" alt="Fathom" />
+                  <img class="slide-competitor-logo slide-competitor-logo--note" style="--x: 55%; --y: 88%; --s: clamp(60px, 4.8vw, 82px); --r: -5deg" src="./assets/logo-tldv.png" alt="tl;dv" />
+                  <img class="slide-competitor-logo slide-competitor-logo--note" style="--x: 72%; --y: 78%; --s: clamp(64px, 5.1vw, 86px); --r: 7deg" src="./assets/logo-read-ai.png" alt="Read AI" />
+                  <img class="slide-competitor-logo slide-competitor-logo--note" style="--x: 90%; --y: 88%; --s: clamp(58px, 4.7vw, 80px); --r: -10deg" src="./assets/logo-notion.png" alt="Notion" />
+                </div>
+              </div>
             </div>
           </article>
         </section>
