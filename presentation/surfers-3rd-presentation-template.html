@@ -1237,6 +1237,64 @@
         font-size: clamp(2.75rem, 4.25vw, 5rem);
       }
 
+      .slide-shell--always-on .copy--split,
+      .slide-shell--translation-toggle .copy--split {
+        flex: 1 1 48%;
+        max-width: 56rem;
+        min-width: 0;
+      }
+
+      .slide-shell--always-on .title,
+      .slide-shell--translation-toggle .title {
+        max-width: 16ch;
+        font-size: clamp(2.7rem, 4.6vw, 5.6rem);
+        line-height: 1.1;
+        letter-spacing: -0.085em;
+      }
+
+      .slide-shell--always-on .visual {
+        flex: 0 1 42rem;
+        width: min(100%, 42rem);
+        min-width: 0;
+      }
+
+      .slide-shell--translation-toggle .visual {
+        flex: 0 1 34rem;
+        width: min(100%, 34rem);
+        min-width: 0;
+      }
+
+      .always-on-photo {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+
+      .translation-toggle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: clamp(8px, 1vw, 14px);
+      }
+
+      .translation-toggle img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1168 / 544;
+        object-fit: cover;
+        border-radius: 16px;
+      }
+
+      .translation-toggle-arrow {
+        color: var(--body);
+        font-size: clamp(2rem, 3.3vw, 3.5rem);
+        font-weight: 500;
+        line-height: 0.8;
+      }
+
       .slide-shell--cursor-series .copy--split {
         flex: 1 1 68%;
         max-width: 72rem;
@@ -2289,6 +2347,15 @@
         .slide-shell--ambient .visual { flex: 0 0 auto; width: 100%; }
         .slide-shell--ambient .evidence-card { grid-template-columns: auto minmax(0, 1fr); justify-content: normal; }
         .slide-shell--ambient .evidence-title { font-size: clamp(1.95rem, 6.5vw, 3.15rem); }
+        .slide-shell--always-on .copy--split,
+        .slide-shell--translation-toggle .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
+        .slide-shell--always-on .visual,
+        .slide-shell--translation-toggle .visual { flex: 0 0 auto; width: 100%; }
+        .slide-shell--always-on .title,
+        .slide-shell--translation-toggle .title { max-width: none; font-size: clamp(2.2rem, 7.2vw, 4.2rem); }
+        .always-on-photo { max-height: 40vh; object-fit: contain; }
+        .translation-toggle { width: 100%; }
+        .translation-toggle img { max-height: 25vh; object-fit: contain; }
         .slide-shell--cursor-series .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--cursor-series .visual { flex: 0 0 auto; width: 100%; }
         .slide-shell--cursor-bridge .visual { margin-left: 0; margin-right: 0; }
@@ -2602,7 +2669,7 @@
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--center copy--wide">
               <p class="kicker">본질</p>
-              <h1 class="title title--center">AI 래퍼 서비스의<br/>업의 본질은 무엇일까요?</h1>
+              <h1 class="title title--center">AI 래퍼 서비스의<br/>본질은 무엇일까요?</h1>
             </div>
           </article>
         </section>
@@ -2742,7 +2809,7 @@
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--center copy--wide">
               <p class="kicker">한계</p>
-              <h1 class="title title--center">해자가 없는 AI 래퍼 스타트업을 하는 것은<br />AI라는 쓰나미에 스스로 집어삼켜지는 격일까요?</h1>
+              <h1 class="title title--center">해자가 없는 AI 래퍼 스타트업을 하는 것은<br />AI라는 쓰나미에 스스로 걸어 들어가는 격일까요?</h1>
             </div>
           </article>
         </section>
@@ -3034,7 +3101,7 @@
             <div class="chapter-label">래퍼 서비스 사례</div>
             <div class="copy copy--center copy--wide">
               <p class="kicker">STUDY</p>
-              <h1 class="title title--center">이 분야는 앞으로 어떨까?<br />'사진 to 풀이'로는 차별화 불가능하니 다른 길을 모색해야<br />오히려 아예 놀이용으로 간다면 기회가 있을까?</h1>
+              <h1 class="title title--center">이 분야는 앞으로 어떨까?<br />'사진 to 풀이'로는 차별화 불가능하니 다른 길을 모색해야.<br />오히려 아예 놀이용으로 간다면 기회가 있을까?</h1>
             </div>
           </article>
         </section>
@@ -3458,6 +3525,25 @@
           </article>
         </section>
 
+        <section class="slide" aria-label="01. Ambient AI">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--principles slide-shell--ambient">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="chapter-label">AI 래퍼란</div>
+            <div class="copy copy--split">
+              <p class="kicker">Vision</p>
+              <h1 class="title">Ambient AI</h1>
+              <p class="body">Ambient는 '나를 둘러싼'이라는 뜻입니다.</p>
+            </div>
+            <div class="visual" aria-label="Ambient AI 설명 카드">
+              <div class="evidence-stack">
+                <section class="evidence-card"><span class="evidence-index">1</span><div><h2 class="evidence-title">Workflow Integration</h2></div></section>
+                <section class="evidence-card"><span class="evidence-index">2</span><div><h2 class="evidence-title">Always-on AI</h2></div></section>
+                <section class="evidence-card"><span class="evidence-index">3</span><div><h2 class="evidence-title">GUI to CUI</h2></div></section>
+              </div>
+            </div>
+          </article>
+        </section>
+
         <section class="slide" aria-label="01. Cursor 사례">
           <article class="slide-shell slide-shell--center slide-shell--section slide-shell--cursor-context">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
@@ -3492,7 +3578,7 @@
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
               <p class="kicker">Workflow Integration</p>
-              <h1 class="title">그래서 "개발자는 끝났다"는<br/>얘기는 이미 익숙했습니다.</h1>
+              <h1 class="title">"개발자는 끝났다"는 얘기는<br/>이미 익숙할 정도였습니다.</h1>
             </div>
             <div class="visual" aria-label="ChatGPT 로고">
               <div class="chatgpt-logo">
@@ -3537,7 +3623,7 @@
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
               <p class="kicker">Workflow Integration</p>
-              <h1 class="title">커서 팀은 이를 해결하기 위해<br />AI에게 접근 권한을 부여하고<br />개발 환경에 완전히 통합했습니다</h1>
+              <h1 class="title">커서 팀은 이를 해결하기 위해<br />AI에게 접근 권한을 부여하고<br />개발 환경에 AI를 통합했습니다</h1>
             </div>
             <div class="visual" aria-label="VS Code와 ChatGPT가 Cursor로 통합되는 과정">
               <div class="logo-equation logo-equation--stacked">
@@ -3576,6 +3662,38 @@
               <div class="chatgpt-logo">
                 <img src="assets/cursor-logo.svg" alt="Cursor 로고" />
                 <p class="logo-service-name">Cursor</p>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="03. X의 자동 번역 사례">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--always-on">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="chapter-label">미래와 제언</div>
+            <div class="copy copy--split">
+              <p class="kicker">Always-on AI</p>
+              <h1 class="title">올해 4월 X의 자동 번역이 세상을 뒤집어 놓았습니다</h1>
+            </div>
+            <div class="visual" aria-label="Elon Musk 사진">
+              <img class="always-on-photo" src="./assets/elon-musk-translation.png" alt="Elon Musk 사진" />
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="03. X의 번역 보기 토글 사례">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--translation-toggle">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="chapter-label">미래와 제언</div>
+            <div class="copy copy--split">
+              <p class="kicker">Always-on AI</p>
+              <h1 class="title">기존의 '번역 보기' 버튼을 토글링 한 것에 불과했습니다</h1>
+            </div>
+            <div class="visual" aria-label="X 번역 보기 전후 비교">
+              <div class="translation-toggle">
+                <img src="./assets/x-translation-before.png" alt="X 번역 보기 버튼이 표시된 화면" />
+                <span class="translation-toggle-arrow" aria-hidden="true">↓</span>
+                <img src="./assets/x-translation-after.png" alt="X 번역 보기 상태가 바뀐 화면" />
               </div>
             </div>
           </article>
