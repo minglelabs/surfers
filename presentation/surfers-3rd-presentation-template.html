@@ -2942,7 +2942,10 @@
         }
 
         function move(step) {
-          setActive(activeIndex + step);
+          let nextIndex = activeIndex + step;
+          if (nextIndex >= total) nextIndex = 0;
+          if (nextIndex < 0) nextIndex = total - 1;
+          setActive(nextIndex);
         }
 
         homeButton.addEventListener("click", () => setActive(0));
