@@ -1228,8 +1228,13 @@
         width: min(100%, 52rem);
       }
 
+      .slide-shell--ambient .evidence-card {
+        grid-template-columns: auto max-content;
+        justify-content: end;
+      }
+
       .slide-shell--ambient .evidence-title {
-        font-size: clamp(2.25rem, 3vw, 3.5rem);
+        font-size: clamp(2.75rem, 4.25vw, 5rem);
       }
 
       .slide-shell--cursor-series .copy--split {
@@ -2244,6 +2249,7 @@
         .slide-shell--principles .evidence-title { font-size: clamp(1.75rem, 7vw, 3.3rem); }
         .slide-shell--ambient .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--ambient .visual { flex: 0 0 auto; width: 100%; }
+        .slide-shell--ambient .evidence-card { grid-template-columns: auto minmax(0, 1fr); justify-content: normal; }
         .slide-shell--ambient .evidence-title { font-size: clamp(1.95rem, 6.5vw, 3.15rem); }
         .slide-shell--cursor-series .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--cursor-series .visual { flex: 0 0 auto; width: 100%; }
@@ -3399,14 +3405,15 @@
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
-              <p class="kicker">첫 번째 요소</p>
+              <p class="kicker">Vision</p>
               <h1 class="title">Ambient AI</h1>
               <p class="body">Ambient는 '나를 둘러싼'이라는 뜻입니다.</p>
             </div>
             <div class="visual" aria-label="Ambient AI 설명 카드">
               <div class="evidence-stack">
-                <section class="evidence-card"><span class="evidence-index">1</span><div><h2 class="evidence-title">사용환경과 AI 서비스를 완전히 통합</h2></div></section>
-                <section class="evidence-card"><span class="evidence-index">2</span><div><h2 class="evidence-title">AI 서비스는 최대한 자동 제공</h2></div></section>
+                <section class="evidence-card"><span class="evidence-index">1</span><div><h2 class="evidence-title">Workflow Integration</h2></div></section>
+                <section class="evidence-card"><span class="evidence-index">2</span><div><h2 class="evidence-title">Always-on AI</h2></div></section>
+                <section class="evidence-card"><span class="evidence-index">3</span><div><h2 class="evidence-title">GUI to CUI</h2></div></section>
               </div>
             </div>
           </article>
@@ -3417,7 +3424,7 @@
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--center copy--wide">
-              <p class="kicker">Cursor</p>
+              <p class="kicker">Workflow Integration</p>
               <h1 class="title title--center">Cursor가 떠오르기 전 2024년 여름까지<br />SW 개발 업계 상황이 어땠는지를 돌아봅시다</h1>
             </div>
           </article>
@@ -3428,7 +3435,7 @@
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
-              <p class="kicker">Cursor</p>
+              <p class="kicker">Workflow Integration</p>
               <h1 class="title">그 이전에도 AI가 코딩에 큰 도움을 주고 있었습니다</h1>
             </div>
             <div class="visual" aria-label="ChatGPT 로고">
@@ -3445,8 +3452,8 @@
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
-              <p class="kicker">Cursor</p>
-              <h1 class="title">그때도 이미 &quot;개발자는 끝났다&quot;는 얘기를 하곤 했습니다.</h1>
+              <p class="kicker">Workflow Integration</p>
+              <h1 class="title">그래서 "개발자는 끝났다"는<br/>얘기는 이미 익숙했습니다.</h1>
             </div>
             <div class="visual" aria-label="ChatGPT 로고">
               <div class="chatgpt-logo">
@@ -3462,8 +3469,8 @@
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
-              <p class="kicker">Cursor</p>
-              <h1 class="title">기존에는 AI에게 도움을 받으려면<br /> 알트탭해가며 코드를 일일이 <br />GPT에게 복붙해야만 했습니다.</h1>
+              <p class="kicker">Workflow Integration</p>
+              <h1 class="title">그러나 기존에는 AI에게 도움을 받으려면<br /> 알트탭해가며 코드를 일일이 <br />GPT에게 복붙해야만 했습니다.</h1>
             </div>
             <div class="visual" aria-label="VS Code와 ChatGPT 사이의 복사와 이동">
               <div class="logo-bridge">
@@ -3490,7 +3497,7 @@
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
-              <p class="kicker">Cursor</p>
+              <p class="kicker">Workflow Integration</p>
               <h1 class="title">커서 팀은 이를 해결하기 위해<br />AI에게 접근 권한을 부여하고<br />개발 환경에 완전히 통합했습니다</h1>
             </div>
             <div class="visual" aria-label="VS Code와 ChatGPT가 Cursor로 통합되는 과정">
@@ -3523,7 +3530,7 @@
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
-              <p class="kicker">Cursor</p>
+              <p class="kicker">Workflow Integration</p>
               <h1 class="title">그러나 Cursor가 출시되고 나서야 비로소 완전히 바이브 코딩이 대두되었습니다.</h1>
             </div>
             <div class="visual" aria-label="Cursor 로고">
@@ -3535,12 +3542,6 @@
           </article>
         </section>
 
-        <section class="slide chapter-divider" aria-label="챕터 11. 뜰 것 같은 분야들">
-          <article class="slide-shell chapter-divider-shell">
-            <h1 class="chapter-divider-title">11. 뜰 것 같은 분야들</h1>
-          </article>
-        </section>
-
         <section class="slide" aria-label="11. 뜰 것 같은 분야들">
           <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--future-fields">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
@@ -3548,7 +3549,6 @@
             <div class="copy copy--split">
               <p class="kicker">Chapter 11</p>
               <h1 class="title">뜰 것 같은 <span class="title-accent">분야들</span></h1>
-              <p class="body">기존 경험의 마지막 병목을 AI가 대신하는 곳에는 아직 새로운 기회가 남아 있습니다. 다음 네 영역은 ‘찾고, 판단하고, 이어서 실행하는’ 흐름을 한 번에 묶을 수 있습니다.</p>
             </div>
             <div class="visual" aria-label="뜰 것 같은 분야들 목록">
               <div class="future-field-list">
