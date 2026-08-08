@@ -154,6 +154,35 @@
         letter-spacing: -0.082em;
       }
 
+      .slide-shell--bigtech {
+        gap: clamp(24px, 4vw, 60px);
+      }
+
+      .slide-shell--bigtech .copy--split {
+        flex: 1 1 68%;
+        max-width: 68rem;
+      }
+
+      .slide-shell--bigtech .visual {
+        flex: 0 1 24rem;
+        width: min(100%, 24rem);
+        min-width: 0;
+      }
+
+      .slide-shell--bigtech .title {
+        max-width: none;
+        font-size: clamp(2.5rem, 4.3vw, 5rem);
+        letter-spacing: -0.085em;
+        white-space: nowrap;
+      }
+
+      .slide-shell--tsunami .title {
+        max-width: 26ch;
+        font-size: clamp(2rem, 3.8vw, 4.8rem);
+        line-height: 1.18;
+        letter-spacing: -0.075em;
+      }
+
       .brand {
         position: absolute;
         top: clamp(22px, 3vw, 42px);
@@ -1102,6 +1131,60 @@
         box-shadow: 0 16px 38px rgba(131, 85, 13, 0.07);
       }
 
+      .bigtech-panel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: min(100%, 43rem);
+        gap: clamp(22px, 3vw, 38px);
+      }
+
+      .bigtech-warning {
+        max-width: 16ch;
+        color: var(--title);
+        font-size: clamp(1.5rem, 2.35vw, 2.45rem);
+        font-weight: 780;
+        line-height: 1.18;
+        letter-spacing: -0.07em;
+        text-align: center;
+      }
+
+      .bigtech-logo-cloud {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        align-items: end;
+        gap: clamp(10px, 1.6vw, 20px);
+        width: min(100%, 40rem);
+      }
+
+      .bigtech-logo-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 0;
+        text-align: center;
+      }
+
+      .bigtech-logo-card:nth-child(1) { transform: translateY(9px) rotate(-7deg); }
+      .bigtech-logo-card:nth-child(2) { transform: translateY(-6px) rotate(4deg); }
+      .bigtech-logo-card:nth-child(3) { transform: translateY(10px) rotate(-3deg); }
+      .bigtech-logo-card:nth-child(4) { transform: translateY(-8px) rotate(6deg); }
+
+      .bigtech-logo-card img {
+        display: block;
+        width: clamp(64px, 7.6vw, 112px);
+        height: clamp(64px, 7.6vw, 112px);
+        object-fit: contain;
+      }
+
+      .bigtech-logo-name {
+        margin-top: 10px;
+        color: var(--title);
+        font-size: clamp(0.82rem, 1.1vw, 1rem);
+        font-weight: 780;
+        letter-spacing: -0.045em;
+      }
+
       .elad-figure {
         min-width: 0;
         margin: 0;
@@ -1558,6 +1641,9 @@
         .slide-shell--ambient .evidence-title { font-size: clamp(1.95rem, 6.5vw, 3.15rem); }
         .slide-shell--cursor-series .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--cursor-series .visual { flex: 0 0 auto; width: 100%; }
+        .slide-shell--bigtech .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
+        .slide-shell--bigtech .visual { flex: 0 0 auto; width: 100%; }
+        .slide-shell--bigtech .title { font-size: clamp(2.1rem, 7.2vw, 4.2rem); white-space: normal; }
         .slide-shell--cursor-series .chatgpt-logo { min-height: 285px; }
         .slide-shell--cursor-series .chatgpt-logo img { width: clamp(150px, 32vw, 230px); }
         .slide-shell--cursor-series .logo-equation { min-height: 285px; gap: 6px; }
@@ -1606,6 +1692,12 @@
         .elad-credit { margin-top: 5px; font-size: 0.54rem; }
         .elad-original, .elad-translation { margin-top: 5px; font-size: 0.74rem; line-height: 1.4; }
         .elad-interpretation { margin-top: 8px; padding-top: 8px; font-size: 0.66rem; line-height: 1.4; }
+        .slide-shell--tsunami .title { max-width: 21ch; font-size: clamp(1.75rem, 6vw, 3.2rem); }
+        .bigtech-panel { gap: 17px; }
+        .bigtech-warning { font-size: clamp(1.15rem, 4.7vw, 1.8rem); }
+        .bigtech-logo-cloud { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 18px; }
+        .bigtech-logo-card img { width: clamp(58px, 18vw, 94px); height: clamp(58px, 18vw, 94px); }
+        .bigtech-logo-name { margin-top: 6px; font-size: clamp(0.76rem, 3vw, 0.92rem); }
         .portfolio-note { padding-top: 8px; font-size: 0.56rem; }
         .metric-grid { gap: 8px; margin-top: 25px; }
         .metric { min-height: 152px; padding: 16px; border-radius: 17px; }
@@ -1865,51 +1957,68 @@
           </article>
         </section>
 
-        <section class="slide" aria-label="01. 래퍼의 한계">
+        <section class="slide" aria-label="01. AI 래퍼는 가치는 크지만 해자가 없다">
           <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--moat">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
               <p class="kicker">한계</p>
-              <h1 class="title">AI 래퍼는<br /><span class="title-accent">가치가 있지만</span><br />해자가 없다</h1>
-              <p class="body">사용자에게 가치를 주는 것과 오래 방어할 수 있는 것은 다른 문제입니다. a16z 파트너 Bryan Kim은 소비자 AI의 현재를 “지금은 해자가 없다”고 진단했습니다.</p>
+              <h1 class="title">AI 래퍼는<br />가치는 크지만<br /><span class="title-accent">해자가 없다</span></h1>
             </div>
-            <div class="visual" aria-label="AI 래퍼의 한계와 해자 정리 카드">
-              <div class="evidence-stack">
-                <section class="evidence-card"><span class="evidence-index">01</span><div><h2 class="evidence-title">가치는 생긴다</h2><p class="evidence-text">기존 경험을 더 쉽고 빠르게 제공하면 사용자는 분명한 효용을 느낍니다.</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">02</span><div><h2 class="evidence-title">하지만 복제된다</h2><p class="evidence-text">모델·프롬프트·UI만으로 만든 기능은 모델 제공자와 경쟁자가 빠르게 따라옵니다.</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">03</span><div><h2 class="evidence-title">해자는 뒤에서 만든다</h2><p class="evidence-text">고유 데이터·깊은 워크플로·유통과 신뢰를 쌓아야 방어력이 생깁니다.</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">04</span><div><h2 class="evidence-title">다름아닌 빅테크</h2><p class="evidence-text">래퍼 서비스들의 가장 큰 위협입니다. OpenAI·Anthropic·Google은 모델 기능을 원천 제품에 흡수하고, 더 큰 유통·자본으로 차별화를 압박합니다.</p></div></section>
+            <div class="visual" aria-label="Elad Gil의 AI 래퍼 관련 발언">
+              <div class="elad-panel">
+                <figure class="elad-figure">
+                  <img class="elad-photo" src="assets/elad-gil.jpg" alt="Elad Gil" />
+                </figure>
+                <blockquote class="elad-quote">
+                  <p class="elad-label">원문</p>
+                  <p class="elad-original">“Today’s day one, no moat businesses: AI wrappers.”</p>
+                  <p class="elad-label elad-label--translation">해석</p>
+                  <p class="elad-translation">“지금은 첫날이고, 해자 없는 비즈니스는 AI 래퍼입니다.”</p>
+                </blockquote>
               </div>
             </div>
           </article>
         </section>
 
-        <section class="slide" aria-label="01. Elad Gil의 관점">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--elad">
+        <section class="slide" aria-label="01. AI 래퍼 스타트업의 가장 큰 위협은 빅테크다">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--bigtech">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 래퍼란</div>
             <div class="copy copy--split">
-              <p class="kicker">한계 · 관점</p>
-              <h1 class="title">해자가 없어도<br /><span class="title-accent">기회는 사라지지 않는다</span></h1>
-              <p class="body">Elad Gil은 초기 AI·SaaS의 방어력이 약하더라도 고객의 필요를 잘 해결하는 일이 먼저라고 설명합니다. 방어력은 고객 가치 위에 시간이 지나며 쌓입니다.</p>
+              <h1 class="title">AI 래퍼 스타트업의<br />가장 큰 위협은 빅테크다.</h1>
             </div>
-            <div class="visual" aria-label="Elad Gil의 원문과 번역">
-              <div class="elad-panel">
-                <figure class="elad-figure">
-                  <img class="elad-photo" src="assets/elad-gil.jpg" alt="Elad Gil at Collision 2023" />
-                  <figcaption class="elad-credit">Elad Gil · Investor &amp; Operator<br />사진: <a href="https://commons.wikimedia.org/wiki/File:Elad_Gil_(53006122469).jpg" target="_blank" rel="noreferrer">Collision Conf / Wikimedia Commons</a> · CC BY 2.0</figcaption>
-                </figure>
-                <blockquote class="elad-quote">
-                  <p class="elad-label">원문</p>
-                  <p class="elad-original">“serving a customer need well is often more important (and harder) to think about than defensibility. In many cases defensibility emerges over time.”</p>
-                  <p class="elad-label elad-label--translation">번역</p>
-                  <p class="elad-translation">“고객의 필요를 잘 충족하는 일이 방어력 자체보다 더 중요하고, 생각하기도 더 어렵습니다. 많은 경우 방어력은 시간이 지나며 생깁니다.”</p>
-                  <p class="elad-interpretation">해자가 없다는 사실이 고객 가치나 사업 기회를 없애는 것은 아닙니다. 먼저 문제를 해결하고, 데이터·워크플로·유통을 쌓으며 해자를 만들어가면 됩니다.</p>
-                </blockquote>
-                <p class="portfolio-note">투자·초기 투자 기업 · Airbnb · Stripe · Coinbase · Figma · Notion · Anduril · Deel · Instacart · Pinterest · OpenAI · Character · Harvey · Mistral · Perplexity · Pika</p>
+            <div class="visual" aria-label="빅테크의 위협">
+              <div class="bigtech-panel">
+                <p class="bigtech-warning">이들이 패치할 때마다<br />스타트업 수만 개가 사라짐</p>
+                <div class="bigtech-logo-cloud">
+                  <section class="bigtech-logo-card">
+                    <img src="assets/chatgpt-logo.svg" alt="ChatGPT 로고" />
+                    <p class="bigtech-logo-name">ChatGPT</p>
+                  </section>
+                  <section class="bigtech-logo-card">
+                    <img src="assets/anthropic-logo.svg" alt="Claude 로고" />
+                    <p class="bigtech-logo-name">Claude</p>
+                  </section>
+                  <section class="bigtech-logo-card">
+                    <img src="assets/gemini-logo.svg" alt="Gemini 로고" />
+                    <p class="bigtech-logo-name">Gemini</p>
+                  </section>
+                  <section class="bigtech-logo-card">
+                    <img src="assets/deepseek-logo.svg" alt="DeepSeek 로고" />
+                    <p class="bigtech-logo-name">DeepSeek</p>
+                  </section>
+                </div>
               </div>
             </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="01. AI 래퍼의 쓰나미">
+          <article class="slide-shell slide-shell--center slide-shell--section slide-shell--tsunami">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="chapter-label">AI 래퍼란</div>
+            <h1 class="title title--center">해자가 없는 AI 래퍼 스타트업을 하는 것은<br />AI라는 쓰나미에 스스로 집어삼켜지는 격이다</h1>
           </article>
         </section>
 
