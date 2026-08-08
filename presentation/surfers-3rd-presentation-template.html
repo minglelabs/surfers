@@ -364,6 +364,43 @@
         white-space: nowrap;
       }
 
+      .studyfetch-proof-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: start;
+        gap: clamp(18px, 3.2vw, 48px);
+        width: min(100%, 74rem);
+        margin: clamp(22px, 3vw, 42px) auto 0;
+      }
+
+      .studyfetch-proof {
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .studyfetch-proof img {
+        display: block;
+        width: 100%;
+        height: clamp(230px, 34vh, 350px);
+        border-radius: 22px;
+        background: #fff;
+        box-shadow: 0 18px 34px rgba(45, 42, 30, 0.14);
+        object-fit: contain;
+      }
+
+      .studyfetch-proof figcaption {
+        max-width: 18ch;
+        margin-top: clamp(12px, 1.4vw, 18px);
+        color: var(--title);
+        font-size: clamp(1rem, 1.45vw, 1.28rem);
+        font-weight: 720;
+        line-height: 1.42;
+        letter-spacing: -0.045em;
+      }
+
       .study-example-image {
         display: block;
         width: auto;
@@ -2209,6 +2246,9 @@
         .automation-name { margin-bottom: 8px; font-size: clamp(0.93rem, 4.1vw, 1.2rem); }
         .automation-icon { width: clamp(66px, 19vw, 104px); height: clamp(66px, 19vw, 104px); border-radius: 17px; }
         .automation-description { margin-top: 8px; font-size: clamp(0.8rem, 3.3vw, 1.05rem); font-weight: 720; line-height: 1.4; }
+        .studyfetch-proof-grid { gap: 10px; margin-top: 20px; }
+        .studyfetch-proof img { height: clamp(160px, 29vh, 250px); border-radius: 17px; }
+        .studyfetch-proof figcaption { margin-top: 8px; font-size: clamp(0.8rem, 3.3vw, 1.05rem); line-height: 1.4; }
         .elad-panel { grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); gap: 11px; padding: 13px; border-radius: 17px; }
         .elad-photo { border-radius: 13px; }
         .elad-credit { margin-top: 5px; font-size: 0.54rem; }
@@ -2364,7 +2404,7 @@
               <nav class="toc-grid toc-grid--three" aria-label="목차 이동">
                 <a class="toc-link" href="#3"><span class="toc-index">01</span><span class="toc-text">AI 래퍼란</span><span class="toc-arrow">→</span></a>
                 <a class="toc-link" href="#17"><span class="toc-index">02</span><span class="toc-text">래퍼 서비스 사례</span><span class="toc-arrow">→</span></a>
-                <a class="toc-link" href="#36"><span class="toc-index">03</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
+                <a class="toc-link" href="#37"><span class="toc-index">03</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
               </nav>
             </div>
           </article>
@@ -2626,16 +2666,16 @@
                 <div class="toc-column">
                   <a class="toc-link" href="#18"><span class="toc-index">01</span><span class="toc-text">바이브 코딩 및 에이전트</span><span class="toc-arrow">→</span></a>
                   <a class="toc-link" href="#22"><span class="toc-index">02</span><span class="toc-text">AI 학습 도우미</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#28"><span class="toc-index">03</span><span class="toc-text">캐릭터 챗</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#29"><span class="toc-index">04</span><span class="toc-text">사진 보정</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#30"><span class="toc-index">05</span><span class="toc-text">식단 관리</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#29"><span class="toc-index">03</span><span class="toc-text">캐릭터 챗</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#30"><span class="toc-index">04</span><span class="toc-text">사진 보정</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#31"><span class="toc-index">05</span><span class="toc-text">식단 관리</span><span class="toc-arrow">→</span></a>
                 </div>
                 <div class="toc-column">
-                  <a class="toc-link" href="#31"><span class="toc-index">06</span><span class="toc-text">노트테이킹</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#32"><span class="toc-index">07</span><span class="toc-text">브라우저</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#33"><span class="toc-index">08</span><span class="toc-text">전문가 서비스</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#34"><span class="toc-index">09</span><span class="toc-text">AI 애그리게이터</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#35"><span class="toc-index">10</span><span class="toc-text">외국어 교육</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#32"><span class="toc-index">06</span><span class="toc-text">노트테이킹</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#33"><span class="toc-index">07</span><span class="toc-text">브라우저</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#34"><span class="toc-index">08</span><span class="toc-text">전문가 서비스</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#35"><span class="toc-index">09</span><span class="toc-text">AI 애그리게이터</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#36"><span class="toc-index">10</span><span class="toc-text">외국어 교육</span><span class="toc-arrow">→</span></a>
                 </div>
               </nav>
             </div>
@@ -2838,13 +2878,37 @@
           </article>
         </section>
 
+        <section class="slide" aria-label="03. AI 학습 도우미의 성장 포인트">
+          <article class="slide-shell slide-shell--center slide-shell--section slide-shell--studyfetch-proof">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="chapter-label">AI 학습 도우미</div>
+            <div class="copy copy--center copy--wide">
+              <p class="kicker">STUDY</p>
+              <div class="studyfetch-proof-grid">
+                <figure class="studyfetch-proof">
+                  <img src="./assets/studyfetch-creator-reels.png" alt="StudyFetch 릴스 바이럴 콘텐츠 화면" />
+                  <figcaption>릴스 바이럴과 크리에이터 네트워크 관리로 고속성장</figcaption>
+                </figure>
+                <figure class="studyfetch-proof">
+                  <img src="./assets/studyfetch-tools.png" alt="StudyFetch의 학습 도구 모음 화면" />
+                  <figcaption>강의자료로 학습세트 자동 생성, 학습 환경 개인화로 락인</figcaption>
+                </figure>
+                <figure class="studyfetch-proof">
+                  <img src="./assets/studyfetch-exam-screenshot.png" alt="StudyFetch의 시험 문제 풀이 화면" />
+                  <figcaption>시험이라는 명확한 목표에 집중, 고객의 실제 문제 해결</figcaption>
+                </figure>
+              </div>
+            </div>
+          </article>
+        </section>
+
         <section class="slide" aria-label="03. AI 학습 도우미의 앞으로">
           <article class="slide-shell slide-shell--center slide-shell--section slide-shell--tsunami slide-shell--study-thought">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
             <div class="chapter-label">AI 학습 도우미</div>
             <div class="copy copy--center copy--wide">
               <p class="kicker">STUDY</p>
-              <h1 class="title title--center">앞으로는?<br />키 피쳐는 차별화 불가능하니 다른 길을 모색해야<br />StudyFetch처럼 하거나, 놀이용으로 간다면 기회가 있을까?</h1>
+              <h1 class="title title--center">앞으로는?<br />키 피쳐는 차별화 불가능하니 다른 길을 모색해야<br />오히려 아예 놀이용으로 간다면 기회가 있을까?</h1>
             </div>
           </article>
         </section>
