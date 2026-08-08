@@ -155,15 +155,20 @@
       }
 
       .slide-shell--bigtech {
-        gap: clamp(24px, 4vw, 60px);
+        display: grid;
+        grid-template-columns: minmax(0, 44%) minmax(0, 1fr);
+        column-gap: clamp(14px, 2vw, 30px);
+        align-items: center;
+        justify-content: initial;
       }
 
       .slide-shell--bigtech .copy--split {
-        flex: 1 1 68%;
-        max-width: 68rem;
+        width: auto;
+        max-width: none;
       }
 
       .slide-shell--bigtech .visual {
+        justify-self: start;
         flex: 0 1 24rem;
         width: min(100%, 24rem);
         min-width: 0;
@@ -1668,6 +1673,7 @@
         .slide-shell--ambient .evidence-title { font-size: clamp(1.95rem, 6.5vw, 3.15rem); }
         .slide-shell--cursor-series .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--cursor-series .visual { flex: 0 0 auto; width: 100%; }
+        .slide-shell--bigtech { display: flex; }
         .slide-shell--bigtech .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--bigtech .visual { flex: 0 0 auto; width: 100%; }
         .slide-shell--bigtech .title { font-size: clamp(2.1rem, 7.2vw, 4.2rem); white-space: normal; }
@@ -1995,7 +2001,7 @@
             <div class="visual" aria-label="Elad Gil의 AI 래퍼 관련 발언">
               <blockquote class="quote-only">
                 <p class="quote-only-original">“Today’s day one, no moat businesses: AI wrappers.”</p>
-                <p class="quote-only-translation">“AI 래퍼는 이제 막 출발한 사업이라, 아직 독자적인 방어벽이 없습니다.”</p>
+                <p class="quote-only-translation">“AI 래퍼는 아직 초창기라서, 제대로 된 해자가 없습니다.”</p>
               </blockquote>
             </div>
           </article>
