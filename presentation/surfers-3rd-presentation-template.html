@@ -154,6 +154,47 @@
         letter-spacing: -0.082em;
       }
 
+      .slide-shell--elad-opportunity .copy--split {
+        flex: 1 1 48%;
+        max-width: 50rem;
+      }
+
+      .slide-shell--elad-opportunity .title {
+        max-width: 15ch;
+        font-size: clamp(2.6rem, 4.15vw, 4.8rem);
+        line-height: 1.1;
+        letter-spacing: -0.082em;
+      }
+
+      .slide-shell--elad-opportunity .visual {
+        flex: 0 1 44rem;
+        width: min(100%, 44rem);
+        min-width: 0;
+      }
+
+      .elad-opportunity-panel {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(16px, 2vw, 26px);
+        width: 100%;
+      }
+
+      .elad-opportunity-photo {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+
+      .elad-opportunity-attribution {
+        color: var(--body);
+        font-size: clamp(0.88rem, 1.25vw, 1.18rem);
+        font-weight: 650;
+        line-height: 1.45;
+        letter-spacing: -0.035em;
+      }
+
       .slide-shell--bigtech {
         display: grid;
         grid-template-columns: minmax(0, 44%) minmax(0, 1fr);
@@ -1765,6 +1806,9 @@
         .slide-shell--bigtech .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--bigtech .visual { flex: 0 0 auto; width: 100%; }
         .slide-shell--bigtech .title { font-size: clamp(2.1rem, 7.2vw, 4.2rem); white-space: normal; }
+        .slide-shell--elad-opportunity .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
+        .slide-shell--elad-opportunity .visual { flex: 0 0 auto; width: 100%; }
+        .slide-shell--elad-opportunity .title { max-width: none; font-size: clamp(2.1rem, 7.2vw, 4.2rem); }
         .slide-shell--competitor-cloud .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--competitor-cloud .visual { flex: 0 0 auto; width: 100%; }
         .slide-shell--competitor-cloud .title { max-width: none; font-size: clamp(2.1rem, 7.2vw, 4.2rem); white-space: normal; }
@@ -2179,6 +2223,23 @@
             <div class="chapter-label">AI 래퍼란</div>
             <p class="kicker">한계</p>
             <h1 class="title title--center">해자가 없는 AI 래퍼 스타트업을 하는 것은<br />AI라는 쓰나미에 스스로 집어삼켜지는 격이다</h1>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="01. Elad Gil은 그럼에도 AI Wrapper가 좋은 기회라고 강조했습니다">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--elad-opportunity">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers</span></div>
+            <div class="chapter-label">AI 래퍼란</div>
+            <div class="copy copy--split">
+              <p class="kicker">한계</p>
+              <h1 class="title">Elad Gil은 그럼에도 AI Wrapper가 좋은 기회라고 강조했습니다</h1>
+            </div>
+            <div class="visual" aria-label="Elad Gil 사진과 투자 이력">
+              <div class="elad-opportunity-panel">
+                <img class="elad-opportunity-photo" src="assets/elad-gil-opportunity.png" alt="Elad Gil" />
+                <p class="elad-opportunity-attribution">Elad Gil, 실리콘 밸리의 유명 투자자, Airbnb, Stripe, Coinbase, Figma, Notion, Anduril, Deel, Instacart, Pinterest, OpenAI, CharacterAI, Harvey, Mistral, Perplexity, Pika에 투자</p>
+              </div>
+            </div>
           </article>
         </section>
 
