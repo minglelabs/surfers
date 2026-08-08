@@ -2906,6 +2906,7 @@
         const total = slides.length;
         const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
         let activeIndex = 0;
+        let hasInitialised = false;
         let wheelLocked = false;
         let touchStart = null;
         function normalise(index) {
@@ -2917,9 +2918,9 @@
           return Number.isInteger(number) && number >= 1 && number <= total ? number - 1 : null;
         }
 
-        function setActive(nextIndex, { syncHash = true } = {}) {
+        function setActive(nextIndex, { syncHash = true, immediate = false } = {}) {
           activeIndex = normalise(nextIndex);
-          track.style.transitionDuration = motionQuery.matches ? "0ms" : "420ms";
+          track.style.transitionDuration = immediate || !hasInitialised || motionQuery.matches ? "0ms" : "420ms";
           track.style.transform = `translate3d(${-activeIndex * window.innerWidth}px, 0, 0)`;
 
           slides.forEach((slide, index) => {
@@ -2936,6 +2937,8 @@
           if (syncHash && window.location.hash !== `#${activeIndex + 1}`) {
             window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}#${activeIndex + 1}`);
           }
+
+          hasInitialised = true;
         }
 
         function move(step) {
@@ -2994,7 +2997,7 @@
 
         window.addEventListener("resize", () => setActive(activeIndex, { syncHash: false }));
         motionQuery.addEventListener?.("change", () => setActive(activeIndex, { syncHash: false }));
-        setActive(indexFromHash() ?? 0, { syncHash: false });
+        setActive(indexFromHash() ?? 0, { syncHash: false, immediate: true });
       })();
     </script>
   </body>
