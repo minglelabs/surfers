@@ -1846,6 +1846,124 @@
         box-shadow: 0 18px 32px rgba(45, 42, 30, 0.15);
       }
 
+      .slide-shell--cursor-takeover {
+        gap: clamp(24px, 3.5vw, 64px);
+      }
+
+      .slide-shell--cursor-takeover .copy--split {
+        flex: 1 1 62%;
+        max-width: none;
+        min-width: 0;
+      }
+
+      .slide-shell--cursor-takeover .title {
+        max-width: none;
+        font-size: clamp(2.35rem, 4.1vw, 5rem);
+        line-height: 1.08;
+        letter-spacing: -0.085em;
+      }
+
+      .slide-shell--cursor-takeover .visual {
+        display: flex;
+        flex: 0 1 30rem;
+        width: min(100%, 30rem);
+        min-width: 0;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .workflow-takeover {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(8px, 1.4vw, 22px);
+        width: min(100%, 34rem);
+        min-height: clamp(300px, 34vw, 460px);
+      }
+
+      .workflow-takeover-service {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: clamp(120px, 13vw, 192px);
+        height: clamp(120px, 13vw, 192px);
+        flex: 0 0 auto;
+      }
+
+      .workflow-takeover-service img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .workflow-takeover-service--vscode {
+        opacity: 0.72;
+        transform: translateX(18px) scale(0.9);
+      }
+
+      .workflow-takeover-service--cursor {
+        position: relative;
+        z-index: 2;
+        margin-left: -26px;
+        transform: translateX(-10px) scale(1.18);
+      }
+
+      .workflow-takeover-symbol {
+        position: relative;
+        z-index: 3;
+        margin-inline: -18px;
+        color: var(--accent-strong);
+        font-size: clamp(3.2rem, 5.4vw, 5.8rem);
+        font-weight: 820;
+        line-height: 1;
+      }
+
+      .slide-shell--service-ambient .copy--split {
+        flex: 1 1 62%;
+        max-width: none;
+        min-width: 0;
+      }
+
+      .slide-shell--service-ambient .title {
+        max-width: none;
+      }
+
+      .slide-shell--service-ambient .visual {
+        display: flex;
+        flex: 0 1 30rem;
+        width: min(100%, 30rem);
+        min-width: 0;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .service-ambient-panel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(18px, 2vw, 30px);
+        width: 100%;
+        min-height: clamp(330px, 38vw, 520px);
+      }
+
+      .service-ambient-logo {
+        display: block;
+        width: clamp(112px, 11vw, 176px);
+        height: auto;
+        object-fit: contain;
+      }
+
+      .service-ambient-screenshot {
+        display: block;
+        width: 100%;
+        height: clamp(180px, 17vw, 280px);
+        border-radius: 16px;
+        object-fit: cover;
+        box-shadow: 0 18px 32px rgba(45, 42, 30, 0.15);
+      }
+
       .slide-shell--cursor-series .copy--split {
         flex: 1 1 68%;
         max-width: 72rem;
@@ -3081,6 +3199,20 @@
         .slide-shell--always-on-iphone .visual { flex: 0 0 auto; width: 100%; max-width: none; }
         .always-on-critique-image { height: clamp(300px, 48vh, 520px); }
         .always-on-iphone-image { height: clamp(360px, 68vh, 620px); }
+        .slide-shell--cursor-takeover .copy--split,
+        .slide-shell--service-ambient .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
+        .slide-shell--cursor-takeover .visual,
+        .slide-shell--service-ambient .visual { flex: 0 0 auto; width: 100%; max-width: none; }
+        .slide-shell--cursor-takeover .title,
+        .slide-shell--service-ambient .title { max-width: none; font-size: clamp(2.2rem, 7.2vw, 4.2rem); }
+        .workflow-takeover { width: 100%; min-height: 285px; gap: 5px; }
+        .workflow-takeover-service { width: clamp(94px, 26vw, 150px); height: clamp(94px, 26vw, 150px); }
+        .workflow-takeover-service--vscode { transform: translateX(10px) scale(0.9); }
+        .workflow-takeover-service--cursor { margin-left: -18px; transform: translateX(-5px) scale(1.12); }
+        .workflow-takeover-symbol { margin-inline: -12px; font-size: clamp(2.4rem, 9vw, 4.3rem); }
+        .service-ambient-panel { min-height: 285px; gap: 14px; }
+        .service-ambient-logo { width: clamp(88px, 22vw, 140px); }
+        .service-ambient-screenshot { height: clamp(150px, 35vw, 230px); }
         .slide-shell--cursor-series .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--cursor-series .visual { flex: 0 0 auto; width: 100%; }
         .slide-shell--cursor-launch .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
@@ -4799,6 +4931,45 @@
             </div>
             <div class="visual" aria-label="AI 자동 번역 설정 화면">
               <img class="always-on-critique-image" src="./assets/x-translation-auto-off.png" alt="자동 번역을 끄는 설정 화면" />
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="03. Cursor가 기존 워크플로우를 잡아먹는 경우">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--cursor-takeover">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">미래와 제언</div>
+            <div class="copy copy--split">
+              <p class="kicker">Always-on AI</p>
+              <h1 class="title">커서와 같은 AI 래퍼가<br />기존의 워크플로우를<br />잡아먹는 경우도 있지만</h1>
+            </div>
+            <div class="visual" aria-label="VS Code를 추월하는 Cursor">
+              <div class="workflow-takeover">
+                <div class="workflow-takeover-service workflow-takeover-service--vscode">
+                  <img src="assets/vscode-logo.svg" alt="VS Code 로고" />
+                </div>
+                <span class="workflow-takeover-symbol" aria-hidden="true">≫</span>
+                <div class="workflow-takeover-service workflow-takeover-service--cursor">
+                  <img src="assets/cursor-logo.svg" alt="Cursor 로고" />
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="03. 기존 서비스가 Ambient AI를 먼저할 가능성">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--always-on slide-shell--service-ambient">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">미래와 제언</div>
+            <div class="copy copy--split">
+              <p class="kicker">Always-on AI</p>
+              <h1 class="title">기존의 서비스가<br />Ambient AI를<br />먼저할 가능성도 있다</h1>
+            </div>
+            <div class="visual" aria-label="X 자동 번역 사례">
+              <div class="service-ambient-panel">
+                <img class="service-ambient-logo" src="assets/x-logo.svg" alt="X 로고" />
+                <img class="service-ambient-screenshot" src="./assets/x-translation-after.png" alt="X 자동 번역 화면" />
+              </div>
             </div>
           </article>
         </section>
