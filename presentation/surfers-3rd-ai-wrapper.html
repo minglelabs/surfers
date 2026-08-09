@@ -140,6 +140,87 @@
         gap: clamp(28px, 6vw, 106px);
       }
 
+      .slide-shell--moat-methods {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(24px, 3.2vw, 46px);
+        text-align: center;
+      }
+
+      .slide-shell--moat-methods .copy {
+        flex: 0 0 auto;
+        width: min(100%, 76rem);
+        margin-top: 0;
+      }
+
+      .slide-shell--moat-methods .kicker {
+        margin-bottom: clamp(16px, 1.8vw, 24px);
+      }
+
+      .slide-shell--moat-methods .title {
+        max-width: none;
+      }
+
+      .slide-shell--moat-methods .visual {
+        flex: 0 0 auto;
+        width: min(100%, 58rem);
+      }
+
+      .moat-example-logos {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: end;
+        gap: clamp(24px, 4vw, 64px);
+        width: 100%;
+        min-height: clamp(230px, 28vw, 360px);
+      }
+
+      .moat-example-logo {
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        gap: clamp(11px, 1.2vw, 18px);
+        text-align: center;
+      }
+
+      .moat-example-logo-name {
+        color: var(--title);
+        font-size: clamp(1.08rem, 1.5vw, 1.42rem);
+        font-weight: 800;
+        letter-spacing: -0.045em;
+      }
+
+      .moat-example-logo img {
+        display: block;
+        width: clamp(120px, 13vw, 192px);
+        height: clamp(120px, 13vw, 192px);
+        object-fit: contain;
+      }
+
+      .slide-shell--innovation-stack .copy--split {
+        flex: 1 1 62%;
+        max-width: 68rem;
+        min-width: 0;
+      }
+
+      .slide-shell--innovation-stack .visual {
+        flex: 0 1 28rem;
+        width: min(100%, 28rem);
+        min-width: 0;
+      }
+
+      .innovation-stack-book {
+        display: block;
+        width: min(100%, 24rem);
+        height: clamp(390px, 60vh, 680px);
+        margin-inline: auto;
+        object-fit: contain;
+        box-shadow: 0 20px 40px rgba(45, 42, 30, 0.12);
+      }
+
       .slide-shell--section {
         background: var(--page);
       }
@@ -2534,6 +2615,49 @@
           gap: clamp(16px, 3.5vh, 28px);
         }
 
+        .slide-shell--moat-methods {
+          gap: clamp(18px, 3.5vh, 28px);
+        }
+
+        .slide-shell--moat-methods .copy,
+        .slide-shell--moat-methods .visual {
+          width: 100%;
+        }
+
+        .slide-shell--moat-methods .title {
+          font-size: clamp(2.2rem, 7.2vw, 4.4rem);
+        }
+
+        .moat-example-logos {
+          gap: 10px;
+          min-height: 220px;
+        }
+
+        .moat-example-logo {
+          gap: 9px;
+        }
+
+        .moat-example-logo-name {
+          font-size: clamp(0.78rem, 3.4vw, 1.05rem);
+        }
+
+        .moat-example-logo img {
+          width: clamp(72px, 22vw, 128px);
+          height: clamp(72px, 22vw, 128px);
+        }
+
+        .slide-shell--innovation-stack .copy--split,
+        .slide-shell--innovation-stack .visual {
+          flex: 0 0 auto;
+          width: 100%;
+          max-width: none;
+        }
+
+        .innovation-stack-book {
+          width: min(72vw, 290px);
+          height: clamp(300px, 48vh, 480px);
+        }
+
         .copy,
         .copy--split { margin-top: 0; }
 
@@ -3861,6 +3985,47 @@
                 <section class="evidence-card"><span class="evidence-index">4</span><div><h2 class="evidence-title">독점 데이터</h2></div></section>
                 <section class="evidence-card"><span class="evidence-index">5</span><div><h2 class="evidence-title">단순 기술력</h2></div></section>
               </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="03. 이들이 해자를 구축한 방식을 우리가 따라할 방법이 있을까요">
+          <article class="slide-shell slide-shell--center slide-shell--section slide-shell--moat-methods">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">미래와 제언</div>
+            <div class="copy copy--center copy--wide">
+              <p class="kicker">MOAT</p>
+              <h1 class="title title--center">이들이 해자를 구축한 방식을<br />우리가 따라할 방법이 있을까요?</h1>
+            </div>
+            <div class="visual" aria-label="해자를 구축한 서비스 사례">
+              <div class="moat-example-logos">
+                <div class="moat-example-logo">
+                  <span class="moat-example-logo-name">YouTube</span>
+                  <img src="./assets/youtube-logo.svg" alt="YouTube 로고" />
+                </div>
+                <div class="moat-example-logo">
+                  <span class="moat-example-logo-name">CUDA</span>
+                  <img src="./assets/cuda-logo.svg" alt="CUDA 로고" />
+                </div>
+                <div class="moat-example-logo">
+                  <span class="moat-example-logo-name">Zeta</span>
+                  <img src="./assets/zeta-logo.ico" alt="Zeta 로고" />
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="03. 스퀘어의 짐 맥켈비 Innovation Stack">
+          <article class="slide-shell slide-shell--split slide-shell--section slide-shell--innovation-stack">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">미래와 제언</div>
+            <div class="copy copy--split">
+              <p class="kicker">MOAT</p>
+              <h1 class="title">스퀘어의 짐 맥켈비<br /><span class="title-accent">Innovation Stack</span></h1>
+            </div>
+            <div class="visual" aria-label="The Innovation Stack 표지">
+              <img class="innovation-stack-book" src="./assets/innovation-stack.png" alt="The Innovation Stack 책 표지" />
             </div>
           </article>
         </section>
