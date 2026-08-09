@@ -445,6 +445,32 @@
         min-width: 0;
       }
 
+      .slide-shell--christensen .copy--split {
+        flex: 1 1 50%;
+        max-width: 52rem;
+        min-width: 0;
+      }
+
+      .slide-shell--christensen .title {
+        max-width: 12ch;
+        font-size: clamp(2.9rem, 5.25vw, 6rem);
+        line-height: 1.08;
+        letter-spacing: -0.085em;
+      }
+
+      .slide-shell--christensen .body {
+        max-width: 42rem;
+        margin-top: clamp(22px, 2.4vw, 32px);
+        font-size: clamp(1.02rem, 1.45vw, 1.34rem);
+        line-height: 1.5;
+      }
+
+      .slide-shell--christensen .visual {
+        flex: 0 1 40rem;
+        width: min(100%, 40rem);
+        min-width: 0;
+      }
+
       .elad-opportunity-panel {
         display: flex;
         flex-direction: column;
@@ -3474,6 +3500,10 @@
         .slide-shell--paul-graham .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--paul-graham .visual { flex: 0 0 auto; width: 100%; }
         .slide-shell--paul-graham .title { max-width: 12ch; font-size: clamp(3rem, 5.6vw, 6.4rem); }
+        .slide-shell--christensen .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
+        .slide-shell--christensen .visual { flex: 0 0 auto; width: 100%; max-width: none; }
+        .slide-shell--christensen .title { max-width: none; font-size: clamp(2.4rem, 7.2vw, 4.2rem); }
+        .slide-shell--christensen .body { max-width: none; font-size: clamp(0.98rem, 3.2vw, 1.15rem); }
         .slide-shell--competitor-cloud .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--competitor-cloud .visual { flex: 0 0 auto; width: 100%; }
         .slide-shell--competitor-cloud .title { max-width: none; font-size: clamp(2.1rem, 7.2vw, 4.2rem); white-space: normal; }
@@ -5291,7 +5321,7 @@
             <div class="chapter-label">미래와 제언</div>
             <div class="copy copy--split">
               <p class="kicker">GUI to CUI</p>
-              <h1 class="title">구글 Ads도 마찬가지다<br />소재 수정조차 찾기 힘듦</h1>
+              <h1 class="title">구글 Ads도 마찬가지로<br />소재 수정조차 찾기 힘듦</h1>
             </div>
             <div class="visual" aria-label="Google Ads Asset library 화면">
               <div class="gui-cui-screens gui-cui-screens--single">
@@ -5307,7 +5337,7 @@
             <div class="chapter-label">미래와 제언</div>
             <div class="copy copy--center copy--wide">
               <p class="kicker">GUI to CUI</p>
-              <h1 class="title title--center">은행 앱 쓰다 짜증나도 마찬가지다<br />고객센터에 전화를 한다<br/>왜?</h1>
+              <h1 class="title title--center">은행 앱 쓰다 짜증나도 마찬가지입니다<br />고객센터에 전화를 하게 됩니다<br/>왜?</h1>
             </div>
           </article>
         </section>
@@ -5318,7 +5348,7 @@
             <div class="chapter-label">미래와 제언</div>
             <div class="copy copy--center copy--wide">
               <p class="kicker">GUI to CUI</p>
-              <h1 class="title title--center">은행 앱 쓰다 짜증나도 마찬가지다<br />고객센터에 전화를 한다<br />대화형 UI로 문제를 해결하기 위해서.</h1>
+              <h1 class="title title--center">은행 앱 쓰다 짜증나도 마찬가지입니다<br />고객센터에 전화를 하게 됩니다<br />대화형 UI로 문제를 해결하기 위해서.</h1>
             </div>
           </article>
         </section>
@@ -5329,7 +5359,7 @@
             <div class="chapter-label">미래와 제언</div>
             <div class="copy copy--split">
               <p class="kicker">GUI to CUI</p>
-              <h1 class="title">결론은, 브라우저와 OS의<br />AI Native화는 필수라는 점<br/>핵심은 GUI to CUI</h1>
+              <h1 class="title">결론은, 브라우저와 OS의<br />AI Native화는 필수라는 점<br/>GUI to CUI를 위해서라도.</h1>
             </div>
             <div class="visual" aria-label="AI 브라우저와 운영체제 대표 로고">
               <div class="vibe-tool-cloud">
@@ -5379,7 +5409,7 @@
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
             <div class="chapter-label">미래와 제언</div>
             <div class="copy copy--split">
-              <p class="kicker">Opportunity</p>
+              <p class="kicker">Ambient AI</p>
               <h1 class="title">커서와 같은 AI 래퍼가<br />기존의 워크플로우를<br />잡아먹는 경우도 있지만</h1>
             </div>
             <div class="visual" aria-label="Cursor가 VS Code를 밀어내는 모습">
@@ -5401,7 +5431,7 @@
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
             <div class="chapter-label">미래와 제언</div>
             <div class="copy copy--split">
-              <p class="kicker">Opportunity</p>
+              <p class="kicker">Ambient AI</p>
               <h1 class="title">기존의 서비스가<br />Ambient AI를<br />먼저할 가능성도 있음</h1>
             </div>
             <div class="visual" aria-label="X 자동 번역 사례">
@@ -5481,6 +5511,25 @@
                 <div class="messenger-radial-node" style="--x: 7%; --y: 72%">컴패니언</div>
                 <div class="messenger-radial-node" style="--x: 12%; --y: 43%">데이팅</div>
                 <div class="messenger-radial-node" style="--x: 19%; --y: 17%">의료/법률/금융 등 전문영역</div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="03. 클레이튼 크리스텐슨 혁신기업의 딜레마">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--christensen">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">미래와 제언</div>
+            <div class="copy copy--split">
+              <p class="kicker">Opportunity</p>
+              <h1 class="title">클레이튼 크리스텐슨<br />혁신기업의 딜레마</h1>
+              <p class="body">The Innovator’s Dilemma: When New Technologies Cause Great Firms to Fail</p>
+            </div>
+            <div class="visual" aria-label="Clayton M. Christensen의 인용문">
+              <div class="quote-only">
+                <p class="quote-only-original">"The reason is that good management itself was the root cause."</p>
+                <p class="quote-only-translation">"실패의 근본 원인은 바로 훌륭한 경영 그 자체였다."</p>
+                <p class="quote-only-translation">- Clayton M. Christensen</p>
               </div>
             </div>
           </article>
