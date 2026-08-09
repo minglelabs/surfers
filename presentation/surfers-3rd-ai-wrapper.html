@@ -710,6 +710,17 @@
         object-fit: contain;
       }
 
+      /* Character AI origin: give the headline room while keeping the proof image compact. */
+      .slide[aria-label="04. Character AI가 캐릭터 챗의 원조"] .slide-shell--character-origin .copy--split {
+        flex: 1 1 62%;
+        max-width: 68rem;
+      }
+
+      .slide[aria-label="04. Character AI가 캐릭터 챗의 원조"] .slide-shell--character-origin .visual {
+        flex: 0 0 30rem;
+        width: 30rem;
+      }
+
       .slide-shell--character-growth {
         gap: clamp(24px, 3.6vw, 58px);
       }
@@ -3817,6 +3828,12 @@
         .slide-shell--vibe-tools .visual { flex: 0 0 auto; width: 100%; }
         .slide-shell--character-origin .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--character-origin .visual { flex: 0 0 auto; width: 100%; max-width: none; }
+        .slide[aria-label="04. Character AI가 캐릭터 챗의 원조"] .slide-shell--character-origin .copy--split,
+        .slide[aria-label="04. Character AI가 캐릭터 챗의 원조"] .slide-shell--character-origin .visual {
+          flex: 0 0 auto;
+          width: 100%;
+          max-width: none;
+        }
         .character-origin { gap: 14px; }
         .character-origin-caption { font-size: clamp(1.15rem, 4.4vw, 1.55rem); }
         .character-origin-image { max-height: 36vh; }
