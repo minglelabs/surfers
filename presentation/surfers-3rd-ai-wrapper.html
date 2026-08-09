@@ -1798,6 +1798,50 @@
         z-index: 3;
       }
 
+      .slide-shell--always-on-critique .copy--split,
+      .slide-shell--always-on-iphone .copy--split {
+        flex: 1 1 62%;
+        max-width: none;
+        min-width: 0;
+      }
+
+      .slide-shell--always-on-critique .visual {
+        display: flex;
+        flex: 0 1 32rem;
+        width: min(100%, 32rem);
+        min-width: 0;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .slide-shell--always-on-iphone .visual {
+        display: flex;
+        flex: 0 1 20rem;
+        width: min(100%, 20rem);
+        min-width: 0;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .always-on-critique-image {
+        display: block;
+        width: min(100%, 32rem);
+        height: clamp(360px, 57vh, 620px);
+        border-radius: 18px;
+        object-fit: contain;
+        box-shadow: 0 18px 32px rgba(45, 42, 30, 0.15);
+      }
+
+      .always-on-iphone-image {
+        display: block;
+        width: auto;
+        height: clamp(430px, 72vh, 740px);
+        max-width: 100%;
+        border-radius: 14px;
+        object-fit: contain;
+        box-shadow: 0 18px 32px rgba(45, 42, 30, 0.15);
+      }
+
       .slide-shell--cursor-series .copy--split {
         flex: 1 1 68%;
         max-width: 72rem;
@@ -3027,6 +3071,12 @@
         .slide-shell--translation-reaction .title { max-width: none; font-size: clamp(2.2rem, 7.2vw, 4.2rem); }
         .translation-reaction-stack { height: clamp(330px, 100vw, 460px); }
         .translation-reaction-shot { width: min(100%, 30rem); }
+        .slide-shell--always-on-critique .copy--split,
+        .slide-shell--always-on-iphone .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
+        .slide-shell--always-on-critique .visual,
+        .slide-shell--always-on-iphone .visual { flex: 0 0 auto; width: 100%; max-width: none; }
+        .always-on-critique-image { height: clamp(300px, 48vh, 520px); }
+        .always-on-iphone-image { height: clamp(360px, 68vh, 620px); }
         .slide-shell--cursor-series .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--cursor-series .visual { flex: 0 0 auto; width: 100%; }
         .slide-shell--cursor-launch .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
@@ -4444,7 +4494,7 @@
               <div class="innovation-step-list">
                 <div class="innovation-step">
                   <p class="innovation-step-label">Workflow Integration</p>
-                  <p class="innovation-step-text">고객의 워크플로우에 AI가 자연스럽게 녹아드는 것</p>
+                  <p class="innovation-step-text">고객의 워크플로우에 AI를 자연스럽게 녹여내는 것</p>
                 </div>
                 <div class="innovation-step">
                   <p class="innovation-step-label">Always-on AI</p>
@@ -4717,6 +4767,45 @@
             <div class="copy copy--center copy--wide">
               <p class="kicker">Always-on AI</p>
               <h1 class="title title--center">딸깍을 해야 한다는 것 자체가 <br />사실상 없는 기능이나 마찬가지였던 겁니다</h1>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="03. AI의 자동 적용도 무조건 좋은 것은 아닙니다">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--always-on-critique">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">미래와 제언</div>
+            <div class="copy copy--split">
+              <p class="kicker">Always-on AI</p>
+              <h1 class="title">다만, AI의 자동 적용도<br />무조건 좋은 건 아닙니다</h1>
+            </div>
+            <div class="visual" aria-label="AI 자동 번역 설정 화면">
+              <img class="always-on-critique-image" src="./assets/x-translation-auto-off.png" alt="자동 번역을 끄는 설정 화면" />
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="03. 아이폰 자동완성 대참사">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--always-on-iphone">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">미래와 제언</div>
+            <div class="copy copy--split">
+              <p class="kicker">Always-on AI</p>
+              <h1 class="title">아이폰 자동완성 대참사</h1>
+            </div>
+            <div class="visual" aria-label="아이폰 자동완성 사례 모음">
+              <img class="always-on-iphone-image" src="./assets/iphone-autocomplete-disaster.png" alt="아이폰 자동완성 대참사 사례 모음" />
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="03. AI 자동 적용을 위한 디자이너의 설계">
+          <article class="slide-shell slide-shell--center slide-shell--section slide-shell--tsunami">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">미래와 제언</div>
+            <div class="copy copy--center copy--wide">
+              <p class="kicker">Always-on AI</p>
+              <h1 class="title title--center">AI가 발전하면 알잘딱으로 해주겠지만<br />당분간은 디자이너가 잘 설계해야 합니다</h1>
             </div>
           </article>
         </section>
