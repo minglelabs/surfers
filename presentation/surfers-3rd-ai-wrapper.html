@@ -1961,23 +1961,6 @@
         justify-content: center;
       }
 
-      .service-ambient-panel {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: clamp(18px, 2vw, 30px);
-        width: 100%;
-        min-height: clamp(330px, 38vw, 520px);
-      }
-
-      .service-ambient-logo {
-        display: block;
-        width: clamp(112px, 11vw, 176px);
-        height: auto;
-        object-fit: contain;
-      }
-
       .service-ambient-screenshot {
         display: block;
         width: 100%;
@@ -3233,8 +3216,6 @@
         .workflow-takeover-service { font-size: clamp(94px, 26vw, 150px); }
         .workflow-takeover-service--vscode { transform: scale(0.9); }
         .workflow-takeover-service--cursor { transform: scale(1.12); }
-        .service-ambient-panel { min-height: 285px; gap: 14px; }
-        .service-ambient-logo { width: clamp(88px, 22vw, 140px); }
         .service-ambient-screenshot { height: clamp(150px, 35vw, 230px); }
         .slide-shell--cursor-series .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--cursor-series .visual { flex: 0 0 auto; width: 100%; }
@@ -5059,10 +5040,7 @@
               <h1 class="title">기존의 서비스가<br />Ambient AI를<br />먼저할 가능성도 있음</h1>
             </div>
             <div class="visual" aria-label="X 자동 번역 사례">
-              <div class="service-ambient-panel">
-                <img class="service-ambient-logo" src="assets/x-logo.svg" alt="X 로고" />
-                <img class="service-ambient-screenshot" src="./assets/x-translation-after.png" alt="X 자동 번역 화면" />
-              </div>
+              <img class="service-ambient-screenshot" src="./assets/x-translation-after.png" alt="X 자동 번역 화면" />
             </div>
           </article>
         </section>
