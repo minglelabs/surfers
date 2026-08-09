@@ -2022,6 +2022,11 @@
         box-shadow: 0 18px 32px rgba(45, 42, 30, 0.15);
       }
 
+      .gui-cui-screens--single .gui-cui-screen {
+        height: auto;
+        object-fit: contain;
+      }
+
       .slide-shell--cursor-series .copy--split {
         flex: 1 1 68%;
         max-width: 72rem;
@@ -3269,6 +3274,7 @@
         .slide-shell--gui-cui-complexity .title { max-width: none; font-size: clamp(2.2rem, 7.2vw, 4.2rem); }
         .gui-cui-screens { gap: 12px; }
         .gui-cui-screen { height: clamp(150px, 36vw, 230px); }
+        .gui-cui-screens--single .gui-cui-screen { height: auto; max-height: 34vh; object-fit: contain; }
         .workflow-takeover { width: 100%; min-height: 285px; gap: 16px; }
         .workflow-takeover-service { width: clamp(94px, 26vw, 150px); height: clamp(94px, 26vw, 150px); }
         .workflow-takeover-service { font-size: clamp(94px, 26vw, 150px); }
@@ -5143,6 +5149,22 @@
             <div class="copy copy--center copy--wide">
               <p class="kicker">GUI to CUI</p>
               <h1 class="title title--center">은행 앱 쓰다 빡치면?<br />전화를 한다<br />왜? 대화형 UI로 문제를 해결하기 위해서.</h1>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="03. 구글 Ads 소재 수정의 어려움">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--gui-cui-complexity">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">미래와 제언</div>
+            <div class="copy copy--split">
+              <p class="kicker">GUI to CUI</p>
+              <h1 class="title">구글 Ads도 마찬가지다<br />소재 수정조차 찾기 힘듦</h1>
+            </div>
+            <div class="visual" aria-label="Google Ads Asset library 화면">
+              <div class="gui-cui-screens gui-cui-screens--single">
+                <img class="gui-cui-screen" src="./assets/google-ads-asset-library.png" alt="Google Ads Asset library 화면" />
+              </div>
             </div>
           </article>
         </section>
