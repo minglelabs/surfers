@@ -734,29 +734,31 @@
       }
 
       .slide-shell--messenger-radial .copy--split {
-        flex: 1 1 43%;
-        max-width: 50rem;
+        flex: 1 1 58%;
+        max-width: none;
         min-width: 0;
       }
 
       .slide-shell--messenger-radial .title {
         max-width: none;
-        font-size: clamp(2.45rem, 4.35vw, 5.25rem);
+        font-size: clamp(2.2rem, 3.65vw, 4.6rem);
       }
 
       .slide-shell--messenger-radial .visual {
         display: flex;
-        flex: 1 1 57%;
-        width: min(100%, 52rem);
+        flex: 0 1 40rem;
+        width: min(100%, 40rem);
         min-width: 0;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
+        margin-left: auto;
       }
 
       .messenger-radial {
         position: relative;
-        width: min(100%, 52rem);
-        height: clamp(390px, 42vw, 560px);
+        width: min(100%, 40rem);
+        height: clamp(350px, 36vw, 480px);
+        margin-left: auto;
       }
 
       .messenger-radial-lines {
@@ -765,6 +767,7 @@
         width: 100%;
         height: 100%;
         overflow: visible;
+        z-index: 0;
       }
 
       .messenger-radial-lines line {
@@ -788,13 +791,21 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         gap: 3px;
+        width: clamp(126px, 10vw, 164px);
+        height: clamp(126px, 10vw, 164px);
+        padding: 14px;
         color: var(--title);
-        font-size: clamp(1.45rem, 2.2vw, 2.45rem);
+        background: rgba(255, 255, 255, 0.94);
+        border: 2px solid rgba(249, 115, 22, 0.5);
+        border-radius: 50%;
+        box-shadow: 0 16px 32px rgba(66, 49, 15, 0.1);
+        font-size: clamp(1.2rem, 1.8vw, 2rem);
         font-weight: 820;
         letter-spacing: -0.075em;
         line-height: 1.02;
-        white-space: nowrap;
+        white-space: normal;
       }
 
       .messenger-radial-core strong:last-child {
@@ -810,8 +821,18 @@
       .messenger-radial-node {
         left: var(--x);
         top: var(--y);
-        max-width: 13ch;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: clamp(106px, 8.6vw, 138px);
+        height: clamp(106px, 8.6vw, 138px);
+        max-width: none;
+        padding: 11px;
         color: var(--title);
+        background: rgba(255, 255, 255, 0.94);
+        border: 1.5px solid rgba(45, 42, 30, 0.22);
+        border-radius: 50%;
+        box-shadow: 0 13px 26px rgba(66, 49, 15, 0.09);
         font-size: clamp(0.98rem, 1.45vw, 1.45rem);
         font-weight: 760;
         letter-spacing: -0.06em;
@@ -3524,8 +3545,18 @@
         .messenger-equation img { width: clamp(82px, 24vw, 132px); }
         .messenger-equation-plus { font-size: clamp(1.8rem, 7vw, 2.8rem); }
         .messenger-radial { height: clamp(360px, 94vw, 480px); }
-        .messenger-radial-core { font-size: clamp(1.2rem, 5vw, 1.8rem); }
-        .messenger-radial-node { max-width: 11ch; font-size: clamp(0.78rem, 2.6vw, 1rem); }
+        .messenger-radial-core {
+          width: clamp(88px, 24vw, 128px);
+          height: clamp(88px, 24vw, 128px);
+          padding: 8px;
+          font-size: clamp(1.05rem, 4vw, 1.5rem);
+        }
+        .messenger-radial-node {
+          width: clamp(68px, 18vw, 98px);
+          height: clamp(68px, 18vw, 98px);
+          padding: 6px;
+          font-size: clamp(0.68rem, 2.2vw, 0.9rem);
+        }
         .slide-shell--vibe-market .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--vibe-market .visual { flex: 0 0 auto; width: 100%; }
         .slide-shell--vibe-market .title { font-size: clamp(2.2rem, 7.6vw, 4.4rem); white-space: normal; }
@@ -4941,7 +4972,7 @@
             <div class="chapter-label">미래와 제언</div>
             <div class="copy copy--center copy--wide">
               <p class="kicker">VISION</p>
-              <h1 class="title title--center">그렇다면 AI 래퍼 서비스가<br />가져야 할 비전이나 전략은?</h1>
+              <h1 class="title title--center">AI 래퍼 서비스가 함정을 피하려면<br />UX적 지향점이 분명해야 한다고 생각</h1>
             </div>
           </article>
         </section>
@@ -5359,7 +5390,7 @@
             <div class="chapter-label">미래와 제언</div>
             <div class="copy copy--split">
               <p class="kicker">GUI to CUI</p>
-              <h1 class="title">결론은, 브라우저와 OS의<br />AI Native화는 필수라는 점<br/>GUI to CUI를 위해서라도.</h1>
+              <h1 class="title">GUI to CUI를 위해서라도<br />브라우저와 운영체제의<br/>AI Native화는 필수다!</h1>
             </div>
             <div class="visual" aria-label="AI 브라우저와 운영체제 대표 로고">
               <div class="vibe-tool-cloud">
@@ -5399,6 +5430,24 @@
                   <img src="https://cdn.simpleicons.org/linux/2D2A1E" alt="Linux 로고" />
                   <span class="vibe-tool-name">Linux</span>
                 </div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="03. 도메인별로 Ambient AI를 잘 구현하는 곳이 살아남는다">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--principles slide-shell--ambient">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">미래와 제언</div>
+            <div class="copy copy--split">
+              <p class="kicker">Ambient AI</p>
+              <h1 class="title">도메인별로 Ambient AI를<br />잘 구현하는 곳이 살아남는다</h1>
+            </div>
+            <div class="visual" aria-label="Ambient AI의 세 가지 Design Principles">
+              <div class="evidence-stack">
+                <section class="evidence-card"><span class="evidence-index">1</span><div><h2 class="evidence-title">Workflow Integration</h2></div></section>
+                <section class="evidence-card"><span class="evidence-index">2</span><div><h2 class="evidence-title">Always-on AI</h2></div></section>
+                <section class="evidence-card"><span class="evidence-index">3</span><div><h2 class="evidence-title">GUI to CUI</h2></div></section>
               </div>
             </div>
           </article>
@@ -5473,24 +5522,6 @@
           </article>
         </section>
 
-        <section class="slide" aria-label="03. 도메인별로 Ambient AI를 잘 구현하는 곳이 살아남는다">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--principles slide-shell--ambient">
-            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
-            <div class="chapter-label">미래와 제언</div>
-            <div class="copy copy--split">
-              <p class="kicker">Ambient AI</p>
-              <h1 class="title">도메인별로 Ambient AI를<br />잘 구현하는 곳이 살아남는다</h1>
-            </div>
-            <div class="visual" aria-label="Ambient AI의 세 가지 Design Principles">
-              <div class="evidence-stack">
-                <section class="evidence-card"><span class="evidence-index">1</span><div><h2 class="evidence-title">Workflow Integration</h2></div></section>
-                <section class="evidence-card"><span class="evidence-index">2</span><div><h2 class="evidence-title">Always-on AI</h2></div></section>
-                <section class="evidence-card"><span class="evidence-index">3</span><div><h2 class="evidence-title">GUI to CUI</h2></div></section>
-              </div>
-            </div>
-          </article>
-        </section>
-
         <section class="slide" aria-label="03. AI Native Messenger">
           <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--messenger-opportunity">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
@@ -5520,26 +5551,26 @@
             <div class="visual" aria-label="AI와 메신저 및 SNS가 확장하는 산업 영역">
               <div class="messenger-radial">
                 <svg class="messenger-radial-lines" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
-                  <line x1="50" y1="50" x2="50" y2="9" />
-                  <line x1="50" y1="50" x2="80" y2="18" />
-                  <line x1="50" y1="50" x2="88" y2="45" />
-                  <line x1="50" y1="50" x2="82" y2="76" />
-                  <line x1="50" y1="50" x2="58" y2="92" />
-                  <line x1="50" y1="50" x2="29" y2="92" />
-                  <line x1="50" y1="50" x2="7" y2="72" />
-                  <line x1="50" y1="50" x2="12" y2="43" />
-                  <line x1="50" y1="50" x2="19" y2="18" />
+                  <line x1="50" y1="50" x2="50" y2="17" />
+                  <line x1="50" y1="50" x2="78" y2="24" />
+                  <line x1="50" y1="50" x2="85" y2="44" />
+                  <line x1="50" y1="50" x2="80" y2="70" />
+                  <line x1="50" y1="50" x2="62" y2="83" />
+                  <line x1="50" y1="50" x2="38" y2="83" />
+                  <line x1="50" y1="50" x2="20" y2="70" />
+                  <line x1="50" y1="50" x2="15" y2="44" />
+                  <line x1="50" y1="50" x2="22" y2="24" />
                 </svg>
                 <div class="messenger-radial-core"><strong>AI</strong><span class="messenger-radial-core-plus">+</span><strong>메신저/SNS</strong></div>
-                <div class="messenger-radial-node" style="--x: 50%; --y: 8%">영업 및 업무</div>
-                <div class="messenger-radial-node" style="--x: 80%; --y: 17%">쇼핑</div>
-                <div class="messenger-radial-node" style="--x: 88%; --y: 44%">교육</div>
-                <div class="messenger-radial-node" style="--x: 82%; --y: 76%">관광</div>
-                <div class="messenger-radial-node" style="--x: 58%; --y: 93%">컨텐츠</div>
-                <div class="messenger-radial-node" style="--x: 29%; --y: 93%">캐릭터챗</div>
-                <div class="messenger-radial-node" style="--x: 7%; --y: 72%">컴패니언</div>
-                <div class="messenger-radial-node" style="--x: 12%; --y: 43%">데이팅</div>
-                <div class="messenger-radial-node" style="--x: 19%; --y: 17%">의료/법률/금융 등 전문영역</div>
+                <div class="messenger-radial-node" style="--x: 50%; --y: 17%">영업 및 업무</div>
+                <div class="messenger-radial-node" style="--x: 78%; --y: 24%">쇼핑</div>
+                <div class="messenger-radial-node" style="--x: 85%; --y: 44%">교육</div>
+                <div class="messenger-radial-node" style="--x: 80%; --y: 70%">관광</div>
+                <div class="messenger-radial-node" style="--x: 62%; --y: 83%">컨텐츠</div>
+                <div class="messenger-radial-node" style="--x: 38%; --y: 83%">캐릭터챗</div>
+                <div class="messenger-radial-node" style="--x: 20%; --y: 70%">컴패니언</div>
+                <div class="messenger-radial-node" style="--x: 15%; --y: 44%">데이팅</div>
+                <div class="messenger-radial-node" style="--x: 22%; --y: 24%">의료/법률/금융 등 전문영역</div>
               </div>
             </div>
           </article>
