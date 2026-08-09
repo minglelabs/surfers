@@ -261,6 +261,27 @@
         letter-spacing: -0.055em;
       }
 
+      .slide-shell--survival-innovation .copy--split {
+        flex: 1 1 57%;
+        max-width: 66rem;
+        min-width: 0;
+      }
+
+      .slide-shell--survival-innovation .visual {
+        flex: 0 1 31rem;
+        width: min(100%, 31rem);
+        min-width: 0;
+      }
+
+      .survival-innovation-photo {
+        display: block;
+        width: 100%;
+        height: clamp(300px, 45vh, 520px);
+        border-radius: 22px;
+        object-fit: cover;
+        box-shadow: 0 20px 40px rgba(45, 42, 30, 0.14);
+      }
+
       .slide-shell--section {
         background: var(--page);
       }
@@ -2723,6 +2744,18 @@
           line-height: 1.38;
         }
 
+        .slide-shell--survival-innovation .copy--split,
+        .slide-shell--survival-innovation .visual {
+          flex: 0 0 auto;
+          width: 100%;
+          max-width: none;
+        }
+
+        .survival-innovation-photo {
+          height: clamp(210px, 34vh, 360px);
+          border-radius: 17px;
+        }
+
         .copy,
         .copy--split { margin-top: 0; }
 
@@ -4118,6 +4151,20 @@
                   <p class="innovation-step-text">고객센터 혁신으로 전화 응대 방식 없애서 비용 줄임</p>
                 </div>
               </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="03. 미리 계획된 청사진 대신 매순간 생존을 위한 몸부림이 곧 혁신으로 이어짐">
+          <article class="slide-shell slide-shell--split slide-shell--section slide-shell--survival-innovation">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">미래와 제언</div>
+            <div class="copy copy--split">
+              <p class="kicker">MOAT</p>
+              <h1 class="title">미리 계획된 청사진 대신<br />매순간 생존을 위한 몸부림이<br />곧 혁신으로 이어짐</h1>
+            </div>
+            <div class="visual" aria-label="혁신을 보여주는 사진">
+              <img class="survival-innovation-photo" src="./assets/survival-innovation.png" alt="작은 반도체를 들어 보이는 기업가" />
             </div>
           </article>
         </section>
