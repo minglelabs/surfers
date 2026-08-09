@@ -1743,14 +1743,18 @@
       }
 
       /* Page 65: staggered reactions to X's automatic translation. */
+      .slide-shell--translation-reaction {
+        gap: clamp(24px, 3.5vw, 64px);
+      }
+
       .slide-shell--translation-reaction .copy--split {
-        flex: 1 1 58%;
+        flex: 1 1 66%;
         max-width: none;
         min-width: 0;
       }
 
       .slide-shell--translation-reaction .title {
-        max-width: 16ch;
+        max-width: none;
         font-size: clamp(2.35rem, 3.65vw, 4.6rem);
         line-height: 1.1;
         letter-spacing: -0.085em;
@@ -1758,8 +1762,8 @@
 
       .slide-shell--translation-reaction .visual {
         display: flex;
-        flex: 0 1 32rem;
-        width: min(100%, 32rem);
+        flex: 0 1 28rem;
+        width: min(100%, 28rem);
         min-width: 0;
         align-items: center;
         justify-content: center;
@@ -1767,14 +1771,14 @@
 
       .translation-reaction-stack {
         position: relative;
-        width: min(100%, 32rem);
-        height: clamp(430px, 43vw, 600px);
+        width: min(100%, 28rem);
+        height: clamp(360px, 31vw, 420px);
       }
 
       .translation-reaction-shot {
         position: absolute;
         display: block;
-        width: min(100%, 30rem);
+        width: min(100%, 26rem);
         height: auto;
         border-radius: 14px;
         box-shadow: 0 18px 32px rgba(45, 42, 30, 0.15);
@@ -1787,13 +1791,13 @@
       }
 
       .translation-reaction-shot:nth-child(2) {
-        top: 34%;
+        top: 29%;
         left: -1%;
         z-index: 2;
       }
 
       .translation-reaction-shot:nth-child(3) {
-        top: 63%;
+        top: 55%;
         left: 8%;
         z-index: 3;
       }
