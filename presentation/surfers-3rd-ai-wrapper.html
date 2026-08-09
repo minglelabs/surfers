@@ -1653,6 +1653,26 @@
         min-width: 0;
       }
 
+      /* Give page 55 more copy room without changing the Ambient AI evidence column. */
+      .slide-shell--ambient-focus-workflow .copy--split {
+        flex: 1 1 55%;
+        max-width: none;
+        min-width: 0;
+      }
+
+      .slide-shell--ambient-focus-workflow .visual {
+        flex: 0 0 52rem;
+        width: 52rem;
+        max-width: 52rem;
+        min-width: 0;
+      }
+
+      .slide-shell--ambient-focus-workflow .title {
+        max-width: none;
+        font-size: clamp(2.35rem, 3.9vw, 4.8rem);
+        line-height: 1.18;
+      }
+
       .slide-shell--always-on .copy--split,
       .slide-shell--translation-toggle .copy--split {
         flex: 1 1 62%;
@@ -2921,6 +2941,9 @@
         .slide-shell--ambient .visual { flex: 0 0 auto; width: 100%; }
         .slide-shell--ambient-focus-always-on .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--ambient-focus-always-on .visual { flex: 0 0 auto; width: 100%; max-width: none; }
+        .slide-shell--ambient-focus-workflow .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
+        .slide-shell--ambient-focus-workflow .visual { flex: 0 0 auto; width: 100%; max-width: none; }
+        .slide-shell--ambient-focus-workflow .title { font-size: clamp(2.2rem, 7.2vw, 4.2rem); }
         .slide-shell--ambient .evidence-card { grid-template-columns: auto minmax(0, 1fr); justify-content: normal; }
         .slide-shell--ambient .evidence-title { font-size: clamp(1.95rem, 6.5vw, 3.15rem); }
         .slide-shell--always-on .copy--split,
@@ -4400,8 +4423,7 @@
             <div class="chapter-label">미래와 제언</div>
             <div class="copy copy--split">
               <p class="kicker">Vision</p>
-              <h1 class="title">첫 번째,</h1>
-              <h1 class="title">워크플로우 통합</h1>
+              <h1 class="title">첫 번째,<br />워크플로우 통합</h1>
             </div>
             <div class="visual" aria-label="Ambient AI 설명 카드">
               <div class="evidence-stack">
