@@ -1929,7 +1929,7 @@
         width: 14%;
         height: 100%;
         border-radius: 999px;
-        background: #ef4444;
+        background: #ff0000;
         content: "";
         transform-origin: center;
       }
@@ -1966,6 +1966,58 @@
         width: 100%;
         height: clamp(180px, 17vw, 280px);
         border-radius: 16px;
+        object-fit: cover;
+        box-shadow: 0 18px 32px rgba(45, 42, 30, 0.15);
+      }
+
+      .slide-shell--gui-cui-center .title {
+        max-width: none;
+        font-size: clamp(2.35rem, 4vw, 5rem);
+        line-height: 1.18;
+      }
+
+      .slide-shell--gui-cui-center .copy--wide {
+        width: min(100%, 108rem);
+      }
+
+      .slide-shell--gui-cui-complexity {
+        gap: clamp(28px, 4vw, 74px);
+      }
+
+      .slide-shell--gui-cui-complexity .copy--split {
+        flex: 1 1 56%;
+        max-width: 64rem;
+        min-width: 0;
+      }
+
+      .slide-shell--gui-cui-complexity .title {
+        max-width: 18ch;
+        font-size: clamp(2.6rem, 4.35vw, 5.3rem);
+        line-height: 1.12;
+      }
+
+      .slide-shell--gui-cui-complexity .visual {
+        display: flex;
+        flex: 0 1 35rem;
+        width: min(100%, 35rem);
+        min-width: 0;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .gui-cui-screens {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(14px, 1.5vw, 22px);
+        width: 100%;
+      }
+
+      .gui-cui-screen {
+        display: block;
+        width: 100%;
+        height: clamp(150px, 13vw, 230px);
+        border-radius: 14px;
         object-fit: cover;
         box-shadow: 0 18px 32px rgba(45, 42, 30, 0.15);
       }
@@ -3211,6 +3263,12 @@
         .slide-shell--service-ambient .visual { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--cursor-takeover .title,
         .slide-shell--service-ambient .title { max-width: none; font-size: clamp(2.2rem, 7.2vw, 4.2rem); }
+        .slide-shell--gui-cui-center .title { max-width: none; font-size: clamp(2.2rem, 7.2vw, 4.2rem); }
+        .slide-shell--gui-cui-complexity .copy--split,
+        .slide-shell--gui-cui-complexity .visual { flex: 0 0 auto; width: 100%; max-width: none; }
+        .slide-shell--gui-cui-complexity .title { max-width: none; font-size: clamp(2.2rem, 7.2vw, 4.2rem); }
+        .gui-cui-screens { gap: 12px; }
+        .gui-cui-screen { height: clamp(150px, 36vw, 230px); }
         .workflow-takeover { width: 100%; min-height: 285px; gap: 16px; }
         .workflow-takeover-service { width: clamp(94px, 26vw, 150px); height: clamp(94px, 26vw, 150px); }
         .workflow-takeover-service { font-size: clamp(94px, 26vw, 150px); }
@@ -4702,30 +4760,11 @@
         </section>
 
         <section class="slide" aria-label="01. Ambient AI">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--principles slide-shell--ambient">
-            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
-            <div class="chapter-label">미래와 제언</div>
-            <div class="copy copy--split">
-              <p class="kicker">VISION</p>
-              <h1 class="title">Ambient AI</h1>
-              <p class="body">Ambient는 '나를 둘러싼'이라는 뜻입니다.</p>
-            </div>
-            <div class="visual" aria-label="Ambient AI 설명 카드">
-              <div class="evidence-stack">
-                <section class="evidence-card"><span class="evidence-index">1</span><div><h2 class="evidence-title">Workflow Integration</h2></div></section>
-                <section class="evidence-card"><span class="evidence-index">2</span><div><h2 class="evidence-title">Always-on AI</h2></div></section>
-                <section class="evidence-card"><span class="evidence-index">3</span><div><h2 class="evidence-title">GUI to CUI</h2></div></section>
-              </div>
-            </div>
-          </article>
-        </section>
-
-        <section class="slide" aria-label="01. Ambient AI">
           <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--principles slide-shell--ambient slide-shell--ambient-focus-workflow">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
             <div class="chapter-label">미래와 제언</div>
             <div class="copy copy--split">
-              <p class="kicker">Vision</p>
+              <p class="kicker">WORKFLOW INTEGRATION</p>
               <h1 class="title">첫 번째,<br />워크플로우 통합</h1>
             </div>
             <div class="visual" aria-label="Ambient AI 설명 카드">
@@ -4866,7 +4905,7 @@
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
             <div class="chapter-label">미래와 제언</div>
             <div class="copy copy--split">
-              <p class="kicker">Vision</p>
+              <p class="kicker">Always-on AI</p>
               <h1 class="title">두 번째,</h1>
               <h1 class="title">AOAI</h1>
             </div>
@@ -4996,7 +5035,7 @@
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
             <div class="chapter-label">미래와 제언</div>
             <div class="copy copy--split">
-              <p class="kicker">Vision</p>
+              <p class="kicker">GUI to CUI</p>
               <h1 class="title">세 번째,</h1>
               <h1 class="title">GUI to CUI</h1>
             </div>
@@ -5015,7 +5054,7 @@
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
             <div class="chapter-label">미래와 제언</div>
             <div class="copy copy--split">
-              <p class="kicker">Always-on AI</p>
+              <p class="kicker">GUI to CUI</p>
               <h1 class="title">커서와 같은 AI 래퍼가<br />기존의 워크플로우를<br />잡아먹는 경우도 있지만</h1>
             </div>
             <div class="visual" aria-label="Cursor가 VS Code를 밀어내는 모습">
@@ -5037,11 +5076,51 @@
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
             <div class="chapter-label">미래와 제언</div>
             <div class="copy copy--split">
-              <p class="kicker">Always-on AI</p>
+              <p class="kicker">GUI to CUI</p>
               <h1 class="title">기존의 서비스가<br />Ambient AI를<br />먼저할 가능성도 있음</h1>
             </div>
             <div class="visual" aria-label="X 자동 번역 사례">
               <img class="service-ambient-screenshot" src="./assets/x-translation-after.png" alt="X 자동 번역 화면" />
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="03. 바이브 코딩이 편한 이유">
+          <article class="slide-shell slide-shell--center slide-shell--section slide-shell--tsunami slide-shell--gui-cui-center">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">미래와 제언</div>
+            <div class="copy copy--center copy--wide">
+              <p class="kicker">GUI to CUI</p>
+              <h1 class="title title--center">바이브 코딩이 편한 이유 중 하나<br />GUI 복잡성과 싸우지 않아도 되어서</h1>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="03. 앱스토어 배포와 AWS 설정">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--gui-cui-complexity">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">미래와 제언</div>
+            <div class="copy copy--split">
+              <p class="kicker">GUI to CUI</p>
+              <h1 class="title">앱스토어 배포가 대표적<br />AWS 설정 또한 비슷</h1>
+              <p class="body">앱스토어에서 인터널 테스터 초대하는 것만해도 도대체 초대 코드가 어디에서 발급되는 건지 찾기 힘들다</p>
+            </div>
+            <div class="visual" aria-label="앱스토어 커넥트와 AWS 설정 화면">
+              <div class="gui-cui-screens">
+                <img class="gui-cui-screen" src="./assets/app-store-connect-internal-testers.png" alt="App Store Connect 인터널 테스터 화면" />
+                <img class="gui-cui-screen" src="./assets/aws-console-settings.png" alt="AWS 설정 화면" />
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="03. AI는 이런 어려움을 해결해준다">
+          <article class="slide-shell slide-shell--center slide-shell--section slide-shell--tsunami slide-shell--gui-cui-center">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">미래와 제언</div>
+            <div class="copy copy--center copy--wide">
+              <p class="kicker">GUI to CUI</p>
+              <h1 class="title title--center">AI는 이런 어려움을 해결해준다<br />조금만 복잡해져도 CUI가 월등히 쉽다</h1>
             </div>
           </article>
         </section>
