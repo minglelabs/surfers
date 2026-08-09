@@ -1654,6 +1654,10 @@
       }
 
       /* Give page 55 more copy room without changing the Ambient AI evidence column. */
+      .slide-shell--ambient-focus-workflow {
+        gap: clamp(20px, 2.2vw, 40px);
+      }
+
       .slide-shell--ambient-focus-workflow .copy--split {
         flex: 1 1 55%;
         max-width: none;
@@ -1671,6 +1675,7 @@
         max-width: none;
         font-size: clamp(2.35rem, 3.9vw, 4.8rem);
         line-height: 1.18;
+        white-space: nowrap;
       }
 
       .slide-shell--always-on .copy--split,
@@ -2999,7 +3004,7 @@
         .slide-shell--ambient-focus-always-on .visual { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--ambient-focus-workflow .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--ambient-focus-workflow .visual { flex: 0 0 auto; width: 100%; max-width: none; }
-        .slide-shell--ambient-focus-workflow .title { font-size: clamp(2.2rem, 7.2vw, 4.2rem); }
+        .slide-shell--ambient-focus-workflow .title { font-size: clamp(2.2rem, 7.2vw, 4.2rem); white-space: normal; }
         .slide-shell--ambient .evidence-card { grid-template-columns: auto minmax(0, 1fr); justify-content: normal; }
         .slide-shell--ambient .evidence-title { font-size: clamp(1.95rem, 6.5vw, 3.15rem); }
         .slide-shell--always-on .copy--split,
