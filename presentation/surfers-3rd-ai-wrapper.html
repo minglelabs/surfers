@@ -311,6 +311,40 @@
         max-width: none;
       }
 
+      .slide-shell--design-principles {
+        gap: clamp(28px, 4vw, 58px);
+      }
+
+      .slide-shell--design-principles .copy--split {
+        flex: 1 1 52%;
+        max-width: 60rem;
+        min-width: 0;
+      }
+
+      .slide-shell--design-principles .visual {
+        flex: 0 1 40rem;
+        width: min(100%, 40rem);
+        min-width: 0;
+      }
+
+      .slide-shell--design-principles .title {
+        max-width: none;
+        font-size: clamp(2.75rem, 4.8vw, 5.6rem);
+        letter-spacing: -0.08em;
+      }
+
+      .slide-shell--design-principles .innovation-step-list {
+        gap: clamp(24px, 3vw, 42px);
+      }
+
+      .slide-shell--design-principles .innovation-step-label {
+        font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+      }
+
+      .slide-shell--design-principles .innovation-step-text {
+        font-size: clamp(1.45rem, 2.15vw, 2rem);
+      }
+
       .vision-principles-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -4303,26 +4337,28 @@
           </article>
         </section>
 
-        <section class="slide" aria-label="03. 서비스의 형태가 아래 셋을 충족하도록 만들자는 겁니다">
-          <article class="slide-shell slide-shell--center slide-shell--section slide-shell--vision-principles">
+        <section class="slide" aria-label="03. 제가 제안하는 세 가지 Design Principles">
+          <article class="slide-shell slide-shell--split slide-shell--section slide-shell--design-principles">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
             <div class="chapter-label">미래와 제언</div>
-            <div class="copy copy--center copy--wide">
+            <div class="copy copy--split">
               <p class="kicker">VISION</p>
-              <h1 class="title title--center">제가 제안하는 바는 서비스의 형태가<br />아래 셋을 충족하도록 만들자는 겁니다</h1>
+              <h1 class="title">제가 제안하는 세 가지<br />Design Principles</h1>
             </div>
-            <div class="vision-principles-grid" aria-label="AI 래퍼 서비스의 세 가지 원칙">
-              <div class="vision-principle">
-                <h2 class="vision-principle-title">Workflow Integration</h2>
-                <p class="vision-principle-text">고객의 워크플로우에 AI가 자연스럽게 녹아드는 것</p>
-              </div>
-              <div class="vision-principle">
-                <h2 class="vision-principle-title">Always-on AI</h2>
-                <p class="vision-principle-text">AI의 도움을 언제나 숨쉬듯 자동으로 제공하는 것</p>
-              </div>
-              <div class="vision-principle">
-                <h2 class="vision-principle-title">GUI to CUI</h2>
-                <p class="vision-principle-text">GUI 화면의 복잡성을 대화형으로 대체하는 것</p>
+            <div class="visual" aria-label="AI 래퍼 서비스의 세 가지 Design Principles">
+              <div class="innovation-step-list">
+                <div class="innovation-step">
+                  <p class="innovation-step-label">Workflow Integration</p>
+                  <p class="innovation-step-text">고객의 워크플로우에 AI가 자연스럽게 녹아드는 것</p>
+                </div>
+                <div class="innovation-step">
+                  <p class="innovation-step-label">Always-on AI</p>
+                  <p class="innovation-step-text">AI의 도움을 언제나 숨쉬듯 자동으로 제공하는 것</p>
+                </div>
+                <div class="innovation-step">
+                  <p class="innovation-step-label">GUI to CUI</p>
+                  <p class="innovation-step-text">GUI 화면의 복잡성을 대화형으로 대체하는 것</p>
+                </div>
               </div>
             </div>
           </article>
