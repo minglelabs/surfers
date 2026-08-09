@@ -2030,6 +2030,20 @@
         justify-content: center;
       }
 
+      .slide-shell--google-ads .visual {
+        flex: 0 1 23rem;
+        width: min(100%, 23rem);
+        max-width: 23rem;
+      }
+
+      .slide-shell--google-ads .gui-cui-screen {
+        width: min(100%, 20rem);
+        max-width: 20rem;
+        height: auto;
+        max-height: 58vh;
+        object-fit: contain;
+      }
+
       .gui-cui-screens {
         display: flex;
         flex-direction: column;
@@ -3297,6 +3311,7 @@
         .slide-shell--gui-cui-complexity .copy--split,
         .slide-shell--gui-cui-complexity .visual { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--gui-cui-complexity .title { max-width: none; font-size: clamp(2.2rem, 7.2vw, 4.2rem); }
+        .slide-shell--google-ads .gui-cui-screen { width: min(100%, 24rem); max-width: 24rem; max-height: 52vh; }
         .gui-cui-screens { gap: 12px; }
         .gui-cui-screen { height: clamp(150px, 36vw, 230px); }
         .gui-cui-screens--single .gui-cui-screen { height: auto; max-height: 34vh; object-fit: contain; }
@@ -5124,7 +5139,7 @@
         </section>
 
         <section class="slide" aria-label="03. 구글 Ads 소재 수정의 어려움">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--gui-cui-complexity slide-shell--translation-friction-larger">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--gui-cui-complexity slide-shell--google-ads slide-shell--translation-friction-larger">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
             <div class="chapter-label">미래와 제언</div>
             <div class="copy copy--split">
@@ -5239,7 +5254,7 @@
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
             <div class="chapter-label">미래와 제언</div>
             <div class="copy copy--split">
-              <p class="kicker">Ambient AI</p>
+              <p class="kicker">Opportunity</p>
               <h1 class="title">기존의 서비스가<br />Ambient AI를<br />먼저할 가능성도 있음</h1>
             </div>
             <div class="visual" aria-label="X 자동 번역 사례">
