@@ -221,6 +221,46 @@
         box-shadow: 0 20px 40px rgba(45, 42, 30, 0.12);
       }
 
+      .slide-shell--innovation-amazon .copy--split {
+        flex: 1 1 52%;
+        max-width: 58rem;
+        min-width: 0;
+      }
+
+      .slide-shell--innovation-amazon .visual {
+        flex: 0 1 39rem;
+        width: min(100%, 39rem);
+        min-width: 0;
+      }
+
+      .innovation-step-list {
+        display: grid;
+        gap: clamp(24px, 3vw, 42px);
+        width: 100%;
+      }
+
+      .innovation-step {
+        display: grid;
+        grid-template-columns: minmax(10rem, 0.42fr) minmax(0, 1fr);
+        gap: clamp(16px, 2.1vw, 32px);
+        align-items: baseline;
+      }
+
+      .innovation-step-label {
+        color: var(--accent-strong);
+        font-size: clamp(1.05rem, 1.45vw, 1.35rem);
+        font-weight: 820;
+        letter-spacing: -0.045em;
+      }
+
+      .innovation-step-text {
+        color: var(--title);
+        font-size: clamp(1.35rem, 2.05vw, 1.9rem);
+        font-weight: 720;
+        line-height: 1.32;
+        letter-spacing: -0.055em;
+      }
+
       .slide-shell--section {
         background: var(--page);
       }
@@ -2658,6 +2698,31 @@
           height: clamp(300px, 48vh, 480px);
         }
 
+        .slide-shell--innovation-amazon .copy--split,
+        .slide-shell--innovation-amazon .visual {
+          flex: 0 0 auto;
+          width: 100%;
+          max-width: none;
+        }
+
+        .innovation-step-list {
+          gap: 17px;
+        }
+
+        .innovation-step {
+          grid-template-columns: 1fr;
+          gap: 4px;
+        }
+
+        .innovation-step-label {
+          font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+        }
+
+        .innovation-step-text {
+          font-size: clamp(1rem, 4.1vw, 1.35rem);
+          line-height: 1.38;
+        }
+
         .copy,
         .copy--split { margin-top: 0; }
 
@@ -4026,6 +4091,33 @@
             </div>
             <div class="visual" aria-label="The Innovation Stack 표지">
               <img class="innovation-stack-book" src="./assets/innovation-stack.png" alt="The Innovation Stack 책 표지" />
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="03. 스타트업의 작은 혁신이 쌓이면 아마존한테도 이길 수 있다">
+          <article class="slide-shell slide-shell--split slide-shell--section slide-shell--innovation-amazon">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">미래와 제언</div>
+            <div class="copy copy--split">
+              <p class="kicker">MOAT</p>
+              <h1 class="title">스타트업의 작은 혁신이 쌓이면<br />아마존한테도 이길 수 있다</h1>
+            </div>
+            <div class="visual" aria-label="스타트업의 작은 혁신">
+              <div class="innovation-step-list">
+                <div class="innovation-step">
+                  <p class="innovation-step-label">혁신해야할 과제</p>
+                  <p class="innovation-step-text">운영 비용 낮춰 최저 수수료 유지</p>
+                </div>
+                <div class="innovation-step">
+                  <p class="innovation-step-label">작은 혁신 1</p>
+                  <p class="innovation-step-text">카드 결제용 하드웨어까지 직접 만들어서 비용 줄임</p>
+                </div>
+                <div class="innovation-step">
+                  <p class="innovation-step-label">작은 혁신 2</p>
+                  <p class="innovation-step-text">고객센터 혁신으로 전화 응대 방식 없애서 비용 줄임</p>
+                </div>
+              </div>
             </div>
           </article>
         </section>
