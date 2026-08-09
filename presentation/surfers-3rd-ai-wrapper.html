@@ -659,6 +659,139 @@
         font-size: clamp(2.3rem, 4.2vw, 5.1rem);
       }
 
+      .slide-shell--messenger-opportunity,
+      .slide-shell--messenger-radial {
+        gap: clamp(24px, 4vw, 68px);
+      }
+
+      .slide-shell--messenger-opportunity .copy--split {
+        flex: 1 1 54%;
+        max-width: 56rem;
+        min-width: 0;
+      }
+
+      .slide-shell--messenger-opportunity .title {
+        max-width: none;
+        font-size: clamp(2.55rem, 4.6vw, 5.7rem);
+      }
+
+      .slide-shell--messenger-opportunity .visual {
+        display: flex;
+        flex: 0 1 34rem;
+        width: min(100%, 34rem);
+        min-width: 0;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .messenger-equation {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(14px, 2vw, 30px);
+        width: 100%;
+        min-height: clamp(300px, 34vw, 470px);
+      }
+
+      .messenger-equation img {
+        display: block;
+        width: clamp(130px, 12vw, 210px);
+        height: auto;
+        object-fit: contain;
+      }
+
+      .messenger-equation-plus {
+        color: var(--body);
+        font-size: clamp(2.3rem, 4vw, 4.4rem);
+        font-weight: 500;
+        line-height: 1;
+      }
+
+      .slide-shell--messenger-radial .copy--split {
+        flex: 1 1 43%;
+        max-width: 50rem;
+        min-width: 0;
+      }
+
+      .slide-shell--messenger-radial .title {
+        max-width: none;
+        font-size: clamp(2.45rem, 4.35vw, 5.25rem);
+      }
+
+      .slide-shell--messenger-radial .visual {
+        display: flex;
+        flex: 1 1 57%;
+        width: min(100%, 52rem);
+        min-width: 0;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .messenger-radial {
+        position: relative;
+        width: min(100%, 52rem);
+        height: clamp(390px, 42vw, 560px);
+      }
+
+      .messenger-radial-lines {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+      }
+
+      .messenger-radial-lines line {
+        stroke: var(--accent-strong);
+        stroke-width: 0.55;
+        stroke-linecap: round;
+        opacity: 0.48;
+      }
+
+      .messenger-radial-core,
+      .messenger-radial-node {
+        position: absolute;
+        z-index: 1;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+
+      .messenger-radial-core {
+        left: 50%;
+        top: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+        color: var(--title);
+        font-size: clamp(1.45rem, 2.2vw, 2.45rem);
+        font-weight: 820;
+        letter-spacing: -0.075em;
+        line-height: 1.02;
+        white-space: nowrap;
+      }
+
+      .messenger-radial-core strong:last-child {
+        color: var(--accent-strong);
+      }
+
+      .messenger-radial-core-plus {
+        color: var(--body);
+        font-size: 0.75em;
+        font-weight: 500;
+      }
+
+      .messenger-radial-node {
+        left: var(--x);
+        top: var(--y);
+        max-width: 13ch;
+        color: var(--title);
+        font-size: clamp(0.98rem, 1.45vw, 1.45rem);
+        font-weight: 760;
+        letter-spacing: -0.06em;
+        line-height: 1.15;
+      }
+
       .slide-shell--study-example .copy--split {
         flex: 1 1 54%;
         max-width: 54rem;
@@ -3353,6 +3486,16 @@
         .slide-shell--vibe-tools .visual { flex: 0 0 auto; width: 100%; }
         .slide-shell--browser-os .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--browser-os .visual { flex: 0 0 auto; width: 100%; max-width: none; }
+        .slide-shell--messenger-opportunity .copy--split,
+        .slide-shell--messenger-radial .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
+        .slide-shell--messenger-opportunity .visual,
+        .slide-shell--messenger-radial .visual { flex: 0 0 auto; width: 100%; max-width: none; }
+        .messenger-equation { min-height: 285px; gap: 9px; }
+        .messenger-equation img { width: clamp(82px, 24vw, 132px); }
+        .messenger-equation-plus { font-size: clamp(1.8rem, 7vw, 2.8rem); }
+        .messenger-radial { height: clamp(360px, 94vw, 480px); }
+        .messenger-radial-core { font-size: clamp(1.2rem, 5vw, 1.8rem); }
+        .messenger-radial-node { max-width: 11ch; font-size: clamp(0.78rem, 2.6vw, 1rem); }
         .slide-shell--vibe-market .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--vibe-market .visual { flex: 0 0 auto; width: 100%; }
         .slide-shell--vibe-market .title { font-size: clamp(2.2rem, 7.6vw, 4.4rem); white-space: normal; }
@@ -5285,6 +5428,60 @@
             <div class="copy copy--center copy--wide">
               <p class="kicker">Opportunity</p>
               <h1 class="title title--center">1. 고객의 문제를 뾰족한 AI 래퍼로 해결한다<br />2. 해당 도메인의 Ambient AI로 진화한다</h1>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="03. AI Native Messenger">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--messenger-opportunity">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">미래와 제언</div>
+            <div class="copy copy--split">
+              <p class="kicker">Opportunity</p>
+              <h1 class="title">제가 보는 가장 큰 기회는<br />AI Native Messenger</h1>
+            </div>
+            <div class="visual" aria-label="카카오톡과 ChatGPT 로고">
+              <div class="messenger-equation">
+                <img src="https://cdn.simpleicons.org/kakaotalk/FFCD00" alt="카카오톡 로고" />
+                <span class="messenger-equation-plus" aria-hidden="true">+</span>
+                <img src="./assets/chatgpt-logo.svg" alt="ChatGPT 로고" />
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="03. 메신저와 SNS와 AI의 결합">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--messenger-radial">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">미래와 제언</div>
+            <div class="copy copy--split">
+              <p class="kicker">Opportunity</p>
+              <h1 class="title">메신저/SNS와 AI의 결합은<br />대부분의 산업을 혁신시킬 것</h1>
+            </div>
+            <div class="visual" aria-label="AI와 메신저 및 SNS가 확장하는 산업 영역">
+              <div class="messenger-radial">
+                <svg class="messenger-radial-lines" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+                  <line x1="50" y1="50" x2="50" y2="9" />
+                  <line x1="50" y1="50" x2="80" y2="18" />
+                  <line x1="50" y1="50" x2="88" y2="45" />
+                  <line x1="50" y1="50" x2="82" y2="76" />
+                  <line x1="50" y1="50" x2="58" y2="92" />
+                  <line x1="50" y1="50" x2="29" y2="92" />
+                  <line x1="50" y1="50" x2="7" y2="72" />
+                  <line x1="50" y1="50" x2="12" y2="43" />
+                  <line x1="50" y1="50" x2="19" y2="18" />
+                </svg>
+                <div class="messenger-radial-core"><strong>AI</strong><span class="messenger-radial-core-plus">+</span><strong>메신저/SNS</strong></div>
+                <div class="messenger-radial-node" style="--x: 50%; --y: 8%">영업 및 업무</div>
+                <div class="messenger-radial-node" style="--x: 80%; --y: 17%">쇼핑</div>
+                <div class="messenger-radial-node" style="--x: 88%; --y: 44%">교육</div>
+                <div class="messenger-radial-node" style="--x: 82%; --y: 76%">관광</div>
+                <div class="messenger-radial-node" style="--x: 58%; --y: 93%">컨텐츠</div>
+                <div class="messenger-radial-node" style="--x: 29%; --y: 93%">캐릭터챗</div>
+                <div class="messenger-radial-node" style="--x: 7%; --y: 72%">컴패니언</div>
+                <div class="messenger-radial-node" style="--x: 12%; --y: 43%">데이팅</div>
+                <div class="messenger-radial-node" style="--x: 19%; --y: 17%">의료/법률/금융 등 전문영역</div>
+              </div>
             </div>
           </article>
         </section>
