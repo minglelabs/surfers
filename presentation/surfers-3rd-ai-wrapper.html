@@ -1876,7 +1876,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: clamp(8px, 1.4vw, 22px);
+        gap: clamp(22px, 3.6vw, 58px);
         width: min(100%, 34rem);
         min-height: clamp(300px, 34vw, 460px);
       }
@@ -1888,6 +1888,7 @@
         width: clamp(120px, 13vw, 192px);
         height: clamp(120px, 13vw, 192px);
         flex: 0 0 auto;
+        font-size: clamp(120px, 13vw, 192px);
       }
 
       .workflow-takeover-service img {
@@ -1898,25 +1899,43 @@
       }
 
       .workflow-takeover-service--vscode {
-        opacity: 0.72;
-        transform: translateX(18px) scale(0.9);
+        position: relative;
+        opacity: 0.56;
+        transform: scale(0.9);
       }
 
       .workflow-takeover-service--cursor {
         position: relative;
         z-index: 2;
-        margin-left: -26px;
-        transform: translateX(-10px) scale(1.18);
+        transform: scale(1.18);
       }
 
-      .workflow-takeover-symbol {
-        position: relative;
+      .workflow-takeover-cross {
+        position: absolute;
+        inset: 0;
         z-index: 3;
-        margin-inline: -18px;
-        color: var(--accent-strong);
-        font-size: clamp(3.2rem, 5.4vw, 5.8rem);
-        font-weight: 820;
-        line-height: 1;
+        pointer-events: none;
+      }
+
+      .workflow-takeover-cross::before,
+      .workflow-takeover-cross::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 14%;
+        height: 100%;
+        border-radius: 999px;
+        background: var(--accent-strong);
+        content: "";
+        transform-origin: center;
+      }
+
+      .workflow-takeover-cross::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      .workflow-takeover-cross::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
       }
 
       .slide-shell--service-ambient .copy--split {
@@ -3205,11 +3224,11 @@
         .slide-shell--service-ambient .visual { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--cursor-takeover .title,
         .slide-shell--service-ambient .title { max-width: none; font-size: clamp(2.2rem, 7.2vw, 4.2rem); }
-        .workflow-takeover { width: 100%; min-height: 285px; gap: 5px; }
+        .workflow-takeover { width: 100%; min-height: 285px; gap: 16px; }
         .workflow-takeover-service { width: clamp(94px, 26vw, 150px); height: clamp(94px, 26vw, 150px); }
-        .workflow-takeover-service--vscode { transform: translateX(10px) scale(0.9); }
-        .workflow-takeover-service--cursor { margin-left: -18px; transform: translateX(-5px) scale(1.12); }
-        .workflow-takeover-symbol { margin-inline: -12px; font-size: clamp(2.4rem, 9vw, 4.3rem); }
+        .workflow-takeover-service { font-size: clamp(94px, 26vw, 150px); }
+        .workflow-takeover-service--vscode { transform: scale(0.9); }
+        .workflow-takeover-service--cursor { transform: scale(1.12); }
         .service-ambient-panel { min-height: 285px; gap: 14px; }
         .service-ambient-logo { width: clamp(88px, 22vw, 140px); }
         .service-ambient-screenshot { height: clamp(150px, 35vw, 230px); }
@@ -4943,14 +4962,14 @@
               <p class="kicker">Always-on AI</p>
               <h1 class="title">커서와 같은 AI 래퍼가<br />기존의 워크플로우를<br />잡아먹는 경우도 있지만</h1>
             </div>
-            <div class="visual" aria-label="VS Code를 추월하는 Cursor">
+            <div class="visual" aria-label="Cursor가 VS Code를 밀어내는 모습">
               <div class="workflow-takeover">
-                <div class="workflow-takeover-service workflow-takeover-service--vscode">
-                  <img src="assets/vscode-logo.svg" alt="VS Code 로고" />
-                </div>
-                <span class="workflow-takeover-symbol" aria-hidden="true">≫</span>
                 <div class="workflow-takeover-service workflow-takeover-service--cursor">
                   <img src="assets/cursor-logo.svg" alt="Cursor 로고" />
+                </div>
+                <div class="workflow-takeover-service workflow-takeover-service--vscode">
+                  <img src="assets/vscode-logo.svg" alt="VS Code 로고" />
+                  <span class="workflow-takeover-cross" aria-hidden="true"></span>
                 </div>
               </div>
             </div>
