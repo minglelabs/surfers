@@ -633,6 +633,28 @@
         height: clamp(300px, 33vw, 430px);
       }
 
+      /* Keep the future browser-and-OS slide independent from the chapter-2 browser cloud. */
+      .slide-shell--browser-os {
+        gap: clamp(18px, 2.2vw, 36px);
+      }
+
+      .slide-shell--browser-os .copy--split {
+        flex: 1 1 68%;
+        max-width: none;
+        min-width: 0;
+      }
+
+      .slide-shell--browser-os .visual {
+        flex: 0 1 27rem;
+        width: min(100%, 27rem);
+        max-width: 27rem;
+        min-width: 0;
+      }
+
+      .slide-shell--browser-os .vibe-tool-cloud {
+        height: clamp(390px, 39vw, 520px);
+      }
+
       .slide-shell--study-example .copy--split {
         flex: 1 1 54%;
         max-width: 54rem;
@@ -3310,6 +3332,8 @@
         .slide-competitor-cloud { height: clamp(250px, 66vw, 390px); }
         .slide-shell--vibe-tools .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--vibe-tools .visual { flex: 0 0 auto; width: 100%; }
+        .slide-shell--browser-os .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
+        .slide-shell--browser-os .visual { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--vibe-market .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--vibe-market .visual { flex: 0 0 auto; width: 100%; }
         .slide-shell--vibe-market .title { font-size: clamp(2.2rem, 7.6vw, 4.4rem); white-space: normal; }
@@ -3317,6 +3341,7 @@
         .slide-shell--vibe-exit .title { white-space: normal; }
         .slide-shell--vibe-exit .visual { margin-right: 0; }
         .vibe-tool-cloud { height: clamp(270px, 72vw, 360px); }
+        .slide-shell--browser-os .vibe-tool-cloud { height: clamp(350px, 90vw, 480px); }
         .vibe-tool { padding: 8px; border-radius: 16px; }
         .vibe-tool { width: min(var(--s), 24vw); height: min(var(--s), 24vw); }
         .vibe-tool-name { font-size: clamp(0.68rem, 2.4vw, 0.88rem); }
@@ -5098,6 +5123,22 @@
           </article>
         </section>
 
+        <section class="slide" aria-label="03. 구글 Ads 소재 수정의 어려움">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--gui-cui-complexity slide-shell--translation-friction-larger">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">미래와 제언</div>
+            <div class="copy copy--split">
+              <p class="kicker">GUI to CUI</p>
+              <h1 class="title">구글 Ads도 마찬가지다<br />소재 수정조차 찾기 힘듦</h1>
+            </div>
+            <div class="visual" aria-label="Google Ads Asset library 화면">
+              <div class="gui-cui-screens gui-cui-screens--single">
+                <img class="gui-cui-screen" src="./assets/google-ads-79.png" alt="Google Ads 광고 제작 화면" />
+              </div>
+            </div>
+          </article>
+        </section>
+
         <section class="slide" aria-label="03. 은행 앱을 쓰다 빡치면">
           <article class="slide-shell slide-shell--center slide-shell--section slide-shell--tsunami slide-shell--gui-cui-center">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
@@ -5120,47 +5161,51 @@
           </article>
         </section>
 
-        <section class="slide" aria-label="03. 구글 Ads 소재 수정의 어려움">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--gui-cui-complexity slide-shell--translation-friction-larger">
-            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
-            <div class="chapter-label">미래와 제언</div>
-            <div class="copy copy--split">
-              <p class="kicker">GUI to CUI</p>
-              <h1 class="title">구글 Ads도 마찬가지다<br />소재 수정조차 찾기 힘듦</h1>
-            </div>
-            <div class="visual" aria-label="Google Ads Asset library 화면">
-              <div class="gui-cui-screens gui-cui-screens--single">
-                <img class="gui-cui-screen" src="./assets/google-ads-79.png" alt="Google Ads 광고 제작 화면" />
-              </div>
-            </div>
-          </article>
-        </section>
-
         <section class="slide" aria-label="03. AI 브라우저는 필연적">
-          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category slide-shell--translation-friction-larger">
+          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category slide-shell--browser-os slide-shell--translation-friction-larger">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
             <div class="chapter-label">미래와 제언</div>
             <div class="copy copy--split">
               <p class="kicker">GUI to CUI</p>
-              <h1 class="title">AI 브라우저는 필연적<br />그 핵심은 GUI to CUI</h1>
+              <h1 class="title">결론은, 브라우저와 OS의<br />AI Native화는 필수라는 점<br/>핵심은 GUI to CUI</h1>
             </div>
-            <div class="visual" aria-label="AI 브라우저 대표 서비스">
+            <div class="visual" aria-label="AI 브라우저와 운영체제 대표 로고">
               <div class="vibe-tool-cloud">
-                <div class="vibe-tool" style="--x: 17%; --y: 30%; --s: clamp(114px, 8.7vw, 146px); --r: -9deg">
+                <div class="vibe-tool" style="--x: 18%; --y: 14%; --s: clamp(82px, 5.8vw, 98px); --r: -9deg">
                   <img src="./assets/comet-logo.png" alt="Comet 로고" />
                   <span class="vibe-tool-name">Perplexity Comet</span>
                 </div>
-                <div class="vibe-tool" style="--x: 54%; --y: 16%; --s: clamp(112px, 8.5vw, 142px); --r: 7deg">
+                <div class="vibe-tool" style="--x: 50%; --y: 10%; --s: clamp(82px, 5.8vw, 98px); --r: 7deg">
                   <img src="./assets/dia-logo.ico" alt="Dia 로고" />
                   <span class="vibe-tool-name">Dia</span>
                 </div>
-                <div class="vibe-tool" style="--x: 80%; --y: 69%; --s: clamp(110px, 8.3vw, 138px); --r: -11deg">
+                <div class="vibe-tool" style="--x: 82%; --y: 18%; --s: clamp(82px, 5.8vw, 98px); --r: -11deg">
                   <img src="./assets/arc-logo.svg" alt="Arc Search 로고" />
                   <span class="vibe-tool-name">Arc Search</span>
                 </div>
-                <div class="vibe-tool" style="--x: 38%; --y: 72%; --s: clamp(108px, 8.1vw, 136px); --r: 9deg">
+                <div class="vibe-tool" style="--x: 22%; --y: 43%; --s: clamp(82px, 5.8vw, 98px); --r: 9deg">
                   <img src="https://aside.com/favicon.ico" alt="Aside 로고" />
                   <span class="vibe-tool-name">Aside</span>
+                </div>
+                <div class="vibe-tool" style="--x: 56%; --y: 39%; --s: clamp(82px, 5.8vw, 98px); --r: -6deg">
+                  <img src="https://cdn.simpleicons.org/apple/2D2A1E" alt="iOS 로고" />
+                  <span class="vibe-tool-name">iOS</span>
+                </div>
+                <div class="vibe-tool" style="--x: 86%; --y: 43%; --s: clamp(82px, 5.8vw, 98px); --r: 8deg">
+                  <img src="https://cdn.simpleicons.org/macos/2D2A1E" alt="macOS 로고" />
+                  <span class="vibe-tool-name">macOS</span>
+                </div>
+                <div class="vibe-tool" style="--x: 18%; --y: 74%; --s: clamp(82px, 5.8vw, 98px); --r: -8deg">
+                  <img src="https://cdn.simpleicons.org/android/2D2A1E" alt="Android 로고" />
+                  <span class="vibe-tool-name">Android</span>
+                </div>
+                <div class="vibe-tool" style="--x: 51%; --y: 72%; --s: clamp(82px, 5.8vw, 98px); --r: 6deg">
+                  <img src="./assets/windows-logo.svg" alt="Windows 로고" />
+                  <span class="vibe-tool-name">Windows</span>
+                </div>
+                <div class="vibe-tool" style="--x: 83%; --y: 76%; --s: clamp(82px, 5.8vw, 98px); --r: -7deg">
+                  <img src="https://cdn.simpleicons.org/linux/2D2A1E" alt="Linux 로고" />
+                  <span class="vibe-tool-name">Linux</span>
                 </div>
               </div>
             </div>
@@ -5172,7 +5217,7 @@
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
             <div class="chapter-label">미래와 제언</div>
             <div class="copy copy--split">
-              <p class="kicker">GUI to CUI</p>
+              <p class="kicker">Opportunity</p>
               <h1 class="title">커서와 같은 AI 래퍼가<br />기존의 워크플로우를<br />잡아먹는 경우도 있지만</h1>
             </div>
             <div class="visual" aria-label="Cursor가 VS Code를 밀어내는 모습">
@@ -5194,7 +5239,7 @@
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
             <div class="chapter-label">미래와 제언</div>
             <div class="copy copy--split">
-              <p class="kicker">GUI to CUI</p>
+              <p class="kicker">Ambient AI</p>
               <h1 class="title">기존의 서비스가<br />Ambient AI를<br />먼저할 가능성도 있음</h1>
             </div>
             <div class="visual" aria-label="X 자동 번역 사례">
