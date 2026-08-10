@@ -898,7 +898,7 @@
 
       .character-phase-emphasis {
         color: var(--accent-strong);
-        font-size: clamp(4.4rem, 8vw, 8.5rem);
+        font-size: clamp(4rem, 6vw, 6rem);
         font-weight: 840;
         line-height: 0.98;
         letter-spacing: -0.09em;
@@ -911,9 +911,35 @@
       }
 
       .slide[aria-label="04. 한국 캐릭터챗 서비스의 강점"] .slide-shell--character-korean .visual {
-        flex: 0 0 40rem;
-        width: 40rem;
+        flex: 0 0 30rem;
+        width: 30rem;
         transform: translateX(1rem);
+      }
+
+      .character-korean-photo {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(12px, 1.5vw, 22px);
+        text-align: center;
+      }
+
+      .character-korean-photo-image {
+        display: block;
+        width: min(100%, 30rem);
+        max-height: min(60vh, 38rem);
+        object-fit: contain;
+      }
+
+      .character-korean-photo-caption {
+        max-width: 28rem;
+        color: var(--title);
+        font-size: clamp(1.25rem, 1.9vw, 2rem);
+        font-weight: 780;
+        line-height: 1.2;
+        letter-spacing: -0.055em;
       }
 
       .slide[aria-label="04. Phase 3 웹툰과 숏츠"] .slide-shell--character-phase3 .copy--split {
@@ -922,13 +948,8 @@
       }
 
       .slide[aria-label="04. Phase 3 웹툰과 숏츠"] .slide-shell--character-phase3 .visual {
-        flex: 0 0 42rem;
-        width: 42rem;
-      }
-
-      .slide[aria-label="04. Phase 3 웹툰과 숏츠"] .character-phase-emphasis {
-        max-width: 100%;
-        white-space: normal;
+        flex: 0 0 30rem;
+        width: 30rem;
       }
 
       .slide[aria-label="04. 웹툰과 숏츠의 제작 방식"] .slide-shell--character-webtoon-thesis .title {
@@ -4366,6 +4387,8 @@
         .character-global-results-image--bottom { height: 42%; }
         .character-phase-label { font-size: clamp(1.55rem, 5.8vw, 2.6rem); }
         .character-phase-emphasis { font-size: clamp(3.25rem, 13vw, 6rem); }
+        .character-korean-photo-image { width: min(100%, 22rem); max-height: 46vh; }
+        .character-korean-photo-caption { font-size: clamp(1.15rem, 4.4vw, 1.6rem); }
         .character-category-list { gap: 18px; }
         .character-category-item { font-size: clamp(1.8rem, 8vw, 3.5rem); white-space: normal; }
         .character-market-image { max-height: 42vh; }
@@ -5274,6 +5297,40 @@
           </article>
         </section>
 
+        <section class="slide" aria-label="04. 캐릭터챗의 두 세부 분야">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--character-growth">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">CHARACTER</p>
+              <h1 class="title">캐릭터 챗은 <br/>사실 세부적으로<br />두 분야로 나뉨</h1>
+            </div>
+            <div class="visual" aria-label="캐릭터챗의 두 세부 분야">
+              <div class="character-category-list">
+                <p class="character-category-item"><span class="character-category-index">1</span>컨텐츠 향 캐릭터챗</p>
+                <p class="character-category-item"><span class="character-category-index">2</span>컴패니언 향 캐릭터챗</p>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="04. 컨텐츠 향 캐릭터챗 시장">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--character-growth">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">CHARACTER</p>
+              <h1 class="title">컨텐츠 향 시장이 큼<br />C.AI가 표준 제시</h1>
+            </div>
+            <div class="visual" aria-label="컨텐츠 향 캐릭터챗 사례">
+              <div class="character-market-proof">
+                <img class="character-market-image" src="./assets/character-content-market.png" alt="제타 캐릭터 콘텐츠 화면" />
+                <p class="character-market-caption">오타쿠는 돈이 된다</p>
+              </div>
+            </div>
+          </article>
+        </section>
+
         <section class="slide" aria-label="04. 캐릭터 컨셉과 AI 대화">
           <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--character-origin">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
@@ -5305,7 +5362,7 @@
             <div class="chapter-label">래퍼 서비스 사례</div>
             <div class="copy copy--split">
               <p class="kicker">CHARACTER</p>
-              <h1 class="title">어떻게 AI와의 대화에서<br />도파민을 느낄까?</h1>
+              <h1 class="title">어떻게 AI와의 대화에서<br />도파민이 터질까?</h1>
             </div>
             <div class="visual" aria-label="캐릭터 챗의 도파민 형성 방식">
               <div class="character-dopamine-list">
@@ -5331,20 +5388,6 @@
           </article>
         </section>
 
-        <section class="slide" aria-label="04. C.AI MAU 수천만">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--character-growth">
-            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
-            <div class="chapter-label">래퍼 서비스 사례</div>
-            <div class="copy copy--split">
-              <p class="kicker">CHARACTER</p>
-              <h1 class="title">경쟁이 심한 분야지만<br/>다들 엄청 잘됨</h1>
-            </div>
-            <div class="visual" aria-label="국내 AI 챗봇 앱 사용시간 순위 이미지">
-              <img class="character-growth-image" src="./assets/character-cai-mau.png" alt="국내 AI 챗봇 앱 TOP 10에서 C.AI 사용 지표" />
-            </div>
-          </article>
-        </section>
-
         <section class="slide" aria-label="04. 제타 한국시장 사용시간 1위">
           <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--character-growth">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
@@ -5359,13 +5402,27 @@
           </article>
         </section>
 
+        <section class="slide" aria-label="04. C.AI MAU 수천만">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--character-growth">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">CHARACTER</p>
+              <h1 class="title">경쟁이 심한 분야지만<br/>다들 엄청 잘됨</h1>
+            </div>
+            <div class="visual" aria-label="국내 AI 챗봇 앱 사용시간 순위 이미지">
+              <img class="character-growth-image" src="./assets/character-cai-mau.png" alt="국내 AI 챗봇 앱 TOP 10에서 C.AI 사용 지표" />
+            </div>
+          </article>
+        </section>
+
         <section class="slide" aria-label="04. 러비더비 영업이익 적자">
           <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--character-growth">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
             <div class="chapter-label">래퍼 서비스 사례</div>
             <div class="copy copy--split">
               <p class="kicker">CHARACTER</p>
-              <h1 class="title">매출은 크지만 경쟁이 심해서<br />영업익 내기 힘듦</h1>
+              <h1 class="title">다만, 매출은 크지만 <br/>경쟁이 심해서<br />영업익 내기 힘듦</h1>
             </div>
             <div class="visual" aria-label="러비더비 매출과 이익 그래프">
               <div class="character-origin">
@@ -5498,13 +5555,24 @@
             <div class="chapter-label">래퍼 서비스 사례</div>
             <div class="copy copy--split">
               <p class="kicker">CHARACTER</p>
-              <h1 class="title">Phase 3는?<br />웹소설을 넘어 웹툰/숏츠로.</h1>
+              <h1 class="title">Phase 3가 온다면?<br />웹소설을 넘어 <br />웹툰과 숏츠로.</h1>
             </div>
-            <div class="visual" aria-label="Phase 3에서 중요해지는 요소">
-              <div class="character-phase-message">
-                <p class="character-phase-label">Phase 3에서 중요해지는 건</p>
-                <p class="character-phase-emphasis">컨텐츠 크리에이터 생태계</p>
+            <div class="visual" aria-label="AI 콘텐츠 생성 기술 예시">
+              <div class="character-korean-photo">
+                <img class="character-korean-photo-image" src="./assets/character-phase3-creator.png" alt="AI로 생성한 콘텐츠 장면 예시" />
+                <p class="character-korean-photo-caption">아직은 설익은 기술이지만 빠르게 발전하고 있다</p>
               </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="04. Phase 3 크리에이터 생태계">
+          <article class="slide-shell slide-shell--center slide-shell--section slide-shell--character-thesis slide-shell--character-phase3-thesis">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--center copy--wide">
+              <p class="kicker">CHARACTER</p>
+              <h1 class="title title--center">Phase 3에서 중요해지는 건<br /><span class="title-accent">컨텐츠 크리에이터 생태계</span></h1>
             </div>
           </article>
         </section>
@@ -5534,25 +5602,6 @@
           </article>
         </section>
 
-        <section class="slide" aria-label="04. 캐릭터챗 분야의 네 가지 특징">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--character-features">
-            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
-            <div class="chapter-label">래퍼 서비스 사례</div>
-            <div class="copy copy--split">
-              <p class="kicker">CHARACTER</p>
-              <h1 class="title">캐릭터챗 분야의<br />네 가지 특징</h1>
-            </div>
-            <div class="visual" aria-label="캐릭터챗 분야의 네 가지 특징">
-              <div class="character-feature-list">
-                <p class="character-feature-item"><span class="character-feature-index">1</span><span>빅테크의 침공이 없음</span></p>
-                <p class="character-feature-item"><span class="character-feature-index">2</span><span>하지만 스타트업간 경쟁이 심함</span></p>
-                <p class="character-feature-item"><span class="character-feature-index">3</span><span>그래도 다들 매출을 잘 냄</span></p>
-                <p class="character-feature-item"><span class="character-feature-index">4</span><span>그러나 영업이익은 잘 못 냄</span></p>
-              </div>
-            </div>
-          </article>
-        </section>
-
         <section class="slide" aria-label="04. 중국발 컨텐츠 빅뱅">
           <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--china-content-boom">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
@@ -5575,23 +5624,6 @@
           </article>
         </section>
 
-        <section class="slide" aria-label="04. 컨텐츠 향 캐릭터챗 시장">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--character-growth">
-            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
-            <div class="chapter-label">래퍼 서비스 사례</div>
-            <div class="copy copy--split">
-              <p class="kicker">CHARACTER</p>
-              <h1 class="title">컨텐츠 향이 시장이 훨씬 큼<br />C.AI가 그 표준을 제시함</h1>
-            </div>
-            <div class="visual" aria-label="컨텐츠 향 캐릭터챗 사례">
-              <div class="character-market-proof">
-                <img class="character-market-image" src="./assets/character-content-market.png" alt="제타 캐릭터 콘텐츠 화면" />
-                <p class="character-market-caption">오타쿠는 돈이 된다</p>
-              </div>
-            </div>
-          </article>
-        </section>
-
         <section class="slide" aria-label="04. 컨텐츠 강국 한국의 기회">
           <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--korean-content">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
@@ -5605,6 +5637,25 @@
                 <p class="korean-content-flag-label">펄럭</p>
                 <img class="korean-content-flag-image" src="./assets/taegeukgi-waving.gif" alt="펄럭이는 태극기" />
                 <p class="korean-content-flag-caption">한국이 웹툰 종주국이도 하고..</p>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="04. 캐릭터챗 분야의 네 가지 특징">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--character-features">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">CHARACTER</p>
+              <h1 class="title">캐릭터챗 분야의<br />네 가지 특징</h1>
+            </div>
+            <div class="visual" aria-label="캐릭터챗 분야의 네 가지 특징">
+              <div class="character-feature-list">
+                <p class="character-feature-item"><span class="character-feature-index">1</span><span>빅테크의 침공이 없음</span></p>
+                <p class="character-feature-item"><span class="character-feature-index">2</span><span>하지만 스타트업간 경쟁이 심함</span></p>
+                <p class="character-feature-item"><span class="character-feature-index">3</span><span>그래도 다들 매출을 잘 냄</span></p>
+                <p class="character-feature-item"><span class="character-feature-index">4</span><span>그러나 영업이익은 잘 못 냄</span></p>
               </div>
             </div>
           </article>
@@ -5644,7 +5695,7 @@
             <div class="chapter-label">래퍼 서비스 사례</div>
             <div class="copy copy--split">
               <p class="kicker">CHARACTER</p>
-              <h1 class="title">AI 웹툰, 숏츠 플랫폼으로 진화<br />작가 및 제작 생태계를 갖춘<br />플랫폼으로 진화를 꾀해야</h1>
+              <h1 class="title">웹툰, 숏츠 플랫폼으로!<br />컨텐츠 제작 방법론 및<br/>크리에이터 생태계 구축</h1>
             </div>
             <div class="visual" aria-label="제타 랩스 AI 웹툰 베타 서비스">
               <div class="character-zeta-webtoon-panel">
@@ -5652,7 +5703,7 @@
                   <img class="character-zeta-webtoon-image character-zeta-webtoon-image--one" src="./assets/zeta-webtoon-beta-1.png" alt="제타 AI 웹툰 베타 서비스 화면 1" />
                   <img class="character-zeta-webtoon-image character-zeta-webtoon-image--two" src="./assets/zeta-webtoon-beta-2.png" alt="제타 AI 웹툰 베타 서비스 화면 2" />
                 </div>
-                <p class="character-zeta-webtoon-caption">제타 랩스 - 제타의 AI 웹툰 베타 서비스</p>
+                <p class="character-zeta-webtoon-caption">제타 랩스 - AI 웹툰 베타 서비스</p>
               </div>
             </div>
           </article>
