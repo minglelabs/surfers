@@ -167,6 +167,61 @@
         width: min(100%, 58rem);
       }
 
+      .slide-shell--notes-differentiation .copy {
+        width: min(100%, 76rem);
+      }
+
+      .slide-shell--notes-differentiation .title {
+        max-width: none;
+        font-size: clamp(2.7rem, 4.9vw, 5.7rem);
+      }
+
+      .slide-shell--notes-differentiation .visual {
+        width: min(100%, 72rem);
+      }
+
+      .notes-differentiation-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: start;
+        gap: clamp(24px, 4.5vw, 70px);
+        width: 100%;
+        margin-top: clamp(14px, 1.8vw, 24px);
+      }
+
+      .notes-differentiation-item {
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .notes-differentiation-name {
+        margin: 0 0 clamp(10px, 1vw, 15px);
+        color: var(--title);
+        font-size: clamp(1.2rem, 1.75vw, 1.62rem);
+        font-weight: 820;
+        letter-spacing: -0.05em;
+      }
+
+      .notes-differentiation-logo {
+        display: block;
+        width: clamp(132px, 13vw, 200px);
+        height: clamp(132px, 13vw, 200px);
+        object-fit: contain;
+      }
+
+      .notes-differentiation-caption {
+        max-width: 22ch;
+        margin: clamp(12px, 1.2vw, 18px) 0 0;
+        color: var(--body);
+        font-size: clamp(1.05rem, 1.55vw, 1.4rem);
+        font-weight: 720;
+        line-height: 1.35;
+        letter-spacing: -0.05em;
+      }
+
       .moat-example-logos {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -4280,6 +4335,36 @@
           font-size: clamp(2.2rem, 7.2vw, 4.4rem);
         }
 
+        .slide-shell--notes-differentiation .copy,
+        .slide-shell--notes-differentiation .visual {
+          width: 100%;
+          max-width: none;
+        }
+
+        .slide-shell--notes-differentiation .title {
+          font-size: clamp(2.2rem, 7.2vw, 4.2rem);
+        }
+
+        .notes-differentiation-grid {
+          gap: 18px;
+        }
+
+        .notes-differentiation-name {
+          margin-bottom: 8px;
+          font-size: clamp(0.9rem, 3.6vw, 1.12rem);
+        }
+
+        .notes-differentiation-logo {
+          width: clamp(72px, 19vw, 116px);
+          height: clamp(72px, 19vw, 116px);
+        }
+
+        .notes-differentiation-caption {
+          max-width: 18ch;
+          margin-top: 8px;
+          font-size: clamp(0.74rem, 3vw, 0.98rem);
+        }
+
         .moat-example-logos {
           gap: 10px;
           min-height: 180px;
@@ -4956,7 +5041,7 @@
               <nav class="toc-grid toc-grid--three" aria-label="목차 이동">
                 <a class="toc-link" href="#3"><span class="toc-index">01</span><span class="toc-text">AI 래퍼란</span><span class="toc-arrow">→</span></a>
                 <a class="toc-link" href="#16"><span class="toc-index">02</span><span class="toc-text">래퍼 서비스 사례</span><span class="toc-arrow">→</span></a>
-                <a class="toc-link" href="#76"><span class="toc-index">03</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
+                <a class="toc-link" href="#77"><span class="toc-index">03</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
               </nav>
             </div>
           </article>
@@ -5218,15 +5303,15 @@
                   <a class="toc-link" href="#18"><span class="toc-index">01</span><span class="toc-text">바이브 코딩 및 에이전트</span><span class="toc-arrow">→</span></a>
                   <a class="toc-link" href="#23"><span class="toc-index">02</span><span class="toc-text">캐릭터 챗</span><span class="toc-arrow">→</span></a>
                   <a class="toc-link" href="#54"><span class="toc-index">03</span><span class="toc-text">노트테이킹</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#62"><span class="toc-index">04</span><span class="toc-text">식단 관리</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#63"><span class="toc-index">05</span><span class="toc-text">AI 애그리게이터</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#63"><span class="toc-index">04</span><span class="toc-text">식단 관리</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#64"><span class="toc-index">05</span><span class="toc-text">AI 애그리게이터</span><span class="toc-arrow">→</span></a>
                 </div>
                 <div class="toc-column">
-                  <a class="toc-link" href="#64"><span class="toc-index">06</span><span class="toc-text">AI 학습 도우미</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#71"><span class="toc-index">07</span><span class="toc-text">브라우저</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#72"><span class="toc-index">08</span><span class="toc-text">외국어 교육</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#73"><span class="toc-index">09</span><span class="toc-text">사진 보정</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#74"><span class="toc-index">10</span><span class="toc-text">전문가 서비스</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#65"><span class="toc-index">06</span><span class="toc-text">AI 학습 도우미</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#72"><span class="toc-index">07</span><span class="toc-text">브라우저</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#73"><span class="toc-index">08</span><span class="toc-text">외국어 교육</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#74"><span class="toc-index">09</span><span class="toc-text">사진 보정</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#75"><span class="toc-index">10</span><span class="toc-text">전문가 서비스</span><span class="toc-arrow">→</span></a>
                 </div>
               </nav>
             </div>
@@ -5982,7 +6067,7 @@
             <div class="chapter-label">래퍼 서비스 사례</div>
             <div class="copy copy--center copy--wide">
               <p class="kicker">NOTES</p>
-              <h1 class="title title--center">회의록 자동 작성하고 요약/번역을 제공하는 서비스<br />통번역 산업과 거의 붙어 있는 시장이라고 봐도 됨</h1>
+              <h1 class="title title--center">회의록 작성 및 요약/번역 제공<br />통번역 서비스도 완전 인접 시장</h1>
             </div>
           </article>
         </section>
@@ -6081,6 +6166,36 @@
             <div class="copy copy--center copy--wide">
               <p class="kicker">NOTES</p>
               <h1 class="title title--center">차별화점을 마련하려면 무엇을 해야할까?</h1>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="07. 노트테이킹의 차별화 전략">
+          <article class="slide-shell slide-shell--center slide-shell--section slide-shell--moat-methods slide-shell--notes-differentiation">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--center copy--wide">
+              <p class="kicker">NOTES</p>
+              <h1 class="title title--center">작은 혁신들을 쌓아 나가면 되지 않을까?</h1>
+            </div>
+            <div class="visual" aria-label="노트테이킹 서비스의 차별화 사례">
+              <div class="notes-differentiation-grid">
+                <section class="notes-differentiation-item">
+                  <h2 class="notes-differentiation-name">Alt</h2>
+                  <img class="notes-differentiation-logo" src="./assets/logo-alt.png" alt="Alt 로고" />
+                  <p class="notes-differentiation-caption">온디바이스 &amp; 무료</p>
+                </section>
+                <section class="notes-differentiation-item">
+                  <h2 class="notes-differentiation-name">Tiro</h2>
+                  <img class="notes-differentiation-logo" src="./assets/logo-tiro.png" alt="Tiro 로고" />
+                  <p class="notes-differentiation-caption">풍부한 기능, 인테그레이션, 크로스 플랫폼</p>
+                </section>
+                <section class="notes-differentiation-item">
+                  <h2 class="notes-differentiation-name">Char</h2>
+                  <img class="notes-differentiation-logo" src="./assets/logo-char.png" alt="Char 로고" />
+                  <p class="notes-differentiation-caption">별도의 노트패드 서비스 등 업무 환경 전체로 확장</p>
+                </section>
+              </div>
             </div>
           </article>
         </section>
@@ -7410,7 +7525,7 @@
       <div class="page-controls" aria-label="페이지 이동">
         <button class="page-home-button" id="home-button" type="button" aria-label="첫 슬라이드로 이동">처음</button>
         <button id="previous-button" type="button" aria-label="이전 슬라이드">←</button>
-        <span class="page-counter" id="page-counter" aria-live="polite">01 / 126</span>
+        <span class="page-counter" id="page-counter" aria-live="polite">01 / 127</span>
         <button id="next-button" type="button" aria-label="다음 슬라이드">→</button>
       </div>
     </main>
