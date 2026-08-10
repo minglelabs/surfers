@@ -750,6 +750,13 @@
         text-align: center;
       }
 
+      .notes-growth-image {
+        display: block;
+        width: min(100%, 30rem);
+        height: auto;
+        object-fit: contain;
+      }
+
       .notes-growth-rate {
         position: relative;
         z-index: 1;
@@ -6049,11 +6056,8 @@
             </div>
             <div class="visual" aria-label="노트테이킹 서비스 성장률">
               <div class="notes-growth">
-                <svg class="notes-growth-curve" viewBox="0 0 480 320" role="img" aria-label="일주일에 10퍼센트 성장하는 J커브">
-                  <path d="M34 268 C 105 270, 126 265, 166 252 C 208 238, 224 232, 260 212 C 304 187, 321 174, 345 142 C 369 110, 380 79, 416 45" />
-                  <polygon points="416,45 388,55 407,76" />
-                </svg>
-                <p class="notes-growth-rate">성장률<strong>일주일에 10%</strong></p>
+                <img class="notes-growth-image" src="./assets/notes-growth.png" alt="주 평균 성장률 12.7%와 빠르게 상승하는 성장 그래프" />
+                <p class="notes-growth-rate">성장률<strong>일주일에 10% 안팎 성장</strong></p>
               </div>
             </div>
           </article>
