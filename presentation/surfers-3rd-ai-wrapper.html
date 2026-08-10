@@ -539,6 +539,72 @@
         white-space: nowrap;
       }
 
+      .slide-shell--character-bigtech-exclusion {
+        gap: clamp(24px, 4.5vw, 72px);
+      }
+
+      .slide-shell--character-bigtech-exclusion .copy--split {
+        flex: 1 1 54%;
+        max-width: 58rem;
+        min-width: 0;
+      }
+
+      .slide-shell--character-bigtech-exclusion .title {
+        max-width: none;
+        font-size: clamp(2.45rem, 4.5vw, 5.35rem);
+        line-height: 1.1;
+      }
+
+      .slide-shell--character-bigtech-exclusion .visual {
+        display: flex;
+        flex: 0 1 42rem;
+        width: min(100%, 42rem);
+        min-width: 0;
+        justify-content: center;
+      }
+
+      .character-bigtech-cloud {
+        position: relative;
+        width: min(100%, 40rem);
+        height: clamp(340px, 35vw, 500px);
+      }
+
+      .character-bigtech-logo {
+        position: absolute;
+        left: var(--x);
+        top: var(--y);
+        display: grid;
+        width: var(--s);
+        height: var(--s);
+        place-items: center;
+        transform: translate(-50%, -50%) rotate(var(--r));
+        filter: drop-shadow(0 18px 24px rgba(45, 42, 30, 0.16));
+      }
+
+      .character-bigtech-logo img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .character-bigtech-cross {
+        position: absolute;
+        inset: 4% 0;
+        z-index: 5;
+        width: 100%;
+        height: 92%;
+        pointer-events: none;
+      }
+
+      .character-bigtech-cross path {
+        fill: none;
+        stroke: #ff0000;
+        stroke-linecap: round;
+        stroke-width: 9;
+        vector-effect: non-scaling-stroke;
+      }
+
       .slide-shell--competitor-cloud {
         gap: clamp(18px, 2.2vw, 34px);
       }
@@ -4241,6 +4307,11 @@
         .slide-shell--bigtech .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--bigtech .visual { flex: 0 0 auto; width: 100%; }
         .slide-shell--bigtech .title { font-size: clamp(2.1rem, 7.2vw, 4.2rem); white-space: normal; }
+        .slide-shell--character-bigtech-exclusion .copy--split,
+        .slide-shell--character-bigtech-exclusion .visual { flex: 0 0 auto; width: 100%; max-width: none; }
+        .slide-shell--character-bigtech-exclusion .title { max-width: none; font-size: clamp(2.1rem, 7.2vw, 4.2rem); }
+        .character-bigtech-cloud { width: min(100%, 34rem); height: clamp(300px, 84vw, 460px); }
+        .character-bigtech-cross { inset: 3% 0; height: 94%; }
         .slide-shell--elad-opportunity .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--elad-opportunity .visual { flex: 0 0 auto; width: 100%; }
         .slide-shell--elad-opportunity .title { max-width: none; font-size: clamp(2.1rem, 7.2vw, 4.2rem); }
@@ -4713,7 +4784,7 @@
               <nav class="toc-grid toc-grid--three" aria-label="목차 이동">
                 <a class="toc-link" href="#3"><span class="toc-index">01</span><span class="toc-text">AI 래퍼란</span><span class="toc-arrow">→</span></a>
                 <a class="toc-link" href="#17"><span class="toc-index">02</span><span class="toc-text">래퍼 서비스 사례</span><span class="toc-arrow">→</span></a>
-                <a class="toc-link" href="#68"><span class="toc-index">03</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
+                <a class="toc-link" href="#69"><span class="toc-index">03</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
               </nav>
             </div>
           </article>
@@ -4974,16 +5045,16 @@
                 <div class="toc-column">
                   <a class="toc-link" href="#18"><span class="toc-index">01</span><span class="toc-text">바이브 코딩 및 에이전트</span><span class="toc-arrow">→</span></a>
                   <a class="toc-link" href="#23"><span class="toc-index">02</span><span class="toc-text">캐릭터 챗</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#53"><span class="toc-index">03</span><span class="toc-text">노트테이킹</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#54"><span class="toc-index">04</span><span class="toc-text">식단 관리</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#55"><span class="toc-index">05</span><span class="toc-text">AI 애그리게이터</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#54"><span class="toc-index">03</span><span class="toc-text">노트테이킹</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#55"><span class="toc-index">04</span><span class="toc-text">식단 관리</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#56"><span class="toc-index">05</span><span class="toc-text">AI 애그리게이터</span><span class="toc-arrow">→</span></a>
                 </div>
                 <div class="toc-column">
-                  <a class="toc-link" href="#56"><span class="toc-index">06</span><span class="toc-text">AI 학습 도우미</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#63"><span class="toc-index">07</span><span class="toc-text">브라우저</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#64"><span class="toc-index">08</span><span class="toc-text">외국어 교육</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#65"><span class="toc-index">09</span><span class="toc-text">사진 보정</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#66"><span class="toc-index">10</span><span class="toc-text">전문가 서비스</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#57"><span class="toc-index">06</span><span class="toc-text">AI 학습 도우미</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#64"><span class="toc-index">07</span><span class="toc-text">브라우저</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#65"><span class="toc-index">08</span><span class="toc-text">외국어 교육</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#66"><span class="toc-index">09</span><span class="toc-text">사진 보정</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#67"><span class="toc-index">10</span><span class="toc-text">전문가 서비스</span><span class="toc-arrow">→</span></a>
                 </div>
               </nav>
             </div>
@@ -5207,6 +5278,54 @@
           </article>
         </section>
 
+        <section class="slide" aria-label="04. 캐릭터 컨셉과 AI 대화">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--character-origin">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">CHARACTER</p>
+              <h1 class="title">캐릭터 컨셉을 만들 수 있고<br />AI가 그에 맞춰 유저들과 대화</h1>
+            </div>
+            <div class="visual" aria-label="Zeta 캐릭터 화면">
+              <img class="character-chat-image" src="./assets/character-ai-chat.png" alt="Zeta 캐릭터 목록 화면" />
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="04. 캐릭터챗의 빅테크 진출">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--character-bigtech-exclusion">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">CHARACTER</p>
+              <h1 class="title">빅테크의 진출 전무<br />규제 리스크도 있고<br />기술에만 집중하려고</h1>
+            </div>
+            <div class="visual" aria-label="빅테크 로고에 표시한 큰 빨간색 X">
+              <div class="character-bigtech-cloud">
+                <div class="character-bigtech-logo" style="--x: 24%; --y: 28%; --s: clamp(98px, 8.6vw, 148px); --r: -9deg">
+                  <img src="./assets/gemini-logo.svg" alt="Gemini 로고" />
+                </div>
+                <div class="character-bigtech-logo" style="--x: 50%; --y: 18%; --s: clamp(106px, 9.2vw, 160px); --r: 5deg">
+                  <img src="./assets/chatgpt-logo.svg" alt="ChatGPT 로고" />
+                </div>
+                <div class="character-bigtech-logo" style="--x: 76%; --y: 29%; --s: clamp(98px, 8.6vw, 148px); --r: 10deg">
+                  <img src="./assets/claude-logo.svg" alt="Claude 로고" />
+                </div>
+                <div class="character-bigtech-logo" style="--x: 32%; --y: 69%; --s: clamp(98px, 8.6vw, 148px); --r: 7deg">
+                  <img src="./assets/meta-logo.svg" alt="Meta 로고" />
+                </div>
+                <div class="character-bigtech-logo" style="--x: 69%; --y: 70%; --s: clamp(98px, 8.6vw, 148px); --r: -6deg">
+                  <img src="./assets/grok-logo.png" alt="Grok 로고" />
+                </div>
+                <svg class="character-bigtech-cross" viewBox="0 0 100 100" role="presentation" aria-hidden="true">
+                  <path d="M8 8 L92 92" />
+                  <path d="M92 8 L8 92" />
+                </svg>
+              </div>
+            </div>
+          </article>
+        </section>
+
         <section class="slide" aria-label="04. 캐릭터챗의 두 세부 분야">
           <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--character-growth">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
@@ -5237,20 +5356,6 @@
                 <img class="character-market-image" src="./assets/character-content-market.png" alt="제타 캐릭터 콘텐츠 화면" />
                 <p class="character-market-caption">오타쿠는 돈이 된다</p>
               </div>
-            </div>
-          </article>
-        </section>
-
-        <section class="slide" aria-label="04. 캐릭터 컨셉과 AI 대화">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--character-origin">
-            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
-            <div class="chapter-label">래퍼 서비스 사례</div>
-            <div class="copy copy--split">
-              <p class="kicker">CHARACTER</p>
-              <h1 class="title">캐릭터 컨셉을 만들 수 있고<br />AI가 그에 맞춰 유저들과 대화</h1>
-            </div>
-            <div class="visual" aria-label="Zeta 캐릭터 화면">
-              <img class="character-chat-image" src="./assets/character-ai-chat.png" alt="Zeta 캐릭터 목록 화면" />
             </div>
           </article>
         </section>
@@ -5656,7 +5761,7 @@
             <div class="chapter-label">래퍼 서비스 사례</div>
             <div class="copy copy--center copy--wide">
               <p class="kicker">CHARACTER</p>
-              <h1 class="title title--center">이 분야는 앞으로 어떨까?<br />웹툰처럼 플랫폼 난무하고, 거인도 등장할 것<br />살아남다 보면 길이 보이지 않을까</h1>
+              <h1 class="title title--center">이 분야는 앞으로 어떨까?<br />웹툰,숏츠와 합쳐지면 지금보다 열 배 이상 커질 것.<br />웹툰처럼 플랫폼 난무하고, 헥토콘도 등장할 것</h1>
             </div>
           </article>
         </section>
@@ -5765,7 +5870,6 @@
             <div class="copy copy--split">
               <p class="kicker">AGGREGATOR</p>
               <h1 class="title"><span class="title-index">분야 05</span>AI 애그리게이터</h1>
-              <p class="body">OpenRouter·Poe처럼 여러 LLM을 하나의 인터페이스나 API로 묶고, 요청을 모델 사이에 라우팅하는 사업입니다. Google의 Darren Mowry는 이 유형을 “AI aggregators”라고 부르며 “Stay out of the aggregator business.”라고 경고했습니다.</p>
             </div>
             <div class="visual" aria-label="AI 애그리게이터 대표 서비스">
               <div class="vibe-tool-cloud">
