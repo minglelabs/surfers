@@ -1041,6 +1041,94 @@
         object-fit: contain;
       }
 
+      .slide[aria-label="04. 후발주자와 작은 스타트업의 전략"] .slide-shell--character-strategy .copy--center {
+        width: min(100%, 88rem);
+      }
+
+      .slide[aria-label="04. 후발주자와 작은 스타트업의 전략"] .slide-shell--character-strategy .title {
+        max-width: none;
+        font-size: clamp(3.5rem, 6.3vw, 7.2rem);
+        line-height: 1.08;
+      }
+
+      .slide[aria-label="04. 위프처럼 뾰족한 콘텐츠 차별화"] .slide-shell--character-whif,
+      .slide[aria-label="04. AI 웹툰 숏츠 플랫폼"] .slide-shell--character-zeta-webtoon {
+        gap: clamp(24px, 4vw, 64px);
+      }
+
+      .slide[aria-label="04. 위프처럼 뾰족한 콘텐츠 차별화"] .slide-shell--character-whif .copy--split,
+      .slide[aria-label="04. AI 웹툰 숏츠 플랫폼"] .slide-shell--character-zeta-webtoon .copy--split {
+        flex: 1 1 54%;
+        max-width: 60rem;
+        min-width: 0;
+      }
+
+      .slide[aria-label="04. 위프처럼 뾰족한 콘텐츠 차별화"] .slide-shell--character-whif .visual,
+      .slide[aria-label="04. AI 웹툰 숏츠 플랫폼"] .slide-shell--character-zeta-webtoon .visual {
+        display: flex;
+        flex: 0 1 36rem;
+        width: min(100%, 36rem);
+        min-width: 0;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .character-whif-panel,
+      .character-zeta-webtoon-panel {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(16px, 2vw, 28px);
+        text-align: center;
+      }
+
+      .character-whif-image {
+        display: block;
+        width: min(100%, 24rem);
+        max-height: 56vh;
+        object-fit: contain;
+      }
+
+      .character-whif-caption,
+      .character-zeta-webtoon-caption {
+        margin: 0;
+        color: var(--title);
+        font-size: clamp(2rem, 3.35vw, 4rem);
+        font-weight: 820;
+        line-height: 1.08;
+        letter-spacing: -0.075em;
+      }
+
+      .character-zeta-webtoon-images {
+        position: relative;
+        width: min(100%, 34rem);
+        height: clamp(300px, 44vh, 520px);
+      }
+
+      .character-zeta-webtoon-image {
+        position: absolute;
+        top: 2%;
+        width: clamp(13rem, 20vw, 18rem);
+        height: 94%;
+        border-radius: 18px;
+        object-fit: cover;
+        box-shadow: 0 18px 34px rgba(45, 42, 30, 0.16);
+      }
+
+      .character-zeta-webtoon-image--one {
+        left: 4%;
+        transform: rotate(-4deg);
+        z-index: 1;
+      }
+
+      .character-zeta-webtoon-image--two {
+        right: 4%;
+        transform: rotate(5deg);
+        z-index: 2;
+      }
+
       .slide[aria-label="04. 중국발 컨텐츠 빅뱅"] .slide-shell--china-content-boom .copy--split {
         flex: 1 1 52%;
         max-width: 56rem;
@@ -4223,6 +4311,28 @@
         .korean-content-flag-image { max-height: 34vh; }
         .korean-content-flag-label,
         .korean-content-flag-caption { font-size: clamp(1.55rem, 6.3vw, 2.7rem); }
+        .slide[aria-label="04. 후발주자와 작은 스타트업의 전략"] .slide-shell--character-strategy .title {
+          max-width: none;
+          font-size: clamp(2.35rem, 8.6vw, 4.8rem);
+        }
+        .slide[aria-label="04. 위프처럼 뾰족한 콘텐츠 차별화"] .slide-shell--character-whif .copy--split,
+        .slide[aria-label="04. 위프처럼 뾰족한 콘텐츠 차별화"] .slide-shell--character-whif .visual,
+        .slide[aria-label="04. AI 웹툰 숏츠 플랫폼"] .slide-shell--character-zeta-webtoon .copy--split,
+        .slide[aria-label="04. AI 웹툰 숏츠 플랫폼"] .slide-shell--character-zeta-webtoon .visual {
+          flex: 0 0 auto;
+          width: 100%;
+          max-width: none;
+        }
+        .character-whif-image { width: min(100%, 19rem); max-height: 46vh; }
+        .character-whif-caption,
+        .character-zeta-webtoon-caption { font-size: clamp(1.55rem, 6.3vw, 2.7rem); }
+        .character-zeta-webtoon-images {
+          width: 100%;
+          height: clamp(250px, 66vw, 390px);
+        }
+        .character-zeta-webtoon-image { width: clamp(9.5rem, 35vw, 14rem); height: 94%; }
+        .character-zeta-webtoon-image--one { left: 9%; }
+        .character-zeta-webtoon-image--two { right: 9%; }
         .slide[aria-label="04. 웹툰 플랫폼의 비즈니스 모델"] .character-webtoon-business-image {
           max-height: 42vh;
           object-fit: contain;
@@ -5506,6 +5616,51 @@
                 <p class="korean-content-flag-label">펄럭</p>
                 <img class="korean-content-flag-image" src="./assets/taegeukgi-waving.gif" alt="펄럭이는 태극기" />
                 <p class="korean-content-flag-caption">한국이 웹툰 종주국이도 하고..</p>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="04. 후발주자와 작은 스타트업의 전략">
+          <article class="slide-shell slide-shell--center slide-shell--section slide-shell--character-strategy">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--center copy--wide">
+              <h1 class="title title--center">그럼 후발주자나 작은 스타트업이<br />가져야하는 전략은 무엇일까?!</h1>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="04. 위프처럼 뾰족한 콘텐츠 차별화">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--character-whif">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <h1 class="title">위프처럼 뾰족하게<br />차별화된 컨텐츠 제공</h1>
+            </div>
+            <div class="visual" aria-label="Whif 콘텐츠 사례">
+              <div class="character-whif-panel">
+                <img class="character-whif-image" src="./assets/whif-content-story.png" alt="Whif 콘텐츠 화면" />
+                <p class="character-whif-caption">BL에 집중</p>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="04. AI 웹툰 숏츠 플랫폼">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--character-zeta-webtoon">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <h1 class="title">AI 웹툰, 숏츠 플랫폼으로 진화<br />작가 및 제작 생태계를 갖춘<br />플랫폼으로 진화를 꾀해야</h1>
+            </div>
+            <div class="visual" aria-label="제타 랩스 AI 웹툰 베타 서비스">
+              <div class="character-zeta-webtoon-panel">
+                <div class="character-zeta-webtoon-images">
+                  <img class="character-zeta-webtoon-image character-zeta-webtoon-image--one" src="./assets/zeta-webtoon-beta-1.png" alt="제타 AI 웹툰 베타 서비스 화면 1" />
+                  <img class="character-zeta-webtoon-image character-zeta-webtoon-image--two" src="./assets/zeta-webtoon-beta-2.png" alt="제타 AI 웹툰 베타 서비스 화면 2" />
+                </div>
+                <p class="character-zeta-webtoon-caption">제타 랩스 - 제타의 AI 웹툰 베타 서비스</p>
               </div>
             </div>
           </article>
