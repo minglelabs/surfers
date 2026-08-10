@@ -954,6 +954,49 @@
         font-size: clamp(2.8rem, 4.65vw, 5.5rem);
       }
 
+      .slide[aria-label="04. 캐릭터챗 분야의 네 가지 특징"] .slide-shell--character-features {
+        gap: clamp(24px, 3.6vw, 58px);
+      }
+
+      .slide[aria-label="04. 캐릭터챗 분야의 네 가지 특징"] .slide-shell--character-features .copy--split {
+        flex: 1 1 48%;
+        max-width: 54rem;
+        min-width: 0;
+      }
+
+      .slide[aria-label="04. 캐릭터챗 분야의 네 가지 특징"] .slide-shell--character-features .visual {
+        flex: 0 1 48rem;
+        width: min(100%, 48rem);
+        min-width: 0;
+      }
+
+      .character-feature-list {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap: clamp(20px, 2.4vw, 34px);
+      }
+
+      .character-feature-item {
+        display: grid;
+        grid-template-columns: clamp(2.5rem, 4vw, 4.8rem) minmax(0, 1fr);
+        align-items: baseline;
+        gap: clamp(16px, 1.8vw, 28px);
+        margin: 0;
+        color: var(--title);
+        font-size: clamp(2rem, 3.1vw, 3.8rem);
+        font-weight: 800;
+        line-height: 1.12;
+        letter-spacing: -0.075em;
+      }
+
+      .character-feature-index {
+        color: var(--accent-strong);
+        font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+        font-size: 0.85em;
+        font-weight: 850;
+      }
+
       .slide[aria-label="04. 중국발 컨텐츠 빅뱅"] .slide-shell--china-content-boom .copy--split {
         flex: 1 1 52%;
         max-width: 56rem;
@@ -4118,6 +4161,15 @@
           max-width: none;
           font-size: clamp(2.55rem, 9.2vw, 5rem);
         }
+        .slide[aria-label="04. 캐릭터챗 분야의 네 가지 특징"] .slide-shell--character-features .copy--split,
+        .slide[aria-label="04. 캐릭터챗 분야의 네 가지 특징"] .slide-shell--character-features .visual {
+          flex: 0 0 auto;
+          width: 100%;
+          max-width: none;
+        }
+        .slide[aria-label="04. 캐릭터챗 분야의 네 가지 특징"] .character-feature-item {
+          font-size: clamp(1.55rem, 6.3vw, 2.7rem);
+        }
         .slide[aria-label="04. 웹툰 플랫폼의 비즈니스 모델"] .character-webtoon-business-image {
           max-height: 42vh;
           object-fit: contain;
@@ -5331,13 +5383,21 @@
           </article>
         </section>
 
-        <section class="slide" aria-label="04. 웹툰과 숏츠 분야의 특징">
-          <article class="slide-shell slide-shell--center slide-shell--section slide-shell--character-thesis slide-shell--character-webtoon-thesis">
+        <section class="slide" aria-label="04. 캐릭터챗 분야의 네 가지 특징">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--character-features">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
             <div class="chapter-label">래퍼 서비스 사례</div>
-            <div class="copy copy--center copy--wide">
+            <div class="copy copy--split">
               <p class="kicker">CHARACTER</p>
-              <h1 class="title title--center">이 분야의 특징은<br />1 빅테크의 침공이 없다는 점<br />2 그러나 스타트업간 경쟁이 심하다는 점</h1>
+              <h1 class="title">캐릭터챗 분야의<br />네 가지 특징</h1>
+            </div>
+            <div class="visual" aria-label="캐릭터챗 분야의 네 가지 특징">
+              <div class="character-feature-list">
+                <p class="character-feature-item"><span class="character-feature-index">1</span><span>빅테크의 침공이 없음</span></p>
+                <p class="character-feature-item"><span class="character-feature-index">2</span><span>스타트업간 경쟁이 심함</span></p>
+                <p class="character-feature-item"><span class="character-feature-index">3</span><span>다들 매출을 잘 냄</span></p>
+                <p class="character-feature-item"><span class="character-feature-index">4</span><span>그러나 영업이익은 못 냄</span></p>
+              </div>
             </div>
           </article>
         </section>
