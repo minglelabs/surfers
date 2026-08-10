@@ -849,6 +849,31 @@
         object-fit: contain;
       }
 
+      .character-zeta-usage-stack {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(12px, 1.5vw, 24px);
+        width: min(100%, 38rem);
+        height: min(74vh, 48rem);
+      }
+
+      .character-zeta-usage-image {
+        display: block;
+        width: 100%;
+        height: 42%;
+        min-height: 0;
+        object-fit: contain;
+      }
+
+      .character-social-media-image {
+        display: block;
+        width: 100%;
+        max-height: 56vh;
+        object-fit: contain;
+      }
+
       .visual--character-global-results {
         align-items: center;
       }
@@ -4382,6 +4407,9 @@
         .slide-shell--character-growth .copy--split,
         .slide-shell--character-growth .visual { flex: 0 0 auto; width: 100%; max-width: none; }
         .character-growth-image { max-height: 38vh; object-fit: contain; }
+        .character-zeta-usage-stack { width: min(100%, 38rem); height: clamp(380px, 95vw, 580px); }
+        .character-zeta-usage-image { height: 42%; }
+        .character-social-media-image { max-height: 42vh; }
         .character-global-results-stack { width: min(100%, 38rem); height: clamp(420px, 104vw, 620px); }
         .character-global-results-image--top,
         .character-global-results-image--bottom { height: 42%; }
@@ -5320,7 +5348,7 @@
             <div class="chapter-label">래퍼 서비스 사례</div>
             <div class="copy copy--split">
               <p class="kicker">CHARACTER</p>
-              <h1 class="title">컨텐츠 향 시장이 큼<br />C.AI가 표준 제시</h1>
+              <h1 class="title">컨텐츠 향  큼<br />C.AI가 표준 제시</h1>
             </div>
             <div class="visual" aria-label="컨텐츠 향 캐릭터챗 사례">
               <div class="character-market-proof">
@@ -5370,6 +5398,37 @@
                 <div class="character-dopamine-item"><span class="character-dopamine-index">2</span><p class="character-dopamine-label">롤플레잉을 통해 자극 극대화</p></div>
                 <div class="character-dopamine-item"><span class="character-dopamine-index">3</span><p class="character-dopamine-label">원하는대로 다양한 스토리 전개</p></div>
               </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="04. 제타와 게임 사용시간 비교">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--character-growth">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">CHARACTER</p>
+              <h1 class="title">얼마나 잘될까?!<br />게임도 안할 정도.</h1>
+            </div>
+            <div class="visual" aria-label="제타의 게임 대비 사용시간 사례">
+              <div class="character-zeta-usage-stack">
+                <img class="character-zeta-usage-image" src="./assets/character-zeta-vs-game.png" alt="제타와 게임 1인당 사용시간 비교 그래프" />
+                <img class="character-zeta-usage-image" src="./assets/character-zeta-game-article.png" alt="게임 이용률 감소와 제타 사용시간 관련 기사 이미지" />
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="04. 전세계 SNS 사용 감소">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--character-growth">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">CHARACTER</p>
+              <h1 class="title">전세계 SNS 사용감소<br />캐릭터챗이 원인인가?!</h1>
+            </div>
+            <div class="visual" aria-label="전세계 소셜미디어 사용시간 추이">
+              <img class="character-social-media-image" src="./assets/character-social-media-decline.png" alt="2022년 정점을 찍은 세대별 소셜미디어 사용시간 그래프" />
             </div>
           </article>
         </section>
