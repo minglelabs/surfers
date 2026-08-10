@@ -741,8 +741,8 @@
       }
 
       .slide[aria-label="04. 캐릭터 챗에서 도파민을 느끼는 방식"] .slide-shell--character-dopamine .visual {
-        flex: 0 0 38rem;
-        width: 38rem;
+        flex: 0 0 28rem;
+        width: 28rem;
       }
 
       .slide[aria-label="04. C.AI MAU 수천만"] .slide-shell--character-growth .copy--split,
@@ -767,8 +767,8 @@
       }
 
       .slide[aria-label="04. 캐릭터챗 해외 성과"] .slide-shell--character-growth .visual {
-        flex: 0 0 42rem;
-        width: 42rem;
+        flex: 0 0 28rem;
+        width: 28rem;
       }
 
       .slide[aria-label="04. 캐릭터챗 해외 성과"] .visual--character-global-results {
@@ -808,8 +808,8 @@
       }
 
       .slide[aria-label="04. 캐릭터챗 Phase 2 콘텐츠"] .slide-shell--character-growth .visual {
-        flex: 0 0 42rem;
-        width: 42rem;
+        flex: 0 0 28rem;
+        width: 28rem;
         transform: translateX(1.25rem);
       }
 
@@ -937,8 +937,8 @@
       }
 
       .slide[aria-label="04. 웹툰 플랫폼의 비즈니스 모델"] .slide-shell--character-business-model .visual {
-        flex: 0 0 40rem;
-        width: 40rem;
+        flex: 0 0 30rem;
+        width: 30rem;
         transform: translateX(1rem);
       }
 
@@ -965,8 +965,8 @@
       }
 
       .slide[aria-label="04. 캐릭터챗 분야의 네 가지 특징"] .slide-shell--character-features .visual {
-        flex: 0 1 48rem;
-        width: min(100%, 48rem);
+        flex: 0 1 40rem;
+        width: min(100%, 40rem);
         min-width: 0;
       }
 
@@ -997,6 +997,50 @@
         font-weight: 850;
       }
 
+      .slide[aria-label="04. 컨텐츠 강국 한국의 기회"] .slide-shell--korean-content {
+        gap: clamp(24px, 3.6vw, 58px);
+      }
+
+      .slide[aria-label="04. 컨텐츠 강국 한국의 기회"] .slide-shell--korean-content .copy--split {
+        flex: 1 1 54%;
+        max-width: 60rem;
+        min-width: 0;
+      }
+
+      .slide[aria-label="04. 컨텐츠 강국 한국의 기회"] .slide-shell--korean-content .visual {
+        display: flex;
+        flex: 0 1 38rem;
+        width: min(100%, 38rem);
+        min-width: 0;
+      }
+
+      .korean-content-flag-stack {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(14px, 1.6vw, 24px);
+      }
+
+      .korean-content-flag-label,
+      .korean-content-flag-caption {
+        margin: 0;
+        color: var(--title);
+        font-size: clamp(1.9rem, 3.1vw, 3.8rem);
+        font-weight: 820;
+        line-height: 1.08;
+        letter-spacing: -0.075em;
+        text-align: center;
+      }
+
+      .korean-content-flag-image {
+        display: block;
+        width: min(100%, 32rem);
+        max-height: 38vh;
+        object-fit: contain;
+      }
+
       .slide[aria-label="04. 중국발 컨텐츠 빅뱅"] .slide-shell--china-content-boom .copy--split {
         flex: 1 1 52%;
         max-width: 56rem;
@@ -1004,8 +1048,8 @@
 
       .slide[aria-label="04. 중국발 컨텐츠 빅뱅"] .slide-shell--china-content-boom .visual {
         display: flex;
-        flex: 0 1 42rem;
-        width: min(100%, 42rem);
+        flex: 0 1 38rem;
+        width: min(100%, 38rem);
         min-width: 0;
       }
 
@@ -4170,6 +4214,15 @@
         .slide[aria-label="04. 캐릭터챗 분야의 네 가지 특징"] .character-feature-item {
           font-size: clamp(1.55rem, 6.3vw, 2.7rem);
         }
+        .slide[aria-label="04. 컨텐츠 강국 한국의 기회"] .slide-shell--korean-content .copy--split,
+        .slide[aria-label="04. 컨텐츠 강국 한국의 기회"] .slide-shell--korean-content .visual {
+          flex: 0 0 auto;
+          width: 100%;
+          max-width: none;
+        }
+        .korean-content-flag-image { max-height: 34vh; }
+        .korean-content-flag-label,
+        .korean-content-flag-caption { font-size: clamp(1.55rem, 6.3vw, 2.7rem); }
         .slide[aria-label="04. 웹툰 플랫폼의 비즈니스 모델"] .character-webtoon-business-image {
           max-height: 42vh;
           object-fit: contain;
@@ -5100,7 +5153,7 @@
             <div class="visual" aria-label="Character AI 소개 이미지">
               <div class="character-origin">
                 <img class="character-origin-image" src="./assets/character-ai-origin.png" alt="Character AI 캐릭터 화면" />
-                <p class="character-origin-caption">구글 출신의 가장 핫한 연구원들이 창업함<br />24년 8월 구글에 3조 이상에 재인수</p>
+                <p class="character-origin-caption">구글 출신의 가장 핫한 연구원들이 창업함<br />24년 8월 구글에 3조 이상에 인수로 재입사</p>
               </div>
             </div>
           </article>
@@ -5364,7 +5417,7 @@
             <div class="chapter-label">래퍼 서비스 사례</div>
             <div class="copy copy--center copy--wide">
               <p class="kicker">CHARACTER</p>
-              <h1 class="title title--center">웹툰/숏츠는 웹소설과 달리 당분간은<br />작가의 고관여로만 컨텐츠가 나온다</h1>
+              <h1 class="title title--center">웹툰/숏츠는 웹소설과 달리<br />당분간은 작가의 고관여가 필수!</h1>
             </div>
           </article>
         </section>
@@ -5394,9 +5447,9 @@
             <div class="visual" aria-label="캐릭터챗 분야의 네 가지 특징">
               <div class="character-feature-list">
                 <p class="character-feature-item"><span class="character-feature-index">1</span><span>빅테크의 침공이 없음</span></p>
-                <p class="character-feature-item"><span class="character-feature-index">2</span><span>스타트업간 경쟁이 심함</span></p>
-                <p class="character-feature-item"><span class="character-feature-index">3</span><span>다들 매출을 잘 냄</span></p>
-                <p class="character-feature-item"><span class="character-feature-index">4</span><span>그러나 영업이익은 못 냄</span></p>
+                <p class="character-feature-item"><span class="character-feature-index">2</span><span>하지만 스타트업간 경쟁이 심함</span></p>
+                <p class="character-feature-item"><span class="character-feature-index">3</span><span>그래도 다들 매출을 잘 냄</span></p>
+                <p class="character-feature-item"><span class="character-feature-index">4</span><span>그러나 영업이익은 잘 못 냄</span></p>
               </div>
             </div>
           </article>
@@ -5436,6 +5489,23 @@
               <div class="character-market-proof">
                 <img class="character-market-image" src="./assets/character-content-market.png" alt="제타 캐릭터 콘텐츠 화면" />
                 <p class="character-market-caption">오타쿠는 돈이 된다</p>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="04. 컨텐츠 강국 한국의 기회">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--korean-content">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <h1 class="title">컨텐츠 강국인 한국이<br />분명 잘 할 수 있다</h1>
+            </div>
+            <div class="visual" aria-label="한국 콘텐츠 산업의 강점">
+              <div class="korean-content-flag-stack">
+                <p class="korean-content-flag-label">펄럭</p>
+                <img class="korean-content-flag-image" src="./assets/taegeukgi-waving.gif" alt="펄럭이는 태극기" />
+                <p class="korean-content-flag-caption">한국이 웹툰 종주국이도 하고..</p>
               </div>
             </div>
           </article>
