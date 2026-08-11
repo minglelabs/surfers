@@ -5659,9 +5659,67 @@
         box-shadow: 0 22px 44px rgba(45, 42, 30, 0.14);
       }
 
+      .slide-shell--aggregator-ops .copy--split {
+        flex: 1 1 42%;
+        max-width: 42rem;
+        min-width: 0;
+      }
+
+      .slide-shell--aggregator-ops .visual {
+        display: flex;
+        flex: 0 1 51rem;
+        width: min(100%, 51rem);
+        min-width: 0;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .aggregator-ops {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap: clamp(8px, 1.1vw, 16px);
+      }
+
+      .aggregator-op {
+        display: grid;
+        grid-template-columns: 2.3rem minmax(0, 1fr);
+        align-items: start;
+        column-gap: 0.75rem;
+      }
+
+      .aggregator-op-index {
+        color: #ff6a00;
+        font-size: clamp(0.95rem, 1.3vw, 1.2rem);
+        font-weight: 700;
+        line-height: 1.45;
+      }
+
+      .aggregator-op-text {
+        margin: 0;
+        color: #29251d;
+        font-size: clamp(0.82rem, 1.25vw, 1.12rem);
+        line-height: 1.45;
+      }
+
+      .aggregator-op-text strong {
+        font-weight: 800;
+      }
+
+      .aggregator-ops-emphasis {
+        margin: clamp(18px, 2vw, 28px) 0 0;
+        color: #ff6a00;
+        font-size: clamp(1.8rem, 3.6vw, 3.4rem);
+        font-weight: 800;
+        line-height: 1.05;
+        text-align: center;
+      }
+
       @media (max-width: 900px) {
         .slide-shell--aggregator-serving .copy--split,
-        .slide-shell--aggregator-serving .visual {
+        .slide-shell--aggregator-serving .visual,
+        .slide-shell--aggregator-ops .copy--split,
+        .slide-shell--aggregator-ops .visual {
           flex: 0 0 auto;
           width: 100%;
           max-width: none;
@@ -5671,6 +5729,14 @@
           width: min(100%, 42rem);
           max-height: 58vh;
           margin-inline: auto;
+        }
+
+        .aggregator-op-text {
+          font-size: clamp(0.88rem, 2.7vw, 1.12rem);
+        }
+
+        .aggregator-ops-emphasis {
+          font-size: clamp(1.7rem, 8vw, 2.8rem);
         }
       }
     </style>
@@ -7308,6 +7374,28 @@
             </div>
             <div class="visual" aria-label="FriendliAI의 다양한 AI 모델 서빙 화면">
               <img class="aggregator-serving-image" src="./assets/friendli-ai-models.png" alt="FriendliAI의 다양한 AI 모델 서빙 목록" />
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="09. AI 애그리게이터: 오픈 모델 서빙">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--aggregator-ops">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">AGGREGATOR</p>
+              <h1 class="title">핵심은 오픈 모델을<br />서빙하는 것</h1>
+            </div>
+            <div class="visual" aria-label="오픈 모델 서빙 업무">
+              <div class="aggregator-ops">
+                <div class="aggregator-op"><span class="aggregator-op-index">1</span><p class="aggregator-op-text"><strong>클러스터링</strong> — GPU 서버·네트워크 구성</p></div>
+                <div class="aggregator-op"><span class="aggregator-op-index">2</span><p class="aggregator-op-text"><strong>서빙 엔진 개발 및 운영</strong> — vLLM·SGLang 등 활용</p></div>
+                <div class="aggregator-op"><span class="aggregator-op-index">3</span><p class="aggregator-op-text"><strong>추론 최적화</strong> — 배칭·동시성·GPU/VRAM 활용률 극대화</p></div>
+                <div class="aggregator-op"><span class="aggregator-op-index">4</span><p class="aggregator-op-text"><strong>로드밸런싱</strong> — 요청 분산</p></div>
+                <div class="aggregator-op"><span class="aggregator-op-index">5</span><p class="aggregator-op-text"><strong>API 서비스 연결</strong> — 실제 서비스와 추론 서버 연결</p></div>
+                <div class="aggregator-op"><span class="aggregator-op-index">6</span><p class="aggregator-op-text"><strong>스케일링·모니터링</strong> — 부하·장애·성능 관리</p></div>
+                <p class="aggregator-ops-emphasis">이거를 대신 해줌</p>
+              </div>
             </div>
           </article>
         </section>
