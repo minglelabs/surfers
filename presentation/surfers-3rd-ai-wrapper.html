@@ -5897,6 +5897,36 @@
         justify-content: center;
       }
 
+      .slide-shell--aggregator-fee .copy--split {
+        flex: 1 1 44%;
+        max-width: 44rem;
+        min-width: 0;
+      }
+
+      .slide-shell--aggregator-fee .visual {
+        display: flex;
+        flex: 0 1 42rem;
+        width: min(100%, 42rem);
+        min-width: 0;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .aggregator-fee-visual {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .aggregator-fee-image {
+        display: block;
+        width: min(100%, 38rem);
+        max-height: 34rem;
+        object-fit: contain;
+        border-radius: 1rem;
+      }
+
       .aggregator-routing-flow {
         position: relative;
         display: flex;
@@ -6021,7 +6051,9 @@
         .slide-shell--aggregator-api .copy--split,
         .slide-shell--aggregator-api .visual,
         .slide-shell--aggregator-routing .copy--split,
-        .slide-shell--aggregator-routing .visual {
+        .slide-shell--aggregator-routing .visual,
+        .slide-shell--aggregator-fee .copy--split,
+        .slide-shell--aggregator-fee .visual {
           flex: 0 0 auto;
           width: 100%;
           max-width: none;
@@ -6094,6 +6126,11 @@
         .aggregator-routing-node img {
           width: clamp(64px, 20vw, 92px);
           height: clamp(64px, 20vw, 92px);
+        }
+
+        .aggregator-fee-image {
+          width: min(100%, 42rem);
+          max-height: 58vh;
         }
       }
     </style>
@@ -7931,6 +7968,22 @@
                   </div>
                 </div>
                 <p class="aggregator-routing-note">open router가 실시간으로 라우팅 해줌</p>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="09. AI 애그리게이터: 수수료">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--aggregator-fee">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">AGGREGATOR</p>
+              <h1 class="title">그러고 수수료 5% 가져감<br />Stripe, VISA랑 비슷함</h1>
+            </div>
+            <div class="visual" aria-label="OpenRouter 수수료 5% 관련 이미지">
+              <div class="aggregator-fee-visual">
+                <img class="aggregator-fee-image" src="./assets/openrouter-fee-meme.webp" alt="OpenRouter 수수료 5% 관련 이미지" />
               </div>
             </div>
           </article>
