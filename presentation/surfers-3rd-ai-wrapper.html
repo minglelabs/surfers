@@ -5630,6 +5630,49 @@
         .slide.is-active .copy,
         .slide.is-active .visual { animation: none; }
       }
+
+      .slide-shell--aggregator-serving {
+        gap: clamp(24px, 4vw, 64px);
+      }
+
+      .slide-shell--aggregator-serving .copy--split {
+        flex: 1 1 42%;
+        max-width: 42rem;
+        min-width: 0;
+      }
+
+      .slide-shell--aggregator-serving .visual {
+        display: flex;
+        flex: 0 1 54rem;
+        width: min(100%, 54rem);
+        min-width: 0;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .aggregator-serving-image {
+        display: block;
+        width: 100%;
+        max-height: clamp(320px, 58vh, 620px);
+        border-radius: 24px;
+        object-fit: contain;
+        box-shadow: 0 22px 44px rgba(45, 42, 30, 0.14);
+      }
+
+      @media (max-width: 900px) {
+        .slide-shell--aggregator-serving .copy--split,
+        .slide-shell--aggregator-serving .visual {
+          flex: 0 0 auto;
+          width: 100%;
+          max-width: none;
+        }
+
+        .aggregator-serving-image {
+          width: min(100%, 42rem);
+          max-height: 58vh;
+          margin-inline: auto;
+        }
+      }
     </style>
   </head>
   <body>
@@ -7251,6 +7294,20 @@
                   <span class="vibe-tool-name">WaveSpeed</span>
                 </div>
               </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="09. AI 애그리게이터: 수많은 AI 모델들 서빙">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--aggregator-serving">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">AGGREGATOR</p>
+              <h1 class="title">수많은 AI 모델들<br />서빙해주는 서비스</h1>
+            </div>
+            <div class="visual" aria-label="FriendliAI의 다양한 AI 모델 서빙 화면">
+              <img class="aggregator-serving-image" src="./assets/friendli-ai-models.png" alt="FriendliAI의 다양한 AI 모델 서빙 목록" />
             </div>
           </article>
         </section>
