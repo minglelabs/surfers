@@ -1038,6 +1038,48 @@
         letter-spacing: -0.045em;
       }
 
+      .slide-shell--diet-onboarding {
+        gap: clamp(22px, 3.2vw, 56px);
+      }
+
+      .slide-shell--diet-onboarding .copy--split {
+        flex: 1 1 48%;
+        max-width: 50rem;
+        min-width: 0;
+      }
+
+      .slide-shell--diet-onboarding .visual {
+        display: flex;
+        flex: 0 1 42rem;
+        width: min(100%, 42rem);
+        min-width: 0;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .diet-onboarding-stack {
+        display: flex;
+        width: min(100%, 40rem);
+        align-items: flex-end;
+        justify-content: center;
+        gap: clamp(6px, 0.9vw, 14px);
+      }
+
+      .diet-onboarding-stack img {
+        display: block;
+        width: calc((100% - clamp(12px, 1.8vw, 28px)) / 3);
+        height: clamp(380px, 58vh, 650px);
+        object-fit: contain;
+      }
+
+      .diet-onboarding-stack img:nth-child(2) {
+        transform: translateY(-4%);
+      }
+
+      .diet-onboarding-stack img:nth-child(3) {
+        transform: translateY(2%);
+      }
+
       .slide-shell--diet-scan {
         gap: clamp(22px, 3.6vw, 62px);
       }
@@ -4929,6 +4971,11 @@
         .slide-shell--cal-ai-origin .cal-ai-feature figcaption {
           font-size: clamp(1rem, 3.6vw, 1.2rem);
         }
+        .slide-shell--diet-onboarding .copy--split,
+        .slide-shell--diet-onboarding .visual { flex: 0 0 auto; width: 100%; max-width: none; }
+        .slide-shell--diet-onboarding .title { max-width: none; font-size: clamp(2.2rem, 7.2vw, 4.2rem); }
+        .diet-onboarding-stack { width: min(100%, 34rem); }
+        .diet-onboarding-stack img { height: clamp(250px, 62vw, 390px); }
         .slide-shell--diet-scan .copy--split,
         .slide-shell--diet-scan .visual { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--diet-scan .title { max-width: none; font-size: clamp(2.2rem, 7.2vw, 4.2rem); }
@@ -6673,6 +6720,24 @@
           </article>
         </section>
 
+        <section class="slide" aria-label="06. 세심한 건강 관리를 느낄 수 있는 UX">
+          <article class="slide-shell slide-shell--split slide-shell--diet-onboarding">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">DIET</p>
+              <h1 class="title">세심한 건강 관리를<br />느낄 수 있는 UX</h1>
+            </div>
+            <div class="visual" aria-label="Cal AI의 세심한 건강 관리 온보딩 화면">
+              <div class="diet-onboarding-stack">
+                <img src="./assets/diet-onboarding-goal.png" alt="Cal AI 목표 선택 온보딩 화면" />
+                <img src="./assets/diet-onboarding-speed.png" alt="Cal AI 목표 달성 속도 설정 화면" />
+                <img src="./assets/diet-onboarding-blockers.png" alt="Cal AI 목표를 막는 요인 선택 화면" />
+              </div>
+            </div>
+          </article>
+        </section>
+
         <section class="slide" aria-label="06. 완전 유료로 서비스해도 사용자 많음">
           <article class="slide-shell slide-shell--split slide-shell--diet-scan">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
@@ -7242,7 +7307,7 @@
                 </div>
                 <div class="future-field-row">
                   <span class="future-field-index">3</span>
-                  <h2 class="future-field-title">광고 제작 에이전트</h2>
+                  <h2 class="future-field-title">광고 레퍼런스 에이전트</h2>
                   <span class="future-field-example">예시 · GRIIM AI</span>
                 </div>
                 <div class="future-field-row">
