@@ -1278,6 +1278,40 @@
         object-fit: contain;
       }
 
+      .slide-shell--diet-health-link {
+        gap: clamp(22px, 3.6vw, 62px);
+      }
+
+      .slide-shell--diet-health-link .copy--split {
+        flex: 1 1 52%;
+        max-width: 54rem;
+        min-width: 0;
+      }
+
+      .slide-shell--diet-health-link .visual {
+        display: flex;
+        flex: 0 1 38rem;
+        width: min(100%, 38rem);
+        min-width: 0;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .diet-health-logos {
+        display: flex;
+        width: min(100%, 38rem);
+        align-items: center;
+        justify-content: center;
+        gap: clamp(22px, 3.4vw, 52px);
+      }
+
+      .diet-health-logo {
+        display: block;
+        width: clamp(170px, 18vw, 290px);
+        height: clamp(100px, 13vw, 170px);
+        object-fit: contain;
+      }
+
       .slide-shell--diet-awareness {
         flex-direction: column;
         align-items: center;
@@ -5000,6 +5034,11 @@
         .slide-shell--diet-preventive .visual { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--diet-preventive .title { max-width: none; font-size: clamp(2.2rem, 7.2vw, 4.2rem); }
         .diet-preventive-figure img { max-height: clamp(190px, 44vw, 320px); }
+        .slide-shell--diet-health-link .copy--split,
+        .slide-shell--diet-health-link .visual { flex: 0 0 auto; width: 100%; max-width: none; }
+        .slide-shell--diet-health-link .title { max-width: none; font-size: clamp(2.2rem, 7.2vw, 4.2rem); }
+        .diet-health-logos { width: min(100%, 34rem); gap: clamp(14px, 4vw, 28px); }
+        .diet-health-logo { width: clamp(120px, 28vw, 210px); height: clamp(90px, 22vw, 150px); }
         .slide-shell--character-origin .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--character-origin .visual { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide[aria-label="04. Character AI가 캐릭터 챗의 원조"] .slide-shell--character-origin .copy--split,
@@ -6943,6 +6982,23 @@
               <figure class="diet-preventive-figure">
                 <img src="./assets/diet-preventive-healthcare-market.png" alt="미국 예방의료 기술 및 서비스 시장 규모 전망" />
               </figure>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="06. 의료·건강 상담 시장과 연계될 가능성">
+          <article class="slide-shell slide-shell--split slide-shell--diet-health-link">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">DIET</p>
+              <h1 class="title">의료·건강 상담 시장과<br />연계될 가능성 농후</h1>
+            </div>
+            <div class="visual" aria-label="Noom과 Counsel Health 로고">
+              <div class="diet-health-logos">
+                <img class="diet-health-logo" src="./assets/noom-logo.png" alt="Noom 로고" />
+                <img class="diet-health-logo" src="./assets/counsel-health-logo.svg" alt="Counsel Health 로고" />
+              </div>
             </div>
           </article>
         </section>
