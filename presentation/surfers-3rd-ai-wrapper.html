@@ -1019,13 +1019,40 @@
         text-align: center;
       }
 
-      .cal-ai-feature img {
+      .cal-ai-photo-stack {
+        position: relative;
+        width: min(100%, 30rem);
+        height: clamp(250px, 23vw, 340px);
+        margin: 0 auto;
+      }
+
+      .cal-ai-photo-stack img {
+        position: absolute;
         display: block;
-        width: clamp(220px, 23vw, 340px);
-        height: clamp(220px, 23vw, 340px);
+        box-shadow: 0 22px 44px rgba(45, 42, 30, 0.16);
+      }
+
+      .cal-ai-feature-logo {
+        z-index: 1;
+        top: 12%;
+        left: 5%;
+        width: clamp(190px, 18vw, 270px);
+        height: clamp(190px, 18vw, 270px);
         border-radius: clamp(28px, 2.2vw, 38px);
         object-fit: contain;
-        box-shadow: 0 22px 44px rgba(45, 42, 30, 0.16);
+        transform: rotate(-7deg);
+      }
+
+      .cal-ai-feature-founder {
+        z-index: 2;
+        top: 0;
+        right: 0;
+        width: clamp(230px, 25vw, 360px);
+        height: auto;
+        aspect-ratio: 16 / 9;
+        border-radius: clamp(20px, 1.8vw, 30px);
+        object-fit: cover;
+        transform: rotate(5deg);
       }
 
       .cal-ai-feature figcaption {
@@ -5066,9 +5093,21 @@
         .slide-competitor-cloud { height: clamp(250px, 66vw, 390px); }
         .slide-shell--vibe-tools .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--vibe-tools .visual { flex: 0 0 auto; width: 100%; }
-        .slide-shell--cal-ai-origin .cal-ai-feature img {
-          width: min(58vw, 260px);
-          height: min(58vw, 260px);
+        .slide-shell--cal-ai-origin .cal-ai-photo-stack {
+          width: min(100%, 24rem);
+          height: clamp(230px, 62vw, 320px);
+        }
+        .slide-shell--cal-ai-origin .cal-ai-feature-logo {
+          top: 14%;
+          left: 2%;
+          width: min(46vw, 180px);
+          height: min(46vw, 180px);
+        }
+        .slide-shell--cal-ai-origin .cal-ai-feature-founder {
+          top: 0;
+          right: 0;
+          width: min(70vw, 260px);
+          height: auto;
         }
         .slide-shell--cal-ai-origin .cal-ai-feature figcaption {
           font-size: clamp(1rem, 3.6vw, 1.2rem);
@@ -6835,9 +6874,12 @@
               <p class="kicker">DIET</p>
               <h1 class="title">여기도 엄청 핫한 분야<br />Cal AI가 원조</h1>
             </div>
-            <div class="visual" aria-label="Cal AI 창업자">
+            <div class="visual" aria-label="Cal AI와 창업자">
               <figure class="cal-ai-feature">
-                <img src="./assets/cal-ai-logo.jpg" alt="Cal AI 앱 아이콘" />
+                <div class="cal-ai-photo-stack">
+                  <img class="cal-ai-feature-logo" src="./assets/cal-ai-logo.jpg" alt="Cal AI 앱 아이콘" />
+                  <img class="cal-ai-feature-founder" src="./assets/cal-ai-founder.png" alt="Cal AI 창업자 사진" />
+                </div>
                 <figcaption>Zach Yadegari · 고교생 시절 창업</figcaption>
               </figure>
             </div>
