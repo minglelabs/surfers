@@ -5778,13 +5778,119 @@
         line-height: 1;
       }
 
+      .slide-shell--aggregator-api .copy--split {
+        flex: 1 1 40%;
+        max-width: 40rem;
+        min-width: 0;
+      }
+
+      .slide-shell--aggregator-api .visual {
+        display: flex;
+        flex: 0 1 52rem;
+        width: min(100%, 52rem);
+        min-width: 0;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .aggregator-api-flow {
+        position: relative;
+        width: min(100%, 48rem);
+        min-height: clamp(320px, 48vh, 500px);
+      }
+
+      .aggregator-api-providers {
+        position: absolute;
+        inset: 0 auto 0 0;
+        z-index: 1;
+        display: grid;
+        width: 64%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-content: center;
+        gap: clamp(16px, 2.2vw, 28px) clamp(14px, 1.8vw, 24px);
+      }
+
+      .aggregator-api-provider {
+        display: flex;
+        min-width: 0;
+        align-items: center;
+        gap: clamp(7px, 0.8vw, 12px);
+      }
+
+      .aggregator-api-provider img {
+        display: block;
+        flex: 0 0 auto;
+        width: clamp(48px, 5.2vw, 76px);
+        height: clamp(48px, 5.2vw, 76px);
+        object-fit: contain;
+      }
+
+      .aggregator-api-provider span {
+        color: #29251d;
+        font-size: clamp(0.82rem, 1.15vw, 1.1rem);
+        font-weight: 700;
+        line-height: 1.15;
+        white-space: nowrap;
+      }
+
+      .aggregator-api-connectors {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+
+      .aggregator-api-connectors line {
+        stroke: #9d978b;
+        stroke-width: 0.8;
+        stroke-linecap: round;
+        stroke-dasharray: 2.4 2.4;
+      }
+
+      .aggregator-api-node {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        z-index: 2;
+        display: grid;
+        width: clamp(150px, 16vw, 218px);
+        aspect-ratio: 1;
+        place-items: center;
+        transform: translateY(-50%);
+        border: 3px solid #ff6a00;
+        border-radius: 50%;
+        color: #29251d;
+        background: #fffdf7;
+        text-align: center;
+      }
+
+      .aggregator-api-node img {
+        display: block;
+        width: clamp(64px, 7vw, 98px);
+        height: clamp(64px, 7vw, 98px);
+        margin: 0 auto;
+        object-fit: contain;
+      }
+
+      .aggregator-api-node span {
+        display: block;
+        margin-top: 0.35rem;
+        font-size: clamp(0.95rem, 1.4vw, 1.3rem);
+        font-weight: 800;
+        line-height: 1.1;
+      }
+
       @media (max-width: 900px) {
         .slide-shell--aggregator-serving .copy--split,
         .slide-shell--aggregator-serving .visual,
         .slide-shell--aggregator-ops .copy--split,
         .slide-shell--aggregator-ops .visual,
         .slide-shell--aggregator-types .copy--split,
-        .slide-shell--aggregator-types .visual {
+        .slide-shell--aggregator-types .visual,
+        .slide-shell--aggregator-api .copy--split,
+        .slide-shell--aggregator-api .visual {
           flex: 0 0 auto;
           width: 100%;
           max-width: none;
@@ -5811,6 +5917,29 @@
 
         .aggregator-type-label {
           font-size: clamp(1.1rem, 5.2vw, 1.6rem);
+        }
+
+        .aggregator-api-flow {
+          min-height: 360px;
+          width: min(100%, 42rem);
+        }
+
+        .aggregator-api-providers {
+          width: 67%;
+          gap: 18px 12px;
+        }
+
+        .aggregator-api-provider img {
+          width: clamp(42px, 13vw, 64px);
+          height: clamp(42px, 13vw, 64px);
+        }
+
+        .aggregator-api-provider span {
+          font-size: clamp(0.72rem, 2.7vw, 0.95rem);
+        }
+
+        .aggregator-api-node {
+          width: clamp(126px, 30vw, 176px);
         }
       }
     </style>
@@ -7526,6 +7655,61 @@
                 <div class="aggregator-op"><span class="aggregator-op-index">5</span><p class="aggregator-op-text"><strong>API 서비스 연결</strong> — 실제 서비스와 추론 서버 연결</p></div>
                 <div class="aggregator-op"><span class="aggregator-op-index">6</span><p class="aggregator-op-text"><strong>스케일링·모니터링</strong> — 부하·장애·성능 관리</p></div>
                 <p class="aggregator-ops-emphasis">이거를 대신 해줌</p>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="09. AI 애그리게이터: 순수 Aggregator API">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--aggregator-api">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">AGGREGATOR</p>
+              <h1 class="title">그러나 순수 aggr.는<br />api 만 제공함</h1>
+            </div>
+            <div class="visual" aria-label="Inference Provider들을 OpenRouter 하나의 API로 묶어 제공">
+              <div class="aggregator-api-flow">
+                <div class="aggregator-api-providers">
+                  <div class="aggregator-api-provider">
+                    <img src="./assets/friendli-ai-logo.ico" alt="FriendliAI 로고" />
+                    <span>FriendliAI</span>
+                  </div>
+                  <div class="aggregator-api-provider">
+                    <img src="https://www.google.com/s2/favicons?domain=replicate.com&sz=128" alt="Replicate 로고" />
+                    <span>Replicate</span>
+                  </div>
+                  <div class="aggregator-api-provider">
+                    <img src="https://www.google.com/s2/favicons?domain=wavespeed.ai&sz=128" alt="WaveSpeed 로고" />
+                    <span>WaveSpeed</span>
+                  </div>
+                  <div class="aggregator-api-provider">
+                    <img src="./assets/together-logo.png" alt="Together 로고" />
+                    <span>Together</span>
+                  </div>
+                  <div class="aggregator-api-provider">
+                    <img src="https://www.google.com/s2/favicons?domain=baseten.co&sz=128" alt="Baseten 로고" />
+                    <span>Baseten</span>
+                  </div>
+                  <div class="aggregator-api-provider">
+                    <img src="https://www.google.com/s2/favicons?domain=fireworks.ai&sz=128" alt="Fireworks 로고" />
+                    <span>Fireworks</span>
+                  </div>
+                </div>
+                <svg class="aggregator-api-connectors" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                  <line x1="54" y1="22" x2="79" y2="50" />
+                  <line x1="54" y1="34" x2="79" y2="50" />
+                  <line x1="54" y1="46" x2="79" y2="50" />
+                  <line x1="54" y1="54" x2="79" y2="50" />
+                  <line x1="54" y1="66" x2="79" y2="50" />
+                  <line x1="54" y1="78" x2="79" y2="50" />
+                </svg>
+                <div class="aggregator-api-node">
+                  <div>
+                    <img src="./assets/openrouter-logo.svg" alt="OpenRouter 로고" />
+                    <span>OpenRouter API</span>
+                  </div>
+                </div>
               </div>
             </div>
           </article>
