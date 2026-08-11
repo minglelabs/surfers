@@ -1038,6 +1038,40 @@
         letter-spacing: -0.045em;
       }
 
+      .slide-shell--diet-scan {
+        gap: clamp(22px, 3.6vw, 62px);
+      }
+
+      .slide-shell--diet-scan .copy--split {
+        flex: 1 1 52%;
+        max-width: 54rem;
+        min-width: 0;
+      }
+
+      .slide-shell--diet-scan .visual {
+        display: flex;
+        flex: 0 1 34rem;
+        width: min(100%, 34rem);
+        min-width: 0;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .diet-scan-figure {
+        display: flex;
+        width: min(100%, 34rem);
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+      }
+
+      .diet-scan-figure img {
+        display: block;
+        width: 100%;
+        height: clamp(320px, 48vh, 560px);
+        object-fit: contain;
+      }
+
       .slide-shell--diet-downloads {
         gap: clamp(22px, 3.6vw, 62px);
       }
@@ -4839,6 +4873,10 @@
         .slide-shell--cal-ai-origin .cal-ai-feature figcaption {
           font-size: clamp(1rem, 3.6vw, 1.2rem);
         }
+        .slide-shell--diet-scan .copy--split,
+        .slide-shell--diet-scan .visual { flex: 0 0 auto; width: 100%; max-width: none; }
+        .slide-shell--diet-scan .title { max-width: none; font-size: clamp(2.2rem, 7.2vw, 4.2rem); }
+        .slide-shell--diet-scan .diet-scan-figure img { height: clamp(230px, 52vw, 360px); }
         .diet-download-list { width: min(100%, 29rem); }
         .diet-download-item { grid-template-columns: clamp(50px, 16vw, 70px) minmax(0, 1fr); }
         .diet-download-item img {
@@ -5303,7 +5341,7 @@
               <nav class="toc-grid toc-grid--three" aria-label="목차 이동">
                 <a class="toc-link" href="#3"><span class="toc-index">01</span><span class="toc-text">AI 래퍼란</span><span class="toc-arrow">→</span></a>
                 <a class="toc-link" href="#16"><span class="toc-index">02</span><span class="toc-text">래퍼 서비스 사례</span><span class="toc-arrow">→</span></a>
-                <a class="toc-link" href="#84"><span class="toc-index">03</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
+                <a class="toc-link" href="#85"><span class="toc-index">03</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
               </nav>
             </div>
           </article>
@@ -5566,14 +5604,14 @@
                   <a class="toc-link" href="#23"><span class="toc-index">02</span><span class="toc-text">캐릭터 챗</span><span class="toc-arrow">→</span></a>
                   <a class="toc-link" href="#54"><span class="toc-index">03</span><span class="toc-text">노트테이킹</span><span class="toc-arrow">→</span></a>
                   <a class="toc-link" href="#65"><span class="toc-index">04</span><span class="toc-text">식단 관리</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#71"><span class="toc-index">05</span><span class="toc-text">AI 애그리게이터</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#72"><span class="toc-index">05</span><span class="toc-text">AI 애그리게이터</span><span class="toc-arrow">→</span></a>
                 </div>
                 <div class="toc-column">
-                  <a class="toc-link" href="#72"><span class="toc-index">06</span><span class="toc-text">AI 학습 도우미</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#79"><span class="toc-index">07</span><span class="toc-text">브라우저</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#80"><span class="toc-index">08</span><span class="toc-text">외국어 교육</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#81"><span class="toc-index">09</span><span class="toc-text">사진 보정</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#82"><span class="toc-index">10</span><span class="toc-text">전문가 서비스</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#73"><span class="toc-index">06</span><span class="toc-text">AI 학습 도우미</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#80"><span class="toc-index">07</span><span class="toc-text">브라우저</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#81"><span class="toc-index">08</span><span class="toc-text">외국어 교육</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#82"><span class="toc-index">09</span><span class="toc-text">사진 보정</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#83"><span class="toc-index">10</span><span class="toc-text">전문가 서비스</span><span class="toc-arrow">→</span></a>
                 </div>
               </nav>
             </div>
@@ -6562,6 +6600,22 @@
               <figure class="cal-ai-feature">
                 <img src="./assets/cal-ai-logo.jpg" alt="Cal AI 앱 아이콘" />
                 <figcaption>Zach Yadegari · 고교생 시절 창업</figcaption>
+              </figure>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="06. 음식 사진 AI 성분 분석">
+          <article class="slide-shell slide-shell--split slide-shell--diet-scan">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">DIET</p>
+              <h1 class="title">음식 사진 찍으면<br />AI가 성분 분석해줌</h1>
+            </div>
+            <div class="visual" aria-label="음식 사진을 분석하는 AI 영양 앱">
+              <figure class="diet-scan-figure">
+                <img src="./assets/diet-scan-analysis.png" alt="음식 사진을 찍으면 AI가 영양 성분을 분석하는 화면" />
               </figure>
             </div>
           </article>
@@ -7908,7 +7962,7 @@
       <div class="page-controls" aria-label="페이지 이동">
         <button class="page-home-button" id="home-button" type="button" aria-label="첫 슬라이드로 이동">처음</button>
         <button id="previous-button" type="button" aria-label="이전 슬라이드">←</button>
-        <span class="page-counter" id="page-counter" aria-live="polite">01 / 134</span>
+        <span class="page-counter" id="page-counter" aria-live="polite">01 / 135</span>
         <button id="next-button" type="button" aria-label="다음 슬라이드">→</button>
       </div>
     </main>
