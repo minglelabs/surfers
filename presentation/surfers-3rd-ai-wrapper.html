@@ -3999,17 +3999,13 @@
         white-space: nowrap;
       }
 
-      .m2e-service-mark {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 2.8em;
-        color: var(--mark-color, var(--title));
-        font-family: Arial, "Apple SD Gothic Neo", sans-serif;
-        font-size: clamp(1.35rem, 2.45vw, 2.55rem);
-        font-weight: 900;
-        letter-spacing: -0.1em;
-        line-height: 0.95;
+      .m2e-service-logo {
+        display: block;
+        width: clamp(46px, 5.5vw, 84px);
+        height: clamp(46px, 5.5vw, 84px);
+        object-fit: contain;
+        border-radius: 20%;
+        filter: drop-shadow(0 9px 12px rgba(37, 29, 15, 0.14));
       }
 
       .m2e-service-name {
@@ -5333,7 +5329,10 @@
           max-width: none;
         }
         .m2e-service-cloud { height: clamp(320px, 75vw, 470px); }
-        .m2e-service-mark { font-size: clamp(1.1rem, 4.8vw, 2rem); }
+        .m2e-service-logo {
+          width: clamp(42px, 12vw, 70px);
+          height: clamp(42px, 12vw, 70px);
+        }
         .m2e-service-name { font-size: clamp(0.68rem, 2.2vw, 0.9rem); }
         .vibe-exit-row { grid-template-columns: 58px minmax(0, 1fr); gap: 12px; min-height: 64px; padding: 7px 0; }
         .vibe-exit-logo { width: 52px; height: 52px; }
@@ -7212,43 +7211,43 @@
             <div class="visual" aria-label="M2E 및 걷기 리워드 서비스">
               <div class="m2e-service-cloud">
                 <div class="m2e-service m2e-service--moneywalk" style="--x: 11%; --y: 14%; --r: -8deg">
-                  <span class="m2e-service-mark" aria-hidden="true">MW</span><span class="m2e-service-name">머니워크</span>
+                  <img class="m2e-service-logo" src="./assets/m2e/moneywalk.jpg" alt="머니워크 앱 아이콘" /><span class="m2e-service-name">머니워크</span>
                 </div>
                 <div class="m2e-service m2e-service--cashwalk" style="--x: 37%; --y: 10%; --r: 7deg">
-                  <span class="m2e-service-mark" aria-hidden="true">CW</span><span class="m2e-service-name">캐시워크</span>
+                  <img class="m2e-service-logo" src="./assets/m2e/cashwalk.jpg" alt="캐시워크 앱 아이콘" /><span class="m2e-service-name">캐시워크</span>
                 </div>
                 <div class="m2e-service m2e-service--toss" style="--x: 66%; --y: 17%; --r: -6deg">
-                  <span class="m2e-service-mark" aria-hidden="true">T</span><span class="m2e-service-name">토스 만보기</span>
+                  <img class="m2e-service-logo" src="./assets/m2e/toss.jpg" alt="토스 앱 아이콘" /><span class="m2e-service-name">토스 만보기</span>
                 </div>
                 <div class="m2e-service m2e-service--geniet" style="--x: 89%; --y: 12%; --r: 10deg">
-                  <span class="m2e-service-mark" aria-hidden="true">G</span><span class="m2e-service-name">지니어트</span>
+                  <img class="m2e-service-logo" src="./assets/m2e/geniet.jpg" alt="지니어트 앱 아이콘" /><span class="m2e-service-name">지니어트</span>
                 </div>
                 <div class="m2e-service m2e-service--balso" style="--x: 18%; --y: 37%; --r: 8deg">
-                  <span class="m2e-service-mark" aria-hidden="true">V</span><span class="m2e-service-name">발로소득</span>
+                  <img class="m2e-service-logo" src="./assets/m2e/balso.jpg" alt="발로소득 앱 아이콘" /><span class="m2e-service-name">발로소득</span>
                 </div>
                 <div class="m2e-service m2e-service--superwalk" style="--x: 49%; --y: 33%; --r: -7deg">
-                  <span class="m2e-service-mark" aria-hidden="true">SW</span><span class="m2e-service-name">SuperWalk</span>
+                  <img class="m2e-service-logo" src="./assets/m2e/superwalk.jpg" alt="SuperWalk 앱 아이콘" /><span class="m2e-service-name">SuperWalk</span>
                 </div>
                 <div class="m2e-service m2e-service--stepn" style="--x: 79%; --y: 39%; --r: 7deg">
-                  <span class="m2e-service-mark" aria-hidden="true">STEPN</span><span class="m2e-service-name">STEPN</span>
+                  <img class="m2e-service-logo" src="./assets/m2e/stepn.jpg" alt="STEPN 앱 아이콘" /><span class="m2e-service-name">STEPN</span>
                 </div>
                 <div class="m2e-service m2e-service--sweatcoin" style="--x: 10%; --y: 62%; --r: -6deg">
-                  <span class="m2e-service-mark" aria-hidden="true">S</span><span class="m2e-service-name">Sweatcoin</span>
+                  <img class="m2e-service-logo" src="./assets/m2e/sweatcoin.jpg" alt="Sweatcoin 앱 아이콘" /><span class="m2e-service-name">Sweatcoin</span>
                 </div>
                 <div class="m2e-service m2e-service--weward" style="--x: 38%; --y: 57%; --r: 8deg">
-                  <span class="m2e-service-mark" aria-hidden="true">W</span><span class="m2e-service-name">WeWard</span>
+                  <img class="m2e-service-logo" src="./assets/m2e/weward.jpg" alt="WeWard 앱 아이콘" /><span class="m2e-service-name">WeWard</span>
                 </div>
                 <div class="m2e-service m2e-service--macadam" style="--x: 67%; --y: 64%; --r: -8deg">
-                  <span class="m2e-service-mark" aria-hidden="true">M</span><span class="m2e-service-name">Macadam</span>
+                  <img class="m2e-service-logo" src="./assets/m2e/macadam.jpg" alt="Macadam 앱 아이콘" /><span class="m2e-service-name">Macadam</span>
                 </div>
                 <div class="m2e-service m2e-service--evidation" style="--x: 92%; --y: 58%; --r: 6deg">
-                  <span class="m2e-service-mark" aria-hidden="true">EVI</span><span class="m2e-service-name">Evidation</span>
+                  <img class="m2e-service-logo" src="./assets/m2e/evidation.jpg" alt="Evidation 앱 아이콘" /><span class="m2e-service-name">Evidation</span>
                 </div>
                 <div class="m2e-service m2e-service--winwalk" style="--x: 25%; --y: 86%; --r: -7deg">
-                  <span class="m2e-service-mark" aria-hidden="true">WW</span><span class="m2e-service-name">Winwalk</span>
+                  <img class="m2e-service-logo" src="./assets/m2e/winwalk.jpg" alt="Winwalk 앱 아이콘" /><span class="m2e-service-name">Winwalk</span>
                 </div>
                 <div class="m2e-service m2e-service--sweat" style="--x: 67%; --y: 86%; --r: 8deg">
-                  <span class="m2e-service-mark" aria-hidden="true">$SWEAT</span><span class="m2e-service-name">Sweat Economy</span>
+                  <img class="m2e-service-logo" src="./assets/m2e/sweat-economy.jpg" alt="Sweat Economy 앱 아이콘" /><span class="m2e-service-name">Sweat Economy</span>
                 </div>
               </div>
             </div>
