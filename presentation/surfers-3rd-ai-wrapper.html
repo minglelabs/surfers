@@ -222,6 +222,62 @@
         letter-spacing: -0.05em;
       }
 
+      .slide-shell--notes-context .copy--split {
+        flex: 1 1 52%;
+        max-width: 54rem;
+        min-width: 0;
+      }
+
+      .slide-shell--notes-context .title {
+        max-width: 15ch;
+        font-size: clamp(2.65rem, 4.5vw, 5.25rem);
+        line-height: 1.14;
+      }
+
+      .slide-shell--notes-context .visual {
+        display: flex;
+        flex: 0 1 42rem;
+        width: min(100%, 42rem);
+        min-width: 0;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .notes-context-stack {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+        grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+        gap: clamp(10px, 1.2vw, 18px);
+        width: min(100%, 42rem);
+        height: min(72vh, 40rem);
+      }
+
+      .notes-context-shot {
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-width: 0;
+        min-height: 0;
+        border-radius: clamp(10px, 1vw, 16px);
+        box-shadow: 0 18px 32px rgba(45, 42, 30, 0.14);
+        object-fit: contain;
+      }
+
+      .notes-context-shot--hub {
+        grid-column: 1 / -1;
+        grid-row: 1;
+      }
+
+      .notes-context-shot--charlie {
+        grid-column: 1;
+        grid-row: 2;
+      }
+
+      .notes-context-shot--memory {
+        grid-column: 2;
+        grid-row: 2;
+      }
+
       .moat-example-logos {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -4365,6 +4421,23 @@
           font-size: clamp(0.74rem, 3vw, 0.98rem);
         }
 
+        .slide-shell--notes-context .copy--split,
+        .slide-shell--notes-context .visual {
+          flex: 0 0 auto;
+          width: 100%;
+          max-width: none;
+        }
+
+        .slide-shell--notes-context .title {
+          max-width: none;
+          font-size: clamp(2.2rem, 7.2vw, 4.2rem);
+        }
+
+        .notes-context-stack {
+          width: 100%;
+          height: min(76vw, 34rem);
+        }
+
         .moat-example-logos {
           gap: 10px;
           min-height: 180px;
@@ -5041,7 +5114,7 @@
               <nav class="toc-grid toc-grid--three" aria-label="목차 이동">
                 <a class="toc-link" href="#3"><span class="toc-index">01</span><span class="toc-text">AI 래퍼란</span><span class="toc-arrow">→</span></a>
                 <a class="toc-link" href="#16"><span class="toc-index">02</span><span class="toc-text">래퍼 서비스 사례</span><span class="toc-arrow">→</span></a>
-                <a class="toc-link" href="#77"><span class="toc-index">03</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
+                <a class="toc-link" href="#78"><span class="toc-index">03</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
               </nav>
             </div>
           </article>
@@ -5303,15 +5376,15 @@
                   <a class="toc-link" href="#18"><span class="toc-index">01</span><span class="toc-text">바이브 코딩 및 에이전트</span><span class="toc-arrow">→</span></a>
                   <a class="toc-link" href="#23"><span class="toc-index">02</span><span class="toc-text">캐릭터 챗</span><span class="toc-arrow">→</span></a>
                   <a class="toc-link" href="#54"><span class="toc-index">03</span><span class="toc-text">노트테이킹</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#63"><span class="toc-index">04</span><span class="toc-text">식단 관리</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#64"><span class="toc-index">05</span><span class="toc-text">AI 애그리게이터</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#64"><span class="toc-index">04</span><span class="toc-text">식단 관리</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#65"><span class="toc-index">05</span><span class="toc-text">AI 애그리게이터</span><span class="toc-arrow">→</span></a>
                 </div>
                 <div class="toc-column">
-                  <a class="toc-link" href="#65"><span class="toc-index">06</span><span class="toc-text">AI 학습 도우미</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#72"><span class="toc-index">07</span><span class="toc-text">브라우저</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#73"><span class="toc-index">08</span><span class="toc-text">외국어 교육</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#74"><span class="toc-index">09</span><span class="toc-text">사진 보정</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#75"><span class="toc-index">10</span><span class="toc-text">전문가 서비스</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#66"><span class="toc-index">06</span><span class="toc-text">AI 학습 도우미</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#73"><span class="toc-index">07</span><span class="toc-text">브라우저</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#74"><span class="toc-index">08</span><span class="toc-text">외국어 교육</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#75"><span class="toc-index">09</span><span class="toc-text">사진 보정</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#76"><span class="toc-index">10</span><span class="toc-text">전문가 서비스</span><span class="toc-arrow">→</span></a>
                 </div>
               </nav>
             </div>
@@ -6188,13 +6261,31 @@
                 <section class="notes-differentiation-item">
                   <h2 class="notes-differentiation-name">Tiro</h2>
                   <img class="notes-differentiation-logo" src="./assets/logo-tiro.png" alt="Tiro 로고" />
-                  <p class="notes-differentiation-caption">풍부한 기능, 인테그레이션, 크로스 플랫폼</p>
+                  <p class="notes-differentiation-caption">풍부한 기능, 인테그레이션, 크로스 플랫폼 <br/>등 회의 버티컬에서 올인원 서비스 제공</p>
                 </section>
                 <section class="notes-differentiation-item">
                   <h2 class="notes-differentiation-name">Char</h2>
                   <img class="notes-differentiation-logo" src="./assets/logo-char.png" alt="Char 로고" />
-                  <p class="notes-differentiation-caption">별도의 노트패드 서비스 등 업무 환경 전체로 확장</p>
+                  <p class="notes-differentiation-caption">노트패드 서비스 및 투두 처리 자동화 등 <br/>업무 환경 전체로 확장</p>
                 </section>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="07. 메신저 및 Context Layer">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--notes-context">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">NOTES</p>
+              <h1 class="title">이들이 나아갈 방향은<br />메신저 및 Context Layer</h1>
+            </div>
+            <div class="visual" aria-label="메신저 및 Context Layer 사례">
+              <div class="notes-context-stack">
+                <img class="notes-context-shot notes-context-shot--hub" src="./assets/notes-context-hub.png" alt="맥락 허브와 다양한 에이전트 연결 구조" />
+                <img class="notes-context-shot notes-context-shot--charlie" src="./assets/notes-charlie.png" alt="노트패드를 구동하는 Charlie 에이전트" />
+                <img class="notes-context-shot notes-context-shot--memory" src="./assets/notes-memory.png" alt="하나의 메모리 레이어로 확장되는 Char" />
               </div>
             </div>
           </article>
@@ -7525,7 +7616,7 @@
       <div class="page-controls" aria-label="페이지 이동">
         <button class="page-home-button" id="home-button" type="button" aria-label="첫 슬라이드로 이동">처음</button>
         <button id="previous-button" type="button" aria-label="이전 슬라이드">←</button>
-        <span class="page-counter" id="page-counter" aria-live="polite">01 / 127</span>
+        <span class="page-counter" id="page-counter" aria-live="polite">01 / 128</span>
         <button id="next-button" type="button" aria-label="다음 슬라이드">→</button>
       </div>
     </main>
