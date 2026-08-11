@@ -991,6 +991,176 @@
         height: clamp(300px, 33vw, 430px);
       }
 
+      .slide-shell--cal-ai-origin {
+        gap: clamp(22px, 3.6vw, 62px);
+      }
+
+      .slide-shell--cal-ai-origin .copy--split {
+        flex: 1 1 52%;
+        max-width: 54rem;
+        min-width: 0;
+      }
+
+      .slide-shell--cal-ai-origin .visual {
+        display: flex;
+        flex: 0 1 34rem;
+        width: min(100%, 34rem);
+        min-width: 0;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .cal-ai-feature {
+        display: flex;
+        width: min(100%, 30rem);
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        text-align: center;
+      }
+
+      .cal-ai-feature img {
+        display: block;
+        width: clamp(220px, 23vw, 340px);
+        height: clamp(220px, 23vw, 340px);
+        border-radius: clamp(28px, 2.2vw, 38px);
+        object-fit: contain;
+        box-shadow: 0 22px 44px rgba(45, 42, 30, 0.16);
+      }
+
+      .cal-ai-feature figcaption {
+        max-width: 22ch;
+        margin: clamp(16px, 1.8vw, 24px) 0 0;
+        color: var(--body);
+        font-size: clamp(1.1rem, 1.7vw, 1.55rem);
+        font-weight: 720;
+        line-height: 1.35;
+        letter-spacing: -0.045em;
+      }
+
+      .slide-shell--diet-downloads {
+        gap: clamp(22px, 3.6vw, 62px);
+      }
+
+      .slide-shell--diet-downloads .copy--split {
+        flex: 1 1 52%;
+        max-width: 54rem;
+        min-width: 0;
+      }
+
+      .slide-shell--diet-downloads .visual {
+        display: flex;
+        flex: 0 1 34rem;
+        width: min(100%, 34rem);
+        min-width: 0;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .diet-download-list {
+        display: flex;
+        width: min(100%, 29rem);
+        flex-direction: column;
+        gap: clamp(16px, 1.8vw, 24px);
+      }
+
+      .diet-download-item {
+        display: grid;
+        grid-template-columns: clamp(58px, 5.6vw, 78px) minmax(0, 1fr);
+        align-items: center;
+        gap: clamp(16px, 1.8vw, 24px);
+      }
+
+      .diet-download-item img {
+        display: block;
+        width: clamp(58px, 5.6vw, 78px);
+        height: clamp(58px, 5.6vw, 78px);
+        border-radius: clamp(14px, 1.2vw, 20px);
+        object-fit: contain;
+      }
+
+      .diet-download-item-copy {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        min-width: 0;
+      }
+
+      .diet-download-item-name,
+      .diet-download-item-count {
+        color: var(--title);
+        font-size: clamp(1.2rem, 1.8vw, 1.65rem);
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: -0.055em;
+      }
+
+      .diet-download-item-count {
+        color: var(--accent-strong);
+        font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+        font-weight: 760;
+      }
+
+      .slide-shell--diet-reason .copy--split {
+        flex: 1 1 52%;
+        max-width: 54rem;
+        min-width: 0;
+      }
+
+      .slide-shell--diet-reason .visual {
+        display: flex;
+        flex: 0 1 34rem;
+        width: min(100%, 34rem);
+        min-width: 0;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .diet-reason-figure {
+        display: flex;
+        width: min(100%, 32rem);
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        text-align: center;
+      }
+
+      .diet-reason-figure img {
+        display: block;
+        width: 100%;
+        height: clamp(300px, 50vh, 540px);
+        object-fit: contain;
+      }
+
+      .diet-reason-figure--insurance img {
+        height: clamp(250px, 38vh, 410px);
+      }
+
+      .diet-reason-figure figcaption {
+        max-width: 26ch;
+        margin: clamp(12px, 1.3vw, 18px) 0 0;
+        color: var(--title);
+        font-size: clamp(1.05rem, 1.55vw, 1.35rem);
+        font-weight: 760;
+        line-height: 1.35;
+        letter-spacing: -0.045em;
+      }
+
+      .slide-shell--diet-awareness {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .slide-shell--diet-awareness .copy {
+        width: min(100%, 78rem);
+      }
+
+      .slide-shell--diet-awareness .title {
+        max-width: none;
+      }
+
       .slide-shell--character-origin {
         gap: clamp(24px, 3.6vw, 58px);
       }
@@ -4662,6 +4832,25 @@
         .slide-competitor-cloud { height: clamp(250px, 66vw, 390px); }
         .slide-shell--vibe-tools .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--vibe-tools .visual { flex: 0 0 auto; width: 100%; }
+        .slide-shell--cal-ai-origin .cal-ai-feature img {
+          width: min(58vw, 260px);
+          height: min(58vw, 260px);
+        }
+        .slide-shell--cal-ai-origin .cal-ai-feature figcaption {
+          font-size: clamp(1rem, 3.6vw, 1.2rem);
+        }
+        .diet-download-list { width: min(100%, 29rem); }
+        .diet-download-item { grid-template-columns: clamp(50px, 16vw, 70px) minmax(0, 1fr); }
+        .diet-download-item img {
+          width: clamp(50px, 16vw, 70px);
+          height: clamp(50px, 16vw, 70px);
+        }
+        .slide-shell--diet-reason .diet-reason-figure img {
+          height: clamp(230px, 52vw, 360px);
+        }
+        .slide-shell--diet-reason .diet-reason-figure--insurance img {
+          height: clamp(190px, 44vw, 300px);
+        }
         .slide-shell--character-origin .copy--split { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide-shell--character-origin .visual { flex: 0 0 auto; width: 100%; max-width: none; }
         .slide[aria-label="04. Character AI가 캐릭터 챗의 원조"] .slide-shell--character-origin .copy--split,
@@ -5114,7 +5303,7 @@
               <nav class="toc-grid toc-grid--three" aria-label="목차 이동">
                 <a class="toc-link" href="#3"><span class="toc-index">01</span><span class="toc-text">AI 래퍼란</span><span class="toc-arrow">→</span></a>
                 <a class="toc-link" href="#16"><span class="toc-index">02</span><span class="toc-text">래퍼 서비스 사례</span><span class="toc-arrow">→</span></a>
-                <a class="toc-link" href="#79"><span class="toc-index">03</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
+                <a class="toc-link" href="#84"><span class="toc-index">03</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
               </nav>
             </div>
           </article>
@@ -5377,14 +5566,14 @@
                   <a class="toc-link" href="#23"><span class="toc-index">02</span><span class="toc-text">캐릭터 챗</span><span class="toc-arrow">→</span></a>
                   <a class="toc-link" href="#54"><span class="toc-index">03</span><span class="toc-text">노트테이킹</span><span class="toc-arrow">→</span></a>
                   <a class="toc-link" href="#65"><span class="toc-index">04</span><span class="toc-text">식단 관리</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#66"><span class="toc-index">05</span><span class="toc-text">AI 애그리게이터</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#71"><span class="toc-index">05</span><span class="toc-text">AI 애그리게이터</span><span class="toc-arrow">→</span></a>
                 </div>
                 <div class="toc-column">
-                  <a class="toc-link" href="#67"><span class="toc-index">06</span><span class="toc-text">AI 학습 도우미</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#74"><span class="toc-index">07</span><span class="toc-text">브라우저</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#75"><span class="toc-index">08</span><span class="toc-text">외국어 교육</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#76"><span class="toc-index">09</span><span class="toc-text">사진 보정</span><span class="toc-arrow">→</span></a>
-                  <a class="toc-link" href="#77"><span class="toc-index">10</span><span class="toc-text">전문가 서비스</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#72"><span class="toc-index">06</span><span class="toc-text">AI 학습 도우미</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#79"><span class="toc-index">07</span><span class="toc-text">브라우저</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#80"><span class="toc-index">08</span><span class="toc-text">외국어 교육</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#81"><span class="toc-index">09</span><span class="toc-text">사진 보정</span><span class="toc-arrow">→</span></a>
+                  <a class="toc-link" href="#82"><span class="toc-index">10</span><span class="toc-text">전문가 서비스</span><span class="toc-arrow">→</span></a>
                 </div>
               </nav>
             </div>
@@ -6238,7 +6427,7 @@
             <div class="chapter-label">래퍼 서비스 사례</div>
             <div class="copy copy--center copy--wide">
               <p class="kicker">NOTES</p>
-              <h1 class="title title--center">차별화점을 마련하려면 무엇을 해야할까?</h1>
+              <h1 class="title title--center">차별화를 위해서는<br/>무엇을 해야할까?</h1>
             </div>
           </article>
         </section>
@@ -6279,7 +6468,7 @@
             <div class="chapter-label">래퍼 서비스 사례</div>
             <div class="copy copy--split">
               <p class="kicker">NOTES</p>
-              <h1 class="title">이들이 노리는 건<br />Context Layer 점령</h1>
+              <h1 class="title">궁극적 목표는 당연히<br />Context Layer 점령</h1>
             </div>
             <div class="visual" aria-label="메신저 및 Context Layer 사례">
               <div class="notes-context-stack">
@@ -6357,6 +6546,98 @@
                   <span class="vibe-tool-name">Rex.fit</span>
                 </div>
               </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="06. Cal AI가 원조인 식단 관리">
+          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--cal-ai-origin">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">DIET</p>
+              <h1 class="title">여기도 엄청 핫한 분야<br />Cal AI가 원조</h1>
+            </div>
+            <div class="visual" aria-label="Cal AI 창업자">
+              <figure class="cal-ai-feature">
+                <img src="./assets/cal-ai-logo.jpg" alt="Cal AI 앱 아이콘" />
+                <figcaption>Zach Yadegari · 고교생 시절 창업</figcaption>
+              </figure>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="06. 식단 관리 앱 다운로드 규모">
+          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--diet-downloads">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">DIET</p>
+              <h1 class="title">수십개의 앱이 모두<br />천만 다운로드 이상</h1>
+            </div>
+            <div class="visual" aria-label="식단 관리 앱 다운로드 추정치">
+              <div class="diet-download-list">
+                <div class="diet-download-item">
+                  <img src="./assets/cal-ai-logo.jpg" alt="Cal AI 로고" />
+                  <div class="diet-download-item-copy"><span class="diet-download-item-name">Cal AI</span><span class="diet-download-item-count">1,000만+ 다운로드 추정</span></div>
+                </div>
+                <div class="diet-download-item">
+                  <img src="./assets/myfitnesspal-logo.ico" alt="MyFitnessPal 로고" />
+                  <div class="diet-download-item-copy"><span class="diet-download-item-name">MyFitnessPal</span><span class="diet-download-item-count">1억+ 다운로드</span></div>
+                </div>
+                <div class="diet-download-item">
+                  <img src="./assets/foodvisor-logo.png" alt="Foodvisor 로고" />
+                  <div class="diet-download-item-copy"><span class="diet-download-item-name">Foodvisor</span><span class="diet-download-item-count">1,000만+ 다운로드</span></div>
+                </div>
+                <div class="diet-download-item">
+                  <img src="./assets/loseit-logo.png" alt="Lose It! 로고" />
+                  <div class="diet-download-item-copy"><span class="diet-download-item-name">Lose It!</span><span class="diet-download-item-count">5,000만+ 다운로드 추정</span></div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="06. 식단 관리 인지도">
+          <article class="slide-shell slide-shell--center slide-shell--section slide-shell--diet-awareness">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--center copy--wide">
+              <p class="kicker">DIET</p>
+              <h1 class="title title--center">그러나 한국인들은 이 분야 자체를 잘 모름<br />왜일까?</h1>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="06. 식단 관리 이유 1">
+          <article class="slide-shell slide-shell--split slide-shell--diet-reason">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">DIET</p>
+              <h1 class="title">이유1<br />한국엔 비만이 적어서</h1>
+            </div>
+            <div class="visual" aria-label="국가별 비만율 비교">
+              <figure class="diet-reason-figure">
+                <img src="./assets/diet-obesity-rankings.png" alt="국가별 성인 비만율 비교" />
+              </figure>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="06. 식단 관리 이유 2">
+          <article class="slide-shell slide-shell--split slide-shell--diet-reason">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">DIET</p>
+              <h1 class="title">이유2<br />당뇨도 건강보험이<br />해결 해줄 거란 착각</h1>
+            </div>
+            <div class="visual" aria-label="건강보험 적자 기사">
+              <figure class="diet-reason-figure diet-reason-figure--insurance">
+                <img src="./assets/diet-health-insurance.png" alt="고령화에 커지는 건강보험 적자 기사 화면" />
+                <figcaption>사실 다 본인들이 내야 하는 돈인데..</figcaption>
+              </figure>
             </div>
           </article>
         </section>
@@ -7627,7 +7908,7 @@
       <div class="page-controls" aria-label="페이지 이동">
         <button class="page-home-button" id="home-button" type="button" aria-label="첫 슬라이드로 이동">처음</button>
         <button id="previous-button" type="button" aria-label="이전 슬라이드">←</button>
-        <span class="page-counter" id="page-counter" aria-live="polite">01 / 129</span>
+        <span class="page-counter" id="page-counter" aria-live="polite">01 / 134</span>
         <button id="next-button" type="button" aria-label="다음 슬라이드">→</button>
       </div>
     </main>
