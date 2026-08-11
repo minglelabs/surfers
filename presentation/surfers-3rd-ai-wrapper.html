@@ -3963,6 +3963,77 @@
         white-space: nowrap;
       }
 
+      .slide-shell--m2e-opportunity {
+        gap: clamp(22px, 3.6vw, 62px);
+      }
+
+      .slide-shell--m2e-opportunity .copy--split {
+        flex: 1 1 48%;
+        max-width: 50rem;
+        min-width: 0;
+      }
+
+      .slide-shell--m2e-opportunity .visual {
+        flex: 0 1 44rem;
+        width: min(100%, 44rem);
+        min-width: 0;
+      }
+
+      .m2e-service-cloud {
+        position: relative;
+        width: 100%;
+        height: clamp(360px, 39vw, 540px);
+      }
+
+      .m2e-service {
+        position: absolute;
+        left: var(--x);
+        top: var(--y);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(6px, 0.65vw, 10px);
+        color: var(--title);
+        text-align: center;
+        transform: translate(-50%, -50%) rotate(var(--r));
+        white-space: nowrap;
+      }
+
+      .m2e-service-mark {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 2.8em;
+        color: var(--mark-color, var(--title));
+        font-family: Arial, "Apple SD Gothic Neo", sans-serif;
+        font-size: clamp(1.35rem, 2.45vw, 2.55rem);
+        font-weight: 900;
+        letter-spacing: -0.1em;
+        line-height: 0.95;
+      }
+
+      .m2e-service-name {
+        color: var(--title);
+        font-size: clamp(0.76rem, 1.05vw, 1rem);
+        font-weight: 820;
+        letter-spacing: -0.055em;
+        line-height: 1.05;
+      }
+
+      .m2e-service--moneywalk { --mark-color: #2b78df; }
+      .m2e-service--cashwalk { --mark-color: #f45c68; }
+      .m2e-service--toss { --mark-color: #2f91e8; }
+      .m2e-service--geniet { --mark-color: #f06b43; }
+      .m2e-service--balso { --mark-color: #75b531; }
+      .m2e-service--superwalk { --mark-color: #4c6df1; }
+      .m2e-service--stepn { --mark-color: #171717; }
+      .m2e-service--sweatcoin { --mark-color: #6c48d9; }
+      .m2e-service--weward { --mark-color: #2e70c7; }
+      .m2e-service--macadam { --mark-color: #ef813e; }
+      .m2e-service--evidation { --mark-color: #647080; }
+      .m2e-service--winwalk { --mark-color: #e7763e; }
+      .m2e-service--sweat { --mark-color: #19826b; }
+
       .logo-stack {
         position: relative;
         display: grid;
@@ -5251,6 +5322,19 @@
         .vibe-tool--bolt .vibe-tool-mark { font-size: clamp(0.82rem, 4.2vw, 1.3rem); }
         .vibe-tool--v0 .vibe-tool-mark { font-size: clamp(1.65rem, 8.5vw, 2.55rem); }
         .vibe-tool--replit .vibe-tool-mark { font-size: clamp(0.84rem, 4.8vw, 1.35rem); }
+        .slide-shell--m2e-opportunity .copy--split {
+          flex: 0 0 auto;
+          width: 100%;
+          max-width: none;
+        }
+        .slide-shell--m2e-opportunity .visual {
+          flex: 0 0 auto;
+          width: 100%;
+          max-width: none;
+        }
+        .m2e-service-cloud { height: clamp(320px, 75vw, 470px); }
+        .m2e-service-mark { font-size: clamp(1.1rem, 4.8vw, 2rem); }
+        .m2e-service-name { font-size: clamp(0.68rem, 2.2vw, 0.9rem); }
         .vibe-exit-row { grid-template-columns: 58px minmax(0, 1fr); gap: 12px; min-height: 64px; padding: 7px 0; }
         .vibe-exit-logo { width: 52px; height: 52px; }
         .vibe-exit-text { font-size: clamp(0.86rem, 3.35vw, 1.05rem); }
@@ -6606,7 +6690,7 @@
             <div class="chapter-label">래퍼 서비스 사례</div>
             <div class="copy copy--center copy--wide">
               <p class="kicker">NOTES</p>
-              <h1 class="title title--center">하지만 영업익은 잘 내지 못하는 것으로 추정<br />해자가 변변치 않은 완전 경쟁 시장이기 때문</h1>
+              <h1 class="title title--center">하지만 영업익은 내기 쉽지 않은 것으로 추정<br />차별화가 쉽지 않은 완전 경쟁 시장이기 때문</h1>
             </div>
           </article>
         </section>
@@ -7405,6 +7489,73 @@
                   <span class="future-field-index">5</span>
                   <h2 class="future-field-title">19금 영상 뷰어</h2>
                   <span class="future-field-example">예시 없음</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="11. M2E 서비스들과도 연계되지 않을까">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--m2e-opportunity">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">미래와 제언</div>
+            <div class="copy copy--split">
+              <p class="kicker">NEXT</p>
+              <h1 class="title">M2E 서비스들과도<br/>연계 되지 않을까?</h1>
+            </div>
+            <div class="visual" aria-label="M2E 및 걷기 리워드 서비스">
+              <div class="m2e-service-cloud">
+                <div class="m2e-service m2e-service--moneywalk" style="--x: 11%; --y: 14%; --r: -8deg">
+                  <span class="m2e-service-mark" aria-hidden="true">MW</span>
+                  <span class="m2e-service-name">머니워크</span>
+                </div>
+                <div class="m2e-service m2e-service--cashwalk" style="--x: 37%; --y: 10%; --r: 7deg">
+                  <span class="m2e-service-mark" aria-hidden="true">CW</span>
+                  <span class="m2e-service-name">캐시워크</span>
+                </div>
+                <div class="m2e-service m2e-service--toss" style="--x: 66%; --y: 17%; --r: -6deg">
+                  <span class="m2e-service-mark" aria-hidden="true">T</span>
+                  <span class="m2e-service-name">토스 만보기</span>
+                </div>
+                <div class="m2e-service m2e-service--geniet" style="--x: 89%; --y: 12%; --r: 10deg">
+                  <span class="m2e-service-mark" aria-hidden="true">G</span>
+                  <span class="m2e-service-name">지니어트</span>
+                </div>
+                <div class="m2e-service m2e-service--balso" style="--x: 18%; --y: 37%; --r: 8deg">
+                  <span class="m2e-service-mark" aria-hidden="true">V</span>
+                  <span class="m2e-service-name">발로소득</span>
+                </div>
+                <div class="m2e-service m2e-service--superwalk" style="--x: 49%; --y: 33%; --r: -7deg">
+                  <span class="m2e-service-mark" aria-hidden="true">SW</span>
+                  <span class="m2e-service-name">SuperWalk</span>
+                </div>
+                <div class="m2e-service m2e-service--stepn" style="--x: 79%; --y: 39%; --r: 7deg">
+                  <span class="m2e-service-mark" aria-hidden="true">STEPN</span>
+                  <span class="m2e-service-name">STEPN</span>
+                </div>
+                <div class="m2e-service m2e-service--sweatcoin" style="--x: 10%; --y: 62%; --r: -6deg">
+                  <span class="m2e-service-mark" aria-hidden="true">S</span>
+                  <span class="m2e-service-name">Sweatcoin</span>
+                </div>
+                <div class="m2e-service m2e-service--weward" style="--x: 38%; --y: 57%; --r: 8deg">
+                  <span class="m2e-service-mark" aria-hidden="true">W</span>
+                  <span class="m2e-service-name">WeWard</span>
+                </div>
+                <div class="m2e-service m2e-service--macadam" style="--x: 67%; --y: 64%; --r: -8deg">
+                  <span class="m2e-service-mark" aria-hidden="true">M</span>
+                  <span class="m2e-service-name">Macadam</span>
+                </div>
+                <div class="m2e-service m2e-service--evidation" style="--x: 92%; --y: 58%; --r: 6deg">
+                  <span class="m2e-service-mark" aria-hidden="true">EVI</span>
+                  <span class="m2e-service-name">Evidation</span>
+                </div>
+                <div class="m2e-service m2e-service--winwalk" style="--x: 25%; --y: 86%; --r: -7deg">
+                  <span class="m2e-service-mark" aria-hidden="true">WW</span>
+                  <span class="m2e-service-name">Winwalk</span>
+                </div>
+                <div class="m2e-service m2e-service--sweat" style="--x: 67%; --y: 86%; --r: 8deg">
+                  <span class="m2e-service-mark" aria-hidden="true">$SWEAT</span>
+                  <span class="m2e-service-name">Sweat Economy</span>
                 </div>
               </div>
             </div>
