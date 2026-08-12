@@ -5904,15 +5904,47 @@
         min-height: clamp(430px, 58vh, 600px);
       }
 
+      .aggregator-api-group-label {
+        position: absolute;
+        left: 50%;
+        z-index: 3;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+        margin: 0;
+        color: #ff6a00;
+        font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+        font-size: clamp(0.66rem, 0.8vw, 0.82rem);
+        font-weight: 850;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        transform: translateX(-50%);
+      }
+
+      .aggregator-api-group-label::before,
+      .aggregator-api-group-label::after {
+        width: clamp(1.5rem, 2vw, 2.5rem);
+        height: 1px;
+        content: "";
+        background: currentColor;
+      }
+
+      .aggregator-api-group-label--providers {
+        top: 0;
+      }
+
       .aggregator-api-providers {
         position: absolute;
-        inset: 0 0 auto;
+        top: clamp(2.55rem, 3.6vw, 3.6rem);
+        left: 50%;
         z-index: 2;
         display: grid;
-        width: 100%;
+        width: 82%;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         align-items: start;
-        gap: clamp(16px, 2vh, 24px) clamp(20px, 3vw, 44px);
+        gap: clamp(14px, 1.7vh, 20px) clamp(8px, 1.2vw, 16px);
+        transform: translateX(-50%);
       }
 
       .aggregator-api-provider {
@@ -5994,6 +6026,18 @@
         height: clamp(64px, 7vw, 98px);
         margin: 0 auto;
         object-fit: contain;
+      }
+
+      .aggregator-api-node-group {
+        display: block;
+        margin-bottom: 0.35rem;
+        color: #ff6a00;
+        font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+        font-size: clamp(0.58rem, 0.72vw, 0.7rem);
+        font-weight: 850;
+        letter-spacing: 0.08em;
+        line-height: 1;
+        text-transform: uppercase;
       }
 
       .aggregator-api-node span {
@@ -6288,8 +6332,9 @@
         }
 
         .aggregator-api-providers {
-          width: 100%;
-          gap: 14px 10px;
+          top: clamp(2.3rem, 8vw, 2.8rem);
+          width: 82%;
+          gap: 12px 8px;
         }
 
         .aggregator-api-provider img {
@@ -6303,6 +6348,10 @@
 
         .aggregator-api-node {
           width: clamp(126px, 30vw, 176px);
+        }
+
+        .aggregator-api-node-group {
+          font-size: clamp(0.54rem, 2vw, 0.68rem);
         }
 
         .aggregator-routing-flow {
@@ -8066,8 +8115,9 @@
               <p class="kicker">AGGREGATOR</p>
               <h1 class="title">그러나 순수 aggr.는<br />api 만 제공함</h1>
             </div>
-            <div class="visual" aria-label="Inference Provider들을 OpenRouter 하나의 API로 묶어 제공">
+            <div class="visual" aria-label="Infer. Prov. 진영의 6개 서비스가 Aggr. 진영 OpenRouter API로 모이는 구조">
               <div class="aggregator-api-flow">
+                <p class="aggregator-api-group-label aggregator-api-group-label--providers">Infer. Prov. 진영</p>
                 <div class="aggregator-api-providers">
                   <div class="aggregator-api-provider">
                     <img src="./assets/friendli-ai-logo.ico" alt="FriendliAI 로고" />
@@ -8100,17 +8150,18 @@
                       <path class="aggregator-api-arrowhead" d="M0 0 L8 3 L0 6 Z" />
                     </marker>
                   </defs>
-                  <path class="aggregator-api-connector" d="M16.7 17 C16.7 40 35 52 50 59" />
-                  <path class="aggregator-api-connector" d="M50 17 C50 35 50 48 50 59" />
-                  <path class="aggregator-api-connector" d="M83.3 17 C83.3 40 65 52 50 59" />
-                  <path class="aggregator-api-connector" d="M16.7 42 C16.7 51 35 56 50 59" />
-                  <path class="aggregator-api-connector" d="M50 42 L50 59" />
-                  <path class="aggregator-api-connector" d="M83.3 42 C83.3 51 65 56 50 59" />
-                  <circle class="aggregator-api-hub" cx="50" cy="59" r="1.1" />
-                  <path class="aggregator-api-connector aggregator-api-connector--trunk" d="M50 59 L50 66" marker-end="url(#aggregator-api-arrow)" />
+                  <path class="aggregator-api-connector" d="M22 26 C22 43 37 55 50 60" />
+                  <path class="aggregator-api-connector" d="M50 26 C50 41 50 52 50 60" />
+                  <path class="aggregator-api-connector" d="M78 26 C78 43 63 55 50 60" />
+                  <path class="aggregator-api-connector" d="M22 49 C22 55 37 58 50 60" />
+                  <path class="aggregator-api-connector" d="M50 49 L50 60" />
+                  <path class="aggregator-api-connector" d="M78 49 C78 55 63 58 50 60" />
+                  <circle class="aggregator-api-hub" cx="50" cy="60" r="1.1" />
+                  <path class="aggregator-api-connector aggregator-api-connector--trunk" d="M50 60 L50 68" marker-end="url(#aggregator-api-arrow)" />
                 </svg>
                 <div class="aggregator-api-node">
                   <div>
+                    <small class="aggregator-api-node-group">Aggr. 진영</small>
                     <img src="./assets/openrouter-logo.svg" alt="OpenRouter 로고" />
                     <span>OpenRouter API</span>
                   </div>
