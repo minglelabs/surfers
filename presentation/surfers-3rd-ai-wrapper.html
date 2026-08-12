@@ -5827,12 +5827,21 @@
       }
 
       .aggregator-type-logos {
+        display: grid;
+        width: min(100%, 34rem);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: start;
+        justify-items: center;
+        gap: clamp(14px, 1.8vw, 24px);
+      }
+
+      .aggregator-type-service {
         display: flex;
-        width: 100%;
-        flex-wrap: wrap;
+        min-width: 0;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
-        gap: clamp(14px, 2vw, 26px);
+        gap: clamp(6px, 0.7vw, 10px);
+        text-align: center;
       }
 
       .aggregator-type-logo {
@@ -5840,6 +5849,14 @@
         width: clamp(58px, 6.2vw, 88px);
         height: clamp(58px, 6.2vw, 88px);
         object-fit: contain;
+      }
+
+      .aggregator-type-service-name {
+        color: #29251d;
+        font-size: clamp(0.72rem, 0.9vw, 0.9rem);
+        font-weight: 750;
+        line-height: 1.1;
+        white-space: nowrap;
       }
 
       .aggregator-type-vs {
@@ -7937,21 +7954,48 @@
                 <div class="aggregator-type-group">
                   <p class="aggregator-type-label">순수 Aggregator</p>
                   <div class="aggregator-type-logos">
-                    <img class="aggregator-type-logo" src="./assets/openrouter-logo.svg" alt="OpenRouter 로고" />
-                    <img class="aggregator-type-logo" src="./assets/poe-logo.svg" alt="Poe 로고" />
-                    <img class="aggregator-type-logo" src="https://www.google.com/s2/favicons?domain=higgsfield.ai&sz=128" alt="Higgsfield 로고" />
+                    <div class="aggregator-type-service">
+                      <img class="aggregator-type-logo" src="./assets/openrouter-logo.svg" alt="OpenRouter 로고" />
+                      <span class="aggregator-type-service-name">OpenRouter</span>
+                    </div>
+                    <div class="aggregator-type-service">
+                      <img class="aggregator-type-logo" src="./assets/poe-logo.svg" alt="Poe 로고" />
+                      <span class="aggregator-type-service-name">Poe</span>
+                    </div>
+                    <div class="aggregator-type-service">
+                      <img class="aggregator-type-logo" src="https://www.google.com/s2/favicons?domain=higgsfield.ai&sz=128" alt="Higgsfield 로고" />
+                      <span class="aggregator-type-service-name">Higgsfield</span>
+                    </div>
                   </div>
                 </div>
                 <p class="aggregator-type-vs">vs</p>
                 <div class="aggregator-type-group">
                   <p class="aggregator-type-label">Inference Provider</p>
                   <div class="aggregator-type-logos">
-                    <img class="aggregator-type-logo" src="./assets/friendli-ai-logo.ico" alt="FriendliAI 로고" />
-                    <img class="aggregator-type-logo" src="https://www.google.com/s2/favicons?domain=replicate.com&sz=128" alt="Replicate 로고" />
-                    <img class="aggregator-type-logo" src="https://www.google.com/s2/favicons?domain=wavespeed.ai&sz=128" alt="WaveSpeed 로고" />
-                    <img class="aggregator-type-logo" src="./assets/together-logo.png" alt="Together 로고" />
-                    <img class="aggregator-type-logo" src="https://www.google.com/s2/favicons?domain=baseten.co&sz=128" alt="Baseten 로고" />
-                    <img class="aggregator-type-logo" src="https://www.google.com/s2/favicons?domain=fireworks.ai&sz=128" alt="Fireworks 로고" />
+                    <div class="aggregator-type-service">
+                      <img class="aggregator-type-logo" src="./assets/friendli-ai-logo.ico" alt="FriendliAI 로고" />
+                      <span class="aggregator-type-service-name">FriendliAI</span>
+                    </div>
+                    <div class="aggregator-type-service">
+                      <img class="aggregator-type-logo" src="https://www.google.com/s2/favicons?domain=replicate.com&sz=128" alt="Replicate 로고" />
+                      <span class="aggregator-type-service-name">Replicate</span>
+                    </div>
+                    <div class="aggregator-type-service">
+                      <img class="aggregator-type-logo" src="https://www.google.com/s2/favicons?domain=wavespeed.ai&sz=128" alt="WaveSpeed 로고" />
+                      <span class="aggregator-type-service-name">WaveSpeed</span>
+                    </div>
+                    <div class="aggregator-type-service">
+                      <img class="aggregator-type-logo" src="./assets/together-logo.png" alt="Together 로고" />
+                      <span class="aggregator-type-service-name">Together</span>
+                    </div>
+                    <div class="aggregator-type-service">
+                      <img class="aggregator-type-logo" src="https://www.google.com/s2/favicons?domain=baseten.co&sz=128" alt="Baseten 로고" />
+                      <span class="aggregator-type-service-name">Baseten</span>
+                    </div>
+                    <div class="aggregator-type-service">
+                      <img class="aggregator-type-logo" src="https://www.google.com/s2/favicons?domain=fireworks.ai&sz=128" alt="Fireworks 로고" />
+                      <span class="aggregator-type-service-name">Fireworks</span>
+                    </div>
                   </div>
                 </div>
               </div>
