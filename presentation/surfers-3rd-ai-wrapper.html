@@ -6134,6 +6134,19 @@
         object-fit: contain;
       }
 
+      .aggregator-growth-service-name {
+        margin: clamp(14px, 1.7vh, 22px) 0 0;
+        color: #29251d;
+        font-size: clamp(1.1rem, 1.55vw, 1.45rem);
+        font-weight: 850;
+        line-height: 1.1;
+        letter-spacing: -0.045em;
+      }
+
+      .aggregator-growth-service-name + .aggregator-growth-metric {
+        margin-top: clamp(6px, 0.8vh, 10px);
+      }
+
       .aggregator-growth-metric {
         margin: clamp(16px, 2vh, 28px) 0 0;
         color: #29251d;
@@ -6414,6 +6427,10 @@
 
         .aggregator-growth-metric {
           font-size: clamp(14px, 3.4vw, 20px);
+        }
+
+        .aggregator-growth-service-name {
+          font-size: clamp(1rem, 3.8vw, 1.3rem);
         }
 
         .aggregator-serving-image {
@@ -8415,10 +8432,12 @@
               <div class="aggregator-growth-visual">
                 <div class="aggregator-growth-item">
                   <img src="https://www.google.com/s2/favicons?domain=higgsfield.ai&sz=128" alt="Higgsfield 로고" />
+                  <p class="aggregator-growth-service-name">Higgsfield</p>
                   <p class="aggregator-growth-metric">1,500만 계정, 300만 generation/일<br/>~$500M revenue run-rate</p>
                 </div>
                 <div class="aggregator-growth-item">
                   <img src="./assets/openrouter-logo.svg" alt="OpenRouter 로고" />
+                  <p class="aggregator-growth-service-name">OpenRouter</p>
                   <p class="aggregator-growth-metric">800만 사용자, 100T tokens/월<br/>~$50M ARR</p>
                 </div>
               </div>
