@@ -6335,7 +6335,7 @@
       .aggregator-routing-flow {
         position: relative;
         width: min(100%, 38rem);
-        min-height: clamp(420px, 52vh, 540px);
+        min-height: clamp(520px, 60vh, 640px);
       }
 
       .aggregator-routing-providers {
@@ -6373,6 +6373,25 @@
         object-fit: contain;
       }
 
+      .aggregator-routing-provider--selected {
+        z-index: 3;
+        width: clamp(102px, 9vw, 120px);
+        aspect-ratio: 1;
+        justify-self: center;
+        justify-content: center;
+        gap: clamp(5px, 0.5vw, 8px);
+        padding: clamp(8px, 0.7vw, 10px);
+        border: 3px solid #ff6a00;
+        border-radius: 50%;
+        background: #fffdf7;
+        box-shadow: 0 10px 22px rgba(255, 106, 0, 0.12);
+      }
+
+      .aggregator-routing-provider--selected img {
+        width: clamp(48px, 5.2vw, 64px);
+        height: clamp(48px, 5.2vw, 64px);
+      }
+
       .aggregator-routing-provider--disabled::before,
       .aggregator-routing-provider--disabled::after {
         content: "";
@@ -6408,13 +6427,14 @@
         stroke: #ff6a00;
         stroke-width: 2.4;
         stroke-linecap: round;
+        vector-effect: non-scaling-stroke;
       }
 
       .aggregator-routing-link {
         position: absolute;
-        bottom: clamp(3.3rem, 6vh, 4.6rem);
+        bottom: clamp(4.25rem, 8vh, 5.5rem);
         left: 50%;
-        z-index: 2;
+        z-index: 3;
         display: flex;
         width: max-content;
         transform: translateX(-50%);
@@ -6422,12 +6442,20 @@
 
       .aggregator-routing-node {
         position: relative;
-        z-index: 1;
+        z-index: 2;
         display: flex;
+        width: clamp(132px, 12vw, 154px);
+        aspect-ratio: 1;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         gap: 0.45rem;
+        padding: clamp(10px, 0.8vw, 12px);
+        border: 3px solid #ff6a00;
+        border-radius: 50%;
         color: #29251d;
+        background: #fffdf7;
+        box-shadow: 0 10px 22px rgba(255, 106, 0, 0.12);
         font-size: clamp(1rem, 1.4vw, 1.3rem);
         font-weight: 800;
         text-align: center;
@@ -6435,8 +6463,8 @@
 
       .aggregator-routing-node img {
         display: block;
-        width: clamp(76px, 8vw, 112px);
-        height: clamp(76px, 8vw, 112px);
+        width: clamp(62px, 6.5vw, 82px);
+        height: clamp(62px, 6.5vw, 82px);
         object-fit: contain;
       }
 
@@ -6551,7 +6579,7 @@
         }
 
         .aggregator-routing-flow {
-          min-height: 400px;
+          min-height: 470px;
           width: min(100%, 38rem);
         }
 
@@ -6568,9 +6596,19 @@
           font-size: clamp(0.72rem, 2.7vw, 0.95rem);
         }
 
+        .aggregator-routing-provider--selected {
+          width: clamp(96px, 28vw, 118px);
+          padding: 8px;
+        }
+
         .aggregator-routing-node img {
-          width: clamp(64px, 20vw, 92px);
-          height: clamp(64px, 20vw, 92px);
+          width: clamp(54px, 17vw, 72px);
+          height: clamp(54px, 17vw, 72px);
+        }
+
+        .aggregator-routing-node {
+          width: clamp(118px, 34vw, 144px);
+          padding: 9px;
         }
 
         .aggregator-fee-flow {
@@ -8398,7 +8436,7 @@
             <div class="visual" aria-label="OpenRouter가 FriendliAI로 라우팅을 선택한 구조">
               <div class="aggregator-routing-flow">
                 <div class="aggregator-routing-providers">
-                  <div class="aggregator-routing-provider">
+                  <div class="aggregator-routing-provider aggregator-routing-provider--selected">
                     <img src="./assets/friendli-ai-logo.ico" alt="FriendliAI 로고" />
                     <span>FriendliAI</span>
                   </div>
@@ -8425,11 +8463,11 @@
                 </div>
                 <svg class="aggregator-routing-connector" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
                   <defs>
-                    <marker id="aggregator-routing-arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ff6a00" />
+                    <marker id="aggregator-routing-arrowhead" viewBox="0 0 6 6" refX="5.5" refY="3" markerWidth="3.8" markerHeight="3.8" orient="auto">
+                      <path d="M 0 0 L 6 3 L 0 6 z" fill="#ff6a00" />
                     </marker>
                   </defs>
-                  <path d="M 50 72 C 50 54 22 41 22 14" marker-end="url(#aggregator-routing-arrowhead)" />
+                  <path d="M 50 60 C 50 44 41 29 30 20" marker-end="url(#aggregator-routing-arrowhead)" />
                 </svg>
                 <div class="aggregator-routing-link">
                   <div class="aggregator-routing-node">
