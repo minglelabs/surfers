@@ -6056,8 +6056,8 @@
 
       .slide-shell--aggregator-routing .visual {
         display: flex;
-        flex: 0 1 52rem;
-        width: min(100%, 52rem);
+        flex: 0 1 40rem;
+        width: min(100%, 40rem);
         min-width: 0;
         align-items: center;
         justify-content: center;
@@ -6149,25 +6149,26 @@
 
       .aggregator-routing-flow {
         position: relative;
-        display: flex;
-        width: min(100%, 48rem);
-        min-height: clamp(320px, 48vh, 500px);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: clamp(12px, 1.5vw, 20px);
+        width: min(100%, 38rem);
+        min-height: clamp(420px, 52vh, 540px);
       }
 
       .aggregator-routing-providers {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        z-index: 2;
         display: grid;
-        width: 100%;
+        width: 82%;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         align-items: center;
-        gap: clamp(18px, 2.1vw, 30px) clamp(10px, 1.4vw, 20px);
+        gap: clamp(16px, 1.8vw, 24px) clamp(8px, 1vw, 14px);
+        transform: translateX(-50%);
       }
 
       .aggregator-routing-provider {
         position: relative;
+        z-index: 2;
         display: flex;
         min-width: 0;
         flex-direction: column;
@@ -6196,7 +6197,7 @@
         width: clamp(4.4rem, 6.2vw, 6.4rem);
         height: clamp(4px, 0.45vw, 7px);
         border-radius: 999px;
-        background: #ff0000;
+        background: #6d28ff;
         pointer-events: none;
       }
 
@@ -6208,28 +6209,30 @@
         transform: translate(-50%, -50%) rotate(-45deg);
       }
 
-      .aggregator-routing-link {
-        position: relative;
-        display: flex;
-        width: 100%;
-        justify-content: center;
-      }
-
-      .aggregator-routing-link svg {
+      .aggregator-routing-connector {
         position: absolute;
-        top: clamp(-6.5rem, -7vw, -4rem);
-        left: 0;
+        inset: 0;
+        z-index: 1;
         width: 100%;
-        height: clamp(5rem, 8vw, 8rem);
+        height: 100%;
         pointer-events: none;
-        overflow: visible;
       }
 
-      .aggregator-routing-link > svg > path {
+      .aggregator-routing-connector > path {
         fill: none;
         stroke: #ff6a00;
         stroke-width: 2.4;
         stroke-linecap: round;
+      }
+
+      .aggregator-routing-link {
+        position: absolute;
+        bottom: clamp(3.3rem, 6vh, 4.6rem);
+        left: 50%;
+        z-index: 2;
+        display: flex;
+        width: max-content;
+        transform: translateX(-50%);
       }
 
       .aggregator-routing-node {
@@ -6253,6 +6256,10 @@
       }
 
       .aggregator-routing-note {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
         margin: 0;
         color: #29251d;
         font-size: clamp(1.05rem, 1.7vw, 1.55rem);
@@ -6355,12 +6362,12 @@
         }
 
         .aggregator-routing-flow {
-          min-height: 360px;
-          width: min(100%, 42rem);
+          min-height: 400px;
+          width: min(100%, 38rem);
         }
 
         .aggregator-routing-providers {
-          gap: 18px 12px;
+          gap: 16px 8px;
         }
 
         .aggregator-routing-provider img {
@@ -8190,7 +8197,7 @@
               <p class="kicker">AGGREGATOR</p>
               <h1 class="title">provider를 직접 쓰면<br />서비스 장애가 많아서.</h1>
             </div>
-            <div class="visual" aria-label="OpenRouter의 실시간 provider 라우팅">
+            <div class="visual" aria-label="OpenRouter가 FriendliAI로 라우팅을 선택한 구조">
               <div class="aggregator-routing-flow">
                 <div class="aggregator-routing-providers">
                   <div class="aggregator-routing-provider">
@@ -8214,19 +8221,19 @@
                     <span>Baseten</span>
                   </div>
                   <div class="aggregator-routing-provider aggregator-routing-provider--disabled">
-                    <img src="https://www.google.com/s2/favicons?domain=fireworks.ai&sz=128" alt="Fireworks 로고" />
+                    <img src="./assets/fireworks-logo-purple.png" alt="Fireworks 로고" />
                     <span>Fireworks</span>
                   </div>
                 </div>
+                <svg class="aggregator-routing-connector" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                  <defs>
+                    <marker id="aggregator-routing-arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ff6a00" />
+                    </marker>
+                  </defs>
+                  <path d="M 50 72 C 50 54 22 41 22 14" marker-end="url(#aggregator-routing-arrowhead)" />
+                </svg>
                 <div class="aggregator-routing-link">
-                  <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                    <defs>
-                      <marker id="aggregator-routing-arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#ff6a00" />
-                      </marker>
-                    </defs>
-                    <path d="M 50 98 C 50 74 17 68 17 8" marker-end="url(#aggregator-routing-arrowhead)" />
-                  </svg>
                   <div class="aggregator-routing-node">
                     <img src="./assets/openrouter-logo.svg" alt="OpenRouter 로고" />
                     <span>OpenRouter</span>
