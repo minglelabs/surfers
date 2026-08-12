@@ -5893,25 +5893,27 @@
       .aggregator-api-flow {
         position: relative;
         width: min(100%, 48rem);
-        min-height: clamp(320px, 48vh, 500px);
+        min-height: clamp(430px, 58vh, 600px);
       }
 
       .aggregator-api-providers {
         position: absolute;
-        inset: 0 auto 0 0;
-        z-index: 1;
+        inset: 0 0 auto;
+        z-index: 2;
         display: grid;
-        width: 64%;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        align-content: center;
-        gap: clamp(16px, 2.2vw, 28px) clamp(14px, 1.8vw, 24px);
+        width: 100%;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: start;
+        gap: clamp(16px, 2vh, 24px) clamp(20px, 3vw, 44px);
       }
 
       .aggregator-api-provider {
         display: flex;
         min-width: 0;
+        flex-direction: column;
         align-items: center;
-        gap: clamp(7px, 0.8vw, 12px);
+        gap: clamp(7px, 0.8vw, 10px);
+        text-align: center;
       }
 
       .aggregator-api-provider img {
@@ -5927,6 +5929,8 @@
         font-size: clamp(0.82rem, 1.15vw, 1.1rem);
         font-weight: 700;
         line-height: 1.15;
+        padding-inline: 0.3rem;
+        background: var(--page);
         white-space: nowrap;
       }
 
@@ -5939,23 +5943,36 @@
         pointer-events: none;
       }
 
-      .aggregator-api-connectors line {
-        stroke: #9d978b;
-        stroke-width: 0.8;
+      .aggregator-api-connector {
+        fill: none;
+        stroke: #f59a5a;
+        stroke-width: 1.4;
         stroke-linecap: round;
-        stroke-dasharray: 2.4 2.4;
+        stroke-dasharray: 4 4;
+        vector-effect: non-scaling-stroke;
+      }
+
+      .aggregator-api-connector--trunk {
+        stroke: #ff6a00;
+        stroke-width: 2.4;
+        stroke-dasharray: none;
+      }
+
+      .aggregator-api-hub,
+      .aggregator-api-arrowhead {
+        fill: #ff6a00;
       }
 
       .aggregator-api-node {
         position: absolute;
-        top: 50%;
-        right: 0;
+        left: 50%;
+        bottom: 0;
         z-index: 2;
         display: grid;
-        width: clamp(150px, 16vw, 218px);
+        width: clamp(142px, 14vw, 190px);
         aspect-ratio: 1;
         place-items: center;
-        transform: translateY(-50%);
+        transform: translateX(-50%);
         border: 3px solid #ff6a00;
         border-radius: 50%;
         color: #29251d;
@@ -6258,13 +6275,13 @@
         }
 
         .aggregator-api-flow {
-          min-height: 360px;
+          min-height: 390px;
           width: min(100%, 42rem);
         }
 
         .aggregator-api-providers {
-          width: 67%;
-          gap: 18px 12px;
+          width: 100%;
+          gap: 14px 10px;
         }
 
         .aggregator-api-provider img {
@@ -8070,12 +8087,19 @@
                   </div>
                 </div>
                 <svg class="aggregator-api-connectors" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                  <line x1="54" y1="22" x2="79" y2="50" />
-                  <line x1="54" y1="34" x2="79" y2="50" />
-                  <line x1="54" y1="46" x2="79" y2="50" />
-                  <line x1="54" y1="54" x2="79" y2="50" />
-                  <line x1="54" y1="66" x2="79" y2="50" />
-                  <line x1="54" y1="78" x2="79" y2="50" />
+                  <defs>
+                    <marker id="aggregator-api-arrow" viewBox="0 0 8 6" refX="7" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+                      <path class="aggregator-api-arrowhead" d="M0 0 L8 3 L0 6 Z" />
+                    </marker>
+                  </defs>
+                  <path class="aggregator-api-connector" d="M16.7 17 C16.7 40 35 52 50 59" />
+                  <path class="aggregator-api-connector" d="M50 17 C50 35 50 48 50 59" />
+                  <path class="aggregator-api-connector" d="M83.3 17 C83.3 40 65 52 50 59" />
+                  <path class="aggregator-api-connector" d="M16.7 42 C16.7 51 35 56 50 59" />
+                  <path class="aggregator-api-connector" d="M50 42 L50 59" />
+                  <path class="aggregator-api-connector" d="M83.3 42 C83.3 51 65 56 50 59" />
+                  <circle class="aggregator-api-hub" cx="50" cy="59" r="1.1" />
+                  <path class="aggregator-api-connector aggregator-api-connector--trunk" d="M50 59 L50 66" marker-end="url(#aggregator-api-arrow)" />
                 </svg>
                 <div class="aggregator-api-node">
                   <div>
