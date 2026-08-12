@@ -6139,12 +6139,197 @@
         justify-content: center;
       }
 
-      .aggregator-fee-image {
+      .aggregator-fee-flow {
+        width: min(100%, 40rem);
+      }
+
+      .aggregator-fee-example {
+        width: fit-content;
+        margin: 0 auto clamp(16px, 2vw, 24px);
+        padding: 0.45rem 0.85rem;
+        border-radius: 999px;
+        color: rgba(45, 42, 30, 0.68);
+        background: rgba(45, 42, 30, 0.07);
+        font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+        font-size: clamp(0.68rem, 0.85vw, 0.82rem);
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .aggregator-fee-route {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) clamp(2.4rem, 4vw, 3.8rem) minmax(0, 1.18fr) clamp(2.4rem, 4vw, 3.8rem) minmax(0, 1fr);
+        align-items: center;
+      }
+
+      .aggregator-fee-party,
+      .aggregator-fee-router {
+        display: flex;
+        min-height: clamp(116px, 11vw, 144px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.45rem;
+        padding: clamp(12px, 1.3vw, 20px);
+        border: 1px solid rgba(45, 42, 30, 0.12);
+        border-radius: clamp(16px, 1.8vw, 24px);
+        background: rgba(255, 255, 255, 0.72);
+        box-shadow: 0 16px 30px rgba(66, 49, 15, 0.1);
+        text-align: center;
+      }
+
+      .aggregator-fee-router {
+        border-color: rgba(249, 115, 22, 0.44);
+        background: linear-gradient(145deg, #fff9e9, #fff0c8);
+      }
+
+      .aggregator-fee-router img {
         display: block;
-        width: min(100%, 38rem);
-        max-height: 34rem;
+        width: clamp(44px, 5vw, 64px);
+        height: clamp(44px, 5vw, 64px);
         object-fit: contain;
-        border-radius: 1rem;
+      }
+
+      .aggregator-fee-party-label,
+      .aggregator-fee-router-label {
+        color: rgba(45, 42, 30, 0.52);
+        font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+        font-size: clamp(0.58rem, 0.72vw, 0.68rem);
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .aggregator-fee-party strong,
+      .aggregator-fee-router strong {
+        color: #29251d;
+        font-size: clamp(0.98rem, 1.28vw, 1.22rem);
+        font-weight: 850;
+        line-height: 1.1;
+        letter-spacing: -0.04em;
+      }
+
+      .aggregator-fee-party small {
+        color: rgba(45, 42, 30, 0.58);
+        font-size: clamp(0.68rem, 0.82vw, 0.78rem);
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      .aggregator-fee-router-fee {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 3.1em;
+        padding: 0.24em 0.52em;
+        border-radius: 999px;
+        color: #ffffff;
+        background: #f97316;
+        font-size: clamp(0.82rem, 1.1vw, 1.02rem);
+        font-style: normal;
+        font-weight: 850;
+        line-height: 1;
+      }
+
+      .aggregator-fee-arrow {
+        position: relative;
+        height: 2px;
+        margin-inline: clamp(4px, 0.6vw, 8px);
+        background: #f59a5a;
+      }
+
+      .aggregator-fee-arrow::after {
+        position: absolute;
+        top: 50%;
+        right: -1px;
+        width: 9px;
+        height: 9px;
+        border-top: 2px solid #f59a5a;
+        border-right: 2px solid #f59a5a;
+        content: "";
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      .aggregator-fee-arrow span {
+        position: absolute;
+        bottom: 0.85rem;
+        left: 50%;
+        padding: 0.1rem 0.3rem;
+        color: #7d4b16;
+        background: var(--page);
+        font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+        font-size: clamp(0.62rem, 0.76vw, 0.72rem);
+        font-weight: 850;
+        line-height: 1;
+        transform: translateX(-50%);
+      }
+
+      .aggregator-fee-takeaway {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: clamp(14px, 2vw, 24px);
+        margin-top: clamp(18px, 2.2vw, 28px);
+        padding: clamp(14px, 1.6vw, 20px) clamp(16px, 2vw, 26px);
+        border: 1px solid rgba(249, 115, 22, 0.24);
+        border-radius: clamp(14px, 1.6vw, 20px);
+        background: rgba(255, 241, 201, 0.56);
+      }
+
+      .aggregator-fee-takeaway div {
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 0.12rem;
+      }
+
+      .aggregator-fee-takeaway span {
+        color: rgba(45, 42, 30, 0.62);
+        font-size: clamp(0.74rem, 0.92vw, 0.88rem);
+        font-weight: 750;
+      }
+
+      .aggregator-fee-takeaway strong {
+        color: #f05a16;
+        font-size: clamp(1.7rem, 2.6vw, 2.55rem);
+        font-weight: 880;
+        line-height: 0.95;
+        letter-spacing: -0.07em;
+      }
+
+      .aggregator-fee-takeaway p {
+        max-width: 20ch;
+        margin: 0;
+        color: #4a4031;
+        font-size: clamp(0.78rem, 0.98vw, 0.94rem);
+        font-weight: 750;
+        line-height: 1.3;
+        text-align: right;
+      }
+
+      .aggregator-fee-comparison {
+        margin: clamp(14px, 1.8vw, 22px) 0 0;
+        color: rgba(45, 42, 30, 0.64);
+        font-size: clamp(0.76rem, 0.96vw, 0.92rem);
+        font-weight: 700;
+        line-height: 1.25;
+        text-align: center;
+      }
+
+      .aggregator-fee-comparison span {
+        margin-right: 0.4rem;
+        color: rgba(45, 42, 30, 0.48);
+        font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+        font-size: 0.9em;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .aggregator-fee-comparison strong {
+        color: #29251d;
+        font-weight: 850;
       }
 
       .aggregator-routing-flow {
@@ -6384,9 +6569,18 @@
           height: clamp(64px, 20vw, 92px);
         }
 
-        .aggregator-fee-image {
-          width: min(100%, 42rem);
-          max-height: 58vh;
+        .aggregator-fee-flow {
+          width: min(100%, 40rem);
+        }
+
+        .aggregator-fee-party,
+        .aggregator-fee-router {
+          min-height: 104px;
+          padding: 12px 8px;
+        }
+
+        .aggregator-fee-takeaway {
+          margin-top: 16px;
         }
       }
     </style>
@@ -8253,9 +8447,36 @@
               <p class="kicker">AGGREGATOR</p>
               <h1 class="title">그러고 수수료 5% 가져감<br />Stripe, VISA랑 비슷함</h1>
             </div>
-            <div class="visual" aria-label="OpenRouter 수수료 5% 관련 이미지">
+            <div class="visual" aria-label="API 사용료 중 OpenRouter가 5%를 수수료로 가져가고, 나머지는 추론 Provider에게 정산되는 구조">
               <div class="aggregator-fee-visual">
-                <img class="aggregator-fee-image" src="./assets/openrouter-fee-meme.webp" alt="OpenRouter 수수료 5% 관련 이미지" />
+                <div class="aggregator-fee-flow">
+                  <p class="aggregator-fee-example">예시 · API 사용료 100</p>
+                  <div class="aggregator-fee-route">
+                    <div class="aggregator-fee-party">
+                      <span class="aggregator-fee-party-label">결제</span>
+                      <strong>앱 서비스</strong>
+                      <small>한 번에 결제</small>
+                    </div>
+                    <div class="aggregator-fee-arrow" aria-hidden="true"><span>100</span></div>
+                    <div class="aggregator-fee-router">
+                      <img src="./assets/openrouter-logo.svg" alt="OpenRouter 로고" />
+                      <span class="aggregator-fee-router-label">Routing</span>
+                      <strong>OpenRouter</strong>
+                      <em class="aggregator-fee-router-fee">5% fee</em>
+                    </div>
+                    <div class="aggregator-fee-arrow" aria-hidden="true"><span>95</span></div>
+                    <div class="aggregator-fee-party">
+                      <span class="aggregator-fee-party-label">정산</span>
+                      <strong>Inference<br />Provider</strong>
+                      <small>95 전달</small>
+                    </div>
+                  </div>
+                  <div class="aggregator-fee-takeaway">
+                    <div><span>OpenRouter의 몫</span><strong>5%</strong></div>
+                    <p>API를 중개하고 라우팅해 주는 대가</p>
+                  </div>
+                  <p class="aggregator-fee-comparison"><span>중개 수수료 모델</span><strong>Stripe · Visa</strong>와 유사</p>
+                </div>
               </div>
             </div>
           </article>
