@@ -6079,21 +6079,24 @@
       }
 
       .slide-shell--aggregator-growth {
-        gap: clamp(24px, 4vh, 56px);
+        gap: clamp(28px, 5vw, 76px);
       }
 
-      .slide-shell--aggregator-growth .copy--center {
-        width: min(100%, 84rem);
+      .slide-shell--aggregator-growth .copy--split {
+        flex: 1 1 48%;
+        max-width: 48rem;
+        min-width: 0;
       }
 
       .slide-shell--aggregator-growth .title {
-        max-width: none;
+        max-width: 16ch;
       }
 
       .slide-shell--aggregator-growth .visual {
         display: flex;
-        width: min(100%, 74rem);
-        margin-top: clamp(28px, 4vh, 60px);
+        flex: 0 1 38rem;
+        width: min(100%, 38rem);
+        min-width: 0;
         align-items: center;
         justify-content: center;
       }
@@ -6103,7 +6106,7 @@
         width: 100%;
         align-items: flex-start;
         justify-content: center;
-        gap: clamp(34px, 7vw, 116px);
+        gap: clamp(18px, 3vw, 44px);
       }
 
       .aggregator-growth-item {
@@ -6380,7 +6383,7 @@
           max-width: none;
         }
 
-        .slide-shell--aggregator-growth .copy--center,
+        .slide-shell--aggregator-growth .copy--split,
         .slide-shell--aggregator-growth .visual {
           flex: 0 0 auto;
           width: 100%;
@@ -8392,12 +8395,12 @@
         </section>
 
         <section class="slide" aria-label="10. AI 애그리게이터: 성장">
-          <article class="slide-shell slide-shell--center slide-shell--aggregator-growth">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--aggregator-growth">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
             <div class="chapter-label">래퍼 서비스 사례</div>
-            <div class="copy copy--center">
+            <div class="copy copy--split">
               <p class="kicker">AGGREGATOR</p>
-              <h1 class="title title--center">오픈소스 진영이 발전함에 따라<br/>매출, 사용량 엄청 많이 늘고 있다</h1>
+              <h1 class="title">오픈소스 진영이 발전함에 따라<br/>매출, 사용량 엄청 많이 늘고 있다</h1>
             </div>
             <div class="visual" aria-label="Higgsfield와 OpenRouter 성장 지표">
               <div class="aggregator-growth-visual">
