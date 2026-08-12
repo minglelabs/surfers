@@ -1944,6 +1944,47 @@
         object-fit: contain;
       }
 
+      .slide[aria-label="04. AI 숏드라마 실사 흥행"] .slide-shell--china-ai-drama .copy--split {
+        flex: 1 1 54%;
+        max-width: 58rem;
+      }
+
+      .slide[aria-label="04. AI 숏드라마 실사 흥행"] .slide-shell--china-ai-drama .visual {
+        display: flex;
+        flex: 0 0 28rem;
+        width: 28rem;
+        min-width: 0;
+      }
+
+      .china-ai-drama-photo {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(12px, 1.5vw, 22px);
+        text-align: center;
+      }
+
+      .china-ai-drama-photo-image {
+        display: block;
+        width: min(100%, 25rem);
+        max-height: min(62vh, 41rem);
+        border-radius: 18px;
+        object-fit: contain;
+        box-shadow: 0 18px 34px rgba(45, 42, 30, 0.16);
+      }
+
+      .china-ai-drama-photo-caption {
+        max-width: 31rem;
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(1.1rem, 1.45vw, 1.55rem);
+        font-weight: 650;
+        line-height: 1.35;
+        letter-spacing: -0.045em;
+      }
+
       .character-category-list {
         display: flex;
         flex-direction: column;
@@ -5420,6 +5461,14 @@
         .slide[aria-label="04. 중국발 컨텐츠 빅뱅"] .china-content-boom-logos {
           width: min(100%, 24rem);
         }
+        .slide[aria-label="04. AI 숏드라마 실사 흥행"] .slide-shell--china-ai-drama .copy--split,
+        .slide[aria-label="04. AI 숏드라마 실사 흥행"] .slide-shell--china-ai-drama .visual {
+          flex: 0 0 auto;
+          width: 100%;
+          max-width: none;
+        }
+        .china-ai-drama-photo-image { width: min(100%, 21rem); max-height: 46vh; }
+        .china-ai-drama-photo-caption { font-size: clamp(1.1rem, 4.2vw, 1.55rem); }
         .character-origin { gap: 14px; }
         .character-origin-caption { font-size: clamp(1.15rem, 4.4vw, 1.55rem); }
         .character-origin-image { max-height: 36vh; }
@@ -7473,7 +7522,7 @@
             <div class="chapter-label">래퍼 서비스 사례</div>
             <div class="copy copy--split">
               <p class="kicker">CHARACTER</p>
-              <h1 class="title">컨텐츠 강국인 한국이<br />분명 잘 할 수 있다</h1>
+              <h1 class="title">컨텐츠 강국인 한국도<br />분명 잘 할 수 있다</h1>
             </div>
             <div class="visual" aria-label="한국 콘텐츠 산업의 강점">
               <div class="korean-content-flag-stack">
@@ -7512,6 +7561,23 @@
             <div class="copy copy--center copy--wide">
               <p class="kicker">CHARACTER</p>
               <h1 class="title title--center">그럼 후발주자나 작은 스타트업이<br />가져야하는 전략은 무엇일까?!</h1>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="04. AI 숏드라마 실사 흥행">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--china-ai-drama">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Surfers 3기</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">CHARACTER</p>
+              <h1 class="title">실사도 이제 대박<br /><span class="title-accent">조회수 2억회</span></h1>
+            </div>
+            <div class="visual" aria-label="AI 숏드라마 가상 여배우 팡타오즈 이미지">
+              <figure class="china-ai-drama-photo">
+                <img class="china-ai-drama-photo-image" src="./assets/china-ai-short-drama-fangtaozi.png" alt="AI 숏드라마 해고당한 소녀의 가상 여배우 팡타오즈" />
+                <figcaption class="china-ai-drama-photo-caption">AI 숏드라마 ‘해고당한 소녀(被裁掉的女孩)’의 가상 여배우 ‘팡타오즈(方桃子)’</figcaption>
+              </figure>
             </div>
           </article>
         </section>
