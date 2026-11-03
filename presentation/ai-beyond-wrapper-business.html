@@ -6741,6 +6741,29 @@
           white-space: nowrap;
         }
       }
+
+      .slide-shell--character-phases .evidence-stack {
+        gap: clamp(16px, 2vw, 28px);
+        width: min(100%, 46rem);
+      }
+
+      .slide-shell--character-phases .evidence-card {
+        padding: clamp(22px, 2.6vw, 36px);
+      }
+
+      .slide-shell--character-phases .evidence-index {
+        font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+        white-space: nowrap;
+      }
+
+      .slide-shell--character-phases .evidence-title {
+        font-size: clamp(1.45rem, 2.3vw, 2.3rem);
+      }
+
+      .slide-shell--character-phases .evidence-text {
+        margin-top: 10px;
+        font-size: clamp(1rem, 1.35vw, 1.3rem);
+      }
     </style>
   </head>
   <body>
@@ -6771,7 +6794,7 @@
               <p class="kicker">목차</p>
               <nav class="toc-grid toc-grid--three" aria-label="목차 이동">
                 <a class="toc-link" href="#3"><span class="toc-index">01</span><span class="toc-text">AI 래퍼 서비스 사례</span><span class="toc-arrow">→</span></a>
-                <a class="toc-link" href="#39"><span class="toc-index">02</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
+                <a class="toc-link" href="#40"><span class="toc-index">02</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
               </nav>
             </div>
           </article>
@@ -6873,6 +6896,23 @@
             <div class="copy copy--center">
               <p class="kicker">CHARACTER</p>
               <h1 class="title title--center">해외 서비스는 구독제뿐이라 매출이 적음<br />한국 서비스는 도파민을 쥐어짜서 한 턴당 100원씩 받음</h1>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="04. 캐릭터챗 Phase 1과 Phase 2">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--character-phases">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">CHARACTER</p>
+              <h1 class="title">캐릭터챗의<br /><span class="title-accent">Phase 1과 Phase 2</span></h1>
+            </div>
+            <div class="visual" aria-label="캐릭터챗 Phase 1과 Phase 2 요약">
+              <div class="evidence-stack">
+                <section class="evidence-card"><span class="evidence-index">Phase 1</span><div><h2 class="evidence-title">핵심은 '모델 성능'</h2><p class="evidence-text">24년 8월 C.AI 매각(인수)으로 끝</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">Phase 2</span><div><h2 class="evidence-title">핵심은 쩌는 컨텐츠 지속 공급</h2><p class="evidence-text">Character AI 파산으로 끝</p></div></section>
+              </div>
             </div>
           </article>
         </section>
@@ -8323,7 +8363,7 @@
       <div class="page-controls" aria-label="페이지 이동">
         <button class="page-home-button" id="home-button" type="button" aria-label="첫 슬라이드로 이동">처음</button>
         <button id="previous-button" type="button" aria-label="이전 슬라이드">←</button>
-        <span class="page-counter" id="page-counter" aria-live="polite">01 / 80</span>
+        <span class="page-counter" id="page-counter" aria-live="polite">01 / 81</span>
         <button id="next-button" type="button" aria-label="다음 슬라이드">→</button>
       </div>
     </main>
