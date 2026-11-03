@@ -6832,6 +6832,44 @@
         font-size: clamp(1.5rem, 2.4vw, 2.7rem);
         white-space: nowrap;
       }
+
+      .slide-shell--vtuber-core .copy--split {
+        flex: 0 1 auto;
+        min-width: 0;
+      }
+
+      .slide-shell--vtuber-core .title {
+        white-space: nowrap;
+      }
+
+      .slide-shell--vtuber-core .visual {
+        flex: 1 1 46rem;
+        width: min(100%, 46rem);
+        min-width: 0;
+      }
+
+      .slide-shell--vtuber-core .evidence-stack {
+        width: 100%;
+        gap: clamp(10px, 1.2vw, 16px);
+      }
+
+      .slide-shell--vtuber-core .evidence-card {
+        grid-template-columns: clamp(5.5rem, 7vw, 7rem) minmax(0, 1fr);
+        align-items: center;
+        padding: clamp(14px, 1.6vw, 22px) clamp(18px, 2vw, 28px);
+      }
+
+      .slide-shell--vtuber-core .evidence-index {
+        font-family: inherit;
+        font-size: clamp(1rem, 1.35vw, 1.3rem);
+        letter-spacing: -0.03em;
+        white-space: nowrap;
+      }
+
+      .slide-shell--vtuber-core .evidence-title,
+      .slide-shell--vtuber-core .evidence-text {
+        word-break: keep-all;
+      }
     </style>
   </head>
   <body>
@@ -6862,7 +6900,7 @@
               <p class="kicker">목차</p>
               <nav class="toc-grid toc-grid--three" aria-label="목차 이동">
                 <a class="toc-link" href="#3"><span class="toc-index">01</span><span class="toc-text">AI 래퍼 서비스 사례</span><span class="toc-arrow">→</span></a>
-                <a class="toc-link" href="#45"><span class="toc-index">02</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
+                <a class="toc-link" href="#46"><span class="toc-index">02</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
               </nav>
             </div>
           </article>
@@ -7339,9 +7377,9 @@
             </div>
             <div class="visual" aria-label="내 관점: 애그리게이터 다음은 B2C 매칭 플랫폼">
               <div class="evidence-stack">
-                <section class="evidence-card"><span class="evidence-index">1</span><div><h2 class="evidence-title">지금은 개발자용 B2B</h2><p class="evidence-text">OpenRouter는 API를 붙이는 개발자를 위한 서비스</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">2</span><div><h2 class="evidence-title">일반 사용자도 같은 고민</h2><p class="evidence-text">어떤 AI를 써야 할지, 구독을 몇 개나 해야 할지 모름</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">3</span><div><h2 class="evidence-title">할 일과 AI를 연결</h2><p class="evidence-text">요청을 가장 잘하는 모델·AI 서비스에 매칭하고 결제는 한 번에</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">1</span><div><h2 class="evidence-title">성장 동력은 오픈 모델</h2><p class="evidence-text">오픈소스 진영이 발전할수록 Aggr. 트래픽도 커짐</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">2</span><div><h2 class="evidence-title">라우팅만으로는 해자가 약함</h2><p class="evidence-text">시장이 성숙하면 추론 제공자가 Aggr.를 대체할 수 있음</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">3</span><div><h2 class="evidence-title">오픈 모델을 직접 돌리는 쪽으로</h2><p class="evidence-text">특화 모델 서빙이나 기기 안에서 돌리는 로컬 런타임 사업</p></div></section>
               </div>
             </div>
           </article>
@@ -7583,6 +7621,26 @@
                 <section class="evidence-card"><span class="evidence-index">1</span><div><h2 class="evidence-title">버튜버 되기는 아직 너무 어려움</h2><p class="evidence-text">2D 리깅, 3D 모델링, 모캡 스튜디오까지 큰 비용과 시간</p></div></section>
                 <section class="evidence-card"><span class="evidence-index">2</span><div><h2 class="evidence-title">생성 모델이 파이프라인을 무너뜨리는 중</h2><p class="evidence-text">Wan Animate, DreamActor 같은 모델을 실시간 방송에 적용</p></div></section>
                 <section class="evidence-card"><span class="evidence-index">3</span><div><h2 class="evidence-title">사진 한 장으로 라이브</h2><p class="evidence-text">Virtually는 이미지 한 장으로 10초 만에 방송 시작</p></div></section>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="내 관점: AI 버튜버 핵심">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--vtuber-core">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">VTUBER</p>
+              <h1 class="title">핵심은<br /><span class="title-accent">캐릭터 제작 간소화</span></h1>
+              <p class="body">자료: Virtually 피치덱</p>
+            </div>
+            <div class="visual" aria-label="AI 버튜버 사업의 방법, 검증, 차별화, 시장 규모">
+              <div class="evidence-stack">
+                <section class="evidence-card"><span class="evidence-index">방법</span><div><h2 class="evidence-title">AI Animate 라이브 적용 · 바이브 리깅</h2><p class="evidence-text">생성 모델로 이미지 한 장을 바로 움직이거나, AI로 리깅을 자동화</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">검증</span><div><h2 class="evidence-title">IRIAM이 수요를 증명</h2><p class="evidence-text">간편 아바타 방송만으로 누적 621만 다운로드, 연매출 85억 엔 이상</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">차별화</span><div><h2 class="evidence-title">돈과 시간에서 압도적</h2><p class="evidence-text">기존 3D 제작 $1,000~25,000 · 모캡 시간당 최대 $1,500 → AI는 제작 $0 · 운영 시간당 $7</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">시장 규모</span><div><h2 class="evidence-title">국내 $7M~11M · 글로벌 $150M+</h2><p class="evidence-text">아바타 제작·운영 연간 지출 기준. 버튜버 전체 시장은 글로벌 $2.2B~3.0B (2026E)</p></div></section>
               </div>
             </div>
           </article>
@@ -8724,7 +8782,7 @@
       <div class="page-controls" aria-label="페이지 이동">
         <button class="page-home-button" id="home-button" type="button" aria-label="첫 슬라이드로 이동">처음</button>
         <button id="previous-button" type="button" aria-label="이전 슬라이드">←</button>
-        <span class="page-counter" id="page-counter" aria-live="polite">01 / 86</span>
+        <span class="page-counter" id="page-counter" aria-live="polite">01 / 87</span>
         <button id="next-button" type="button" aria-label="다음 슬라이드">→</button>
       </div>
     </main>
