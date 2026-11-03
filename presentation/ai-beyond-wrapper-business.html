@@ -6711,6 +6711,36 @@
         color: var(--body);
         font-size: clamp(1.6rem, 2.6vw, 2.8rem);
       }
+
+      @media (min-width: 1024px) {
+        .slide-shell--ambient-focus-always-on,
+        .slide-shell--ambient-focus-gui {
+          gap: clamp(20px, 2.2vw, 40px);
+        }
+
+        .slide-shell--ambient-focus-always-on .copy--split,
+        .slide-shell--ambient-focus-gui .copy--split {
+          flex: 1 1 40%;
+          max-width: none;
+          min-width: 0;
+        }
+
+        .slide-shell--ambient-focus-always-on .visual,
+        .slide-shell--ambient-focus-gui .visual {
+          flex: 0 1 52rem;
+          width: min(100%, 52rem);
+          max-width: 52rem;
+          min-width: 0;
+        }
+
+        .slide-shell--ambient .evidence-title {
+          font-size: clamp(2.4rem, 3.9vw, 4.6rem);
+        }
+
+        .slide-shell--aoi-case .title {
+          white-space: nowrap;
+        }
+      }
     </style>
   </head>
   <body>
@@ -7647,7 +7677,7 @@
                   <p class="innovation-step-text">고객의 워크플로우에 AI를 자연스럽게 녹여내는 것</p>
                 </div>
                 <div class="innovation-step">
-                  <p class="innovation-step-label">Always-on AI</p>
+                  <p class="innovation-step-label">Always-On Intelligence</p>
                   <p class="innovation-step-text">AI의 도움을 언제나 숨쉬듯 자동으로 제공하는 것</p>
                 </div>
                 <div class="innovation-step">
@@ -7670,7 +7700,7 @@
             <div class="visual" aria-label="Ambient AI 설명 카드">
               <div class="evidence-stack">
                 <section class="evidence-card"><span class="evidence-index">1</span><div><h2 class="evidence-title">Workflow Integration</h2></div></section>
-                <section class="evidence-card"><span class="evidence-index">2</span><div><h2 class="evidence-title">Always-on AI</h2></div></section>
+                <section class="evidence-card"><span class="evidence-index">2</span><div><h2 class="evidence-title">Always-On Intelligence</h2></div></section>
                 <section class="evidence-card"><span class="evidence-index">3</span><div><h2 class="evidence-title">GUI to CUI</h2></div></section>
               </div>
             </div>
@@ -7727,14 +7757,68 @@
           </article>
         </section>
 
+        <section class="slide" aria-label="01. Ambient AI">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--principles slide-shell--ambient slide-shell--ambient-focus-always-on">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
+            <div class="chapter-label">미래와 제언</div>
+            <div class="copy copy--split">
+              <p class="kicker">Always-On Intelligence</p>
+              <h1 class="title">두 번째,<br />AOI</h1>
+            </div>
+            <div class="visual" aria-label="Ambient AI 설명 카드">
+              <div class="evidence-stack">
+                <section class="evidence-card"><span class="evidence-index">1</span><div><h2 class="evidence-title">Workflow Integration</h2></div></section>
+                <section class="evidence-card"><span class="evidence-index">2</span><div><h2 class="evidence-title">Always-On Intelligence</h2></div></section>
+                <section class="evidence-card"><span class="evidence-index">3</span><div><h2 class="evidence-title">GUI to CUI</h2></div></section>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="03. AOI 사례 X의 자동 번역">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--translation-toggle slide-shell--aoi-case">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
+            <div class="chapter-label">미래와 제언</div>
+            <div class="copy copy--split">
+              <p class="kicker">Always-On Intelligence</p>
+              <h1 class="title">AOI 사례<br /><span class="title-accent">X의 자동 번역</span></h1>
+            </div>
+            <div class="visual" aria-label="X 번역 보기 전후 비교">
+              <div class="translation-toggle">
+                <img src="./assets/x-translation-before.png" alt="X 번역 보기 버튼이 표시된 화면" />
+                <span class="translation-toggle-arrow" aria-hidden="true">↓</span>
+                <img src="./assets/x-translation-after.png" alt="X 번역 보기 상태가 바뀐 화면" />
+              </div>
+            </div>
+          </article>
+        </section>
+
         <section class="slide" aria-label="03. 자동 번역이 딸깍을 대신한 이유">
           <article class="slide-shell slide-shell--center slide-shell--section">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
             <div class="chapter-label">미래와 제언</div>
             <div class="copy copy--center copy--wide">
-              <p class="kicker">Always-on AI</p>
+              <p class="kicker">Always-On Intelligence</p>
               <h1 class="title title--center">버튼 한 번 딸깍하는 것을<br />대신해줬기 때문입니다</h1>
               <p class="body body--center">물론 X의 백엔드 추천시스템이 i18n까지 고려하는 것으로 바뀐게더 큰 이유일 수도.<br />X는 이미 1년 전부터 추천시스템을 완전히 AI Native로 바꿨기 때문에 이게 가능했다.</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="01. Ambient AI">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--principles slide-shell--ambient slide-shell--ambient-focus-gui">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
+            <div class="chapter-label">미래와 제언</div>
+            <div class="copy copy--split">
+              <p class="kicker">GUI to CUI</p>
+              <h1 class="title">세 번째,<br />GUI to CUI</h1>
+            </div>
+            <div class="visual" aria-label="Ambient AI 설명 카드">
+              <div class="evidence-stack">
+                <section class="evidence-card"><span class="evidence-index">1</span><div><h2 class="evidence-title">Workflow Integration</h2></div></section>
+                <section class="evidence-card"><span class="evidence-index">2</span><div><h2 class="evidence-title">Always-On Intelligence</h2></div></section>
+                <section class="evidence-card"><span class="evidence-index">3</span><div><h2 class="evidence-title">GUI to CUI</h2></div></section>
+              </div>
             </div>
           </article>
         </section>
@@ -7839,7 +7923,7 @@
       <div class="page-controls" aria-label="페이지 이동">
         <button class="page-home-button" id="home-button" type="button" aria-label="첫 슬라이드로 이동">처음</button>
         <button id="previous-button" type="button" aria-label="이전 슬라이드">←</button>
-        <span class="page-counter" id="page-counter" aria-live="polite">01 / 50</span>
+        <span class="page-counter" id="page-counter" aria-live="polite">01 / 53</span>
         <button id="next-button" type="button" aria-label="다음 슬라이드">→</button>
       </div>
     </main>
