@@ -6961,6 +6961,51 @@
       html[lang="en"] [data-lang-only="ko"] {
         display: none;
       }
+
+      .slide-shell--about .copy--split {
+        flex: 0 1 auto;
+        min-width: 0;
+      }
+
+      .slide-shell--about .title {
+        white-space: nowrap;
+      }
+
+      .about-avatar {
+        display: block;
+        width: clamp(120px, 11vw, 190px);
+        height: auto;
+        margin-bottom: clamp(16px, 2vw, 28px);
+        border-radius: 50%;
+        box-shadow: 0 16px 36px rgba(66, 49, 15, 0.14);
+      }
+
+      .slide-shell--about .visual {
+        flex: 1 1 44rem;
+        width: min(100%, 44rem);
+        min-width: 0;
+      }
+
+      .slide-shell--about .evidence-stack {
+        width: 100%;
+      }
+
+      .slide-shell--about .evidence-card {
+        grid-template-columns: 5.2em minmax(0, 1fr) auto;
+        align-items: center;
+      }
+
+      .slide-shell--about .evidence-index {
+        font-family: inherit;
+        font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+        white-space: nowrap;
+      }
+
+      .about-card-icon {
+        width: clamp(44px, 4vw, 64px);
+        height: auto;
+        border-radius: 22%;
+      }
     </style>
 </head>
 <body>
@@ -6977,14 +7022,32 @@
 </div>
 </article>
 </section>
+<section aria-label="About the speaker" class="slide" data-ko-aria-label="발표자 소개" data-slide="발표자 소개">
+<article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--about">
+<div class="brand"><span aria-hidden="true" class="brand-mark"></span><span>AI Beyond 2026</span></div>
+<div class="chapter-label" data-ko="발표자 소개">About me</div>
+<div class="copy copy--split">
+<img class="about-avatar" src="./assets/presenter-avatar.png" alt="Illustrated portrait of Hyeongkeol Nam" data-ko-alt="남형걸 일러스트 프로필"/>
+<p class="kicker" data-ko="발표자 소개">About me</p>
+<h1 class="title" data-ko="남형걸&lt;br/&gt;&lt;span class=&quot;title-accent&quot;&gt;밍글랩스&lt;/span&gt;">Hyeongkeol Nam<br/><span class="title-accent">Mingle Labs</span></h1>
+</div>
+<div class="visual" aria-label="Career and current work" data-ko-aria-label="경력과 현재 하는 일">
+<div class="evidence-stack">
+<section class="evidence-card"><span class="evidence-index" data-ko="이전">Before</span><div><h2 class="evidence-title" data-ko="하이퍼커넥트 · 스캐터랩">Hyperconnect · Scatter Lab</h2><p class="evidence-text" data-ko="두 회사에서 AI·소셜 서비스를 만들었습니다">Built AI and social products at both</p></div></section>
+<section class="evidence-card"><span class="evidence-index" data-ko="2년">2 years</span><div><h2 class="evidence-title" data-ko="AI 래퍼에 2년간 시간 꼴아박음">All in on AI wrappers</h2><p class="evidence-text" data-ko="밍글랩스에서 2년간 만들고, 망하고, 배웠습니다">Two years of shipping, failing and learning at Mingle Labs</p></div></section>
+<section class="evidence-card"><span class="evidence-index" data-ko="현재">Now</span><div><h2 class="evidence-title" data-ko="HashChat">HashChat</h2><p class="evidence-text" data-ko="구 밍글. 3개 이상 언어를 끊김 없이 실시간 통번역하는 앱">Formerly Mingle. Nonstop, real-time interpreting across 3+ languages</p></div><img class="about-card-icon" src="./assets/app-hashchat.png" alt="HashChat app icon" data-ko-alt="HashChat 앱 아이콘"/></section>
+</div>
+</div>
+</article>
+</section>
 <section aria-label="Contents" class="slide" data-ko-aria-label="목차" data-slide="목차">
 <article class="slide-shell slide-shell--center">
 <div class="brand"><span aria-hidden="true" class="brand-mark"></span><span>AI Beyond 2026</span></div>
 <div class="copy copy--center copy--wide">
 <p class="kicker" data-ko="목차">Contents</p>
 <nav aria-label="Jump to section" class="toc-grid toc-grid--three" data-ko-aria-label="목차 이동">
-<a class="toc-link" data-ko='&lt;span class="toc-index"&gt;01&lt;/span&gt;&lt;span class="toc-text"&gt;AI 래퍼 서비스 사례&lt;/span&gt;&lt;span class="toc-arrow"&gt;→&lt;/span&gt;' href="#3"><span class="toc-index">01</span><span class="toc-text">AI Wrapper Case Studies</span><span class="toc-arrow">→</span></a>
-<a class="toc-link" data-ko='&lt;span class="toc-index"&gt;02&lt;/span&gt;&lt;span class="toc-text"&gt;미래와 제언&lt;/span&gt;&lt;span class="toc-arrow"&gt;→&lt;/span&gt;' href="#45"><span class="toc-index">02</span><span class="toc-text">What Comes Next</span><span class="toc-arrow">→</span></a>
+<a class="toc-link" data-ko='&lt;span class="toc-index"&gt;01&lt;/span&gt;&lt;span class="toc-text"&gt;AI 래퍼 서비스 사례&lt;/span&gt;&lt;span class="toc-arrow"&gt;→&lt;/span&gt;' href="#4"><span class="toc-index">01</span><span class="toc-text">AI Wrapper Case Studies</span><span class="toc-arrow">→</span></a>
+<a class="toc-link" data-ko='&lt;span class="toc-index"&gt;02&lt;/span&gt;&lt;span class="toc-text"&gt;미래와 제언&lt;/span&gt;&lt;span class="toc-arrow"&gt;→&lt;/span&gt;' href="#46"><span class="toc-index">02</span><span class="toc-text">What Comes Next</span><span class="toc-arrow">→</span></a>
 </nav>
 </div>
 </article>
@@ -8757,7 +8820,7 @@
 <div aria-label="Slide navigation" class="page-controls" data-ko-aria-label="페이지 이동">
 <button aria-label="Go to first slide" class="page-home-button" data-ko="처음" data-ko-aria-label="첫 슬라이드로 이동" id="home-button" type="button">Home</button>
 <button aria-label="Previous slide" data-ko-aria-label="이전 슬라이드" id="previous-button" type="button">←</button>
-<span aria-live="polite" class="page-counter" id="page-counter">01 / 86</span>
+<span aria-live="polite" class="page-counter" id="page-counter">01 / 87</span>
 <button aria-label="Next slide" data-ko-aria-label="다음 슬라이드" id="next-button" type="button">→</button>
 </div>
 </main>
