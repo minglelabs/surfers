@@ -6751,13 +6751,51 @@
         padding: clamp(22px, 2.6vw, 36px);
       }
 
+      .slide-shell--character-phases .evidence-card {
+        grid-template-columns: auto minmax(0, 1fr);
+        align-items: center;
+      }
+
       .slide-shell--character-phases .evidence-index {
-        font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+        display: grid;
+        gap: 8px;
+        font-family: inherit;
+        font-size: clamp(1.6rem, 2.6vw, 2.6rem);
+        letter-spacing: -0.04em;
+        line-height: 1;
         white-space: nowrap;
       }
 
+      .slide-shell--character-phases .evidence-index small {
+        color: var(--body);
+        font-size: clamp(0.88rem, 1.1vw, 1.05rem);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      .slide-shell--character-phases .title {
+        white-space: nowrap;
+      }
+
+      .slide-shell--character-phases .copy--split {
+        flex: 0 1 auto;
+        max-width: none;
+        min-width: 0;
+      }
+
+      .slide-shell--character-phases .visual {
+        flex: 1 1 50rem;
+        width: min(100%, 50rem);
+        min-width: 0;
+      }
+
+      .slide-shell--character-phases .evidence-title,
+      .slide-shell--character-phases .evidence-text {
+        word-break: keep-all;
+      }
+
       .slide-shell--character-phases .evidence-title {
-        font-size: clamp(1.45rem, 2.3vw, 2.3rem);
+        font-size: clamp(1.3rem, 1.95vw, 2rem);
       }
 
       .slide-shell--character-phases .evidence-text {
@@ -6926,12 +6964,12 @@
             <div class="chapter-label">래퍼 서비스 사례</div>
             <div class="copy copy--split">
               <p class="kicker">CHARACTER</p>
-              <h1 class="title">캐릭터챗의<br /><span class="title-accent">Phase 1과 Phase 2</span></h1>
+              <h1 class="title">캐릭터챗의 <span class="title-accent">역사</span></h1>
             </div>
             <div class="visual" aria-label="캐릭터챗 Phase 1과 Phase 2 요약">
               <div class="evidence-stack">
-                <section class="evidence-card"><span class="evidence-index">Phase 1</span><div><h2 class="evidence-title">핵심은 '모델 성능'</h2><p class="evidence-text">24년 8월 C.AI 매각(인수)으로 끝</p></div></section>
-                <section class="evidence-card"><span class="evidence-index">Phase 2</span><div><h2 class="evidence-title">핵심은 쩌는 컨텐츠 지속 공급</h2><p class="evidence-text">Character AI 파산으로 끝</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">Phase 1<small>22년 9월 ~ 24년 8월</small></span><div><h2 class="evidence-title">핵심은 '모델 성능'</h2><p class="evidence-text">C.AI 서비스 출시로 시작, 24년 8월 C.AI 매각(인수)으로 끝</p></div></section>
+                <section class="evidence-card"><span class="evidence-index">Phase 2<small>24년 8월 ~ C.AI 파산</small></span><div><h2 class="evidence-title">핵심은 '컨텐츠 공급'</h2><p class="evidence-text">쩌는 컨텐츠를 지속 공급하는 싸움, Character AI 파산으로 끝</p></div></section>
               </div>
             </div>
           </article>
