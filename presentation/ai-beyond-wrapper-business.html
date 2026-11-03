@@ -6601,6 +6601,66 @@
           padding: 12px;
         }
       }
+
+      .field-grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: clamp(8px, 0.9vw, 13px);
+        width: min(100%, 66rem);
+        margin: clamp(20px, 2.6vw, 34px) auto 0;
+        text-align: left;
+      }
+
+      .field-chip {
+        padding: clamp(10px, 1.1vw, 15px) clamp(11px, 1.2vw, 16px);
+        border: 1px solid var(--soft);
+        border-radius: 16px;
+        background: var(--paper);
+      }
+
+      .field-chip em {
+        display: block;
+        color: var(--accent-strong);
+        font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+        font-size: clamp(0.62rem, 0.75vw, 0.72rem);
+        font-style: normal;
+        font-weight: 800;
+      }
+
+      .field-chip strong {
+        display: block;
+        margin-top: 3px;
+        color: var(--title);
+        font-size: clamp(0.88rem, 1.2vw, 1.12rem);
+        font-weight: 800;
+        letter-spacing: -0.05em;
+        white-space: nowrap;
+      }
+
+      .field-chip span {
+        display: block;
+        margin-top: 3px;
+        color: var(--body);
+        font-size: clamp(0.68rem, 0.85vw, 0.8rem);
+        letter-spacing: -0.03em;
+      }
+
+      .field-chip--focus {
+        border-color: rgba(249, 115, 22, 0.45);
+        background: var(--accent-pale);
+      }
+
+      .field-grid-note {
+        margin-top: clamp(12px, 1.4vw, 18px);
+        color: var(--body);
+        font-size: clamp(0.78rem, 0.95vw, 0.9rem);
+        text-align: center;
+      }
+
+      @media (max-width: 760px) {
+        .field-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .field-chip strong { white-space: normal; }
+      }
     </style>
   </head>
   <body>
@@ -6631,8 +6691,7 @@
               <p class="kicker">목차</p>
               <nav class="toc-grid toc-grid--three" aria-label="목차 이동">
                 <a class="toc-link" href="#3"><span class="toc-index">01</span><span class="toc-text">AI 래퍼 서비스 사례</span><span class="toc-arrow">→</span></a>
-                <a class="toc-link" href="#25"><span class="toc-index">02</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
-                <a class="toc-link" href="#34"><span class="toc-index">부록</span><span class="toc-text">그 외 분야</span><span class="toc-arrow">→</span></a>
+                <a class="toc-link" href="#37"><span class="toc-index">02</span><span class="toc-text">미래와 제언</span><span class="toc-arrow">→</span></a>
               </nav>
             </div>
           </article>
@@ -6644,7 +6703,37 @@
             <div class="chapter-label">래퍼 서비스 사례</div>
             <div class="copy copy--center copy--wide">
               <p class="kicker">정의</p>
+              <h1 class="title title--center">래퍼란?</h1>
               <p class="body body--focus body--center">“GPT 같은 파운데이션 모델 위에<br/>UI만 구현해서 만든 소프트웨어”<br />를 뜻합니다.</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="매출을 내는 AI 래퍼 분야 15">
+          <article class="slide-shell slide-shell--center slide-shell--section">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--center copy--wide">
+              <p class="kicker">OVERVIEW</p>
+              <h1 class="title title--center">유의미한 매출을 내는<br /><span class="title-accent">AI 래퍼 분야 15</span></h1>
+              <div class="field-grid" aria-label="AI 래퍼 분야 15개 목록">
+                <div class="field-chip field-chip--focus"><em>01</em><strong>캐릭터챗</strong><span>Character.AI · 제타</span></div>
+                <div class="field-chip field-chip--focus"><em>02</em><strong>AI 애그리게이터</strong><span>OpenRouter</span></div>
+                <div class="field-chip field-chip--focus"><em>03</em><strong>노트테이킹</strong><span>Granola · 티로</span></div>
+                <div class="field-chip field-chip--focus"><em>04</em><strong>AI 식단 관리</strong><span>Cal AI</span></div>
+                <div class="field-chip"><em>05</em><strong>바이브 코딩</strong><span>Cursor · Lovable</span></div>
+                <div class="field-chip"><em>06</em><strong>AI 학습 도우미</strong><span>QANDA · Gauth</span></div>
+                <div class="field-chip"><em>07</em><strong>AI 브라우저</strong><span>Comet · Dia</span></div>
+                <div class="field-chip"><em>08</em><strong>외국어 교육</strong><span>Speak · ELSA</span></div>
+                <div class="field-chip"><em>09</em><strong>사진 보정</strong><span>Remini · Photoroom</span></div>
+                <div class="field-chip"><em>10</em><strong>전문가 서비스</strong><span>Harvey · Abridge</span></div>
+                <div class="field-chip"><em>11</em><strong>사주·운세</strong><span>포스텔러 · 점신</span></div>
+                <div class="field-chip"><em>12</em><strong>유튜브 요약</strong><span>Lilys AI · Eightify</span></div>
+                <div class="field-chip"><em>13</em><strong>숏츠·하이라이트</strong><span>OpusClip · Vrew</span></div>
+                <div class="field-chip"><em>14</em><strong>사진 관리</strong><span>Google Photos · Immich</span></div>
+                <div class="field-chip"><em>15</em><strong>사내 지식 검색</strong><span>Glean · Notion AI</span></div>
+              </div>
+              <p class="field-grid-note">색칠된 4개 분야를 자세히 살펴봅니다</p>
             </div>
           </article>
         </section>
@@ -6702,6 +6791,20 @@
           </article>
         </section>
 
+        <section class="slide" aria-label="04. 웹툰 플랫폼의 비즈니스 모델">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--character-business-model">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">CHARACTER</p>
+              <h1 class="title">과거의 웹툰 플랫폼처럼<br />비즈니스 모델이 관건!</h1>
+            </div>
+            <div class="visual" aria-label="웹툰 산업의 수익 구조">
+              <img class="character-webtoon-business-image" src="./assets/character-webtoon-business-model.png" alt="웹툰 산업의 수익 구조" />
+            </div>
+          </article>
+        </section>
+
         <section class="slide" aria-label="02. 캐릭터 챗의 앞으로">
           <article class="slide-shell slide-shell--center slide-shell--section slide-shell--tsunami slide-shell--study-thought">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
@@ -6718,7 +6821,7 @@
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
             <div class="chapter-label">래퍼 서비스 사례</div>
             <div class="copy copy--split">
-              <p class="kicker">MY VIEW · 스타트업 아이템</p>
+              <p class="kicker">CHARACTER</p>
               <h1 class="title">캐릭터챗 다음은<br /><span class="title-accent">로컬 모델 사업</span></h1>
             </div>
             <div class="visual" aria-label="내 관점: 캐릭터챗 다음은 로컬 모델 사업">
@@ -6795,7 +6898,7 @@
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
             <div class="chapter-label">래퍼 서비스 사례</div>
             <div class="copy copy--split">
-              <p class="kicker">MY VIEW · 스타트업 아이템</p>
+              <p class="kicker">AGGREGATOR</p>
               <h1 class="title">애그리게이터 다음은<br /><span class="title-accent">B2C 매칭 플랫폼</span></h1>
             </div>
             <div class="visual" aria-label="내 관점: 애그리게이터 다음은 B2C 매칭 플랫폼">
@@ -6886,7 +6989,7 @@
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
             <div class="chapter-label">래퍼 서비스 사례</div>
             <div class="copy copy--split">
-              <p class="kicker">MY VIEW · 스타트업 아이템</p>
+              <p class="kicker">NOTES</p>
               <h1 class="title">노트테이킹 다음은<br /><span class="title-accent">메신저 서비스</span></h1>
             </div>
             <div class="visual" aria-label="내 관점: 노트테이킹 다음은 메신저 서비스">
@@ -6955,7 +7058,7 @@
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
             <div class="chapter-label">래퍼 서비스 사례</div>
             <div class="copy copy--split">
-              <p class="kicker">MY VIEW · 스타트업 아이템</p>
+              <p class="kicker">DIET</p>
               <h1 class="title">식단 관리 다음은<br /><span class="title-accent">의료 상담 서비스</span></h1>
             </div>
             <div class="visual" aria-label="내 관점: 식단 관리 다음은 의료 상담 서비스">
@@ -6973,7 +7076,7 @@
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
             <div class="chapter-label">래퍼 서비스 사례</div>
             <div class="copy copy--split">
-              <p class="kicker">MY VIEW · 스타트업 아이템</p>
+              <p class="kicker">VTUBER</p>
               <h1 class="title">하나 더,<br /><span class="title-accent">AI 버튜버 사업</span></h1>
               <p class="body">참고: Virtually (밍글랩스)</p>
             </div>
@@ -6992,7 +7095,7 @@
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
             <div class="chapter-label">래퍼 서비스 사례</div>
             <div class="copy copy--split">
-              <p class="kicker">MY VIEW · 스타트업 아이템</p>
+              <p class="kicker">VTUBER</p>
               <h1 class="title">라이브는 숏폼보다<br /><span class="title-accent">100배 더 번다</span></h1>
               <p class="body">자료: Virtually 피치덱</p>
             </div>
@@ -7022,6 +7125,381 @@
                 <section class="evidence-card"><span class="evidence-index">3</span><div><h2 class="evidence-title">노트테이킹 → 메신저 서비스</h2></div></section>
                 <section class="evidence-card"><span class="evidence-index">4</span><div><h2 class="evidence-title">AI 식단 관리 → 의료 상담 서비스</h2></div></section>
                 <section class="evidence-card"><span class="evidence-index">5</span><div><h2 class="evidence-title">AI 버튜버 사업</h2></div></section>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="03. AI 학습 도우미">
+          <article class="slide-shell slide-shell--split slide-shell--vibe-tools">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">STUDY</p>
+              <h1 class="title"><span class="title-index">그 외 분야</span>AI 학습 도우미</h1>
+            </div>
+            <div class="visual" aria-label="AI 학습 도우미 서비스">
+              <div class="vibe-tool-cloud">
+                <div class="vibe-tool" style="--x: 12%; --y: 25%; --s: clamp(108px, 8.4vw, 140px); --r: -15deg">
+                  <img src="./assets/qanda-logo.ico" alt="QANDA 로고" />
+                  <span class="vibe-tool-name">QANDA</span>
+                </div>
+                <div class="vibe-tool" style="--x: 47%; --y: 14%; --s: clamp(112px, 8.5vw, 142px); --r: 9deg">
+                  <img src="./assets/photomath-logo.png" alt="Photomath 로고" />
+                  <span class="vibe-tool-name">Photomath</span>
+                </div>
+                <div class="vibe-tool" style="--x: 79%; --y: 26%; --s: clamp(104px, 8vw, 134px); --r: -12deg">
+                  <img src="./assets/gauth-logo.jpg" alt="Gauth 로고" />
+                  <span class="vibe-tool-name">Gauth</span>
+                </div>
+                <div class="vibe-tool" style="--x: 64%; --y: 58%; --s: clamp(108px, 8.1vw, 136px); --r: 15deg">
+                  <img src="./assets/brainly-logo.ico" alt="Brainly 로고" />
+                  <span class="vibe-tool-name">Brainly</span>
+                </div>
+                <div class="vibe-tool" style="--x: 27%; --y: 72%; --s: clamp(112px, 8.6vw, 144px); --r: -7deg">
+                  <img src="./assets/studyfetch-logo.ico" alt="StudyFetch 로고" />
+                  <span class="vibe-tool-name">StudyFetch</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="08. 브라우저">
+          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">BROWSER</p>
+              <h1 class="title"><span class="title-index">그 외 분야</span>브라우저</h1>
+            </div>
+            <div class="visual" aria-label="AI 브라우저 대표 서비스">
+              <div class="vibe-tool-cloud">
+                <div class="vibe-tool" style="--x: 17%; --y: 30%; --s: clamp(114px, 8.7vw, 146px); --r: -9deg">
+                  <img src="./assets/comet-logo.png" alt="Comet 로고" />
+                  <span class="vibe-tool-name">Perplexity Comet</span>
+                </div>
+                <div class="vibe-tool" style="--x: 54%; --y: 16%; --s: clamp(112px, 8.5vw, 142px); --r: 7deg">
+                  <img src="./assets/dia-logo.ico" alt="Dia 로고" />
+                  <span class="vibe-tool-name">Dia</span>
+                </div>
+                <div class="vibe-tool" style="--x: 80%; --y: 69%; --s: clamp(110px, 8.3vw, 138px); --r: -11deg">
+                  <img src="./assets/arc-logo.svg" alt="Arc Search 로고" />
+                  <span class="vibe-tool-name">Arc Search</span>
+                </div>
+                <div class="vibe-tool" style="--x: 38%; --y: 72%; --s: clamp(108px, 8.1vw, 136px); --r: 9deg">
+                  <img src="https://aside.com/favicon.ico" alt="Aside 로고" />
+                  <span class="vibe-tool-name">Aside</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="08. 외국어 교육" data-category-order="08">
+          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">LANGUAGE</p>
+              <h1 class="title"><span class="title-index">그 외 분야</span>외국어 교육</h1>
+            </div>
+            <div class="visual" aria-label="외국어 교육 대표 서비스">
+              <div class="vibe-tool-cloud">
+                <div class="vibe-tool" style="--x: 17%; --y: 28%; --s: clamp(112px, 8.5vw, 142px); --r: -10deg">
+                  <img src="./assets/duolingo-logo.svg" alt="Duolingo 로고" />
+                  <span class="vibe-tool-name">Duolingo</span>
+                </div>
+                <div class="vibe-tool" style="--x: 54%; --y: 17%; --s: clamp(116px, 8.8vw, 148px); --r: 8deg">
+                  <img src="./assets/speak-logo.png" alt="Speak 로고" />
+                  <span class="vibe-tool-name">Speak</span>
+                </div>
+                <div class="vibe-tool" style="--x: 80%; --y: 70%; --s: clamp(110px, 8.3vw, 138px); --r: -7deg">
+                  <img src="./assets/elsa-logo.ico" alt="ELSA Speak 로고" />
+                  <span class="vibe-tool-name">ELSA Speak</span>
+                </div>
+                <div class="vibe-tool" style="--x: 23%; --y: 72%; --s: clamp(108px, 8.1vw, 136px); --r: 7deg">
+                  <img src="./assets/heyring-logo.jpg" alt="헤이링 로고" />
+                  <span class="vibe-tool-name">헤이링</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="05. 사진 보정">
+          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">PHOTO</p>
+              <h1 class="title"><span class="title-index">그 외 분야</span>사진 보정</h1>
+            </div>
+            <div class="visual" aria-label="사진 보정 대표 서비스">
+              <div class="vibe-tool-cloud">
+                <div class="vibe-tool" style="--x: 15%; --y: 24%; --s: clamp(104px, 7.9vw, 132px); --r: -12deg">
+                  <img src="./assets/remini-logo.ico" alt="Remini 로고" />
+                  <span class="vibe-tool-name">Remini</span>
+                </div>
+                <div class="vibe-tool" style="--x: 50%; --y: 16%; --s: clamp(104px, 7.9vw, 132px); --r: 7deg">
+                  <img src="./assets/faceapp-logo.png" alt="FaceApp 로고" />
+                  <span class="vibe-tool-name">FaceApp</span>
+                </div>
+                <div class="vibe-tool" style="--x: 84%; --y: 26%; --s: clamp(104px, 7.9vw, 132px); --r: -9deg">
+                  <img src="./assets/photoroom-logo.ico" alt="Photoroom 로고" />
+                  <span class="vibe-tool-name">Photoroom</span>
+                </div>
+                <div class="vibe-tool" style="--x: 18%; --y: 72%; --s: clamp(104px, 7.9vw, 132px); --r: 9deg">
+                  <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ac/7b/ac/ac7bacb1-42ca-84b4-d7bc-edbc4de80900/AppIcon-0-0-1x_U007ephone-0-1-0-sRGB-85-220.png/512x512bb.jpg" alt="SNOW 로고" />
+                  <span class="vibe-tool-name">SNOW</span>
+                </div>
+                <div class="vibe-tool" style="--x: 50%; --y: 70%; --s: clamp(104px, 7.9vw, 132px); --r: -6deg">
+                  <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/30/3b/49/303b49c2-505b-e52b-c9a6-40513a12dd1d/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg" alt="Carat 로고" />
+                  <span class="vibe-tool-name">Carat</span>
+                </div>
+                <div class="vibe-tool" style="--x: 84%; --y: 72%; --s: clamp(104px, 7.9vw, 132px); --r: 12deg">
+                  <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/bb/e8/46/bbe84655-6db0-2c13-1f5a-4904df31d504/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg" alt="Concept 로고" />
+                  <span class="vibe-tool-name">Concept</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="10. 전문가 서비스" data-category-order="10">
+          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category slide-shell--expert-services">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">EXPERT</p>
+              <h1 class="title"><span class="title-index">그 외 분야</span>전문가 서비스</h1>
+            </div>
+            <div class="visual" aria-label="전문가 서비스 대표 서비스">
+              <div class="vibe-tool-cloud">
+                <div class="vibe-tool" style="--x: 10%; --y: 15%; --s: clamp(76px, 5.8vw, 94px); --r: -11deg">
+                  <img src="./assets/harvey-logo.png" alt="Harvey 로고" />
+                  <span class="vibe-tool-name">Harvey</span>
+                </div>
+                <div class="vibe-tool" style="--x: 34%; --y: 10%; --s: clamp(76px, 5.8vw, 94px); --r: 8deg">
+                  <img src="https://superlawyer.co.kr/favicon.ico" alt="SuperLawyer 로고" />
+                  <span class="vibe-tool-name">SuperLawyer</span>
+                </div>
+                <div class="vibe-tool" style="--x: 60%; --y: 17%; --s: clamp(76px, 5.8vw, 94px); --r: -7deg">
+                  <img src="./assets/norm-ai-logo.png" alt="Norm AI 로고" />
+                  <span class="vibe-tool-name">Norm AI</span>
+                </div>
+                <div class="vibe-tool" style="--x: 87%; --y: 12%; --s: clamp(76px, 5.8vw, 94px); --r: 11deg">
+                  <img src="https://framerusercontent.com/images/WY5ORpPObnBhMgjnlR4uFUElzWs.png" alt="Legora 로고" />
+                  <span class="vibe-tool-name">Legora</span>
+                </div>
+                <div class="vibe-tool" style="--x: 17%; --y: 39%; --s: clamp(76px, 5.8vw, 94px); --r: 7deg">
+                  <img src="https://lbox.kr/favicon.ico" alt="LBOX 로고" />
+                  <span class="vibe-tool-name">LBOX</span>
+                </div>
+                <div class="vibe-tool" style="--x: 43%; --y: 44%; --s: clamp(76px, 5.8vw, 94px); --r: -10deg">
+                  <img src="https://static.neardoc.ai/logo.svg" alt="NearDoc 로고" />
+                  <span class="vibe-tool-name">NearDoc</span>
+                </div>
+                <div class="vibe-tool" style="--x: 68%; --y: 37%; --s: clamp(76px, 5.8vw, 94px); --r: 12deg">
+                  <img src="https://cdn.prod.website-files.com/6279c9d10eb860662e5ec006/6695ec67d4fc124a96df106b_abridge-favicon-symbol-red.png" alt="Abridge 로고" />
+                  <span class="vibe-tool-name">Abridge</span>
+                </div>
+                <div class="vibe-tool" style="--x: 91%; --y: 42%; --s: clamp(76px, 5.8vw, 94px); --r: -8deg">
+                  <img src="https://www.google.com/s2/favicons?domain=pilot.com&sz=128" alt="Pilot 로고" />
+                  <span class="vibe-tool-name">Pilot</span>
+                </div>
+                <div class="vibe-tool" style="--x: 11%; --y: 64%; --s: clamp(76px, 5.8vw, 94px); --r: -6deg">
+                  <img src="https://cdn.prod.website-files.com/68dd4bd4ddd2a6818d9fdde6/68fa39549a10a75db074f07f_68efd87f8372e64d05b5ea6b_fav-32%20(1).png" alt="Counsel Health 로고" />
+                  <span class="vibe-tool-name">Counsel Health</span>
+                </div>
+                <div class="vibe-tool" style="--x: 36%; --y: 59%; --s: clamp(76px, 5.8vw, 94px); --r: 9deg">
+                  <img src="https://framerusercontent.com/images/RcdrytOKpIouzwnRG9UtFjLkm0c.png" alt="Rogo 로고" />
+                  <span class="vibe-tool-name">Rogo</span>
+                </div>
+                <div class="vibe-tool" style="--x: 62%; --y: 66%; --s: clamp(76px, 5.8vw, 94px); --r: -12deg">
+                  <img src="https://images.ctfassets.net/bn476u6z5acg/FL0Xan4jxdYw5m4aeVp5r/51fdfa3b20f78e4009ccd40d52f37fb2/vector.png?w=64&q=85&fm=webp" alt="Hebbia 로고" />
+                  <span class="vibe-tool-name">Hebbia</span>
+                </div>
+                <div class="vibe-tool" style="--x: 86%; --y: 61%; --s: clamp(76px, 5.8vw, 94px); --r: 6deg">
+                  <img src="https://cdn.sanity.io/images/ewv2vq7j/production/3d8360e5ead3de1b0875f9f4b7ee309e29f0480a-64x65.png?fit=max&auto=format" alt="AlphaSense 로고" />
+                  <span class="vibe-tool-name">AlphaSense</span>
+                </div>
+                <div class="vibe-tool" style="--x: 39%; --y: 89%; --s: clamp(76px, 5.8vw, 94px); --r: -9deg">
+                  <img src="https://www.google.com/s2/favicons?domain=inkle.ai&sz=128" alt="Inkle 로고" />
+                  <span class="vibe-tool-name">Inkle</span>
+                </div>
+                <div class="vibe-tool" style="--x: 65%; --y: 84%; --s: clamp(76px, 5.8vw, 94px); --r: 8deg">
+                  <img src="https://www.google.com/s2/favicons?domain=maxed.life&sz=128" alt="Maxed 로고" />
+                  <span class="vibe-tool-name">Maxed</span>
+                </div>
+                <div class="vibe-tool" style="--x: 15%; --y: 88%; --s: clamp(76px, 5.8vw, 94px); --r: 7deg">
+                  <img src="https://www.google.com/s2/favicons?domain=cranston.ai&sz=128" alt="Cranston 로고" />
+                  <span class="vibe-tool-name">Cranston</span>
+                </div>
+                <div class="vibe-tool" style="--x: 90%; --y: 87%; --s: clamp(76px, 5.8vw, 94px); --r: -6deg">
+                  <img src="https://www.google.com/s2/favicons?domain=blackore.ai&sz=128" alt="Black Ore 로고" />
+                  <span class="vibe-tool-name">Black Ore</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="11. 사주·운세">
+          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">FORTUNE</p>
+              <h1 class="title"><span class="title-index">그 외 분야</span>사주·운세</h1>
+              <p class="body">LLM의 개인화 해석과 상담형 과금이<br />잘 맞아떨어지는 분야</p>
+            </div>
+            <div class="visual" aria-label="사주·운세 대표 서비스">
+              <div class="vibe-tool-cloud">
+                <div class="vibe-tool" style="--x: 17%; --y: 30%; --s: clamp(112px, 8.5vw, 142px); --r: -9deg">
+                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #6b4fd8; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">포스텔러</span>
+                  <span class="vibe-tool-name">포스텔러</span>
+                </div>
+                <div class="vibe-tool" style="--x: 54%; --y: 16%; --s: clamp(112px, 8.5vw, 142px); --r: 7deg">
+                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #d9472b; font-size: clamp(1.15rem, 2.05vw, 1.95rem); white-space: nowrap">점신</span>
+                  <span class="vibe-tool-name">점신</span>
+                </div>
+                <div class="vibe-tool" style="--x: 80%; --y: 69%; --s: clamp(112px, 8.5vw, 142px); --r: -11deg">
+                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #ff7a00; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">헬로우봇</span>
+                  <span class="vibe-tool-name">헬로우봇</span>
+                </div>
+                <div class="vibe-tool" style="--x: 38%; --y: 72%; --s: clamp(112px, 8.5vw, 142px); --r: 9deg">
+                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #111111; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">Co–Star</span>
+                  <span class="vibe-tool-name">Co–Star</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="12. 유튜브 요약">
+          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">SUMMARY</p>
+              <h1 class="title"><span class="title-index">그 외 분야</span>유튜브 요약</h1>
+              <p class="body">영상 요약은 빅테크 기본 기능이 되는 중<br />노트·학습 워크플로우와 묶여야 생존</p>
+            </div>
+            <div class="visual" aria-label="유튜브 요약 대표 서비스">
+              <div class="vibe-tool-cloud">
+                <div class="vibe-tool" style="--x: 17%; --y: 30%; --s: clamp(112px, 8.5vw, 142px); --r: -9deg">
+                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #3b5bdb; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">Lilys AI</span>
+                  <span class="vibe-tool-name">Lilys AI</span>
+                </div>
+                <div class="vibe-tool" style="--x: 54%; --y: 16%; --s: clamp(112px, 8.5vw, 142px); --r: 7deg">
+                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #111111; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">Eightify</span>
+                  <span class="vibe-tool-name">Eightify</span>
+                </div>
+                <div class="vibe-tool" style="--x: 80%; --y: 69%; --s: clamp(112px, 8.5vw, 142px); --r: -11deg">
+                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #0f9d58; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">NoteGPT</span>
+                  <span class="vibe-tool-name">NoteGPT</span>
+                </div>
+                <div class="vibe-tool" style="--x: 38%; --y: 72%; --s: clamp(112px, 8.5vw, 142px); --r: 9deg">
+                  <img src="./assets/youtube-logo.svg" alt="YouTube 로고" />
+                  <span class="vibe-tool-name">YouTube</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="13. 숏츠·하이라이트 제작">
+          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">CLIPS</p>
+              <h1 class="title"><span class="title-index">그 외 분야</span>숏츠·하이라이트<br />제작</h1>
+              <p class="body">롱폼을 숏폼으로 자동 편집<br />크리에이터 생태계와 함께 성장</p>
+            </div>
+            <div class="visual" aria-label="숏츠·하이라이트 제작 대표 서비스">
+              <div class="vibe-tool-cloud">
+                <div class="vibe-tool" style="--x: 17%; --y: 30%; --s: clamp(112px, 8.5vw, 142px); --r: -9deg">
+                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #5b3df5; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">OpusClip</span>
+                  <span class="vibe-tool-name">OpusClip</span>
+                </div>
+                <div class="vibe-tool" style="--x: 54%; --y: 16%; --s: clamp(112px, 8.5vw, 142px); --r: 7deg">
+                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #7c3aed; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">Vizard</span>
+                  <span class="vibe-tool-name">Vizard</span>
+                </div>
+                <div class="vibe-tool" style="--x: 80%; --y: 69%; --s: clamp(112px, 8.5vw, 142px); --r: -11deg">
+                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #1f6feb; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">Vrew</span>
+                  <span class="vibe-tool-name">Vrew</span>
+                </div>
+                <div class="vibe-tool" style="--x: 38%; --y: 72%; --s: clamp(112px, 8.5vw, 142px); --r: 9deg">
+                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #111111; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">CapCut</span>
+                  <span class="vibe-tool-name">CapCut</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="14. 사진 관리">
+          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">PHOTOS</p>
+              <h1 class="title"><span class="title-index">그 외 분야</span>사진 관리</h1>
+              <p class="body">자연어로 사진 찾기·정리<br />OS와 클라우드를 쥔 빅테크가 유리</p>
+            </div>
+            <div class="visual" aria-label="사진 관리 대표 서비스">
+              <div class="vibe-tool-cloud">
+                <div class="vibe-tool" style="--x: 17%; --y: 30%; --s: clamp(112px, 8.5vw, 142px); --r: -9deg">
+                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #ea4335; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">Google Photos</span>
+                  <span class="vibe-tool-name">Google Photos</span>
+                </div>
+                <div class="vibe-tool" style="--x: 54%; --y: 16%; --s: clamp(112px, 8.5vw, 142px); --r: 7deg">
+                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #ff9500; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">Apple Photos</span>
+                  <span class="vibe-tool-name">Apple Photos</span>
+                </div>
+                <div class="vibe-tool" style="--x: 80%; --y: 69%; --s: clamp(112px, 8.5vw, 142px); --r: -11deg">
+                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #4250af; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">Immich</span>
+                  <span class="vibe-tool-name">Immich</span>
+                </div>
+                <div class="vibe-tool" style="--x: 38%; --y: 72%; --s: clamp(112px, 8.5vw, 142px); --r: 9deg">
+                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #00a35c; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">Ente</span>
+                  <span class="vibe-tool-name">Ente</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="slide" aria-label="15. 사내 지식 검색 (사내위키)">
+          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category">
+            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
+            <div class="chapter-label">래퍼 서비스 사례</div>
+            <div class="copy copy--split">
+              <p class="kicker">KNOWLEDGE</p>
+              <h1 class="title"><span class="title-index">그 외 분야</span>사내 지식 검색<br />(사내위키)</h1>
+              <p class="body">흩어진 문서·대화를 권한 그대로 검색<br />Context Layer 경쟁의 최전선</p>
+            </div>
+            <div class="visual" aria-label="사내 지식 검색 (사내위키) 대표 서비스">
+              <div class="vibe-tool-cloud">
+                <div class="vibe-tool" style="--x: 17%; --y: 30%; --s: clamp(112px, 8.5vw, 142px); --r: -9deg">
+                  <img src="./assets/glean-logo.png" alt="Glean 로고" />
+                  <span class="vibe-tool-name">Glean</span>
+                </div>
+                <div class="vibe-tool" style="--x: 54%; --y: 16%; --s: clamp(112px, 8.5vw, 142px); --r: 7deg">
+                  <img src="./assets/logo-notion.png" alt="Notion AI 로고" />
+                  <span class="vibe-tool-name">Notion AI</span>
+                </div>
+                <div class="vibe-tool" style="--x: 80%; --y: 69%; --s: clamp(112px, 8.5vw, 142px); --r: -11deg">
+                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #e8590c; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">Guru</span>
+                  <span class="vibe-tool-name">Guru</span>
+                </div>
+                <div class="vibe-tool" style="--x: 38%; --y: 72%; --s: clamp(112px, 8.5vw, 142px); --r: 9deg">
+                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #111111; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">DeepWiki</span>
+                  <span class="vibe-tool-name">DeepWiki</span>
+                </div>
               </div>
             </div>
           </article>
@@ -7227,393 +7705,12 @@
             </div>
           </article>
         </section>
-
-        <section class="slide chapter-divider" aria-label="부록. 그 외 분야">
-          <article class="slide-shell chapter-divider-shell">
-            <h1 class="chapter-divider-title">부록. 그 외 분야</h1>
-          </article>
-        </section>
-
-        <section class="slide" aria-label="03. AI 학습 도우미">
-          <article class="slide-shell slide-shell--split slide-shell--vibe-tools">
-            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
-            <div class="chapter-label">부록</div>
-            <div class="copy copy--split">
-              <p class="kicker">STUDY</p>
-              <h1 class="title"><span class="title-index">그 외 분야</span>AI 학습 도우미</h1>
-            </div>
-            <div class="visual" aria-label="AI 학습 도우미 서비스">
-              <div class="vibe-tool-cloud">
-                <div class="vibe-tool" style="--x: 12%; --y: 25%; --s: clamp(108px, 8.4vw, 140px); --r: -15deg">
-                  <img src="./assets/qanda-logo.ico" alt="QANDA 로고" />
-                  <span class="vibe-tool-name">QANDA</span>
-                </div>
-                <div class="vibe-tool" style="--x: 47%; --y: 14%; --s: clamp(112px, 8.5vw, 142px); --r: 9deg">
-                  <img src="./assets/photomath-logo.png" alt="Photomath 로고" />
-                  <span class="vibe-tool-name">Photomath</span>
-                </div>
-                <div class="vibe-tool" style="--x: 79%; --y: 26%; --s: clamp(104px, 8vw, 134px); --r: -12deg">
-                  <img src="./assets/gauth-logo.jpg" alt="Gauth 로고" />
-                  <span class="vibe-tool-name">Gauth</span>
-                </div>
-                <div class="vibe-tool" style="--x: 64%; --y: 58%; --s: clamp(108px, 8.1vw, 136px); --r: 15deg">
-                  <img src="./assets/brainly-logo.ico" alt="Brainly 로고" />
-                  <span class="vibe-tool-name">Brainly</span>
-                </div>
-                <div class="vibe-tool" style="--x: 27%; --y: 72%; --s: clamp(112px, 8.6vw, 144px); --r: -7deg">
-                  <img src="./assets/studyfetch-logo.ico" alt="StudyFetch 로고" />
-                  <span class="vibe-tool-name">StudyFetch</span>
-                </div>
-              </div>
-            </div>
-          </article>
-        </section>
-
-        <section class="slide" aria-label="08. 브라우저">
-          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category">
-            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
-            <div class="chapter-label">부록</div>
-            <div class="copy copy--split">
-              <p class="kicker">BROWSER</p>
-              <h1 class="title"><span class="title-index">그 외 분야</span>브라우저</h1>
-            </div>
-            <div class="visual" aria-label="AI 브라우저 대표 서비스">
-              <div class="vibe-tool-cloud">
-                <div class="vibe-tool" style="--x: 17%; --y: 30%; --s: clamp(114px, 8.7vw, 146px); --r: -9deg">
-                  <img src="./assets/comet-logo.png" alt="Comet 로고" />
-                  <span class="vibe-tool-name">Perplexity Comet</span>
-                </div>
-                <div class="vibe-tool" style="--x: 54%; --y: 16%; --s: clamp(112px, 8.5vw, 142px); --r: 7deg">
-                  <img src="./assets/dia-logo.ico" alt="Dia 로고" />
-                  <span class="vibe-tool-name">Dia</span>
-                </div>
-                <div class="vibe-tool" style="--x: 80%; --y: 69%; --s: clamp(110px, 8.3vw, 138px); --r: -11deg">
-                  <img src="./assets/arc-logo.svg" alt="Arc Search 로고" />
-                  <span class="vibe-tool-name">Arc Search</span>
-                </div>
-                <div class="vibe-tool" style="--x: 38%; --y: 72%; --s: clamp(108px, 8.1vw, 136px); --r: 9deg">
-                  <img src="https://aside.com/favicon.ico" alt="Aside 로고" />
-                  <span class="vibe-tool-name">Aside</span>
-                </div>
-              </div>
-            </div>
-          </article>
-        </section>
-
-        <section class="slide" aria-label="08. 외국어 교육" data-category-order="08">
-          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category">
-            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
-            <div class="chapter-label">부록</div>
-            <div class="copy copy--split">
-              <p class="kicker">LANGUAGE</p>
-              <h1 class="title"><span class="title-index">그 외 분야</span>외국어 교육</h1>
-            </div>
-            <div class="visual" aria-label="외국어 교육 대표 서비스">
-              <div class="vibe-tool-cloud">
-                <div class="vibe-tool" style="--x: 17%; --y: 28%; --s: clamp(112px, 8.5vw, 142px); --r: -10deg">
-                  <img src="./assets/duolingo-logo.svg" alt="Duolingo 로고" />
-                  <span class="vibe-tool-name">Duolingo</span>
-                </div>
-                <div class="vibe-tool" style="--x: 54%; --y: 17%; --s: clamp(116px, 8.8vw, 148px); --r: 8deg">
-                  <img src="./assets/speak-logo.png" alt="Speak 로고" />
-                  <span class="vibe-tool-name">Speak</span>
-                </div>
-                <div class="vibe-tool" style="--x: 80%; --y: 70%; --s: clamp(110px, 8.3vw, 138px); --r: -7deg">
-                  <img src="./assets/elsa-logo.ico" alt="ELSA Speak 로고" />
-                  <span class="vibe-tool-name">ELSA Speak</span>
-                </div>
-                <div class="vibe-tool" style="--x: 23%; --y: 72%; --s: clamp(108px, 8.1vw, 136px); --r: 7deg">
-                  <img src="./assets/heyring-logo.jpg" alt="헤이링 로고" />
-                  <span class="vibe-tool-name">헤이링</span>
-                </div>
-              </div>
-            </div>
-          </article>
-        </section>
-
-        <section class="slide" aria-label="05. 사진 보정">
-          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category">
-            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
-            <div class="chapter-label">부록</div>
-            <div class="copy copy--split">
-              <p class="kicker">PHOTO</p>
-              <h1 class="title"><span class="title-index">그 외 분야</span>사진 보정</h1>
-            </div>
-            <div class="visual" aria-label="사진 보정 대표 서비스">
-              <div class="vibe-tool-cloud">
-                <div class="vibe-tool" style="--x: 15%; --y: 24%; --s: clamp(104px, 7.9vw, 132px); --r: -12deg">
-                  <img src="./assets/remini-logo.ico" alt="Remini 로고" />
-                  <span class="vibe-tool-name">Remini</span>
-                </div>
-                <div class="vibe-tool" style="--x: 50%; --y: 16%; --s: clamp(104px, 7.9vw, 132px); --r: 7deg">
-                  <img src="./assets/faceapp-logo.png" alt="FaceApp 로고" />
-                  <span class="vibe-tool-name">FaceApp</span>
-                </div>
-                <div class="vibe-tool" style="--x: 84%; --y: 26%; --s: clamp(104px, 7.9vw, 132px); --r: -9deg">
-                  <img src="./assets/photoroom-logo.ico" alt="Photoroom 로고" />
-                  <span class="vibe-tool-name">Photoroom</span>
-                </div>
-                <div class="vibe-tool" style="--x: 18%; --y: 72%; --s: clamp(104px, 7.9vw, 132px); --r: 9deg">
-                  <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ac/7b/ac/ac7bacb1-42ca-84b4-d7bc-edbc4de80900/AppIcon-0-0-1x_U007ephone-0-1-0-sRGB-85-220.png/512x512bb.jpg" alt="SNOW 로고" />
-                  <span class="vibe-tool-name">SNOW</span>
-                </div>
-                <div class="vibe-tool" style="--x: 50%; --y: 70%; --s: clamp(104px, 7.9vw, 132px); --r: -6deg">
-                  <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/30/3b/49/303b49c2-505b-e52b-c9a6-40513a12dd1d/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg" alt="Carat 로고" />
-                  <span class="vibe-tool-name">Carat</span>
-                </div>
-                <div class="vibe-tool" style="--x: 84%; --y: 72%; --s: clamp(104px, 7.9vw, 132px); --r: 12deg">
-                  <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/bb/e8/46/bbe84655-6db0-2c13-1f5a-4904df31d504/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg" alt="Concept 로고" />
-                  <span class="vibe-tool-name">Concept</span>
-                </div>
-              </div>
-            </div>
-          </article>
-        </section>
-
-        <section class="slide" aria-label="10. 전문가 서비스" data-category-order="10">
-          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category slide-shell--expert-services">
-            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
-            <div class="chapter-label">부록</div>
-            <div class="copy copy--split">
-              <p class="kicker">EXPERT</p>
-              <h1 class="title"><span class="title-index">그 외 분야</span>전문가 서비스</h1>
-            </div>
-            <div class="visual" aria-label="전문가 서비스 대표 서비스">
-              <div class="vibe-tool-cloud">
-                <div class="vibe-tool" style="--x: 10%; --y: 15%; --s: clamp(76px, 5.8vw, 94px); --r: -11deg">
-                  <img src="./assets/harvey-logo.png" alt="Harvey 로고" />
-                  <span class="vibe-tool-name">Harvey</span>
-                </div>
-                <div class="vibe-tool" style="--x: 34%; --y: 10%; --s: clamp(76px, 5.8vw, 94px); --r: 8deg">
-                  <img src="https://superlawyer.co.kr/favicon.ico" alt="SuperLawyer 로고" />
-                  <span class="vibe-tool-name">SuperLawyer</span>
-                </div>
-                <div class="vibe-tool" style="--x: 60%; --y: 17%; --s: clamp(76px, 5.8vw, 94px); --r: -7deg">
-                  <img src="./assets/norm-ai-logo.png" alt="Norm AI 로고" />
-                  <span class="vibe-tool-name">Norm AI</span>
-                </div>
-                <div class="vibe-tool" style="--x: 87%; --y: 12%; --s: clamp(76px, 5.8vw, 94px); --r: 11deg">
-                  <img src="https://framerusercontent.com/images/WY5ORpPObnBhMgjnlR4uFUElzWs.png" alt="Legora 로고" />
-                  <span class="vibe-tool-name">Legora</span>
-                </div>
-                <div class="vibe-tool" style="--x: 17%; --y: 39%; --s: clamp(76px, 5.8vw, 94px); --r: 7deg">
-                  <img src="https://lbox.kr/favicon.ico" alt="LBOX 로고" />
-                  <span class="vibe-tool-name">LBOX</span>
-                </div>
-                <div class="vibe-tool" style="--x: 43%; --y: 44%; --s: clamp(76px, 5.8vw, 94px); --r: -10deg">
-                  <img src="https://static.neardoc.ai/logo.svg" alt="NearDoc 로고" />
-                  <span class="vibe-tool-name">NearDoc</span>
-                </div>
-                <div class="vibe-tool" style="--x: 68%; --y: 37%; --s: clamp(76px, 5.8vw, 94px); --r: 12deg">
-                  <img src="https://cdn.prod.website-files.com/6279c9d10eb860662e5ec006/6695ec67d4fc124a96df106b_abridge-favicon-symbol-red.png" alt="Abridge 로고" />
-                  <span class="vibe-tool-name">Abridge</span>
-                </div>
-                <div class="vibe-tool" style="--x: 91%; --y: 42%; --s: clamp(76px, 5.8vw, 94px); --r: -8deg">
-                  <img src="https://www.google.com/s2/favicons?domain=pilot.com&sz=128" alt="Pilot 로고" />
-                  <span class="vibe-tool-name">Pilot</span>
-                </div>
-                <div class="vibe-tool" style="--x: 11%; --y: 64%; --s: clamp(76px, 5.8vw, 94px); --r: -6deg">
-                  <img src="https://cdn.prod.website-files.com/68dd4bd4ddd2a6818d9fdde6/68fa39549a10a75db074f07f_68efd87f8372e64d05b5ea6b_fav-32%20(1).png" alt="Counsel Health 로고" />
-                  <span class="vibe-tool-name">Counsel Health</span>
-                </div>
-                <div class="vibe-tool" style="--x: 36%; --y: 59%; --s: clamp(76px, 5.8vw, 94px); --r: 9deg">
-                  <img src="https://framerusercontent.com/images/RcdrytOKpIouzwnRG9UtFjLkm0c.png" alt="Rogo 로고" />
-                  <span class="vibe-tool-name">Rogo</span>
-                </div>
-                <div class="vibe-tool" style="--x: 62%; --y: 66%; --s: clamp(76px, 5.8vw, 94px); --r: -12deg">
-                  <img src="https://images.ctfassets.net/bn476u6z5acg/FL0Xan4jxdYw5m4aeVp5r/51fdfa3b20f78e4009ccd40d52f37fb2/vector.png?w=64&q=85&fm=webp" alt="Hebbia 로고" />
-                  <span class="vibe-tool-name">Hebbia</span>
-                </div>
-                <div class="vibe-tool" style="--x: 86%; --y: 61%; --s: clamp(76px, 5.8vw, 94px); --r: 6deg">
-                  <img src="https://cdn.sanity.io/images/ewv2vq7j/production/3d8360e5ead3de1b0875f9f4b7ee309e29f0480a-64x65.png?fit=max&auto=format" alt="AlphaSense 로고" />
-                  <span class="vibe-tool-name">AlphaSense</span>
-                </div>
-                <div class="vibe-tool" style="--x: 39%; --y: 89%; --s: clamp(76px, 5.8vw, 94px); --r: -9deg">
-                  <img src="https://www.google.com/s2/favicons?domain=inkle.ai&sz=128" alt="Inkle 로고" />
-                  <span class="vibe-tool-name">Inkle</span>
-                </div>
-                <div class="vibe-tool" style="--x: 65%; --y: 84%; --s: clamp(76px, 5.8vw, 94px); --r: 8deg">
-                  <img src="https://www.google.com/s2/favicons?domain=maxed.life&sz=128" alt="Maxed 로고" />
-                  <span class="vibe-tool-name">Maxed</span>
-                </div>
-                <div class="vibe-tool" style="--x: 15%; --y: 88%; --s: clamp(76px, 5.8vw, 94px); --r: 7deg">
-                  <img src="https://www.google.com/s2/favicons?domain=cranston.ai&sz=128" alt="Cranston 로고" />
-                  <span class="vibe-tool-name">Cranston</span>
-                </div>
-                <div class="vibe-tool" style="--x: 90%; --y: 87%; --s: clamp(76px, 5.8vw, 94px); --r: -6deg">
-                  <img src="https://www.google.com/s2/favicons?domain=blackore.ai&sz=128" alt="Black Ore 로고" />
-                  <span class="vibe-tool-name">Black Ore</span>
-                </div>
-              </div>
-            </div>
-          </article>
-        </section>
-
-        <section class="slide" aria-label="11. 사주·운세">
-          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category">
-            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
-            <div class="chapter-label">부록</div>
-            <div class="copy copy--split">
-              <p class="kicker">FORTUNE</p>
-              <h1 class="title"><span class="title-index">그 외 분야</span>사주·운세</h1>
-              <p class="body">LLM의 개인화 해석과 상담형 과금이<br />잘 맞아떨어지는 분야</p>
-            </div>
-            <div class="visual" aria-label="사주·운세 대표 서비스">
-              <div class="vibe-tool-cloud">
-                <div class="vibe-tool" style="--x: 17%; --y: 30%; --s: clamp(112px, 8.5vw, 142px); --r: -9deg">
-                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #6b4fd8; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">포스텔러</span>
-                  <span class="vibe-tool-name">포스텔러</span>
-                </div>
-                <div class="vibe-tool" style="--x: 54%; --y: 16%; --s: clamp(112px, 8.5vw, 142px); --r: 7deg">
-                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #d9472b; font-size: clamp(1.15rem, 2.05vw, 1.95rem); white-space: nowrap">점신</span>
-                  <span class="vibe-tool-name">점신</span>
-                </div>
-                <div class="vibe-tool" style="--x: 80%; --y: 69%; --s: clamp(112px, 8.5vw, 142px); --r: -11deg">
-                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #ff7a00; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">헬로우봇</span>
-                  <span class="vibe-tool-name">헬로우봇</span>
-                </div>
-                <div class="vibe-tool" style="--x: 38%; --y: 72%; --s: clamp(112px, 8.5vw, 142px); --r: 9deg">
-                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #111111; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">Co–Star</span>
-                  <span class="vibe-tool-name">Co–Star</span>
-                </div>
-              </div>
-            </div>
-          </article>
-        </section>
-
-        <section class="slide" aria-label="12. 유튜브 요약">
-          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category">
-            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
-            <div class="chapter-label">부록</div>
-            <div class="copy copy--split">
-              <p class="kicker">SUMMARY</p>
-              <h1 class="title"><span class="title-index">그 외 분야</span>유튜브 요약</h1>
-              <p class="body">영상 요약은 빅테크 기본 기능이 되는 중<br />노트·학습 워크플로우와 묶여야 생존</p>
-            </div>
-            <div class="visual" aria-label="유튜브 요약 대표 서비스">
-              <div class="vibe-tool-cloud">
-                <div class="vibe-tool" style="--x: 17%; --y: 30%; --s: clamp(112px, 8.5vw, 142px); --r: -9deg">
-                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #3b5bdb; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">Lilys AI</span>
-                  <span class="vibe-tool-name">Lilys AI</span>
-                </div>
-                <div class="vibe-tool" style="--x: 54%; --y: 16%; --s: clamp(112px, 8.5vw, 142px); --r: 7deg">
-                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #111111; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">Eightify</span>
-                  <span class="vibe-tool-name">Eightify</span>
-                </div>
-                <div class="vibe-tool" style="--x: 80%; --y: 69%; --s: clamp(112px, 8.5vw, 142px); --r: -11deg">
-                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #0f9d58; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">NoteGPT</span>
-                  <span class="vibe-tool-name">NoteGPT</span>
-                </div>
-                <div class="vibe-tool" style="--x: 38%; --y: 72%; --s: clamp(112px, 8.5vw, 142px); --r: 9deg">
-                  <img src="./assets/youtube-logo.svg" alt="YouTube 로고" />
-                  <span class="vibe-tool-name">YouTube</span>
-                </div>
-              </div>
-            </div>
-          </article>
-        </section>
-
-        <section class="slide" aria-label="13. 숏츠·하이라이트 제작">
-          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category">
-            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
-            <div class="chapter-label">부록</div>
-            <div class="copy copy--split">
-              <p class="kicker">CLIPS</p>
-              <h1 class="title"><span class="title-index">그 외 분야</span>숏츠·하이라이트<br />제작</h1>
-              <p class="body">롱폼을 숏폼으로 자동 편집<br />크리에이터 생태계와 함께 성장</p>
-            </div>
-            <div class="visual" aria-label="숏츠·하이라이트 제작 대표 서비스">
-              <div class="vibe-tool-cloud">
-                <div class="vibe-tool" style="--x: 17%; --y: 30%; --s: clamp(112px, 8.5vw, 142px); --r: -9deg">
-                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #5b3df5; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">OpusClip</span>
-                  <span class="vibe-tool-name">OpusClip</span>
-                </div>
-                <div class="vibe-tool" style="--x: 54%; --y: 16%; --s: clamp(112px, 8.5vw, 142px); --r: 7deg">
-                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #7c3aed; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">Vizard</span>
-                  <span class="vibe-tool-name">Vizard</span>
-                </div>
-                <div class="vibe-tool" style="--x: 80%; --y: 69%; --s: clamp(112px, 8.5vw, 142px); --r: -11deg">
-                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #1f6feb; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">Vrew</span>
-                  <span class="vibe-tool-name">Vrew</span>
-                </div>
-                <div class="vibe-tool" style="--x: 38%; --y: 72%; --s: clamp(112px, 8.5vw, 142px); --r: 9deg">
-                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #111111; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">CapCut</span>
-                  <span class="vibe-tool-name">CapCut</span>
-                </div>
-              </div>
-            </div>
-          </article>
-        </section>
-
-        <section class="slide" aria-label="14. 사진 관리">
-          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category">
-            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
-            <div class="chapter-label">부록</div>
-            <div class="copy copy--split">
-              <p class="kicker">PHOTOS</p>
-              <h1 class="title"><span class="title-index">그 외 분야</span>사진 관리</h1>
-              <p class="body">자연어로 사진 찾기·정리<br />OS와 클라우드를 쥔 빅테크가 유리</p>
-            </div>
-            <div class="visual" aria-label="사진 관리 대표 서비스">
-              <div class="vibe-tool-cloud">
-                <div class="vibe-tool" style="--x: 17%; --y: 30%; --s: clamp(112px, 8.5vw, 142px); --r: -9deg">
-                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #ea4335; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">Google Photos</span>
-                  <span class="vibe-tool-name">Google Photos</span>
-                </div>
-                <div class="vibe-tool" style="--x: 54%; --y: 16%; --s: clamp(112px, 8.5vw, 142px); --r: 7deg">
-                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #ff9500; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">Apple Photos</span>
-                  <span class="vibe-tool-name">Apple Photos</span>
-                </div>
-                <div class="vibe-tool" style="--x: 80%; --y: 69%; --s: clamp(112px, 8.5vw, 142px); --r: -11deg">
-                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #4250af; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">Immich</span>
-                  <span class="vibe-tool-name">Immich</span>
-                </div>
-                <div class="vibe-tool" style="--x: 38%; --y: 72%; --s: clamp(112px, 8.5vw, 142px); --r: 9deg">
-                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #00a35c; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">Ente</span>
-                  <span class="vibe-tool-name">Ente</span>
-                </div>
-              </div>
-            </div>
-          </article>
-        </section>
-
-        <section class="slide" aria-label="15. 사내 지식 검색 (사내위키)">
-          <article class="slide-shell slide-shell--split slide-shell--vibe-tools slide-shell--vibe-category">
-            <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
-            <div class="chapter-label">부록</div>
-            <div class="copy copy--split">
-              <p class="kicker">KNOWLEDGE</p>
-              <h1 class="title"><span class="title-index">그 외 분야</span>사내 지식 검색<br />(사내위키)</h1>
-              <p class="body">흩어진 문서·대화를 권한 그대로 검색<br />Context Layer 경쟁의 최전선</p>
-            </div>
-            <div class="visual" aria-label="사내 지식 검색 (사내위키) 대표 서비스">
-              <div class="vibe-tool-cloud">
-                <div class="vibe-tool" style="--x: 17%; --y: 30%; --s: clamp(112px, 8.5vw, 142px); --r: -9deg">
-                  <img src="./assets/glean-logo.png" alt="Glean 로고" />
-                  <span class="vibe-tool-name">Glean</span>
-                </div>
-                <div class="vibe-tool" style="--x: 54%; --y: 16%; --s: clamp(112px, 8.5vw, 142px); --r: 7deg">
-                  <img src="./assets/logo-notion.png" alt="Notion AI 로고" />
-                  <span class="vibe-tool-name">Notion AI</span>
-                </div>
-                <div class="vibe-tool" style="--x: 80%; --y: 69%; --s: clamp(112px, 8.5vw, 142px); --r: -11deg">
-                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #e8590c; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">Guru</span>
-                  <span class="vibe-tool-name">Guru</span>
-                </div>
-                <div class="vibe-tool" style="--x: 38%; --y: 72%; --s: clamp(112px, 8.5vw, 142px); --r: 9deg">
-                  <span class="vibe-tool-mark" aria-hidden="true" style="color: #111111; font-size: clamp(0.85rem, 1.35vw, 1.25rem); white-space: nowrap">DeepWiki</span>
-                  <span class="vibe-tool-name">DeepWiki</span>
-                </div>
-              </div>
-            </div>
-          </article>
-        </section>
       </div>
 
       <div class="page-controls" aria-label="페이지 이동">
         <button class="page-home-button" id="home-button" type="button" aria-label="첫 슬라이드로 이동">처음</button>
         <button id="previous-button" type="button" aria-label="이전 슬라이드">←</button>
-        <span class="page-counter" id="page-counter" aria-live="polite">01 / 44</span>
+        <span class="page-counter" id="page-counter" aria-live="polite">01 / 45</span>
         <button id="next-button" type="button" aria-label="다음 슬라이드">→</button>
       </div>
     </main>
