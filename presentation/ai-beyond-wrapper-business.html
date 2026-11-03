@@ -46,6 +46,16 @@
         box-sizing: border-box;
       }
 
+      .deck-stage {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 1280px;
+        height: 720px;
+        border: 0;
+        transform-origin: center;
+      }
+
       html,
       body {
         width: 100%;
@@ -6733,7 +6743,9 @@
           min-width: 0;
         }
 
-        .slide-shell--ambient .evidence-title {
+        .slide-shell--ambient-focus-workflow .evidence-title,
+        .slide-shell--ambient-focus-always-on .evidence-title,
+        .slide-shell--ambient-focus-gui .evidence-title {
           font-size: clamp(2.4rem, 3.9vw, 4.6rem);
         }
 
@@ -6876,9 +6888,16 @@
         font-size: clamp(2.4rem, 3.7vw, 4.4rem);
       }
 
-      .slide-shell--view-wide .visual {
-        flex: 0 0 34rem;
-        width: 34rem;
+      @media (min-width: 861px) {
+        .slide-shell--view-wide .visual {
+          flex: 0 0 34rem;
+          width: 34rem;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .vibe-tool-cloud { width: 86%; margin-inline: auto; }
+        .translation-reaction-shot { max-width: 92%; }
       }
     </style>
   </head>
@@ -8774,7 +8793,65 @@
     </main>
 
     <script>
+      // 캔버스·임베드처럼 작은 창에서는 1280×720 무대로 그린 뒤 창 크기에 맞게 축소한다.
       (() => {
+        const STAGE_WIDTH = 1280;
+        const STAGE_HEIGHT = 720;
+        const params = new URLSearchParams(window.location.search);
+        if (params.has("stage")) return;
+        const needsStage = () => window.innerWidth >= 600 && (window.innerWidth < STAGE_WIDTH || window.innerHeight < STAGE_HEIGHT);
+        let resizeTimer = null;
+        const reloadWhen = (condition) => {
+          window.addEventListener("resize", () => {
+            window.clearTimeout(resizeTimer);
+            resizeTimer = window.setTimeout(() => { if (condition()) window.location.reload(); }, 300);
+          });
+        };
+
+        if (!needsStage()) {
+          reloadWhen(needsStage);
+          return;
+        }
+
+        window.__deckStageHost = true;
+        const deck = document.querySelector(".deck");
+        deck.remove();
+        params.set("stage", "1");
+        const frame = document.createElement("iframe");
+        frame.className = "deck-stage";
+        frame.title = deck.getAttribute("aria-label");
+        frame.src = `${window.location.pathname}?${params}${window.location.hash}`;
+        document.body.appendChild(frame);
+
+        const fit = () => {
+          const scale = Math.min(window.innerWidth / STAGE_WIDTH, window.innerHeight / STAGE_HEIGHT);
+          frame.style.transform = `translate(-50%, -50%) scale(${scale})`;
+        };
+        fit();
+        window.addEventListener("resize", fit);
+        reloadWhen(() => !needsStage());
+
+        frame.addEventListener("load", () => frame.contentWindow.focus());
+        window.addEventListener("message", (event) => {
+          if (event.source !== frame.contentWindow || !event.data || !event.data.deckSlide) return;
+          const hash = `#${event.data.deckSlide}`;
+          if (window.location.hash !== hash) {
+            window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}${hash}`);
+          }
+        });
+        window.addEventListener("hashchange", () => { frame.contentWindow.location.hash = window.location.hash; });
+        window.addEventListener("keydown", (event) => {
+          frame.contentWindow.dispatchEvent(new KeyboardEvent("keydown", { key: event.key }));
+        });
+        window.addEventListener("wheel", (event) => {
+          frame.contentWindow.dispatchEvent(new WheelEvent("wheel", { deltaX: event.deltaX, deltaY: event.deltaY }));
+        }, { passive: true });
+      })();
+    </script>
+
+    <script>
+      (() => {
+        if (window.__deckStageHost) return;
         const track = document.getElementById("deck-track");
         const slides = Array.from(track.querySelectorAll(".slide"));
         const progress = document.getElementById("progress-fill");
@@ -8829,6 +8906,10 @@
 
           if (syncHash && window.location.hash !== `#${activeIndex + 1}`) {
             window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}#${activeIndex + 1}`);
+          }
+
+          if (window.parent !== window) {
+            window.parent.postMessage({ deckSlide: activeIndex + 1 }, window.location.origin);
           }
 
           hasInitialised = true;
