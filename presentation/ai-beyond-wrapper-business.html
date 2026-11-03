@@ -6764,6 +6764,26 @@
         margin-top: 10px;
         font-size: clamp(1rem, 1.35vw, 1.3rem);
       }
+
+      .slide-shell--view-narrow .copy--split {
+        flex: 1 1 auto;
+        max-width: none;
+        min-width: 0;
+      }
+
+      .slide-shell--view-narrow .title {
+        white-space: nowrap;
+      }
+
+      .slide-shell--view-narrow .visual {
+        flex: 0 1 30rem;
+        width: min(100%, 30rem);
+        min-width: 0;
+      }
+
+      .slide-shell--view-narrow .evidence-stack {
+        width: 100%;
+      }
     </style>
   </head>
   <body>
@@ -6954,12 +6974,12 @@
         </section>
 
         <section class="slide" aria-label="내 관점: 캐릭터챗 다음은 로컬 모델 사업">
-          <article class="slide-shell slide-shell--split slide-shell--wrapper">
+          <article class="slide-shell slide-shell--split slide-shell--wrapper slide-shell--view-narrow">
             <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>AI Beyond 2026</span></div>
             <div class="chapter-label">래퍼 서비스 사례</div>
             <div class="copy copy--split">
               <p class="kicker">CHARACTER</p>
-              <h1 class="title">캐릭터챗 다음은<br /><span class="title-accent">로컬 모델 사업</span></h1>
+              <h1 class="title">캐릭터챗의 숨은 기회는<br /><span class="title-accent">로컬 모델 사업</span></h1>
             </div>
             <div class="visual" aria-label="내 관점: 캐릭터챗 다음은 로컬 모델 사업">
               <div class="evidence-stack">
