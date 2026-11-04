@@ -7098,6 +7098,107 @@
       .slide-shell--diet-intro .evidence-text {
         font-size: clamp(1.05rem, 1.5vw, 1.3rem);
       }
+    
+      /* Phones: less on screen. Let long lines wrap, line logo clouds up in a grid,
+         and drop the small source lines under stat numbers. */
+      @media (max-width: 560px) {
+        .slide .title,
+        .slide .title-accent,
+        .slide .evidence-title,
+        .slide .field-chip strong {
+          white-space: normal !important;
+        }
+
+        .slide .evidence-title {
+          overflow-wrap: anywhere;
+        }
+
+        .vibe-tool-cloud:not(.vibe-tool-cloud--row) {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(62px, 1fr));
+          gap: 10px;
+          height: auto !important;
+          align-content: center;
+        }
+
+        .vibe-tool-cloud:not(.vibe-tool-cloud--row) .vibe-tool {
+          position: relative;
+          left: auto;
+          top: auto;
+          width: auto;
+          height: auto;
+          aspect-ratio: 1;
+          padding: 7px;
+          border-radius: 14px;
+          transform: none;
+          box-shadow: 0 8px 18px rgba(66, 49, 15, 0.1);
+        }
+
+        .vibe-tool-cloud:not(.vibe-tool-cloud--row) .vibe-tool img {
+          width: 58%;
+          height: 58%;
+        }
+
+        .vibe-tool-cloud:not(.vibe-tool-cloud--row) .vibe-tool-name {
+          max-width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 0.62rem;
+        }
+
+        .slide-competitor-cloud {
+          position: relative;
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(52px, 1fr));
+          gap: 10px;
+          height: auto !important;
+          min-height: 0 !important;
+        }
+
+        .slide-competitor-cloud .slide-competitor-logo {
+          position: relative !important;
+          left: auto !important;
+          top: auto !important;
+          width: 100% !important;
+          height: auto !important;
+          aspect-ratio: 1;
+          transform: none !important;
+          box-shadow: 0 6px 14px rgba(66, 49, 15, 0.1);
+        }
+
+        .stat-grid {
+          gap: 8px;
+          margin-top: 16px;
+        }
+
+        .stat-tile {
+          gap: 4px;
+          padding: 12px;
+          border-radius: 14px;
+        }
+
+        .stat-number {
+          font-size: clamp(1.35rem, 6.6vw, 1.9rem);
+        }
+
+        .stat-label {
+          font-size: 0.78rem;
+          line-height: 1.28;
+        }
+
+        .stat-source {
+          display: none;
+        }
+
+        .field-chip span {
+          display: none;
+        }
+
+        .field-chip strong {
+          font-size: 0.82rem;
+          word-break: keep-all;
+        }
+      }
     </style>
 </head>
 <body>
